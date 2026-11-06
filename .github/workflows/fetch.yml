@@ -1,10 +1,10 @@
 name: daily-market-data
 on:
   schedule:
-    # 週一至週五 UTC 21:15 與 22:15（＝台北隔天 05:15／06:15）。
+    # UTC 週日至週四 21:15 與 22:15（＝台北週一至週五 05:15／06:15）。
     # 腳本只在芝加哥 16:00–17:00（CME 休市時段）之後正式執行，冬令／夏令自動對應。
-    - cron: "15 21 * * 1-5"
-    - cron: "15 22 * * 1-5"
+    - cron: "15 21 * * 0-4"
+    - cron: "15 22 * * 0-4"
   workflow_dispatch: {}
 permissions:
   contents: write
