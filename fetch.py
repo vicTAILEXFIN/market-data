@@ -38,6 +38,29 @@ def r(x, n=4):
     return None if x is None or (isinstance(x, float) and math.isnan(x)) else round(float(x), n)
 
 
+def treasury_curve(today):
+    """美國財政部每日公債殖利率（官方 CSV）：回傳最近兩個早於台北今日的交易日的 2Y、30Y。"""
+    import csv, io
+    rows = []
+    for year in (today.year, today.year - 1):
+        url = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/"
+               f"{year}/all?type=daily_treasury_yield_curve&field_tdr_date_value={year}&page&_format=csv")
+        text = urlopen(Request(url, headers={"User-Agent": "market-data/1.0"}), timeout=30).read().decode("utf-8-sig")
+        rows += list(csv.DictReader(io.StringIO(text)))
+        if len(rows) >= 3:
+            break
+    parsed = []
+    for x in rows:
+        d = dt.datetime.strptime(x["Date"], "%m/%d/%Y").date()
+        if d < today and x.get("2 Yr") and x.get("30 Yr"):
+            parsed.append((d, float(x["2 Yr"]), float(x["30 Yr"])))
+    parsed.sort(reverse=True)
+    (d1, y2, y30), (_d0, p2, p30) = parsed[0], parsed[1]
+    return {"date": d1.isoformat(), "source": "treasury",
+            "y2": {"yield": round(y2, 2), "bp": int(round((y2 - p2) * 100))},
+            "y30": {"yield": round(y30, 2), "bp": int(round((y30 - p30) * 100))}}
+
+
 # ---------- 下載 ----------
 def yf_hist(symbol, period, interval, tries=3):
     import yfinance as yf
@@ -230,7 +253,7 @@ def main():
         except Exception:  # noqa
             pass
     out = {"generated_at_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "taipei_date": today.isoformat(),
-           "indices": {}, "ust10y": None, "stocks": {}, "macro": {}, "fedwatch": None, "errors": errors}
+           "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "errors": errors}
 
     for s, n in INDICES.items():
         p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), n, 2)
@@ -242,6 +265,13 @@ def main():
         y1, y0 = f(tnx[-1][1]), f(tnx[-2][1])
         out["ust10y"] = {"date": tnx[-1][0].isoformat(), "yield": r(y1, 3), "prev": r(y0, 3),
                          "bp": int(round((y1 - y0) * 100))}
+    p = pair(daily_closes(yf_hist("000001.SS", "10d", "1d"), today), "上證綜合", 2)
+    if p:
+        out["sse"] = p
+    try:
+        out["ust_curve"] = treasury_curve(today)
+    except Exception as e:  # noqa
+        errors.append(f"美債2Y/30Y 取不到：{e}")
     for s in STOCKS:
         p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), s, 2)
         if p:
