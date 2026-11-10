@@ -360,6 +360,65 @@ def pair(series, name, digits=4):
             "prev_close": r(c0, digits), "chg": r(c1 - c0, digits), "pct": r((c1 / c0 - 1) * 100, 2)}
 
 
+# ---------- 固定行事曆（央行利率決策、結算日、MSCI）----------
+# 來源：BoJ、ECB、BoE、MSCI 官網公布的年度日程（2026/11/10 核對）；台灣央行理監事會由排程依官網公告補入
+BOJ = ["2026-01-23", "2026-03-19", "2026-04-28", "2026-06-16", "2026-07-31", "2026-09-18", "2026-10-30", "2026-12-18",
+       "2027-01-22", "2027-03-18", "2027-04-28", "2027-06-11", "2027-07-22", "2027-09-22", "2027-10-29", "2027-12-17"]
+ECB = ["2026-12-17", "2027-02-04", "2027-03-18", "2027-04-29", "2027-06-10", "2027-07-22", "2027-09-09", "2027-10-28", "2027-12-16"]
+BOE = ["2026-11-05", "2026-12-17", "2027-02-04", "2027-03-18", "2027-04-29", "2027-06-17", "2027-07-29", "2027-09-16",
+       "2027-11-04", "2027-12-16"]
+MSCI = [("2026-11-11", "2026-12-01"), ("2027-02-09", "2027-03-01"), ("2027-05-10", "2027-05-28"), ("2027-08-12", "2027-09-01"),
+        ("2027-11-11", "2027-12-01"), ("2028-02-10", "2028-03-01"), ("2028-05-11", "2028-06-01"), ("2028-08-14", "2028-09-01")]
+
+
+def nth_weekday(y, m, weekday, n):
+    d = dt.date(y, m, 1)
+    d += dt.timedelta(days=(weekday - d.weekday()) % 7)
+    return d + dt.timedelta(weeks=n - 1)
+
+
+def prev_business_day(d):
+    d -= dt.timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= dt.timedelta(days=1)
+    return d
+
+
+def fixed_events(today, back=7, ahead=14):
+    """固定行事曆：類別一律為「總經與市場」。taipei 為台北時間（日期 YYYY-MM-DD、時刻 HH:MM 或文字）。"""
+    lo, hi = today - dt.timedelta(days=back), today + dt.timedelta(days=ahead)
+    ev = []
+
+    def at(day, hm, tz):
+        t = dt.datetime.combine(day, dt.time(*hm), tz).astimezone(TPE)
+        return t.date(), t.strftime("%H:%M")
+
+    def add(d, t, title, note=""):
+        if lo <= d <= hi:
+            ev.append({"date": d.isoformat(), "time": t, "cat": "總經與市場", "title": title, "note": note})
+
+    for x in FOMC:
+        add(*at(x, (14, 0), NY), "FOMC利率決策", "聲明與主席記者會（記者會 14:30 ET）")
+    for s in BOJ:
+        add(dt.date.fromisoformat(s), "午間", "日銀利率決策", "公布時間不固定，通常台北 11:00–13:00；總裁記者會 14:30 JST")
+    for s in ECB:
+        add(*at(dt.date.fromisoformat(s), (14, 15), ZoneInfo("Europe/Berlin")), "歐洲央行利率決策", "記者會 14:45 CET")
+    for s in BOE:
+        add(*at(dt.date.fromisoformat(s), (12, 0), LDN), "英國央行利率決策", "")
+    for a, e in MSCI:
+        a, e = dt.date.fromisoformat(a), dt.date.fromisoformat(e)
+        add(a + dt.timedelta(days=1), "清晨", "MSCI季度調整結果公布", f"美東 {a:%m/%d} 盤後公布；{e:%m/%d} 生效")
+        add(prev_business_day(e), "收盤", "MSCI季度調整生效（今日收盤換股）", "被動資金於收盤集中交易")
+    y, m = lo.year, lo.month
+    for _ in range(3):
+        quarter = m in (3, 6, 9, 12)
+        add(nth_weekday(y, m, 2, 3), "13:30", "台指期月結算" + ("（季月：台指期、選擇權、個股期貨同步結算）" if quarter else ""), "")
+        fri = nth_weekday(y, m, 4, 3)
+        add(fri, "美股收盤", "美股四巫日（季度期貨與選擇權同步到期）" if quarter else "美股月選擇權到期", "收盤前後成交量與波動放大")
+        y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+    return sorted(ev, key=lambda e: (e["date"], e["time"]))
+
+
 def main():
     now = dt.datetime.now(dt.timezone.utc)
     ct = now.astimezone(CT)
@@ -456,6 +515,12 @@ def main():
         out["us_macro_fred"], out["us_calendar"] = fred.build(now, errors=errors)
     except Exception as ex:  # noqa
         errors.append(f"FRED 失敗：{ex}")
+
+    try:
+        out["fixed_events"] = fixed_events(today)
+    except Exception as ex:  # noqa
+        out["fixed_events"] = None
+        errors.append(f"fixed_events 失敗：{ex}")
 
     for path in ("data/latest.json", f"data/{today.isoformat()}.json"):
         with open(path, "w", encoding="utf-8") as f:
