@@ -225,20 +225,43 @@ def ust_auctions(today):
         et = dt.datetime.combine(day, dt.time(13, 0), NY)
         return et.astimezone(TPE).strftime("%m/%d %H:%M")
 
-    def row(x, done):
-        day = dt.date.fromisoformat(x["auctionDate"][:10])
+    def adate(x):
+        for k in ("auctionDate", "auction_date", "announcedAuctionDate", "auctionDateYear"):
+            v = x.get(k)
+            if v and len(str(v)) >= 10:
+                return dt.date.fromisoformat(str(v)[:10])
+        return None
+
+    def row(x, day, done):
+        amt = num(x.get("offeringAmount"))
         r_ = {"term": x.get("securityTerm"), "type": x.get("securityType"), "auction_date_et": day.isoformat(),
-              "taipei_time": tpe_time(day), "offering_bn": round(num(x.get("offeringAmount")) / 1e9, 1) if num(x.get("offeringAmount")) else None,
+              "taipei_time": tpe_time(day), "offering_bn": round(amt / 1e9, 1) if amt else None,
               "reopening": x.get("reopening") == "Yes"}
         if done:
             r_.update({"high_yield": num(x.get("highYield")), "bid_to_cover": num(x.get("bidToCoverRatio"))})
         return r_
+
+    def rows(items, done, keep_if):
+        if isinstance(items, dict):  # 有些端點包一層
+            items = next((v for v in items.values() if isinstance(v, list)), [])
+        out_, missing = [], 0
+        for x in items:
+            if not isinstance(x, dict) or not keep(x):
+                continue
+            day = adate(x)
+            if day is None:
+                missing += 1; continue
+            if keep_if(x, day):
+                out_.append(row(x, day, done))
+        if missing and not out_:
+            sample = next((x for x in items if isinstance(x, dict)), {})
+            raise ValueError(f"找不到標售日期欄位；欄位={sorted(sample)[:40]}")
+        return out_
     up = json.loads(get(base + "upcoming?format=json"))
     done = json.loads(get(base + "auctioned?format=json&days=10"))
     horizon = today + dt.timedelta(days=9)
-    return {"upcoming": sorted([row(x, False) for x in up if keep(x) and dt.date.fromisoformat(x["auctionDate"][:10]) <= horizon],
-                               key=lambda r_: r_["auction_date_et"]),
-            "results": sorted([row(x, True) for x in done if keep(x) and x.get("highYield")],
+    return {"upcoming": sorted(rows(up, False, lambda x, d: d <= horizon), key=lambda r_: r_["auction_date_et"]),
+            "results": sorted(rows(done, True, lambda x, d: bool(x.get("highYield"))),
                               key=lambda r_: r_["auction_date_et"], reverse=True)[:6]}
 
 
