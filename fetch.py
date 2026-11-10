@@ -219,14 +219,21 @@ def twd_official(today):
 def ust_auctions(today):
     """TreasuryDirect：近期中長債標售結果與未來 8 天標售日程（13:00 ET 截標，換算台北時間）。"""
     base = "https://www.treasurydirect.gov/TA_WS/securities/"
-    keep = lambda x: x.get("securityType") in ("Note", "Bond") or "TIPS" in (x.get("securityType") or "")
+    stype = lambda x: x.get("securityType") or x.get("announcedAsSecurityType") or ""
+    keep = lambda x: stype(x) in ("Note", "Bond") or "TIPS" in stype(x)
 
-    def tpe_time(day):
-        et = dt.datetime.combine(day, dt.time(13, 0), NY)
+    def tpe_time(day, x=None):
+        hm = dt.time(13, 0)
+        t = (x or {}).get("competitiveAuctionCloseTime") or ""
+        try:
+            hm = dt.datetime.strptime(t.strip().upper().replace(".", ""), "%I:%M %p").time()
+        except ValueError:
+            pass
+        et = dt.datetime.combine(day, hm, NY)
         return et.astimezone(TPE).strftime("%m/%d %H:%M")
 
     def adate(x):
-        for k in ("auctionDate", "auction_date", "announcedAuctionDate", "auctionDateYear"):
+        for k in ("auctionDate", "competitiveAuctionCloseDate", "announcedAuctionDate"):
             v = x.get(k)
             if v and len(str(v)) >= 10:
                 return dt.date.fromisoformat(str(v)[:10])
@@ -234,8 +241,8 @@ def ust_auctions(today):
 
     def row(x, day, done):
         amt = num(x.get("offeringAmount"))
-        r_ = {"term": x.get("securityTerm"), "type": x.get("securityType"), "auction_date_et": day.isoformat(),
-              "taipei_time": tpe_time(day), "offering_bn": round(amt / 1e9, 1) if amt else None,
+        r_ = {"term": x.get("securityTerm") or x.get("announcedAsSecurityTerm"), "type": stype(x), "auction_date_et": day.isoformat(),
+              "taipei_time": tpe_time(day, x), "offering_bn": round(amt / 1e9, 1) if amt else None,
               "reopening": x.get("reopening") == "Yes"}
         if done:
             r_.update({"high_yield": num(x.get("highYield")), "bid_to_cover": num(x.get("bidToCoverRatio"))})
@@ -255,7 +262,7 @@ def ust_auctions(today):
                 out_.append(row(x, day, done))
         if missing and not out_:
             sample = next((x for x in items if isinstance(x, dict)), {})
-            raise ValueError(f"找不到標售日期欄位；欄位={sorted(sample)[:40]}")
+            raise ValueError(f"找不到標售日期欄位；欄位={sorted(sample)}")
         return out_
     up = json.loads(get(base + "upcoming?format=json"))
     done = json.loads(get(base + "auctioned?format=json&days=10"))
