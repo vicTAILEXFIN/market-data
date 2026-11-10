@@ -52,13 +52,12 @@ def treasury_curve(today):
     parsed = []
     for x in rows:
         d = dt.datetime.strptime(x["Date"], "%m/%d/%Y").date()
-        if d < today and x.get("2 Yr") and x.get("30 Yr"):
-            parsed.append((d, float(x["2 Yr"]), float(x["30 Yr"])))
+        if d < today and x.get("2 Yr") and x.get("10 Yr") and x.get("30 Yr"):
+            parsed.append((d, float(x["2 Yr"]), float(x["10 Yr"]), float(x["30 Yr"])))
     parsed.sort(reverse=True)
-    (d1, y2, y30), (_d0, p2, p30) = parsed[0], parsed[1]
-    return {"date": d1.isoformat(), "source": "treasury",
-            "y2": {"yield": round(y2, 2), "bp": int(round((y2 - p2) * 100))},
-            "y30": {"yield": round(y30, 2), "bp": int(round((y30 - p30) * 100))}}
+    (d1, y2, y10, y30), (_d0, p2, p10, p30) = parsed[0], parsed[1]
+    q = lambda y, p: {"yield": round(y, 2), "bp": int(round((y - p) * 100))}
+    return {"date": d1.isoformat(), "source": "treasury", "y2": q(y2, p2), "y10": q(y10, p10), "y30": q(y30, p30)}
 
 
 # ---------- 下載 ----------
@@ -186,6 +185,100 @@ def nyfed_effr():
     return sorted(rows)
 
 
+UA = {"User-Agent": "Mozilla/5.0 (market-data digest; +https://github.com/vicTAILEXFIN/market-data)"}
+
+
+def get(url, data=None, timeout=30):
+    import gzip
+    raw = urlopen(Request(url, data=data, headers=UA), timeout=timeout).read()
+    return gzip.decompress(raw) if raw[:2] == b"\x1f\x8b" else raw
+
+
+def num(s):
+    s = str(s).replace(",", "").strip()
+    return float(s) if s not in ("", "-", "--") else None
+
+
+def twd_official(today):
+    """央行網站「新臺幣/美元銀行間收盤匯率」（資料來源：台北外匯經紀，營業日 16:00–17:00 公布）。"""
+    import re
+    text = re.sub(r"<[^>]+>", " ", get("https://www.cbc.gov.tw/tw/lp-645-1-1-60.html").decode("utf-8", "ignore"))
+    rows = []
+    for d, v in re.findall(r"(\d{4}/\d{2}/\d{2})\s+([0-9]{2}\.[0-9]{3})", text):
+        dd = dt.date.fromisoformat(d.replace("/", "-"))
+        if dd < today:
+            rows.append((dd, float(v)))
+    rows = sorted(set(rows))
+    if len(rows) < 2:
+        raise ValueError(f"央行收盤匯率解析不到兩筆（{len(rows)}）")
+    (d0, c0), (d1, c1) = rows[-2], rows[-1]
+    return {"name": "美元兌新台幣", "date": d1.isoformat(), "close": c1, "prev_date": d0.isoformat(), "prev_close": c0,
+            "chg": round(c1 - c0, 3), "pct": round((c1 / c0 - 1) * 100, 2), "source": "cbc_taipeiforex_close"}
+
+
+def ust_auctions(today):
+    """TreasuryDirect：近期中長債標售結果與未來 8 天標售日程（13:00 ET 截標，換算台北時間）。"""
+    base = "https://www.treasurydirect.gov/TA_WS/securities/"
+    keep = lambda x: x.get("securityType") in ("Note", "Bond") or "TIPS" in (x.get("securityType") or "")
+
+    def tpe_time(day):
+        et = dt.datetime.combine(day, dt.time(13, 0), NY)
+        return et.astimezone(TPE).strftime("%m/%d %H:%M")
+
+    def row(x, done):
+        day = dt.date.fromisoformat(x["auctionDate"][:10])
+        r_ = {"term": x.get("securityTerm"), "type": x.get("securityType"), "auction_date_et": day.isoformat(),
+              "taipei_time": tpe_time(day), "offering_bn": round(num(x.get("offeringAmount")) / 1e9, 1) if num(x.get("offeringAmount")) else None,
+              "reopening": x.get("reopening") == "Yes"}
+        if done:
+            r_.update({"high_yield": num(x.get("highYield")), "bid_to_cover": num(x.get("bidToCoverRatio"))})
+        return r_
+    up = json.loads(get(base + "upcoming?format=json"))
+    done = json.loads(get(base + "auctioned?format=json&days=10"))
+    horizon = today + dt.timedelta(days=9)
+    return {"upcoming": sorted([row(x, False) for x in up if keep(x) and dt.date.fromisoformat(x["auctionDate"][:10]) <= horizon],
+                               key=lambda r_: r_["auction_date_et"]),
+            "results": sorted([row(x, True) for x in done if keep(x) and x.get("highYield")],
+                              key=lambda r_: r_["auction_date_et"], reverse=True)[:6]}
+
+
+def twse_institutional(today):
+    """證交所三大法人買賣金額（BFI82U），取早於今天的最近交易日；單位億元。"""
+    for k in range(1, 8):
+        d = today - dt.timedelta(days=k)
+        js = json.loads(get(f"https://www.twse.com.tw/rwd/zh/fund/BFI82U?type=day&dayDate={d:%Y%m%d}&response=json"))
+        if js.get("stat") == "OK" and js.get("data"):
+            net = {r_[0]: num(r_[3]) for r_ in js["data"]}
+            yi = lambda v: None if v is None else round(v / 1e8, 2)
+            pick = lambda key: next((v for n, v in net.items() if n.startswith(key)), None)
+            return {"date": d.isoformat(), "unit": "億元",
+                    "foreign": yi(pick("外資及陸資")), "trust": yi(pick("投信")),
+                    "dealer": yi((pick("自營商(自行買賣)") or 0) + (pick("自營商(避險)") or 0)), "total": yi(pick("合計"))}
+        time.sleep(1)
+    raise ValueError("BFI82U 近7日無資料")
+
+
+def taifex_foreign_tx(today):
+    """期交所三大法人期貨未平倉（臺股期貨 TXF）：外資多空未平倉口數淨額。"""
+    import csv, io
+    from urllib.parse import urlencode
+    for k in range(1, 8):
+        d = today - dt.timedelta(days=k)
+        form = urlencode({"queryStartDate": f"{d:%Y/%m/%d}", "queryEndDate": f"{d:%Y/%m/%d}", "commodityId": "TXF"}).encode()
+        text = get("https://www.taifex.com.tw/cht/3/futContractsDateDown", data=form).decode("big5", "ignore")
+        rows = list(csv.reader(io.StringIO(text)))
+        if len(rows) < 2 or "身份別" not in "".join(rows[0]):
+            time.sleep(1); continue
+        hdr = [h.strip() for h in rows[0]]
+        i_who = next(i for i, h in enumerate(hdr) if "身份別" in h)
+        i_net = [i for i, h in enumerate(hdr) if "未平倉" in h and "口數" in h and "淨額" in h]
+        for r_ in rows[1:]:
+            if len(r_) > i_who and "外資" in r_[i_who]:
+                return {"date": d.isoformat(), "contract": "臺股期貨", "foreign_net_oi": int(num(r_[i_net[0]])), "header": hdr[i_net[0]]}
+        raise ValueError(f"TAIFEX 找不到外資列；欄位={hdr}")
+    raise ValueError("TAIFEX 近7日無資料")
+
+
 def on_or_before(rows, d):
     c = [x for x in rows if x[0] <= d]
     return c[-1] if c else None
@@ -253,7 +346,7 @@ def main():
         except Exception:  # noqa
             pass
     out = {"generated_at_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "taipei_date": today.isoformat(),
-           "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "us_macro_fred": None, "us_calendar": None, "errors": errors}
+           "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "us_macro_fred": None, "us_calendar": None, "errors": errors, "notes": []}
 
     for s, n in INDICES.items():
         p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), n, 2)
@@ -270,8 +363,21 @@ def main():
         out["sse"] = p
     try:
         out["ust_curve"] = treasury_curve(today)
+        c10 = out["ust_curve"]["y10"]
+        out["ust10y"] = {"date": out["ust_curve"]["date"], "yield": c10["yield"], "bp": c10["bp"], "source": "treasury"}
     except Exception as e:  # noqa
-        errors.append(f"美債2Y/30Y 取不到：{e}")
+        errors.append(f"美債殖利率曲線（財政部）取不到，10年期改用 ^TNX：{e}")
+        if out["ust10y"]:
+            out["ust10y"]["source"] = "yahoo_tnx"
+
+    # 官方／交易所 API（各自獨立，失敗只記錄在 errors）
+    for key, fn in (("twd_official", twd_official), ("ust_auctions", ust_auctions),
+                    ("tw_institutional", twse_institutional), ("taifex_foreign_tx", taifex_foreign_tx)):
+        try:
+            out[key] = fn(today)
+        except Exception as e:  # noqa
+            out[key] = None
+            errors.append(f"{key} 取不到：{e}")
     for s in STOCKS:
         p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), s, 2)
         if p:
