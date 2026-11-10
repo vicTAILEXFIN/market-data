@@ -412,7 +412,7 @@ def fixed_events(today, back=7, ahead=14):
     y, m = lo.year, lo.month
     for _ in range(3):
         quarter = m in (3, 6, 9, 12)
-        add(nth_weekday(y, m, 2, 3), "13:30", "台指期月結算" + ("（季月：台指期、選擇權、個股期貨同步結算）" if quarter else ""), "")
+        add(nth_weekday(y, m, 2, 3), "13:30", "台股四巫日（台指期、台指選擇權、個股期貨、個股選擇權季月同步結算）" if quarter else "台指期月結算", "")
         fri = nth_weekday(y, m, 4, 3)
         add(fri, "美股收盤", "美股四巫日（季度期貨與選擇權同步到期）" if quarter else "美股月選擇權到期", "收盤前後成交量與波動放大")
         y, m = (y + 1, 1) if m == 12 else (y, m + 1)
