@@ -419,6 +419,107 @@ def fixed_events(today, back=7, ahead=14):
     return sorted(ev, key=lambda e: (e["date"], e["time"]))
 
 
+# ---------- 指數貢獻度（動態權值股）----------
+# 名單每月更新一次存 data/universe.json；貢獻度每天以當日價格計算。
+DOW_FALLBACK = ["AAPL", "AMGN", "AMZN", "AXP", "BA", "CAT", "CRM", "CSCO", "CVX", "DIS", "GS", "HD", "HON", "IBM", "JNJ",
+                "JPM", "KO", "MCD", "MMM", "MRK", "MSFT", "NKE", "NVDA", "PG", "SHW", "TRV", "UNH", "V", "VZ", "WMT"]
+ZH = {"AAPL": "蘋果", "AMGN": "安進", "AMZN": "亞馬遜", "AXP": "美國運通", "BA": "波音", "CAT": "開拓重工", "CRM": "Salesforce",
+      "CSCO": "思科", "CVX": "雪佛龍", "DIS": "迪士尼", "GS": "高盛", "HD": "家得寶", "HON": "漢威聯合", "IBM": "IBM",
+      "JNJ": "嬌生", "JPM": "摩根大通", "KO": "可口可樂", "MCD": "麥當勞", "MMM": "3M", "MRK": "默克", "MSFT": "微軟",
+      "NKE": "Nike", "NVDA": "輝達", "PG": "寶僑", "SHW": "宣偉", "TRV": "旅行家保險", "UNH": "聯合健康", "V": "Visa",
+      "VZ": "威訊", "WMT": "沃爾瑪", "INTC": "英特爾", "AVGO": "博通", "META": "Meta", "GOOGL": "Alphabet", "TSLA": "特斯拉"}
+
+
+def load_universe(today):
+    path = "data/universe.json"
+    u = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+    if u.get("month") == today.strftime("%Y-%m"):
+        return u
+    import re
+    new = {"month": today.strftime("%Y-%m"), "updated": today.isoformat()}
+    try:
+        html_ = get("https://www.slickcharts.com/dowjones").decode("utf-8", "ignore")
+        syms = list(dict.fromkeys(re.findall(r'href="/symbol/([A-Z.]+)"', html_)))
+        if len(syms) != 30:
+            raise ValueError(f"解析到 {len(syms)} 檔")
+        new["dow"], new["dow_source"] = syms, "slickcharts"
+    except Exception as e:  # noqa
+        new["dow"], new["dow_source"] = u.get("dow") or DOW_FALLBACK, "previous_or_fallback"
+        errors.append(f"道瓊成分股名單更新失敗，沿用舊名單：{e}")
+    json.dump(new, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return new
+
+
+def rank(rows, n=5):
+    rows = [r for r in rows if r["pts"] is not None]
+    up = sorted([r for r in rows if r["pts"] > 0], key=lambda r: -r["pts"])[:n]
+    dn = sorted([r for r in rows if r["pts"] < 0], key=lambda r: r["pts"])[:n]
+    return up, dn
+
+
+def dow_contrib(today, idx, universe):
+    """道瓊：價格加權，除數＝前收價總和÷前日指數；貢獻點數＝股價變動÷除數。"""
+    rows, prev_sum, dates = [], 0.0, set()
+    for s in universe["dow"]:
+        p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), s, 2)
+        if not p:
+            continue
+        rows.append({"sym": s, "name": ZH.get(s, s), "pct": p["pct"], "chg": p["chg"], "prev": p["prev_close"]})
+        prev_sum += p["prev_close"]; dates.add(p["date"])
+    if len(rows) < 28:
+        raise ValueError(f"道瓊成分股只取到 {len(rows)} 檔")
+    prev_index = idx["close"] - idx["chg"]
+    div = prev_sum / prev_index
+    for r in rows:
+        r["pts"] = round(r["chg"] / div, 2)
+    implied = round(sum(r["pts"] for r in rows), 2)
+    up, dn = rank(rows)
+    keep = lambda r: {k: r[k] for k in ("sym", "name", "pct", "pts")}
+    return {"date": idx["date"], "method": "price_weighted_divisor", "divisor": round(div, 6), "n": len(rows),
+            "index_chg": idx["chg"], "implied_chg": implied, "top_up": [keep(r) for r in up], "top_down": [keep(r) for r in dn]}
+
+
+def twse_contrib(today, idx):
+    """台股加權：證交所 OpenAPI 全部上市股收盤與漲跌 × 已發行普通股數；貢獻點數＝前日市值權重×漲跌幅×前日指數。"""
+    day = json.loads(get("https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL", timeout=60))
+    info = json.loads(get("https://openapi.twse.com.tw/v1/opendata/t187ap03_L", timeout=60))
+    if not day or not info:
+        raise ValueError("證交所 OpenAPI 回傳空資料")
+    k = lambda d, *words: next((key for key in d if all(w in key for w in words)), None)
+    kc, kn, ks = k(info[0], "公司代號"), k(info[0], "公司簡稱"), k(info[0], "已發行普通股數")
+    if not (kc and ks):
+        raise ValueError(f"t187ap03_L 欄位找不到；欄位={list(info[0])}")
+    shares = {str(x[kc]).strip(): (num(x[ks]), str(x.get(kn) or "").strip()) for x in info}
+    rows, cap_prev = [], 0.0
+    for x in day:
+        code = str(x.get("Code", "")).strip()
+        if code not in shares or not shares[code][0]:
+            continue
+        close, chg = num(x.get("ClosingPrice")), num(x.get("Change"))
+        if close is None or chg is None:
+            continue
+        prev = close - chg
+        if prev <= 0:
+            continue
+        cap = shares[code][0] * prev
+        cap_prev += cap
+        rows.append({"sym": code, "name": shares[code][1] or str(x.get("Name", "")).strip(), "pct": round(chg / prev * 100, 2),
+                     "cap": cap, "ret": chg / prev})
+    if len(rows) < 500:
+        raise ValueError(f"上市個股只對到 {len(rows)} 檔")
+    prev_index = idx["close"] - idx["chg"]
+    for r in rows:
+        r["pts"] = round(r["cap"] / cap_prev * r["ret"] * prev_index, 2)
+        r["weight"] = round(r["cap"] / cap_prev * 100, 2)
+    implied = round(sum(r["pts"] for r in rows), 2)
+    up, dn = rank(rows)
+    keep = lambda r: {kk: r[kk] for kk in ("sym", "name", "pct", "pts", "weight")}
+    top_w = sorted(rows, key=lambda r: -r["weight"])[:10]
+    return {"date": idx["date"], "method": "cap_weighted_issued_shares", "n": len(rows), "index_chg": idx["chg"],
+            "implied_chg": implied, "top_up": [keep(r) for r in up], "top_down": [keep(r) for r in dn],
+            "top_weights": [{"sym": r["sym"], "name": r["name"], "weight": r["weight"]} for r in top_w]}
+
+
 def main():
     now = dt.datetime.now(dt.timezone.utc)
     ct = now.astimezone(CT)
@@ -515,6 +616,21 @@ def main():
         out["us_macro_fred"], out["us_calendar"] = fred.build(now, errors=errors)
     except Exception as ex:  # noqa
         errors.append(f"FRED 失敗：{ex}")
+
+    out["contributors"] = {}
+    try:
+        universe = load_universe(today)
+    except Exception as ex:  # noqa
+        universe = {"dow": DOW_FALLBACK}
+        errors.append(f"universe 讀取失敗：{ex}")
+    for sym, fn in (("^DJI", lambda i: dow_contrib(today, i, universe)), ("^TWII", lambda i: twse_contrib(today, i))):
+        idx = out["indices"].get(sym)
+        if not idx:
+            continue
+        try:
+            out["contributors"][sym] = fn(idx)
+        except Exception as ex:  # noqa
+            errors.append(f"contributors {sym} 失敗：{ex}")
 
     try:
         out["fixed_events"] = fixed_events(today)
