@@ -253,7 +253,7 @@ def main():
         except Exception:  # noqa
             pass
     out = {"generated_at_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "taipei_date": today.isoformat(),
-           "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "us_macro_fred": None, "errors": errors}
+           "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "us_macro_fred": None, "us_calendar": None, "errors": errors}
 
     for s, n in INDICES.items():
         p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), n, 2)
@@ -317,7 +317,7 @@ def main():
 
     try:
         import fred
-        out["us_macro_fred"] = fred.build(now, errors=errors)
+        out["us_macro_fred"], out["us_calendar"] = fred.build(now, errors=errors)
     except Exception as ex:  # noqa
         errors.append(f"FRED 失敗：{ex}")
 

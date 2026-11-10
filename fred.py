@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """美國總經數據（FRED API）：實際值、前值與發布日程。
 
-由 fetch.py 呼叫，輸出 latest.json 的 us_macro_fred 欄位：
-  us_day     前一美國交易日（紐約日期，遇週末退回週五）
-  released   us_day 當天發布的指標（實際值、前值、期別），07:45 排程直接填入「美國總經數據」表
-  latest     所有追蹤指標的最新值（不論是否當天發布），供新聞判讀參考
-  upcoming   us_day 之後 14 天內的發布日程，供「未來關注事件」使用
+由 fetch.py 呼叫，輸出 latest.json 兩個欄位：
+  us_macro_fred  追蹤指標清單：name、period、value、prev、mode、last_updated（FRED，美國中部時間），
+                 另有 release_date 與 released_prev_us_day（發布日是否為前一美國交易日，比 last_updated 準，
+                 因為修正也會更新 last_updated）、actual／prev_display（已格式化的顯示值）
+  us_calendar    未來 9 天美國重要數據發布：event、taipei（台北時間 MM/DD HH:MM）、metrics
 預期值 FRED 沒有，仍由排程讀 tradingeconomics。
 需要環境變數 FRED_API_KEY（GitHub secret）；沒有金鑰時回傳 None，不影響其他欄位。
 """
@@ -18,31 +18,41 @@ from zoneinfo import ZoneInfo
 NY = ZoneInfo("America/New_York")
 BASE = "https://api.stlouisfed.org/fred/"
 
-# (series_id, units, 中文名稱, 顯示格式)
+# (series_id, units, 中文名稱, 顯示格式, mode)
 # units：lin＝原值、chg＝較上期變動、pch＝較上期%變動、pc1＝年增率
+# mode（07:45 排程讀取口徑）：mom＝月增率%、yoy＝年增率%、diff_k＝千人增減、level＝水準值、level_k＝千單位水準值
 METRICS = [
-    ("PAYEMS", "chg", "非農就業人數變動", "wan_k_chg"),
-    ("UNRATE", "lin", "失業率", "pct1"),
-    ("CES0500000003", "pch", "平均時薪月增率", "pct1"),
-    ("CES0500000003", "pc1", "平均時薪年增率", "pct1"),
-    ("CPIAUCSL", "pch", "CPI月增率", "pct1"),
-    ("CPIAUCSL", "pc1", "CPI年增率", "pct1"),
-    ("CPILFESL", "pch", "核心CPI月增率", "pct1"),
-    ("CPILFESL", "pc1", "核心CPI年增率", "pct1"),
-    ("PPIFIS", "pch", "PPI月增率", "pct1"),
-    ("PPIFIS", "pc1", "PPI年增率", "pct1"),
-    ("PCEPI", "pc1", "PCE物價年增率", "pct1"),
-    ("PCEPILFE", "pch", "核心PCE物價月增率", "pct1"),
-    ("PCEPILFE", "pc1", "核心PCE物價年增率", "pct1"),
-    ("RSAFS", "pch", "零售銷售月增率", "pct1"),
-    ("A191RL1Q225SBEA", "lin", "實質GDP季增年率", "pct1"),
-    ("ICSA", "lin", "初領失業金人數", "wan_persons"),
-    ("JTSJOL", "lin", "JOLTS職缺數", "wan_k"),
-    ("INDPRO", "pch", "工業生產月增率", "pct1"),
-    ("HOUST", "lin", "新屋開工（年化）", "wan_k"),
-    ("DGORDER", "pch", "耐久財訂單月增率", "pct1"),
-    ("OPHNFB", "pc1", "非農生產力年增率", "pct1"),
+    ("PAYEMS", "chg", "非農就業人數變動", "wan_k_chg", "diff_k"),
+    ("UNRATE", "lin", "失業率", "pct1", "level"),
+    ("CES0500000003", "pch", "平均時薪月增率", "pct1", "mom"),
+    ("CES0500000003", "pc1", "平均時薪年增率", "pct1", "yoy"),
+    ("CPIAUCSL", "pch", "CPI月增率", "pct1", "mom"),
+    ("CPIAUCSL", "pc1", "CPI年增率", "pct1", "yoy"),
+    ("CPILFESL", "pch", "核心CPI月增率", "pct1", "mom"),
+    ("CPILFESL", "pc1", "核心CPI年增率", "pct1", "yoy"),
+    ("PPIFIS", "pch", "PPI月增率", "pct1", "mom"),
+    ("PPIFIS", "pc1", "PPI年增率", "pct1", "yoy"),
+    ("PCEPI", "pc1", "PCE物價年增率", "pct1", "yoy"),
+    ("PCEPILFE", "pch", "核心PCE物價月增率", "pct1", "mom"),
+    ("PCEPILFE", "pc1", "核心PCE物價年增率", "pct1", "yoy"),
+    ("RSAFS", "pch", "零售銷售月增率", "pct1", "mom"),
+    ("A191RL1Q225SBEA", "lin", "實質GDP季增年率", "pct1", "level"),
+    ("ICSA", "lin", "初領失業金人數", "wan_persons", "level"),
+    ("JTSJOL", "lin", "JOLTS職缺數", "wan_k", "level_k"),
+    ("INDPRO", "pch", "工業生產月增率", "pct1", "mom"),
+    ("HOUST", "lin", "新屋開工（年化）", "wan_k", "level_k"),
+    ("DGORDER", "pch", "耐久財訂單月增率", "pct1", "mom"),
+    ("OPHNFB", "pc1", "非農生產力年增率", "pct1", "yoy"),
 ]
+# 發布事件中文名與美東發布時間（FRED 只給日期）
+EVENT = {"PAYEMS": ("美國就業報告（非農、失業率、時薪）", "08:30"), "CPIAUCSL": ("美國CPI", "08:30"),
+         "PPIFIS": ("美國PPI", "08:30"), "PCEPI": ("美國個人所得與支出（PCE物價）", "08:30"),
+         "RSAFS": ("美國零售銷售", "08:30"), "A191RL1Q225SBEA": ("美國GDP", "08:30"),
+         "ICSA": ("美國初領失業金人數", "08:30"), "JTSJOL": ("美國JOLTS職缺", "10:00"),
+         "INDPRO": ("美國工業生產", "09:15"), "HOUST": ("美國新屋開工", "08:30"),
+         "DGORDER": ("美國耐久財訂單", "08:30"), "OPHNFB": ("美國生產力與單位勞動成本", "08:30")}
+TPE = ZoneInfo("Asia/Taipei")
+
 
 
 def _get(path, key, **params):
@@ -124,7 +134,7 @@ def build(now_utc, key=None, errors=None):
     errors = errors if errors is not None else []
     if not key:
         print("FRED_API_KEY 未設定，略過美國總經數據")
-        return None
+        return None, None
     us_day = us_business_day(now_utc)
 
     # 1) 每個 series 屬於哪個 release（release_id 與名稱）
@@ -156,7 +166,7 @@ def build(now_utc, key=None, errors=None):
 
     # 3) 各指標最新兩期
     latest = []
-    for sid, units, name, kind in METRICS:
+    for sid, units, name, kind, mode in METRICS:
         if sid not in rel_of:
             continue
         try:
@@ -169,36 +179,37 @@ def build(now_utc, key=None, errors=None):
             rid, rname = rel_of[sid]
             past = sorted(d for d in dates.get(rid, ()) if d <= us_day)
             latest.append({
-                "name": name, "series_id": sid, "units": units, "release_id": rid, "release": rname,
+                "name": name, "series_id": sid, "units": units, "mode": mode, "release_id": rid, "release": rname,
+                "last_updated": sinfo[sid]["last_updated"],
                 "release_date": past[-1].isoformat() if past else None,
                 "period": period_label(d1, sinfo[sid]["freq"]), "period_date": d1,
                 "value": round(v1, 4), "actual": fmt(v1, kind),
-                "prev_period": period_label(d0, sinfo[sid]["freq"]), "prev_value": round(v0, 4),
-                "prev": fmt(v0, kind), "chg_vs_prev": diff_text(v1, v0, kind)})
+                "prev_period": period_label(d0, sinfo[sid]["freq"]),
+                "prev": round(v0, 4), "prev_display": fmt(v0, kind), "chg_vs_prev": diff_text(v1, v0, kind)})
         except Exception as e:  # noqa
             errors.append(f"FRED {sid} {units} 取不到：{e}")
 
-    released = [x for x in latest if x["release_date"] == us_day.isoformat()]
+    for x in latest:
+        x["released_prev_us_day"] = x["release_date"] == us_day.isoformat()
 
-    # 4) 未來 14 天發布日程（依日期、release 彙整）
-    upcoming = {}
+    # 4) 未來 9 天發布日程（依日期、事件彙整，時間換成台北）
+    cal = {}
     for sid, (rid, rname) in rel_of.items():
+        ev = EVENT.get(sid)
+        if not ev:
+            continue  # 同一 release 的其他 series（如 UNRATE）併入主事件
         for d in dates.get(rid, ()):
-            if d > us_day:
-                e = upcoming.setdefault((d, rid), {"date": d.isoformat(), "release_id": rid, "release": rname,
-                                                   "metrics": []})
-                for m in METRICS:
-                    if m[0] == sid and m[2] not in e["metrics"]:
-                        e["metrics"].append(m[2])
-    upcoming = [upcoming[k] for k in sorted(upcoming)]
-
-    return {"source": "FRED", "us_day": us_day.isoformat(), "released": released, "latest": latest,
-            "upcoming": upcoming,
-            "note": "實際值與前值為 FRED 最新版本（前值可能已修正）；預期值不在 FRED，排程另取。發布時間多為美東 08:30。"}
-
+            if us_day < d <= us_day + dt.timedelta(days=9):
+                hh, mm = map(int, ev[1].split(":"))
+                tpe = dt.datetime(d.year, d.month, d.day, hh, mm, tzinfo=NY).astimezone(TPE)
+                cal[(tpe, rid)] = {"event": ev[0], "taipei": tpe.strftime("%m/%d %H:%M"), "us_date": d.isoformat(),
+                                   "et": ev[1], "release": rname,
+                                   "metrics": [m[2] for m in METRICS if rel_of.get(m[0], (None,))[0] == rid]}
+    calendar = [cal[k] for k in sorted(cal)]
+    return latest, calendar
 
 if __name__ == "__main__":
     errs = []
-    out = build(dt.datetime.now(dt.timezone.utc), errors=errs)
-    print(json.dumps(out, ensure_ascii=False, indent=1))
+    items, cal = build(dt.datetime.now(dt.timezone.utc), errors=errs)
+    print(json.dumps({"us_macro_fred": items, "us_calendar": cal}, ensure_ascii=False, indent=1))
     print("errors:", errs)
