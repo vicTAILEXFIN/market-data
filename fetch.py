@@ -2,7 +2,7 @@
 """每日金融市場摘要：行情數據抓取（於 GitHub Actions 執行）。
 
 輸出 data/latest.json 與 data/YYYY-MM-DD.json（台北日期），供 07:45 的摘要排程讀取。
-來源：Yahoo Finance（yfinance）、紐約聯準銀行 EFFR API（免金鑰）。
+來源：Yahoo Finance（yfinance）、紐約聯準銀行 EFFR API（免金鑰）、美國財政部 CSV、FRED API（需 FRED_API_KEY）。
 FedWatch 以 30 天期聯邦基金期貨（ZQ）依 CME 方法推算。
 """
 import json, math, os, sys, time, datetime as dt
@@ -253,7 +253,7 @@ def main():
         except Exception:  # noqa
             pass
     out = {"generated_at_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "taipei_date": today.isoformat(),
-           "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "errors": errors}
+           "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "us_macro_fred": None, "errors": errors}
 
     for s, n in INDICES.items():
         p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), n, 2)
@@ -314,6 +314,12 @@ def main():
         json.dump(hist, open(hist_path, "w"), ensure_ascii=False, indent=0, sort_keys=True)
     except Exception as ex:  # noqa
         errors.append(f"FedWatch 失敗：{ex}")
+
+    try:
+        import fred
+        out["us_macro_fred"] = fred.build(now, errors=errors)
+    except Exception as ex:  # noqa
+        errors.append(f"FRED 失敗：{ex}")
 
     for path in ("data/latest.json", f"data/{today.isoformat()}.json"):
         with open(path, "w", encoding="utf-8") as f:
