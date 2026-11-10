@@ -439,7 +439,8 @@ def load_universe(today):
     new = {"month": today.strftime("%Y-%m"), "updated": today.isoformat()}
     try:
         html_ = get("https://www.slickcharts.com/dowjones").decode("utf-8", "ignore")
-        syms = list(dict.fromkeys(re.findall(r'href="/symbol/([A-Z.]+)"', html_)))
+        etf = {"SPY", "QQQ", "DIA", "IWM", "VOO", "VTI"}
+        syms = [x for x in dict.fromkeys(re.findall(r'href="/symbol/([A-Z.]+)"', html_)) if x not in etf]
         if len(syms) != 30:
             raise ValueError(f"解析到 {len(syms)} 檔")
         new["dow"], new["dow_source"] = syms, "slickcharts"
