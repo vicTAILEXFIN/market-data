@@ -1,0 +1,1223 @@
+{
+ "generated_at_utc": "2026-11-11T22:15:43Z",
+ "taipei_date": "2026-11-12",
+ "indices": {
+  "^DJI": {
+   "name": "道瓊工業指數",
+   "date": "2026-11-11",
+   "close": 52486.49,
+   "prev_date": "2026-11-10",
+   "prev_close": 52231.89,
+   "chg": 254.6,
+   "pct": 0.49
+  },
+  "^GSPC": {
+   "name": "標準普爾500指數",
+   "date": "2026-11-11",
+   "close": 7619.38,
+   "prev_date": "2026-11-10",
+   "prev_close": 7520.93,
+   "chg": 98.45,
+   "pct": 1.31
+  },
+  "^IXIC": {
+   "name": "那斯達克綜合指數",
+   "date": "2026-11-11",
+   "close": 25466.19,
+   "prev_date": "2026-11-10",
+   "prev_close": 25065.87,
+   "chg": 400.32,
+   "pct": 1.6
+  },
+  "^SOX": {
+   "name": "費城半導體指數",
+   "date": "2026-11-11",
+   "close": 10564.11,
+   "prev_date": "2026-11-10",
+   "prev_close": 9998.33,
+   "chg": 565.78,
+   "pct": 5.66
+  },
+  "^N225": {
+   "name": "日經225指數",
+   "date": "2026-11-11",
+   "close": 61285.47,
+   "prev_date": "2026-11-10",
+   "prev_close": 60459.58,
+   "chg": 825.89,
+   "pct": 1.37,
+   "source": "yahoo_intraday_fill"
+  },
+  "^KS11": {
+   "name": "韓國綜合股價指數",
+   "date": "2026-11-11",
+   "close": 5372.43,
+   "prev_date": "2026-11-10",
+   "prev_close": 5239.13,
+   "chg": 133.3,
+   "pct": 2.54,
+   "source": "yahoo_intraday_fill"
+  },
+  "^TWII": {
+   "name": "台灣加權指數",
+   "date": "2026-11-11",
+   "close": 44257.15,
+   "prev_close": 42711.92,
+   "chg": 1545.23,
+   "pct": 3.62,
+   "source": "twse_mi_index",
+   "prev_date": "2026-11-10"
+  }
+ },
+ "ust10y": {
+  "date": "2026-11-10",
+  "yield": 4.98,
+  "bp": 10,
+  "source": "treasury"
+ },
+ "sse": {
+  "name": "上證綜合",
+  "date": "2026-11-10",
+  "close": 3663.72,
+  "prev_date": "2026-11-09",
+  "prev_close": 3660.79,
+  "chg": 2.93,
+  "pct": 0.08
+ },
+ "ust_curve": {
+  "date": "2026-11-10",
+  "source": "treasury",
+  "y2": {
+   "yield": 4.73,
+   "bp": 17
+  },
+  "y10": {
+   "yield": 4.98,
+   "bp": 10
+  },
+  "y30": {
+   "yield": 5.35,
+   "bp": 9
+  }
+ },
+ "stocks": {
+  "AAPL": {
+   "date": "2026-11-11",
+   "close": 355.63,
+   "pct": 2.04
+  },
+  "MSFT": {
+   "date": "2026-11-11",
+   "close": 521.12,
+   "pct": -2.26
+  },
+  "NVDA": {
+   "date": "2026-11-11",
+   "close": 173.73,
+   "pct": 2.87
+  },
+  "AMZN": {
+   "date": "2026-11-11",
+   "close": 266.17,
+   "pct": -1.74
+  },
+  "GOOGL": {
+   "date": "2026-11-11",
+   "close": 293.45,
+   "pct": 2.11
+  },
+  "META": {
+   "date": "2026-11-11",
+   "close": 628.77,
+   "pct": -1.97
+  },
+  "AVGO": {
+   "date": "2026-11-11",
+   "close": 345.22,
+   "pct": 3.99
+  },
+  "GS": {
+   "date": "2026-11-11",
+   "close": 926.81,
+   "pct": 1.83
+  },
+  "CAT": {
+   "date": "2026-11-11",
+   "close": 601.61,
+   "pct": 2.91
+  },
+  "MU": {
+   "date": "2026-11-11",
+   "close": 811.3,
+   "pct": 11.89
+  },
+  "INTC": {
+   "date": "2026-11-11",
+   "close": 62.5,
+   "pct": 7.52
+  },
+  "AMD": {
+   "date": "2026-11-11",
+   "close": 552.9,
+   "pct": 7.32
+  },
+  "TSM": {
+   "date": "2026-11-11",
+   "close": 413.35,
+   "pct": 4.25
+  },
+  "2330.TW": {
+   "date": "2026-11-11",
+   "close": 2395.0,
+   "pct": 4.81
+  },
+  "2317.TW": {
+   "date": "2026-11-11",
+   "close": 242.0,
+   "pct": 0.21
+  },
+  "2454.TW": {
+   "date": "2026-11-11",
+   "close": 3990.0,
+   "pct": 4.18
+  },
+  "2308.TW": {
+   "date": "2026-11-11",
+   "close": 1295.0,
+   "pct": 1.57
+  },
+  "005930.KS": {
+   "date": "2026-11-11",
+   "close": 206000.0,
+   "pct": 3.57
+  },
+  "000660.KS": {
+   "date": "2026-11-11",
+   "close": 1277000.0,
+   "pct": 5.36
+  },
+  "373220.KS": {
+   "date": "2026-11-11",
+   "close": 335500.0,
+   "pct": 1.51
+  },
+  "9983.T": {
+   "date": "2026-11-11",
+   "close": 80480.0,
+   "pct": -1.34
+  },
+  "8035.T": {
+   "date": "2026-11-11",
+   "close": 9272.0,
+   "pct": 2.95
+  },
+  "6857.T": {
+   "date": "2026-11-11",
+   "close": 31440.0,
+   "pct": 5.89
+  },
+  "9984.T": {
+   "date": "2026-11-11",
+   "close": 3855.0,
+   "pct": -0.44
+  }
+ },
+ "macro": {
+  "TWD=X": {
+   "name": "美元兌新台幣",
+   "date": "2026-11-11",
+   "close": 32.832,
+   "prev_date": "2026-11-10",
+   "prev_close": 32.858,
+   "chg": -0.026,
+   "pct": -0.08,
+   "method": "30m參考K棒"
+  },
+  "JPY=X": {
+   "name": "美元兌日圓",
+   "date": "2026-11-11",
+   "close": 159.78,
+   "prev_date": "2026-11-10",
+   "prev_close": 158.73,
+   "chg": 1.05,
+   "pct": 0.66,
+   "method": "30m參考K棒"
+  },
+  "BZ=F": {
+   "name": "布蘭特原油",
+   "date": "2026-11-11",
+   "close": 92.62,
+   "prev_date": "2026-11-10",
+   "prev_close": 91.49,
+   "chg": 1.13,
+   "pct": 1.24,
+   "method": "30m參考K棒＋已結算日K前收"
+  },
+  "GC=F": {
+   "name": "黃金（COMEX近月期貨）",
+   "date": "2026-11-11",
+   "close": 3999.9,
+   "prev_date": "2026-11-10",
+   "prev_close": 4030.2,
+   "chg": -30.3,
+   "pct": -0.75,
+   "method": "30m參考K棒＋已結算日K前收"
+  },
+  "DX-Y.NYB": {
+   "name": "美元指數",
+   "date": "2026-11-11",
+   "close": 102.91,
+   "prev_date": "2026-11-10",
+   "prev_close": 102.25,
+   "chg": 0.67,
+   "pct": 0.65,
+   "method": "30m參考K棒"
+  }
+ },
+ "fedwatch": {
+  "meeting": "12/09",
+  "range": "3.75%–4.00%",
+  "asof": "11/11",
+  "rows": [
+   [
+    "最新",
+    0.0,
+    0.0,
+    87.3,
+    12.7
+   ],
+   [
+    "1天前",
+    0.0,
+    0.0,
+    90.1,
+    9.9
+   ],
+   [
+    "1週前",
+    0.0,
+    18.3,
+    81.7,
+    0.0
+   ],
+   [
+    "1個月前",
+    0.0,
+    15.0,
+    70.3,
+    14.7
+   ]
+  ],
+  "source": "computed_from_ZQ",
+  "effr": 3.88
+ },
+ "us_macro_fred": [
+  {
+   "name": "非農就業人數變動",
+   "series_id": "PAYEMS",
+   "units": "chg",
+   "mode": "diff_k",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:43:20-06",
+   "release_date": "2026-11-06",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 165.0,
+   "actual": "+16.5萬",
+   "prev_period": "2026年9月",
+   "prev": 60.0,
+   "prev_display": "+6.0萬",
+   "chg_vs_prev": "+10.5萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "失業率",
+   "series_id": "UNRATE",
+   "units": "lin",
+   "mode": "level",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:43:15-06",
+   "release_date": "2026-11-06",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 4.1,
+   "actual": "4.1%",
+   "prev_period": "2026年9月",
+   "prev": 4.2,
+   "prev_display": "4.2%",
+   "chg_vs_prev": "−0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "平均時薪月增率",
+   "series_id": "CES0500000003",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:42:53-06",
+   "release_date": "2026-11-06",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 0.3698,
+   "actual": "0.4%",
+   "prev_period": "2026年9月",
+   "prev": 0.2648,
+   "prev_display": "0.3%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "平均時薪年增率",
+   "series_id": "CES0500000003",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:42:53-06",
+   "release_date": "2026-11-06",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 3.1208,
+   "actual": "3.1%",
+   "prev_period": "2026年9月",
+   "prev": 3.1608,
+   "prev_display": "3.2%",
+   "chg_vs_prev": "0.0個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "CPI月增率",
+   "series_id": "CPIAUCSL",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:12:46-06",
+   "release_date": "2026-11-10",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 0.3503,
+   "actual": "0.4%",
+   "prev_period": "2026年9月",
+   "prev": 0.6485,
+   "prev_display": "0.6%",
+   "chg_vs_prev": "−0.3個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "CPI年增率",
+   "series_id": "CPIAUCSL",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:12:46-06",
+   "release_date": "2026-11-10",
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 3.7172,
+   "actual": "3.7%",
+   "prev_period": "2026年8月",
+   "prev": 3.353,
+   "prev_display": "3.4%",
+   "chg_vs_prev": "+0.4個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心CPI月增率",
+   "series_id": "CPILFESL",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:13:38-06",
+   "release_date": "2026-11-10",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 0.2963,
+   "actual": "0.3%",
+   "prev_period": "2026年9月",
+   "prev": 0.3348,
+   "prev_display": "0.3%",
+   "chg_vs_prev": "0.0個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心CPI年增率",
+   "series_id": "CPILFESL",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:13:38-06",
+   "release_date": "2026-11-10",
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 2.5658,
+   "actual": "2.6%",
+   "prev_period": "2026年8月",
+   "prev": 2.4462,
+   "prev_display": "2.4%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "PPI月增率",
+   "series_id": "PPIFIS",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 46,
+   "release": "Producer Price Index",
+   "last_updated": "2026-10-15 09:20:42-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 1.3434,
+   "actual": "1.3%",
+   "prev_period": "2026年8月",
+   "prev": 0.4703,
+   "prev_display": "0.5%",
+   "chg_vs_prev": "+0.9個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "PPI年增率",
+   "series_id": "PPIFIS",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 46,
+   "release": "Producer Price Index",
+   "last_updated": "2026-10-15 09:20:42-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 6.3463,
+   "actual": "6.3%",
+   "prev_period": "2026年8月",
+   "prev": 5.5817,
+   "prev_display": "5.6%",
+   "chg_vs_prev": "+0.8個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "PCE物價年增率",
+   "series_id": "PCEPI",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 54,
+   "release": "Personal Income and Outlays",
+   "last_updated": "2026-10-29 07:43:37-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 3.6489,
+   "actual": "3.6%",
+   "prev_period": "2026年8月",
+   "prev": 3.4442,
+   "prev_display": "3.4%",
+   "chg_vs_prev": "+0.2個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心PCE物價月增率",
+   "series_id": "PCEPILFE",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 54,
+   "release": "Personal Income and Outlays",
+   "last_updated": "2026-10-29 07:43:35-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 0.3165,
+   "actual": "0.3%",
+   "prev_period": "2026年8月",
+   "prev": 0.262,
+   "prev_display": "0.3%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心PCE物價年增率",
+   "series_id": "PCEPILFE",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 54,
+   "release": "Personal Income and Outlays",
+   "last_updated": "2026-10-29 07:43:35-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 3.1212,
+   "actual": "3.1%",
+   "prev_period": "2026年8月",
+   "prev": 3.0344,
+   "prev_display": "3.0%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "零售銷售月增率",
+   "series_id": "RSAFS",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 9,
+   "release": "Advance Monthly Sales for Retail and Food Services",
+   "last_updated": "2026-10-15 07:38:17-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 0.7708,
+   "actual": "0.8%",
+   "prev_period": "2026年8月",
+   "prev": 1.2888,
+   "prev_display": "1.3%",
+   "chg_vs_prev": "−0.5個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "實質GDP季增年率",
+   "series_id": "A191RL1Q225SBEA",
+   "units": "lin",
+   "mode": "level",
+   "release_id": 53,
+   "release": "Gross Domestic Product",
+   "last_updated": "2026-10-29 08:01:39-05",
+   "release_date": null,
+   "period": "2026Q3",
+   "period_date": "2026-07-01",
+   "value": 3.4,
+   "actual": "3.4%",
+   "prev_period": "2026Q2",
+   "prev": 2.2,
+   "prev_display": "2.2%",
+   "chg_vs_prev": "+1.2個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "初領失業金人數",
+   "series_id": "ICSA",
+   "units": "lin",
+   "mode": "level",
+   "release_id": 180,
+   "release": "Unemployment Insurance Weekly Claims Report",
+   "last_updated": "2026-11-05 07:34:30-06",
+   "release_date": "2026-11-05",
+   "period": "10/31當週",
+   "period_date": "2026-10-31",
+   "value": 189000.0,
+   "actual": "18.9萬",
+   "prev_period": "10/24當週",
+   "prev": 195000.0,
+   "prev_display": "19.5萬",
+   "chg_vs_prev": "−0.6萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "JOLTS職缺數",
+   "series_id": "JTSJOL",
+   "units": "lin",
+   "mode": "level_k",
+   "release_id": 192,
+   "release": "Job Openings and Labor Turnover Survey",
+   "last_updated": "2026-11-03 09:10:46-06",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 7523.0,
+   "actual": "752.3萬",
+   "prev_period": "2026年8月",
+   "prev": 7190.0,
+   "prev_display": "719.0萬",
+   "chg_vs_prev": "+33.3萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "工業生產月增率",
+   "series_id": "INDPRO",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 13,
+   "release": "G.17 Industrial Production and Capacity Utilization",
+   "last_updated": "2026-10-16 08:20:19-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 0.6626,
+   "actual": "0.7%",
+   "prev_period": "2026年8月",
+   "prev": 0.0638,
+   "prev_display": "0.1%",
+   "chg_vs_prev": "+0.6個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "新屋開工（年化）",
+   "series_id": "HOUST",
+   "units": "lin",
+   "mode": "level_k",
+   "release_id": 27,
+   "release": "New Residential Construction",
+   "last_updated": "2026-10-20 07:33:37-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 1221.0,
+   "actual": "122.1萬",
+   "prev_period": "2026年8月",
+   "prev": 1288.0,
+   "prev_display": "128.8萬",
+   "chg_vs_prev": "−6.7萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "耐久財訂單月增率",
+   "series_id": "DGORDER",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 95,
+   "release": "Manufacturer's Shipments, Inventories, and Orders (M3) Survey",
+   "last_updated": "2026-11-03 09:36:38-06",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 1.9125,
+   "actual": "1.9%",
+   "prev_period": "2026年8月",
+   "prev": 0.1432,
+   "prev_display": "0.1%",
+   "chg_vs_prev": "+1.8個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "非農生產力年增率",
+   "series_id": "OPHNFB",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 47,
+   "release": "Productivity and Costs",
+   "last_updated": "2026-11-05 07:38:56-06",
+   "release_date": "2026-11-05",
+   "period": "2026Q3",
+   "period_date": "2026-07-01",
+   "value": 2.0575,
+   "actual": "2.1%",
+   "prev_period": "2026Q2",
+   "prev": 2.2867,
+   "prev_display": "2.3%",
+   "chg_vs_prev": "−0.2個百分點",
+   "released_prev_us_day": false
+  }
+ ],
+ "us_calendar": [
+  {
+   "event": "美國初領失業金人數",
+   "taipei": "11/12 21:30",
+   "us_date": "2026-11-12",
+   "et": "08:30",
+   "release": "Unemployment Insurance Weekly Claims Report",
+   "metrics": [
+    "初領失業金人數"
+   ]
+  },
+  {
+   "event": "美國PPI",
+   "taipei": "11/13 21:30",
+   "us_date": "2026-11-13",
+   "et": "08:30",
+   "release": "Producer Price Index",
+   "metrics": [
+    "PPI月增率",
+    "PPI年增率"
+   ]
+  },
+  {
+   "event": "美國零售銷售",
+   "taipei": "11/17 21:30",
+   "us_date": "2026-11-17",
+   "et": "08:30",
+   "release": "Advance Monthly Sales for Retail and Food Services",
+   "metrics": [
+    "零售銷售月增率"
+   ]
+  },
+  {
+   "event": "美國工業生產",
+   "taipei": "11/17 22:15",
+   "us_date": "2026-11-17",
+   "et": "09:15",
+   "release": "G.17 Industrial Production and Capacity Utilization",
+   "metrics": [
+    "工業生產月增率"
+   ]
+  },
+  {
+   "event": "美國新屋開工",
+   "taipei": "11/18 21:30",
+   "us_date": "2026-11-18",
+   "et": "08:30",
+   "release": "New Residential Construction",
+   "metrics": [
+    "新屋開工（年化）"
+   ]
+  },
+  {
+   "event": "美國初領失業金人數",
+   "taipei": "11/19 21:30",
+   "us_date": "2026-11-19",
+   "et": "08:30",
+   "release": "Unemployment Insurance Weekly Claims Report",
+   "metrics": [
+    "初領失業金人數"
+   ]
+  }
+ ],
+ "errors": [],
+ "notes": [
+  "日經225指數 日K缺 2026-11-11，改用小時K最後一根",
+  "韓國綜合股價指數 日K缺 2026-11-11，改用小時K最後一根",
+  "台灣加權指數 日K缺 2026-11-11，改用小時K最後一根",
+  "台灣加權 Yahoo 44041.66 與證交所 44257.15 不符，採證交所"
+ ],
+ "twd_official": {
+  "name": "美元兌新台幣",
+  "date": "2026-11-11",
+  "close": 32.86,
+  "prev_date": "2026-11-10",
+  "prev_close": 32.865,
+  "chg": -0.005,
+  "pct": -0.02,
+  "source": "cbc_taipeiforex_close"
+ },
+ "ust_auctions": {
+  "upcoming": [
+   {
+    "term": "30-Year",
+    "type": "Bond",
+    "auction_date_et": "2026-11-12",
+    "taipei_time": "11/13 02:00",
+    "offering_bn": 25.0,
+    "reopening": false
+   },
+   {
+    "term": "20-Year",
+    "type": "Bond",
+    "auction_date_et": "2026-11-18",
+    "taipei_time": "11/19 02:00",
+    "offering_bn": null,
+    "reopening": false
+   },
+   {
+    "term": "9-Year 8-Month",
+    "type": "Note",
+    "auction_date_et": "2026-11-19",
+    "taipei_time": "11/20 02:00",
+    "offering_bn": null,
+    "reopening": true
+   }
+  ],
+  "results": [
+   {
+    "term": "10-Year",
+    "type": "Note",
+    "auction_date_et": "2026-11-10",
+    "taipei_time": "11/11 02:00",
+    "offering_bn": 42.0,
+    "reopening": false,
+    "high_yield": 5.02,
+    "bid_to_cover": 2.46
+   },
+   {
+    "term": "3-Year",
+    "type": "Note",
+    "auction_date_et": "2026-11-09",
+    "taipei_time": "11/10 02:00",
+    "offering_bn": 58.0,
+    "reopening": false,
+    "high_yield": 4.627,
+    "bid_to_cover": 2.53
+   }
+  ]
+ },
+ "tw_institutional": {
+  "date": "2026-11-11",
+  "unit": "億元",
+  "foreign": -7.66,
+  "trust": 185.85,
+  "dealer": 62.57,
+  "total": 240.76
+ },
+ "taifex_foreign_tx": {
+  "date": "2026-11-11",
+  "contract": "臺股期貨",
+  "foreign_net_oi": -104271,
+  "header": "多空未平倉口數淨額",
+  "prev_date": "2026-11-10",
+  "prev_net_oi": -103473
+ },
+ "tw_chips": {
+  "date": "2026-11-11",
+  "unit": "億元",
+  "foreign_streak": -10,
+  "trust_streak": 22,
+  "foreign_sell_top": [
+   {
+    "sym": "3653",
+    "name": "健策",
+    "lots": -829,
+    "amt": -51.6
+   },
+   {
+    "sym": "2383",
+    "name": "台光電",
+    "lots": -1078,
+    "amt": -48.5
+   },
+   {
+    "sym": "2308",
+    "name": "台達電",
+    "lots": -3143,
+    "amt": -40.71
+   }
+  ],
+  "foreign_buy_top": [
+   {
+    "sym": "2330",
+    "name": "台積電",
+    "lots": 6038,
+    "amt": 144.62
+   },
+   {
+    "sym": "2408",
+    "name": "南亞科",
+    "lots": 8566,
+    "amt": 33.75
+   },
+   {
+    "sym": "6669",
+    "name": "緯穎",
+    "lots": 1428,
+    "amt": 23.98
+   }
+  ],
+  "trust_buy_top": [
+   {
+    "sym": "2330",
+    "name": "台積電",
+    "lots": 2385,
+    "amt": 57.13
+   },
+   {
+    "sym": "1303",
+    "name": "南亞",
+    "lots": 15637,
+    "amt": 48.94
+   },
+   {
+    "sym": "2454",
+    "name": "聯發科",
+    "lots": 590,
+    "amt": 23.53
+   }
+  ],
+  "trust_sell_top": [
+   {
+    "sym": "3189",
+    "name": "景碩",
+    "lots": -3752,
+    "amt": -27.8
+   },
+   {
+    "sym": "2327",
+    "name": "國巨*",
+    "lots": -4656,
+    "amt": -19.76
+   },
+   {
+    "sym": "2408",
+    "name": "南亞科",
+    "lots": -4943,
+    "amt": -19.47
+   }
+  ],
+  "tsmc": {
+   "foreign_lots": 6038,
+   "foreign_amt": 144.62,
+   "trust_lots": 2385,
+   "foreign_streak": 1
+  },
+  "tx_foreign_net_oi": -104271,
+  "tx_prev_net_oi": -103473,
+  "tx_chg": -798
+ },
+ "preopen": {
+  "TSM": {
+   "name": "台積電ADR",
+   "date": "2026-11-11",
+   "close": 413.35,
+   "prev_date": "2026-11-10",
+   "prev_close": 396.48,
+   "chg": 16.87,
+   "pct": 4.25
+  },
+  "NKD=F": {
+   "name": "日經期貨（CME）",
+   "date": "2026-11-11",
+   "close": 62040.0,
+   "prev_date": "2026-11-10",
+   "prev_close": 60090.0,
+   "chg": 1950.0,
+   "pct": 3.25
+  },
+  "TXF_NIGHT": {
+   "name": "台指期夜盤",
+   "contract": "202611",
+   "trade_date": "2026-11-12",
+   "last": 44606.0,
+   "chg": 470.0,
+   "pct": 1.06,
+   "volume": null,
+   "note": "最後成交價，較前一日一般交易時段結算價"
+  }
+ },
+ "contributors": {
+  "^DJI": {
+   "date": "2026-11-11",
+   "method": "price_weighted_divisor",
+   "divisor": 0.163633,
+   "n": 30,
+   "index_chg": 254.6,
+   "implied_chg": 226.48,
+   "top_up": [
+    {
+     "sym": "CAT",
+     "name": "開拓重工",
+     "pct": 2.91,
+     "pts": 104.14
+    },
+    {
+     "sym": "GS",
+     "name": "高盛",
+     "pct": 1.83,
+     "pts": 101.57
+    },
+    {
+     "sym": "AAPL",
+     "name": "蘋果",
+     "pct": 2.04,
+     "pts": 43.51
+    },
+    {
+     "sym": "NVDA",
+     "name": "輝達",
+     "pct": 2.87,
+     "pts": 29.58
+    },
+    {
+     "sym": "CRM",
+     "name": "Salesforce",
+     "pct": 2.12,
+     "pts": 27.68
+    }
+   ],
+   "top_down": [
+    {
+     "sym": "MSFT",
+     "name": "微軟",
+     "pct": -2.26,
+     "pts": -73.52
+    },
+    {
+     "sym": "MCD",
+     "name": "麥當勞",
+     "pct": -2.61,
+     "pts": -45.04
+    },
+    {
+     "sym": "AMZN",
+     "name": "亞馬遜",
+     "pct": -1.74,
+     "pts": -28.72
+    },
+    {
+     "sym": "UNH",
+     "name": "聯合健康",
+     "pct": -0.54,
+     "pts": -13.32
+    },
+    {
+     "sym": "TRV",
+     "name": "旅行家保險",
+     "pct": -0.33,
+     "pts": -8.07
+    }
+   ]
+  },
+  "^TWII": {
+   "date": "2026-11-11",
+   "method": "cap_weighted_issued_shares",
+   "n": 1094,
+   "index_chg": 1545.23,
+   "implied_chg": 1539.96,
+   "top_up": [
+    {
+     "sym": "2330",
+     "name": "台積電",
+     "pct": 4.81,
+     "pts": 870.47,
+     "weight": 42.33
+    },
+    {
+     "sym": "2454",
+     "name": "聯發科",
+     "pct": 4.18,
+     "pts": 78.36,
+     "weight": 4.39
+    },
+    {
+     "sym": "1303",
+     "name": "南亞",
+     "pct": 8.3,
+     "pts": 58.08,
+     "weight": 1.64
+    },
+    {
+     "sym": "3017",
+     "name": "奇鋐",
+     "pct": 8.96,
+     "pts": 29.96,
+     "weight": 0.78
+    },
+    {
+     "sym": "3443",
+     "name": "創意",
+     "pct": 9.97,
+     "pts": 29.24,
+     "weight": 0.69
+    }
+   ],
+   "top_down": [
+    {
+     "sym": "2356",
+     "name": "英業達",
+     "pct": -6.74,
+     "pts": -4.05,
+     "weight": 0.14
+    },
+    {
+     "sym": "2324",
+     "name": "仁寶",
+     "pct": -4.45,
+     "pts": -1.95,
+     "weight": 0.1
+    },
+    {
+     "sym": "910322",
+     "name": "康師傅-DR",
+     "pct": -2.83,
+     "pts": -1.37,
+     "weight": 0.11
+    },
+    {
+     "sym": "6770",
+     "name": "力積電",
+     "pct": -1.18,
+     "pts": -1.01,
+     "weight": 0.2
+    },
+    {
+     "sym": "1795",
+     "name": "美時",
+     "pct": -6.31,
+     "pts": -0.87,
+     "weight": 0.03
+    }
+   ],
+   "top_weights": [
+    {
+     "sym": "2330",
+     "name": "台積電",
+     "weight": 42.33
+    },
+    {
+     "sym": "2454",
+     "name": "聯發科",
+     "weight": 4.39
+    },
+    {
+     "sym": "2317",
+     "name": "鴻海",
+     "weight": 2.43
+    },
+    {
+     "sym": "2308",
+     "name": "台達電",
+     "weight": 2.37
+    },
+    {
+     "sym": "3711",
+     "name": "日月光投控",
+     "weight": 1.94
+    },
+    {
+     "sym": "1303",
+     "name": "南亞",
+     "weight": 1.64
+    },
+    {
+     "sym": "2881",
+     "name": "富邦金",
+     "weight": 1.53
+    },
+    {
+     "sym": "2882",
+     "name": "國泰金",
+     "weight": 1.15
+    },
+    {
+     "sym": "2383",
+     "name": "台光電",
+     "weight": 1.12
+    },
+    {
+     "sym": "2891",
+     "name": "中信金",
+     "weight": 1.04
+    }
+   ]
+  }
+ },
+ "fixed_events": [
+  {
+   "date": "2026-11-05",
+   "time": "20:00",
+   "cat": "總經與市場",
+   "title": "英國央行利率決策",
+   "note": ""
+  },
+  {
+   "date": "2026-11-12",
+   "time": "清晨",
+   "cat": "總經與市場",
+   "title": "MSCI季度調整結果公布",
+   "note": "美東 11/11 盤後公布；12/01 生效"
+  },
+  {
+   "date": "2026-11-18",
+   "time": "13:30",
+   "cat": "總經與市場",
+   "title": "台指期月結算",
+   "note": ""
+  },
+  {
+   "date": "2026-11-20",
+   "time": "美股收盤",
+   "cat": "總經與市場",
+   "title": "美股月選擇權到期",
+   "note": "收盤前後成交量與波動放大"
+  }
+ ]
+}
