@@ -304,9 +304,211 @@ def taifex_foreign_tx(today):
         i_net = [i for i, h in enumerate(hdr) if "未平倉" in h and "口數" in h and "淨額" in h]
         for r_ in rows[1:]:
             if len(r_) > i_who and "外資" in r_[i_who]:
-                return {"date": d.isoformat(), "contract": "臺股期貨", "foreign_net_oi": int(num(r_[i_net[0]])), "header": hdr[i_net[0]]}
+                res = {"date": d.isoformat(), "contract": "臺股期貨", "foreign_net_oi": int(num(r_[i_net[0]])), "header": hdr[i_net[0]]}
+                # 前一交易日
+                for j in range(1, 8):
+                    pd_ = d - dt.timedelta(days=j)
+                    if pd_.weekday() >= 5:
+                        continue
+                    form2 = urlencode({"queryStartDate": f"{pd_:%Y/%m/%d}", "queryEndDate": f"{pd_:%Y/%m/%d}", "commodityId": "TXF"}).encode()
+                    t2 = get("https://www.taifex.com.tw/cht/3/futContractsDateDown", data=form2).decode("big5", "ignore")
+                    rows2 = list(csv.reader(io.StringIO(t2)))
+                    if len(rows2) < 2 or "身份別" not in "".join(rows2[0]):
+                        time.sleep(1); continue
+                    for q in rows2[1:]:
+                        if len(q) > i_who and "外資" in q[i_who]:
+                            res["prev_date"] = pd_.isoformat(); res["prev_net_oi"] = int(num(q[i_net[0]]))
+                            break
+                    if "prev_net_oi" in res:
+                        break
+                return res
         raise ValueError(f"TAIFEX 找不到外資列；欄位={hdr}")
     raise ValueError("TAIFEX 近7日無資料")
+
+def intraday_last(symbol, before):
+    """Yahoo 日K缺最新一天時的補抓：用 5 天 1 小時K，取當地日期 < before 的最後一根（當地日期, 收盤）。"""
+    df = yf_hist(symbol, "5d", "1h", tries=2)
+    out = {}
+    if df is None:
+        return None
+    for ts, row in df.iterrows():
+        d = ts.date()
+        if d >= before or math.isnan(row["Close"]):
+            continue
+        out[d] = float(row["Close"])
+    if not out:
+        return None
+    d = max(out)
+    return d, out[d]
+
+
+def prev_business_day_local(d):
+    d = d - dt.timedelta(days=1)
+    while d.weekday() >= 5:
+        d = d - dt.timedelta(days=1)
+    return d
+
+
+def twii_official(today):
+    """證交所 OpenAPI MI_INDEX：發行量加權股價指數當日收盤（官方值）。"""
+    js = json.loads(get("https://openapi.twse.com.tw/v1/exchangeReport/MI_INDEX", timeout=60))
+    row = next((x for x in js if str(x.get("指數", "")).strip() == "發行量加權股價指數"), None)
+    if not row:
+        raise ValueError("MI_INDEX 找不到發行量加權股價指數")
+    roc = str(row["日期"]).strip()
+    d = dt.date(int(roc[:-4]) + 1911, int(roc[-4:-2]), int(roc[-2:]))
+    if d >= today:
+        raise ValueError(f"MI_INDEX 日期 {d} 不早於今天")
+    close, pts, pct = num(row["收盤指數"]), num(row["漲跌點數"]), num(row["漲跌百分比"])
+    sign = -1 if str(row.get("漲跌", "")).strip() == "-" else 1
+    chg = sign * abs(pts)
+    return {"name": "台灣加權指數", "date": d.isoformat(), "close": close, "prev_close": r(close - chg, 2),
+            "chg": r(chg, 2), "pct": sign * abs(pct), "source": "twse_mi_index"}
+
+
+# ---------- 台股籌碼面 ----------
+def _bfi82u(d):
+    js = json.loads(get(f"https://www.twse.com.tw/rwd/zh/fund/BFI82U?type=day&dayDate={d:%Y%m%d}&response=json"))
+    if js.get("stat") != "OK" or not js.get("data"):
+        return None
+    net = {r_[0]: num(r_[3]) for r_ in js["data"]}
+    pick = lambda key: next((v for n, v in net.items() if n.startswith(key)), None)
+    return {"foreign": pick("外資及陸資"), "trust": pick("投信")}
+
+
+def _t86(d):
+    js = json.loads(get(f"https://www.twse.com.tw/rwd/zh/fund/T86?date={d:%Y%m%d}&selectType=ALLBUT0999&response=json", timeout=90))
+    if js.get("stat") != "OK" or not js.get("data"):
+        return None
+    f = js["fields"]
+    fi, ti = f.index("外陸資買賣超股數(不含外資自營商)"), f.index("投信買賣超股數")
+    return {str(x[0]).strip(): (str(x[1]).strip(), num(x[fi]) or 0, num(x[ti]) or 0) for x in js["data"]}
+
+
+def tw_chips(today, inst, tx):
+    """籌碼面：法人連續買賣超天數、個股買賣超前三（金額，排除 ETF）、台積電外資連續天數、外資期貨淨未平倉前日值。
+    inst/tx 為 twse_institutional、taifex_foreign_tx 的結果。"""
+    if not inst:
+        raise ValueError("無三大法人資料")
+    d0 = dt.date.fromisoformat(inst["date"])
+    out = {"date": inst["date"], "unit": "億元"}
+
+    # 1) 連續天數（BFI82U 從最新交易日往回，同號才累計；最多 40 個交易日）
+    sign = {k: (1 if inst[k] > 0 else -1) for k in ("foreign", "trust") if inst.get(k)}
+    streak = {k: 0 for k in sign}
+    d, tries = d0, 0
+    while sign and tries < 70 and max(streak.values(), default=0) < 40:
+        if d.weekday() < 5:
+            row = _bfi82u(d)
+            if d != d0:
+                time.sleep(0.4)
+            if row is not None:  # None = 休市
+                for k in list(sign):
+                    v = row.get(k)
+                    if v is not None and (1 if v > 0 else -1) == sign[k]:
+                        streak[k] += 1
+                    else:
+                        sign.pop(k)
+        d = d - dt.timedelta(days=1); tries += 1
+    out["foreign_streak"] = streak.get("foreign", 0) * (1 if (inst.get("foreign") or 0) > 0 else -1)
+    out["trust_streak"] = streak.get("trust", 0) * (1 if (inst.get("trust") or 0) > 0 else -1)
+
+    # 2) 個股前三（金額 = 買賣超股數 × 收盤價；排除 ETF 與非 4 碼代號）
+    t86 = _t86(d0)
+    day = json.loads(get("https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL", timeout=90))
+    px = {}
+    for x in day:
+        c = str(x.get("Code", "")).strip()
+        p = num(x.get("ClosingPrice"))
+        if p:
+            px[c] = p
+    roc = str(day[0].get("Date", "")).strip() if day else ""
+    pday = dt.date(int(roc[:-4]) + 1911, int(roc[-4:-2]), int(roc[-2:])) if len(roc) >= 7 else None
+    if pday != d0:  # 收盤價日期不符（例如下午執行時已更新為今日）：改用指定日期的 MI_INDEX 全部個股
+        js = json.loads(get(f"https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date={d0:%Y%m%d}&type=ALLBUT0999&response=json", timeout=120))
+        px = {}
+        for tb in js.get("tables", []):
+            f = tb.get("fields") or []
+            if "證券代號" in f and "收盤價" in f:
+                ic, ip = f.index("證券代號"), f.index("收盤價")
+                for x in tb.get("data", []):
+                    p = num(x[ip])
+                    if p:
+                        px[str(x[ic]).strip()] = p
+        if not px:
+            raise ValueError(f"T86 {d0} 找不到同日收盤價（STOCK_DAY_ALL 為 {pday}）")
+    if not t86:
+        raise ValueError(f"T86 {d0} 無資料")
+    rows = []
+    for code, (name, fnet, tnet) in t86.items():
+        if len(code) != 4 or code.startswith("00") or code not in px:
+            continue
+        rows.append({"sym": code, "name": name, "foreign_lots": round(fnet / 1000), "foreign_amt": round(fnet * px[code] / 1e8, 2),
+                     "trust_lots": round(tnet / 1000), "trust_amt": round(tnet * px[code] / 1e8, 2)})
+    keep = lambda r_, k: {"sym": r_["sym"], "name": r_["name"], "lots": r_[f"{k}_lots"], "amt": r_[f"{k}_amt"]}
+    by = lambda k, rev: sorted(rows, key=lambda r_: r_[f"{k}_amt"], reverse=rev)[:3]
+    out["foreign_sell_top"] = [keep(x, "foreign") for x in by("foreign", False) if x["foreign_amt"] < 0]
+    out["foreign_buy_top"] = [keep(x, "foreign") for x in by("foreign", True) if x["foreign_amt"] > 0]
+    out["trust_buy_top"] = [keep(x, "trust") for x in by("trust", True) if x["trust_amt"] > 0]
+    out["trust_sell_top"] = [keep(x, "trust") for x in by("trust", False) if x["trust_amt"] < 0]
+
+    # 3) 台積電外資連續買賣超天數（T86 往回最多 25 個交易日）
+    tsmc = t86.get("2330")
+    if tsmc:
+        s0 = 1 if tsmc[1] > 0 else -1
+        n, d, tries = 1, d0 - dt.timedelta(days=1), 0
+        while n < 25 and tries < 40:
+            if d.weekday() < 5:
+                t = _t86(d); time.sleep(0.5)
+                if t is not None:
+                    v = t.get("2330")
+                    if not v or (1 if v[1] > 0 else -1) != s0:
+                        break
+                    n += 1
+            d = d - dt.timedelta(days=1); tries += 1
+        out["tsmc"] = {"foreign_lots": round(tsmc[1] / 1000), "foreign_amt": round(tsmc[1] * px.get("2330", 0) / 1e8, 2),
+                       "trust_lots": round(tsmc[2] / 1000), "foreign_streak": n * s0}
+
+    # 4) 外資台指期淨未平倉：前一交易日值與變化
+    if tx:
+        out["tx_foreign_net_oi"] = tx["foreign_net_oi"]
+        out["tx_prev_net_oi"] = tx.get("prev_net_oi")
+        out["tx_chg"] = (tx["foreign_net_oi"] - tx["prev_net_oi"]) if tx.get("prev_net_oi") is not None else None
+    return out
+
+
+# ---------- 開盤前領先指標 ----------
+def txf_night(today):
+    """期交所盤後交易（夜盤，台北 15:00–05:00）臺股期貨近月：最後成交價、較前一日結算漲跌。交易日 = today。"""
+    import re
+    url = ("https://www.taifex.com.tw/cht/3/futDailyMarketReport?queryType=2&marketCode=1&dateaddcnt=0"
+           f"&commodity_id=TX&queryDate={today:%Y/%m/%d}")
+    html = get(url, timeout=60).decode("utf-8", "ignore")
+    rows = re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S)
+    for tr in rows:
+        cells = [re.sub(r"<[^>]+>", "", c).replace("&nbsp;", "").strip() for c in re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)]
+        if len(cells) >= 8 and cells[0] == "TX" and re.fullmatch(r"\d{6}", cells[1]):
+            last, chg, pct = num(cells[5]), cells[6], cells[7]
+            if last is None:
+                continue
+            sgn = -1 if "-" in chg or "▼" in chg else 1
+            chg_v, pct_v = num(re.sub(r"[^\d.]", "", chg)), num(re.sub(r"[^\d.]", "", pct))
+            return {"name": "台指期夜盤", "contract": cells[1], "trade_date": today.isoformat(), "last": last,
+                    "chg": sgn * (chg_v or 0), "pct": sgn * (pct_v or 0), "volume": num(cells[8]),
+                    "note": "最後成交價，較前一日一般交易時段結算價"}
+    raise ValueError("期交所盤後行情找不到 TX 近月列（可能尚未更新或休市）")
+
+
+def preopen(today, tx_night=None):
+    """開盤前領先指標：台積電 ADR、CME 日經期貨（美元）、台指期夜盤。"""
+    out = {}
+    for s, n in (("TSM", "台積電ADR"), ("NKD=F", "日經期貨（CME）")):
+        p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), n, 2)
+        if p:
+            out[s] = p
+    if tx_night:
+        out["TXF_NIGHT"] = tx_night
+    return out
 
 
 def on_or_before(rows, d):
@@ -539,10 +741,30 @@ def main():
     out = {"generated_at_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "taipei_date": today.isoformat(),
            "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "us_macro_fred": None, "us_calendar": None, "errors": errors, "notes": []}
 
+    expected = prev_business_day_local(today)  # 亞股最新應有的收盤日（不含休市）
     for s, n in INDICES.items():
-        p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), n, 2)
+        dl = daily_closes(yf_hist(s, "10d", "1d"), today)
+        p = pair(dl, n, 2)
+        if s in ("^N225", "^KS11", "^TWII") and dl and dl[-1][0] < expected:
+            # Yahoo 日K缺最新一天：用小時K補最後一根，前收用日K最後一筆
+            last = intraday_last(s, today)
+            if last and last[0] > dl[-1][0]:
+                d1, c1 = last
+                d0, c0 = dl[-1]
+                p = {"name": n, "date": d1.isoformat(), "close": r(c1, 2), "prev_date": d0.isoformat(), "prev_close": r(c0, 2),
+                     "chg": r(c1 - c0, 2), "pct": r((c1 / c0 - 1) * 100, 2), "source": "yahoo_intraday_fill"}
+                out["notes"].append(f"{n} 日K缺 {d1}，改用小時K最後一根")
         if p:
             out["indices"][s] = p
+    try:
+        tw = twii_official(today)
+        y = out["indices"].get("^TWII")
+        tw["prev_date"] = y["date"] if y and y["date"] < tw["date"] else (y["prev_date"] if y and y["date"] == tw["date"] else None)
+        if y and y["date"] == tw["date"] and abs(y["close"] - tw["close"]) > 1:
+            out["notes"].append(f"台灣加權 Yahoo {y['close']} 與證交所 {tw['close']} 不符，採證交所")
+        out["indices"]["^TWII"] = tw
+    except Exception as e:  # noqa
+        errors.append(f"證交所加權指數取不到，改用 Yahoo：{e}")
     tnx = daily_closes(yf_hist("^TNX", "10d", "1d"), today)
     if len(tnx) >= 2:
         f = (lambda v: v / 10) if tnx[-1][1] > 20 else (lambda v: v)
@@ -569,6 +791,21 @@ def main():
         except Exception as e:  # noqa
             out[key] = None
             errors.append(f"{key} 取不到：{e}")
+    try:
+        out["tw_chips"] = tw_chips(today, out.get("tw_institutional"), out.get("taifex_foreign_tx"))
+    except Exception as e:  # noqa
+        out["tw_chips"] = None
+        errors.append(f"tw_chips 取不到：{e}")
+    try:
+        night = txf_night(today)
+    except Exception as e:  # noqa
+        night = None
+        errors.append(f"台指期夜盤取不到：{e}")
+    try:
+        out["preopen"] = preopen(today, night)
+    except Exception as e:  # noqa
+        out["preopen"] = None
+        errors.append(f"preopen 取不到：{e}")
     for s in STOCKS:
         p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), s, 2)
         if p:
