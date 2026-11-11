@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-11-10T22:15:32Z",
+ "generated_at_utc": "2026-11-11T05:47:04Z",
  "taipei_date": "2026-11-11",
  "indices": {
   "^DJI": {
@@ -23,7 +23,7 @@
   "^IXIC": {
    "name": "那斯達克綜合指數",
    "date": "2026-11-10",
-   "close": 25065.88,
+   "close": 25065.87,
    "prev_date": "2026-11-09",
    "prev_close": 25253.14,
    "chg": -187.27,
@@ -40,30 +40,31 @@
   },
   "^N225": {
    "name": "日經225指數",
-   "date": "2026-11-09",
-   "close": 58775.5,
-   "prev_date": "2026-11-06",
-   "prev_close": 57434.77,
-   "chg": 1340.73,
-   "pct": 2.33
+   "date": "2026-11-10",
+   "close": 60459.58,
+   "prev_date": "2026-11-09",
+   "prev_close": 58775.5,
+   "chg": 1684.08,
+   "pct": 2.87
   },
   "^KS11": {
    "name": "韓國綜合股價指數",
-   "date": "2026-11-09",
-   "close": 5018.85,
-   "prev_date": "2026-11-06",
-   "prev_close": 5059.69,
-   "chg": -40.84,
-   "pct": -0.81
+   "date": "2026-11-10",
+   "close": 5239.13,
+   "prev_date": "2026-11-09",
+   "prev_close": 5018.85,
+   "chg": 220.28,
+   "pct": 4.39
   },
   "^TWII": {
    "name": "台灣加權指數",
-   "date": "2026-11-09",
-   "close": 41661.7,
-   "prev_date": "2026-11-06",
-   "prev_close": 39701.64,
-   "chg": 1960.06,
-   "pct": 4.94
+   "date": "2026-11-10",
+   "close": 42711.92,
+   "prev_close": 41661.7,
+   "chg": 1050.22,
+   "pct": 2.52,
+   "source": "twse_mi_index",
+   "prev_date": "2026-11-09"
   }
  },
  "ust10y": {
@@ -74,12 +75,12 @@
  },
  "sse": {
   "name": "上證綜合",
-  "date": "2026-11-09",
-  "close": 3660.79,
-  "prev_date": "2026-11-06",
-  "prev_close": 3649.18,
-  "chg": 11.61,
-  "pct": 0.32
+  "date": "2026-11-10",
+  "close": 3663.72,
+  "prev_date": "2026-11-09",
+  "prev_close": 3660.79,
+  "chg": 2.93,
+  "pct": 0.08
  },
  "ust_curve": {
   "date": "2026-11-10",
@@ -402,7 +403,7 @@
    "prev": 0.6485,
    "prev_display": "0.6%",
    "chg_vs_prev": "−0.3個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "CPI年增率",
@@ -421,7 +422,7 @@
    "prev": 3.353,
    "prev_display": "3.4%",
    "chg_vs_prev": "+0.4個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "核心CPI月增率",
@@ -440,7 +441,7 @@
    "prev": 0.3348,
    "prev_display": "0.3%",
    "chg_vs_prev": "0.0個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "核心CPI年增率",
@@ -459,7 +460,7 @@
    "prev": 2.4462,
    "prev_display": "2.4%",
    "chg_vs_prev": "+0.1個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "PPI月增率",
@@ -621,7 +622,7 @@
    "release_id": 192,
    "release": "Job Openings and Labor Turnover Survey",
    "last_updated": "2026-11-03 09:10:46-06",
-   "release_date": "2026-11-03",
+   "release_date": null,
    "period": "2026年9月",
    "period_date": "2026-09-01",
    "value": 7523.0,
@@ -678,7 +679,7 @@
    "release_id": 95,
    "release": "Manufacturer's Shipments, Inventories, and Orders (M3) Survey",
    "last_updated": "2026-11-03 09:36:38-06",
-   "release_date": "2026-11-03",
+   "release_date": null,
    "period": "2026年9月",
    "period_date": "2026-09-01",
    "value": 1.9125,
@@ -846,7 +847,134 @@
   "date": "2026-11-10",
   "contract": "臺股期貨",
   "foreign_net_oi": -103473,
-  "header": "多空未平倉口數淨額"
+  "header": "多空未平倉口數淨額",
+  "prev_date": "2026-11-09",
+  "prev_net_oi": -101771
+ },
+ "tw_chips": {
+  "date": "2026-11-10",
+  "unit": "億元",
+  "foreign_streak": -9,
+  "trust_streak": 21,
+  "foreign_sell_top": [
+   {
+    "sym": "2330",
+    "name": "台積電",
+    "lots": -8182,
+    "amt": -186.95
+   },
+   {
+    "sym": "2454",
+    "name": "聯發科",
+    "lots": -2587,
+    "amt": -99.08
+   },
+   {
+    "sym": "3653",
+    "name": "健策",
+    "lots": -552,
+    "amt": -31.99
+   }
+  ],
+  "foreign_buy_top": [
+   {
+    "sym": "1802",
+    "name": "台玻",
+    "lots": 83718,
+    "amt": 58.43
+   },
+   {
+    "sym": "3661",
+    "name": "世芯-KY",
+    "lots": 1016,
+    "amt": 34.75
+   },
+   {
+    "sym": "2408",
+    "name": "南亞科",
+    "lots": 7281,
+    "amt": 27.89
+   }
+  ],
+  "trust_buy_top": [
+   {
+    "sym": "2330",
+    "name": "台積電",
+    "lots": 5634,
+    "amt": 128.74
+   },
+   {
+    "sym": "2454",
+    "name": "聯發科",
+    "lots": 1160,
+    "amt": 44.42
+   },
+   {
+    "sym": "1303",
+    "name": "南亞",
+    "lots": 9864,
+    "amt": 28.51
+   }
+  ],
+  "trust_sell_top": [
+   {
+    "sym": "2408",
+    "name": "南亞科",
+    "lots": -2989,
+    "amt": -11.45
+   },
+   {
+    "sym": "2327",
+    "name": "國巨*",
+    "lots": -1201,
+    "amt": -5.0
+   },
+   {
+    "sym": "3026",
+    "name": "禾伸堂",
+    "lots": -742,
+    "amt": -3.78
+   }
+  ],
+  "tsmc": {
+   "foreign_lots": -8182,
+   "foreign_amt": -186.95,
+   "trust_lots": 5634,
+   "foreign_streak": -23
+  },
+  "tx_foreign_net_oi": -103473,
+  "tx_prev_net_oi": -101771,
+  "tx_chg": -1702
+ },
+ "preopen": {
+  "TSM": {
+   "name": "台積電ADR",
+   "date": "2026-11-10",
+   "close": 396.48,
+   "prev_date": "2026-11-09",
+   "prev_close": 388.62,
+   "chg": 7.86,
+   "pct": 2.02
+  },
+  "NKD=F": {
+   "name": "日經期貨（CME）",
+   "date": "2026-11-10",
+   "close": 60090.0,
+   "prev_date": "2026-11-09",
+   "prev_close": 60965.0,
+   "chg": -875.0,
+   "pct": -1.44
+  },
+  "TXF_NIGHT": {
+   "name": "台指期夜盤",
+   "contract": "202611",
+   "trade_date": "2026-11-11",
+   "last": 42522.0,
+   "chg": -124.0,
+   "pct": -0.29,
+   "volume": null,
+   "note": "最後成交價，較前一日一般交易時段結算價"
+  }
  },
  "contributors": {
   "^DJI": {
@@ -922,45 +1050,45 @@
    ]
   },
   "^TWII": {
-   "date": "2026-11-09",
+   "date": "2026-11-10",
    "method": "cap_weighted_issued_shares",
    "n": 1095,
-   "index_chg": 1960.06,
-   "implied_chg": 1000.14,
+   "index_chg": 1050.22,
+   "implied_chg": 1049.47,
    "top_up": [
     {
      "sym": "2330",
      "name": "台積電",
      "pct": 2.24,
-     "pts": 377.02,
+     "pts": 395.63,
      "weight": 42.45
     },
     {
      "sym": "2308",
      "name": "台達電",
      "pct": 9.91,
-     "pts": 86.86,
+     "pts": 91.15,
      "weight": 2.21
     },
     {
      "sym": "1303",
      "name": "南亞",
      "pct": 9.89,
-     "pts": 59.96,
+     "pts": 62.92,
      "weight": 1.53
     },
     {
      "sym": "3711",
      "name": "日月光投控",
      "pct": 7.84,
-     "pts": 57.42,
+     "pts": 60.25,
      "weight": 1.84
     },
     {
      "sym": "2454",
      "name": "聯發科",
      "pct": 2.82,
-     "pts": 49.0,
+     "pts": 51.42,
      "weight": 4.38
     }
    ],
@@ -969,35 +1097,35 @@
      "sym": "2891",
      "name": "中信金",
      "pct": -2.9,
-     "pts": -12.59,
+     "pts": -13.21,
      "weight": 1.09
     },
     {
      "sym": "6446",
      "name": "藥華藥",
      "pct": -6.57,
-     "pts": -11.05,
+     "pts": -11.6,
      "weight": 0.42
     },
     {
      "sym": "2882",
      "name": "國泰金",
      "pct": -0.9,
-     "pts": -4.27,
+     "pts": -4.48,
      "weight": 1.19
     },
     {
      "sym": "2207",
      "name": "和泰車",
      "pct": -4.69,
-     "pts": -4.05,
+     "pts": -4.25,
      "weight": 0.22
     },
     {
      "sym": "2887",
      "name": "台新新光金",
      "pct": -1.25,
-     "pts": -3.65,
+     "pts": -3.83,
      "weight": 0.73
     }
    ],
