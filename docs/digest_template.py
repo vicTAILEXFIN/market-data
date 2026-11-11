@@ -51,7 +51,10 @@ STK = re.compile(r"[一-鿿A-Za-z]+（[+−]\d+\.\d{2}%）")
 SHORT = {"道瓊工業指數": "道瓊", "標準普爾500指數": "標普500", "那斯達克綜合指數": "那斯達克", "費城半導體指數": "費城半導體",
          "日經225指數": "日經225", "韓國綜合股價指數": "韓國綜合", "台灣加權指數": "台灣加權"}
 SCALE = {"美元兌新台幣": 1, "布蘭特原油": 5, "黃金（COMEX近月期貨）": 3, "美元指數": 1}
-HIKE, HIKE2, HOLD, CUT = "#DC2626", "#7F1D1D", "#94A3B8", "#15803D"
+# FedWatch 低飽和玫瑰色：(底色, 字色)
+FW_COL = {"cut": ("#A8D5C2", "#14532D"), "hold": ("#E5E7EB", "#374151"), "hike1": ("#F1BDBA", "#7A1F1F"), "hike2": ("#C97A78", "#FFFFFF")}
+TAG = {"總經": "#1D4ED8", "政策": "#7C3AED", "個股": "#C2410C", "產業": "#15803D", "地緣": "#6B5B4B", "盤勢": "#0F766E"}
+IMPACT = ("美股", "那斯達克", "費半", "台股", "日股", "韓股", "陸股", "美債殖利率", "2年期殖利率", "美元", "新台幣", "油價", "黃金", "升息機率")
 
 
 def heat_color(v, m):
@@ -62,17 +65,41 @@ def heat_color(v, m):
     return "#%02X%02X%02X" % c, ("#FFFFFF" if t > 0.45 else "#1F2937")
 
 
-def heatmap(title, tiles):
-    """tiles: [(名稱, 最新值, 主數字, 數值或None, 色階上限, 註記)]；紅漲綠跌，一列4格"""
-    out = [h2(title, "10px 0 4px"), '<table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;table-layout:fixed;margin:0"><tr>']
+def heat_rows(title, tiles):
+    """tiles: [(名稱, 最新值, 主數字, 數值或None, 色階上限, 註記)]；一列一個市場，整列依漲跌上色"""
+    r = [f'<tr><td colspan="4" style="{F_JH};font-size:10.5pt;font-weight:bold;color:#0B2545;padding:7px 0 3px">{esc(title)}</td></tr>']
     for n, lv, big, v, m, nt in tiles:
         bg, fg = heat_color(v, m)
-        out.append(f'<td bgcolor="{bg}" style="background-color:{bg};color:{fg};text-align:center;vertical-align:middle;border:2px solid #FFFFFF;padding:7px 4px">'
-                   f'<div style="{F_JH};font-size:10.5pt;font-weight:bold">{esc(n)}</div>'
-                   f'<div style="{F_AP};font-size:10pt;margin-top:2px">{esc(lv) if lv else "&nbsp;"}</div>'
-                   f'<div style="{F_AP};font-size:15pt;font-weight:bold;line-height:1.25">{esc(big)}</div>'
-                   f'<div style="{F_JH};font-size:9pt">{esc(nt) if nt else "&nbsp;"}</div></td>')
-    return "".join(out) + "</tr></table>"
+        td = f'background-color:{bg};color:{fg};border-bottom:2px solid #FFFFFF;padding:4px 6px;white-space:nowrap'
+        r.append(f'<tr><td bgcolor="{bg}" style="{td};{F_JH};font-size:10pt;font-weight:bold">{esc(n)}</td>'
+                 f'<td bgcolor="{bg}" style="{td};{F_AP};font-size:10pt;text-align:right">{esc(lv) if lv else "&nbsp;"}</td>'
+                 f'<td bgcolor="{bg}" style="{td};{F_AP};font-size:11pt;font-weight:bold;text-align:right">{esc(big)}</td>'
+                 f'<td bgcolor="{bg}" style="{td};{F_AP};font-size:9pt;text-align:right">{esc(nt) if nt else "&nbsp;"}</td></tr>')
+    return "".join(r)
+
+
+def heat_block():
+    col = lambda parts: ('<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout:fixed">'
+                         '<colgroup><col width="29%"><col width="27%"><col width="19%"><col width="25%"></colgroup>' + "".join(heat_rows(*x) for x in parts) + "</table>")
+    left = col([("美股", us_tiles()), ("亞股", asia_tiles())])
+    right = col([("美國公債殖利率", ust_tiles()), ("匯率與商品", macro_tiles())])
+    return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout:fixed;margin:4px 0 0"><tr>'
+            f'<td width="50%" style="vertical-align:top;padding-right:10px">{left}</td><td width="50%" style="vertical-align:top;padding-left:10px">{right}</td></tr></table>')
+
+
+def preopen_line():
+    po = D.get("preopen") or {}
+    parts = []
+    for key, name in (("TSM", "台積電ADR"), ("TXF_NIGHT", "台指期夜盤"), ("NKD=F", "日經期貨")):
+        x = po.get(key)
+        if not x: continue
+        if key == "TXF_NIGHT":
+            parts.append(f"{name} {x['last']:,.0f}（{sgn(x['chg'])}{abs(x['chg']):,.0f}，{pct(x['pct'])}）")
+        else:
+            parts.append(f"{name} {pct(x['pct'])}")
+    if not parts: return ""
+    return (f'<p style="{F_JH};font-size:9.5pt;color:#374151;margin:6px 0 0;padding:5px 8px;background-color:#F3F4F6">'
+            f'<b>開盤前指標</b>　{esc("｜".join(parts))}</p>')
 
 
 def bp_value(s):
@@ -107,7 +134,7 @@ def ust_tiles():
     if y2:
         sp, dif = round((y10[0] - y2[0]) * 100), y10[1] - y2[1]
         nt = f"擴大 {dif:g}bp，曲線趨陡" if dif > 0 else (f"收窄 {abs(dif):g}bp，曲線趨平" if dif < 0 else "利差持平")
-        t.append(("10Y−2Y 利差", "", f"{sp}bp", None, 15, nt))
+        t.append(("10Y−2Y 利差", f"{sp}bp", f"{sgn(dif)}{abs(dif):g}bp", None, 15, "曲線趨陡" if dif > 0 else ("曲線趨平" if dif < 0 else "利差持平")))
     else:
         t.append(("10Y−2Y 利差", "", "未取得", None, 15, ""))
     return t
@@ -118,11 +145,11 @@ def macro_tiles():
     out = []
     for n in ("美元指數", "美元兌新台幣", "布蘭特原油", "黃金（COMEX近月期貨）"):
         _n, lv, ch, nt, r, a, d = M[n]
-        name = "黃金（COMEX）" if n.startswith("黃金") else n
+        name = "黃金" if n.startswith("黃金") else n
         if not a:
             out.append((name, "", "未取得", None, SCALE[n], ""))
             continue
-        lvl = lv.split("/")[0].replace("美元", " 美元")
+        lvl = lv.split("/")[0].replace("美元", "")
         sub = nt or (D.get("brent_note") if n == "布蘭特原油" else None) or f"{sgn(a[1])}{abs(a[1]):,.2f} 美元"
         out.append((name, lvl, pct(a[2]), a[2], SCALE[n], sub))
     return out
@@ -132,22 +159,102 @@ def fedwatch():
     fw = D["fedwatch"]
     rows = []
     for label, cut, hold, h1, h2_ in fw["rows"]:
-        segs = "".join(f'<td width="{p:g}%" height="22" bgcolor="{c}" style="background-color:{c};width:{p:g}%;height:22px;color:#FFFFFF;{F_AP};font-size:9.5pt;text-align:center;font-weight:bold">'
-                       f'<font color="#FFFFFF">{(f"{p:g}%") if p >= 8 else "&nbsp;"}</font></td>'
-                       for p, c in ((cut, CUT), (hold, HOLD), (h1, HIKE), (h2_, HIKE2)) if p > 0)
+        segs = "".join(f'<td width="{p:g}%" height="22" bgcolor="{c}" style="background-color:{c};width:{p:g}%;height:22px;color:{fc};{F_AP};font-size:9.5pt;text-align:center;font-weight:bold">'
+                       f'<font color="{fc}">{(f"{p:g}%") if p >= 8 else "&nbsp;"}</font></td>'
+                       for p, (c, fc) in ((cut, FW_COL["cut"]), (hold, FW_COL["hold"]), (h1, FW_COL["hike1"]), (h2_, FW_COL["hike2"])) if p > 0)
         rows.append(f'<tr><td width="16%" nowrap style="{F_JH};font-size:10.5pt;padding:4px 8px 4px 0;width:16%;white-space:nowrap;{"font-weight:bold" if label == "最新" else ""}">{esc(label)}</td>'
                     f'<td style="padding:4px 0"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;table-layout:fixed"><tr>{segs}</tr></table></td></tr>'
                     '<tr><td colspan="2" height="6" style="height:6px;font-size:1px;line-height:1px">&nbsp;</td></tr>')
-    # 圖例用表格＋彩色「■」字元：不依賴 inline-block 尺寸，轉寄或整頁複製時不會跑版
     legend = ('<table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;margin:6px 0 4px"><tr>' +
               "".join(f'<td nowrap style="{F_JH};font-size:9.5pt;color:#374151;padding:0 14px 0 0;white-space:nowrap">'
                       f'<font color="{c}"><span style="color:{c};font-size:11pt">■</span></font>&nbsp;{n}&nbsp;&nbsp;&nbsp;&nbsp;</td>'
-                      for n, c in (("降息", CUT), ("維持不變", HOLD), ("升息1碼", HIKE), ("升息2碼以上", HIKE2))) + "</tr></table>")
+                      for n, (c, _) in (("降息", FW_COL["cut"]), ("維持不變", FW_COL["hold"]), ("升息1碼", FW_COL["hike1"]), ("升息2碼以上", FW_COL["hike2"]))) + "</tr></table>")
     return (h2("FedWatch 利率預期") +
             f'<p style="{F_JH};font-size:11pt;margin:0 0 6px">{esc(fw["meeting"])} FOMC 會議｜目前利率區間 {esc(fw["range"])}｜CME {esc(fw["asof"])} 更新（依前一日期貨結算）</p>'
             f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse">{"".join(rows)}</table>'
             f'{legend}'
             f'<p style="{F_JH};font-size:11pt;line-height:1.6;margin:4px 0 12px">{esc(fw["note"])}</p>')
+
+
+# ---------- 重點摘要、新聞卡、台股籌碼面 ----------
+def highlight_box():
+    li = "".join(f'<tr><td style="{F_AP};font-size:11pt;vertical-align:top;padding:3px 6px 3px 0;white-space:nowrap">{i}.</td>'
+                 f'<td style="{F_JH};font-size:11pt;line-height:1.65;padding:3px 0"><b>{esc(h)}：</b>{esc(t)}</td></tr>'
+                 for i, (h, t) in enumerate(D["highlight"], 1))
+    return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 0 4px"><tr>'
+            f'<td bgcolor="#FEF6D2" style="background-color:#FEF6D2;border:1px solid #E9D47A;padding:12px 16px">'
+            f'<div style="{F_JH};font-size:12pt;font-weight:bold;color:#1F2937;margin-bottom:6px">本期重點摘要</div>'
+            f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0">{li}</table></td></tr></table>')
+
+
+def impact_chip(n, a):
+    up = a == "▲"
+    bg, fg = ("#FBE9E8", "#A61B1B") if up else ("#E6F4EC", "#1E7A55")
+    return (f'<span style="display:inline-block;{F_JH};font-size:9pt;line-height:16px;padding:0 7px;margin:0 0 0 6px;'
+            f'background-color:{bg};color:{fg}">{esc(n)}&nbsp;{a}</span>')
+
+
+def news_card(i, e):
+    tag = e["tag"]
+    chips = "".join(impact_chip(n, a) for n, a in e.get("impact") or [])
+    bl = "".join(f'<tr><td style="{F_JH};font-size:11pt;vertical-align:top;padding:2px 8px 2px 4px">•</td>'
+                 f'<td style="{F_JH};font-size:10.5pt;line-height:1.6;padding:2px 0;color:#000">{esc(b)}</td></tr>' for b in e["bullets"])
+    return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 0 12px"><tr>'
+            f'<td style="border:1px solid #E5E7EB;padding:12px 16px;background-color:#FFFFFF">'
+            f'<div><span style="{F_JH};font-size:9.5pt;font-weight:bold;color:#FFFFFF;background-color:{TAG[tag]};padding:2px 8px">{esc(tag)}</span>'
+            f'&nbsp;&nbsp;<span style="{F_AP};font-size:10pt;color:#6B7280">{esc(e["date"])}</span>{chips}</div>'
+            f'<p style="{F_JH};font-size:12pt;font-weight:bold;line-height:1.4;margin:7px 0 6px">{i}. <a href="{html.escape(e["url"])}" style="{LINK}">{esc(e["title"])}</a></p>'
+            f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0">{bl}</table></td></tr></table>')
+
+
+def chips_block():
+    ch, inst = D.get("chips"), D.get("inst")
+    idx_date = next((r[5] for r in D["index_rows"] if r[0] == "台灣加權指數"), None)
+    if not ch or not inst or not idx_date:
+        return ""
+    d = inst["date"][5:].replace("-", "/").lstrip("0")
+    if d != idx_date and inst["date"][5:].replace("-", "/") != idx_date:
+        return ""
+    mx = max(1.0, *(abs(inst[k] or 0) for k in ("foreign", "trust", "dealer", "total")))
+    bars = []
+    for n, k, st in (("外資及陸資", "foreign", ch.get("foreign_streak")), ("投信", "trust", ch.get("trust_streak")), ("自營商", "dealer", None), ("三大法人合計", "total", None)):
+        v = inst.get(k) or 0
+        w = max(2, round(abs(v) / mx * 100))
+        left = (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td width="{100-w}%"></td><td width="{w}%" bgcolor="#3E9C76" style="background-color:#3E9C76;height:14px;font-size:1px">&nbsp;</td></tr></table>') if v < 0 else ""
+        right = (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td width="{w}%" bgcolor="#D9534F" style="background-color:#D9534F;height:14px;font-size:1px">&nbsp;</td><td width="{100-w}%"></td></tr></table>') if v > 0 else ""
+        col = "#B42318" if v > 0 else "#1E7A55"
+        stx = ""
+        if st and abs(st) >= 2:
+            stx = (f'<span style="{F_JH};font-size:8.5pt;padding:0 6px;background-color:{"#FBE9E8" if st > 0 else "#E6F4EC"};color:{col}">連{abs(st)}{"買" if st > 0 else "賣"}</span>')
+        bars.append(f'<tr><td width="20%" style="{F_JH};font-size:10pt;text-align:right;padding:2px 8px;white-space:nowrap;{"font-weight:bold" if "合計" in n else ""}">{n}</td>'
+                    f'<td width="27%" style="padding:2px 0;border-right:1px solid #9CA3AF">{left}</td><td width="27%" style="padding:2px 0">{right}</td>'
+                    f'<td width="14%" style="{F_AP};font-size:10pt;font-weight:bold;color:{col};padding:2px 6px;white-space:nowrap">{sgn(v)}{abs(v):,.2f}</td>'
+                    f'<td width="12%" style="padding:2px 0;white-space:nowrap">{stx}</td></tr>')
+    bars = '<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout:fixed">' + "".join(bars) + "</table>"
+
+    def top(title, rows, color):
+        t = "".join(f'<tr><td style="{F_JH};font-size:10pt;padding:2px 0;white-space:nowrap">{esc(x["name"])}</td>'
+                    f'<td style="{F_AP};font-size:10pt;font-weight:bold;text-align:right;color:{color};white-space:nowrap">{sgn(x["amt"])}{abs(x["amt"]):,.1f}</td>'
+                    f'<td style="{F_AP};font-size:9pt;text-align:right;color:#6B7280;white-space:nowrap;padding-left:6px">{sgn(x["lots"])}{abs(x["lots"]):,}張</td></tr>'
+                    for x in rows[:3]) or f'<tr><td style="{F_JH};font-size:9pt;color:#9CA3AF">—</td></tr>'
+        return (f'<td width="33%" style="vertical-align:top;background-color:#F8FAFC;border:1px solid #E2E8F0;padding:5px 8px">'
+                f'<div style="{F_JH};font-size:9.5pt;color:#475569;margin-bottom:2px">{title}</div>'
+                f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0">{t}</table></td>')
+    tops = ('<table role="presentation" width="100%" cellspacing="6" cellpadding="0" style="table-layout:fixed;margin:4px 0 0"><tr>' +
+            top("外資賣超前三（億元）", ch.get("foreign_sell_top") or [], "#1E7A55") + top("外資買超前三（億元）", ch.get("foreign_buy_top") or [], "#B42318") +
+            top("投信買超前三（億元）", ch.get("trust_buy_top") or [], "#B42318") + "</tr></table>")
+    extra = []
+    ts = ch.get("tsmc")
+    if ts and ts.get("foreign_streak"):
+        st = ts["foreign_streak"]
+        extra.append(f'台積電外資連{abs(st)}日{"買" if st > 0 else "賣"}超（{sgn(ts["foreign_lots"])}{abs(ts["foreign_lots"]):,}張）')
+    oi = ch.get("tx_foreign_net_oi")
+    if oi is not None:
+        chg = ch.get("tx_chg")
+        extra.append(f'外資台指期淨未平倉 {oi:+,} 口' + (f'（較前日{"空單增加" if chg < 0 else "空單減少" if oi < 0 else "多單增加" if chg > 0 else "多單減少"} {abs(chg):,} 口）' if chg else ""))
+    fut = (f'<p style="{F_JH};font-size:10pt;color:#374151;margin:6px 0 0">{esc("｜".join(extra))}</p>') if extra else ""
+    return (h2(f"台股籌碼面（{idx_date} 上市）") +
+            f'<p style="{F_JH};font-size:9.5pt;color:#6B7280;margin:0 0 4px">三大法人買賣超（億元）</p>' + bars + tops + fut)
 
 
 def us_macro():
@@ -251,21 +358,21 @@ def calendar_text():
 def build():
     P = ['<!doctype html><html><head><meta charset="UTF-8"></head><body style="margin:0;padding:20px;background:#fff;color:#000"><div style="max-width:900px;margin:0 auto">',
          f'<h1 style="{F_JH};font-size:14pt;font-weight:bold;color:#000;margin:0 0 8px">每日金融市場摘要</h1>',
-         f'<p style="{F_JH};font-size:11pt;margin:0 0 10px">{esc(D["date_line"])}</p>']
-    P.append(h2("今日新聞重點摘要", "14px 0 6px"))
-    P.append(f'<p style="{F_JH};font-size:11pt;color:#000;line-height:1.6;margin:0 0 6px"><span style="background-color:#FFFF00">{esc(D["highlight"])}</span></p>')
-    P.append(heatmap("美股", us_tiles()))
-    P.append(heatmap("亞股", asia_tiles()))
-    P.append(heatmap("美國公債殖利率", ust_tiles()))
-    P.append(heatmap("匯率與商品", macro_tiles()))
+         f'<p style="{F_JH};font-size:11pt;margin:0 0 12px">{esc(D["date_line"])}</p>']
+    P.append(highlight_box())
+    P.append(h2("全球盤勢一覽", "14px 0 0"))
+    P.append(heat_block())
+    P.append(preopen_line())
     P.append(fedwatch())
-    for i, (t, u, s) in enumerate(D["news"], 1):
-        P += [p_title(i, t, u), p_body(s)]
+    P.append(h2("重大新聞", "16px 0 8px"))
+    for i, e in enumerate(D["news"], 1):
+        P.append(news_card(i, e))
     rows = [[brk(n), f"{c:,.2f}<br>{lbl(d)}", f"{pts(ch)}（{pct(pc)}）", esc(r)] for n, c, ch, pc, r, d in D["index_rows"]]
     lv, bp, note, r, d = D["ust"]
     rows.append(["美國10年期公債殖利率", f"{lv}<br>{lbl(d)}", f"{bp}<br>({note})", esc(r)])
     P.append(h2("主要指數"))
     P.append(table(["指數", "最新數據", "漲跌", "主要原因說明"], ["19%", "18%", "16%", "47%"], rows, left=(3,)))
+    P.append(chips_block())
     P.append(h2("匯率、商品與利率"))
     rows = [[brk(n), f"{esc(lv)}<br>{lbl(d)}", esc(ch) + (f"<br>({esc(nt)})" if nt else ""), esc(r)]
             for n, lv, ch, nt, r, _a, d in D["macro_rows"]]
@@ -279,21 +386,33 @@ def build():
 
 
 def build_text():
-    L = ["每日金融市場摘要", D["date_line"], "", "今日新聞重點摘要", D["highlight"]]
+    L = ["每日金融市場摘要", D["date_line"], "", "本期重點摘要"] + [f"{i}. {h}：{t}" for i, (h, t) in enumerate(D["highlight"], 1)]
     for title, tiles in (("美股", us_tiles()), ("亞股", asia_tiles()), ("美國公債殖利率", ust_tiles()), ("匯率與商品", macro_tiles())):
         L += ["", title, "｜".join(f"{n} {lv} {big}（{nt}）".replace("  ", " ").replace("（）", "") for n, lv, big, v, m, nt in tiles)]
+    po = re.sub(r"<[^>]+>", "", preopen_line()).replace("開盤前指標", "開盤前指標：", 1).strip()
+    if po: L += ["", po]
     fw = D["fedwatch"]
     L += ["", "FedWatch 利率預期", f"{fw['meeting']} FOMC 會議｜目前利率區間 {fw['range']}｜CME {fw['asof']} 更新"]
     for label, cut, hold, h1, h2_ in fw["rows"]:
         L.append(f"{label}：降息 {cut:g}%｜維持 {hold:g}%｜升息1碼 {h1:g}%｜升息2碼以上 {h2_:g}%")
-    L += [fw["note"], ""]
-    for i, (t, u, s) in enumerate(D["news"], 1):
-        L += [f"{i}. {t}", u, s, ""]
+    L += [fw["note"], "", "重大新聞"]
+    for i, e in enumerate(D["news"], 1):
+        imp = "｜影響：" + "、".join(f"{n}{a}" for n, a in e["impact"]) if e.get("impact") else ""
+        L += [f"［{e['tag']}］{e['date']}{imp}", f"{i}. {e['title']}", e["url"]] + [f"• {b}" for b in e["bullets"]] + [""]
     L += ["主要指數"]
     for n, c, ch, pc, r, d in D["index_rows"]:
         L.append(f"{n}｜{c:,.2f}{lbl(d)}｜{pts(ch)}（{pct(pc)}）｜{r}")
     lv, bp, note, r, d = D["ust"]
-    L += [f"美國10年期公債殖利率｜{lv}{lbl(d)}｜{bp}（{note}）｜{r}", "", "匯率、商品與利率"]
+    L += [f"美國10年期公債殖利率｜{lv}{lbl(d)}｜{bp}（{note}）｜{r}"]
+    cb = chips_block()
+    if cb:
+        ch, inst = D["chips"], D["inst"]
+        L += ["", f"台股籌碼面（{inst['date']} 上市，億元）",
+              f"外資及陸資 {inst['foreign']:+,.2f}（連{abs(ch.get('foreign_streak') or 0)}日）｜投信 {inst['trust']:+,.2f}（連{abs(ch.get('trust_streak') or 0)}日）｜自營商 {inst['dealer']:+,.2f}｜合計 {inst['total']:+,.2f}"]
+        for title, key in (("外資賣超前三", "foreign_sell_top"), ("外資買超前三", "foreign_buy_top"), ("投信買超前三", "trust_buy_top")):
+            L.append(f"{title}：" + "、".join(f"{x['name']} {x['amt']:+,.1f}億（{x['lots']:+,}張）" for x in (ch.get(key) or [])[:3]))
+        L.append(re.sub(r"<[^>]+>", "", cb.split("</table>")[-1]).strip())
+    L += ["", "匯率、商品與利率"]
     for n, lv, ch, nt, r, _a, d in D["macro_rows"]:
         L.append(f"{n}｜{lv}{lbl(d)}｜{ch}{'（' + nt + '）' if nt else ''}｜{r}")
     um = D.get("us_macro")
@@ -305,19 +424,82 @@ def build_text():
     return "\n".join(L)
 
 
+def impact_value(name):
+    """影響標籤對應的實際方向：>0 上漲／上升，<0 下跌／下降，None 無資料"""
+    R = {r[0]: r for r in D["index_rows"]}
+    M = {m[0]: m for m in D["macro_rows"]}
+    idx = {"美股": "標準普爾500指數", "那斯達克": "那斯達克綜合指數", "費半": "費城半導體指數", "台股": "台灣加權指數", "日股": "日經225指數", "韓股": "韓國綜合股價指數"}
+    if name in idx: return R[idx[name]][3]
+    if name == "陸股": return (D.get("sse") or [None, None, None])[2]
+    if name == "美債殖利率": return bp_value(D["ust"][1])
+    if name == "2年期殖利率": return ((D.get("curve") or {}).get("y2") or [None, None])[1]
+    if name == "美元": return (M["美元指數"][5] or [None, None, None])[2]
+    if name == "新台幣":
+        a = M["美元兌新台幣"][5]
+        return -a[2] if a else None
+    if name == "油價": return (M["布蘭特原油"][5] or [None, None, None])[2]
+    if name == "黃金": return (M["黃金（COMEX近月期貨）"][5] or [None, None, None])[2]
+    if name == "升息機率":
+        rows = (D.get("fedwatch") or {}).get("rows") or []
+        if len(rows) >= 2: return (rows[0][3] + rows[0][4]) - (rows[1][3] + rows[1][4])
+        return None
+    # 個股：須出現在指數表原因說明中，方向依其漲跌幅
+    for r in D["index_rows"]:
+        m = re.search(re.escape(name) + r"（([+−])\d+\.\d{2}%）", r[4])
+        if m: return 1 if m.group(1) == "+" else -1
+    return None
+
+
 def checks(h):
     E = []
-    if not 5 <= len(D["news"]) <= 8: E.append("重大新聞須5–8則")
+    N = D["news"]
+    if not 6 <= len(N) <= 7: E.append("重大新聞須6–7則")
+    if not 4 <= len(D["highlight"]) <= 5: E.append("本期重點摘要須4–5點")
+    for hd, tx in D["highlight"]:
+        if not hd or not tx or len(hd) > 16: E.append(f"重點摘要導語須≤16字且內文不可空：{hd}")
     if len(D["index_rows"]) != 7: E.append("指數列須7列＋美債1列")
     if len(D["life"]) != 3: E.append("壽險新聞須3則")
     for t, u, s in D["life"]:
         if not 200 <= len(s) <= 300: E.append(f"壽險摘要字數{len(s)}：{t}")
-    for t, u, s in D["news"] + D["life"]:
         if not re.match(r"^https?://[^/]+/.+", u): E.append(f"連結非具體文章：{u}")
-        if re.match(r"^\S{1,12}｜\d{1,2}/\d{1,2}：", s): E.append(f"摘要含來源日期標籤：{t}")
+    tags = [e.get("tag") for e in N]
+    if any(t not in TAG for t in tags): E.append(f"新聞主題須為{list(TAG)}：{tags}")
+    if tags.count("盤勢") > 2: E.append("盤勢新聞最多2則（美股1、亞股1）")
+    if len(set(tags)) < 4: E.append(f"新聞至少涵蓋4類主題，目前{sorted(set(tags))}")
+    inst = D.get("inst") or {}
+    inst_tokens = [f"{abs(inst[k]):,.2f}" for k in ("foreign", "trust", "dealer", "total") if inst.get(k)]
+    oi = (D.get("chips") or {}).get("tx_foreign_net_oi")
+    if oi is not None: inst_tokens.append(f"{abs(oi):,}")
+    for e in N:
+        t, b = e.get("title", ""), e.get("bullets") or []
+        if not re.match(r"^https?://[^/]+/.+", e.get("url", "")): E.append(f"連結非具體文章：{e.get('url')}")
+        if not e.get("date") or not re.match(r"^\d{1,2}/\d{1,2}", str(e.get("date"))): E.append(f"新聞須有日期標籤（M/D 或 M/D 盤後）：{t}")
+        if not 3 <= len(b) <= 4: E.append(f"新聞須3–4點條列：{t}")
+        for x in b:
+            if len(x) > 60: E.append(f"條列超過60字（{len(x)}）：{x[:20]}…")
+        if b and not b[-1].startswith("後續觀察"): E.append(f"最後一點須以「後續觀察」開頭：{t}")
+        body = t + "".join(b)
+        for n, c, ch, pc, r, d in D["index_rows"]:
+            for tok in (f"{c:,.2f}", f"{abs(ch):,.2f}點", f"{abs(ch):,.2f} 點"):
+                if tok in body: E.append(f"新聞重複表格指數數字「{tok}」：{t}")
+        for tok in inst_tokens:
+            if tok in body: E.append(f"新聞重複籌碼面數字「{tok}」（法人金額／期貨口數交給籌碼面區塊）：{t}")
+        dup = [x for x in STK.findall(body) if any(x in r[4] for r in D["index_rows"])]
+        if len(dup) > 1: E.append(f"新聞重複表格個股漲跌幅{dup}：{t}")
+        if e.get("tag") == "盤勢" and any(k in t for k in ("日經", "韓股", "台股", "亞股", "日股", "KOSPI")) and not re.match(r"^（\d{1,2}/\d{1,2}）", t):
+            E.append(f"亞股盤勢新聞標題須以收盤日開頭，例如「（11/10）…」：{t}")
+        imp = e.get("impact") or []
+        if len(imp) > 3: E.append(f"影響標籤最多3個：{t}")
+        for n, a in imp:
+            if a not in ("▲", "▼"): E.append(f"影響方向須為▲或▼：{n}{a}")
+            v = impact_value(n)
+            if v is None: E.append(f"影響標籤「{n}」無數據可核對，不得標示：{t}")
+            elif (v > 0) != (a == "▲") or v == 0: E.append(f"影響標籤「{n}{a}」與數據方向不符：{t}")
     for n, c, ch, pc, r, d in D["index_rows"]:
         if abs(round(ch / (c - ch) * 100, 2) - pc) > 0.011: E.append(f"百分比不符：{n}")
         if "（" not in r: E.append(f"原因說明缺個股漲跌幅：{n}")
+        if n in ("日經225指數", "韓國綜合股價指數", "台灣加權指數") and re.search(r"(延續|跟進|同步|呼應).{0,6}(美股|CPI|華爾街)", r):
+            E.append(f"亞股原因說明不得把收盤後才發生的美國事件寫成因果：{n}")
     for n, lv, ch, nt, r, a, d in D["macro_rows"]:
         if a and abs(round(a[1] / (a[0] - a[1]) * 100, 2) - a[2]) > 0.011: E.append(f"百分比不符：{n}")
     se = D.get("sse")
@@ -325,8 +507,8 @@ def checks(h):
     idx = h.split("匯率、商品與利率")[0]
     if len(re.findall(r"\(\d{2}/\d{2}市場收盤\)", idx)) != 8: E.append("指數表日期標籤須8個")
     if D["ust"][2] not in ("殖利率上升", "殖利率下降", "殖利率持平"): E.append("美債升降註記")
-    if "background-color:#FFFF00" not in h or "今日新聞重點摘要：" in h: E.append("重點摘要亮黃／前綴")
-    for bad in ("重大新聞", "主要指數變動", "資料截至"):
+    if "本期重點摘要" not in h or "今日新聞重點摘要" in h: E.append("重點摘要標題須為「本期重點摘要」")
+    for bad in ("主要指數變動", "資料截至"):
         if bad in h: E.append(f"不應出現：{bad}")
     if "未來關注事件" not in h: E.append("缺未來關注事件")
     try:
@@ -342,36 +524,37 @@ def checks(h):
         for d in win:
             n = sum(1 for e in evs if e.get("date") == d)
             if n > 4: E.append(f"{d} 事件卡超過4張（{n}）")
+        # 已發生的事件：須有 result；法說／財報與總經且有 result 者，須登記 followups
+        fu_events = {str(f.get("event") or "") for f in (D.get("followups") or []) if isinstance(f, dict)}
+        for e in evs:
+            past = e.get("date") < today.isoformat() or (e.get("date") == today.isoformat() and TWORD.get(e.get("time"), str(e.get("time"))) <= "07:45")
+            if past and not e.get("result"): E.append(f"已發生事件須附 result：{e.get('title')}")
+            if past and e.get("cat") in ("法說／財報", "總經與市場", "政策公布") and e.get("result") and not any(str(e.get("title"))[:6] in x for x in fu_events):
+                E.append(f"已發生事件須在 followups 登記並於新聞／摘要分析：{e.get('title')}")
     except Exception as ex:  # noqa
         E.append(f"日曆資料錯誤：{ex}")
     fu = D.get("followups")
     if not isinstance(fu, list): E.append("缺 followups（無已發生事件時填 []）")
+    hl_text = "".join(h_ + t_ for h_, t_ in D["highlight"])
     for f in fu or []:
         w, kw = f.get("where"), f.get("keyword") or ""
         if w == "news":
             i = f.get("idx")
-            if not isinstance(i, int) or not 1 <= i <= len(D["news"]): E.append(f"followups 新聞編號錯誤：{f.get('event')}")
-            elif not kw or kw not in D["news"][i - 1][0] + D["news"][i - 1][2]: E.append(f"followups 關鍵字不在第{i}則新聞：{f.get('event')}")
+            if not isinstance(i, int) or not 1 <= i <= len(N): E.append(f"followups 新聞編號錯誤：{f.get('event')}")
+            elif not kw or kw not in N[i - 1]["title"] + "".join(N[i - 1]["bullets"]): E.append(f"followups 關鍵字不在第{i}則新聞：{f.get('event')}")
         elif w == "highlight":
-            if not kw or kw not in D["highlight"]: E.append(f"followups 關鍵字不在重點摘要：{f.get('event')}")
+            if not kw or kw not in hl_text: E.append(f"followups 關鍵字不在重點摘要：{f.get('event')}")
         elif w == "us_macro":
             um = D.get("us_macro") or {}
             if not kw or kw not in json.dumps(um, ensure_ascii=False): E.append(f"followups 關鍵字不在美國總經數據：{f.get('event')}")
         else:
             E.append(f"followups where 須為 news／highlight／us_macro：{f.get('event')}")
     if [m[0] for m in D["macro_rows"]] != MACRO: E.append("匯率、商品與利率清單須依序為：" + "、".join(MACRO))
-    if "text-align:right" in h: E.append("主要原因說明／觀察重點須靠左對齊")
     if "收盤／數據日" in h or h.count(">最新數據<") != 2: E.append("欄名須為「最新數據」")
     reasons = [r[4] for r in D["index_rows"]] + [D["ust"][3]] + [m[4] for m in D["macro_rows"]]
     for r in reasons:
         m = SRC.search(r)
         if m: E.append(f"原因說明不得括號註明來源：{m.group(0)}")
-    for t, u, s in D["news"]:
-        for n, c, ch, pc, r, d in D["index_rows"]:
-            for tok in (f"{c:,.2f}", f"{abs(ch):,.2f}點"):
-                if tok in s: E.append(f"新聞摘要重複表格指數數字「{tok}」：{t}")
-        dup = [x for x in STK.findall(s) if any(x in r[4] for r in D["index_rows"])]
-        if len(dup) > 1: E.append(f"新聞摘要重複表格個股漲跌幅{dup}：{t}")
     fw = D.get("fedwatch") or {}
     labels = [r[0] for r in fw.get("rows", [])]
     if labels and (labels[0] != "最新" or any(x not in ("最新", "1天前", "1週前", "1個月前") for x in labels)): E.append("FedWatch列名須為：最新、1天前、1週前、1個月前")
@@ -382,10 +565,11 @@ def checks(h):
         if not fw.get(k): E.append(f"FedWatch缺欄位：{k}")
     um = D.get("us_macro")
     if um and any(len(r) != 6 for r in um.get("rows", [])): E.append("美國總經數據每列須6欄")
-    order = ["今日新聞重點摘要", "美股", "亞股", "美國公債殖利率", "匯率與商品", "FedWatch 利率預期", "主要指數", "匯率、商品與利率", "未來關注事件", "壽險業新聞"]
+    order = ["全球盤勢一覽", "FedWatch 利率預期", "重大新聞", "主要指數", "匯率、商品與利率", "未來關注事件", "壽險業新聞"]
     pos = [h.find(f">{x}</h2>") for x in order]
-    if -1 in pos or pos != sorted(pos): E.append("區塊順序須為：" + "→".join(order))
-    if pos[5] != -1 and h.find(p_title(1, *D["news"][0][:2])) < pos[5]: E.append("重大新聞須在FedWatch之後")
+    if -1 in pos or pos != sorted(pos): E.append("區塊順序須為：本期重點摘要→" + "→".join(order))
+    if h.find("本期重點摘要") > pos[0]: E.append("本期重點摘要須在最上方")
+    if D.get("chips") and not chips_block(): E.append("籌碼面資料日期與台股指數日期不符，區塊已略過（請確認 inst／chips 日期）")
     return E
 
 
