@@ -8,6 +8,7 @@ F_AP = "font-family:Aptos,Arial,sans-serif"
 LINK = "color:#164A73;text-decoration:underline;font-weight:bold"
 D = json.load(open(sys.argv[1], encoding="utf-8"))
 esc = lambda s: html.escape(s, quote=False)
+W = 700  # 郵件版寬（px）：Outlook／Word 引擎不認 max-width，一律用固定寬度＋width 屬性
 
 
 def p_title(n, t, u):
@@ -23,19 +24,22 @@ def h2(t, m="22px 0 10px"):
     return f'<h2 style="{F_JH};font-size:11pt;font-weight:bold;color:#000;margin:{m}">{esc(t)}</h2>'
 
 
-def cell(tag, c, bg, hdr=False, align="center"):
-    return (f'<{tag} style="{F_AP};font-size:11pt;text-align:{align};vertical-align:middle;border:1px solid #D9D9D9;'
+def cell(tag, c, bg, hdr=False, align="center", w=None):
+    wa = f' width="{round(W * float(w.rstrip("%")) / 100)}"' if w else ""
+    return (f'<{tag}{wa} bgcolor="{bg}" align="{align}" valign="middle" style="{F_AP};font-size:11pt;text-align:{align};vertical-align:middle;border:1px solid #D9D9D9;'
             f'padding:9px 7px;overflow-wrap:break-word;background-color:{bg};color:{"#FFFFFF" if hdr else "#000000"};'
             f'font-weight:{"bold" if hdr else "normal"}">{c}</{tag}>')
 
 
 def table(hdrs, widths, rows, left=()):
-    o = ['<table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;table-layout:fixed;margin:9px 0 12px">',
-         "<colgroup>" + "".join(f'<col style="width:{w}">' for w in widths) + "</colgroup>",
-         "<tr>" + "".join(cell("th", esc(h), "#243B53", True) for h in hdrs) + "</tr>"]
+    o = [f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed">',
+         "<tr>" + "".join(cell("th", esc(h), "#243B53", True, w=w) for h, w in zip(hdrs, widths)) + "</tr>"]
     for i, r in enumerate(rows):
         o.append("<tr>" + "".join(cell("td", c, "#FFFFFF" if i % 2 == 0 else "#F2F6F9", align="left" if j in left else "center") for j, c in enumerate(r)) + "</tr>")
-    return "".join(o) + "</table>"
+    return "".join(o) + "</table>" + gap(12)
+
+
+gap = lambda h: f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="{h}" style="height:{h}px;font-size:1px;line-height:1px">&nbsp;</td></tr></table>'
 
 
 # 名稱欄：括號說明一律換到下一行，例如「黃金<br>（COMEX近月期貨）」
@@ -53,7 +57,12 @@ SHORT = {"道瓊工業指數": "道瓊", "標準普爾500指數": "標普500", "
 SCALE = {"美元兌新台幣": 1, "布蘭特原油": 5, "黃金（COMEX近月期貨）": 3, "美元指數": 1}
 # FedWatch 低飽和玫瑰色：(底色, 字色)
 FW_COL = {"cut": ("#A8D5C2", "#14532D"), "hold": ("#E5E7EB", "#374151"), "hike1": ("#F1BDBA", "#7A1F1F"), "hike2": ("#C97A78", "#FFFFFF")}
-TAG = {"總經": "#1D4ED8", "政策": "#7C3AED", "個股": "#C2410C", "產業": "#15803D", "地緣": "#6B5B4B", "盤勢": "#0F766E"}
+TAG = {"總經": "#1D4ED8", "政策": "#7C3AED", "個股": "#C2410C", "產業": "#15803D", "地緣": "#6B5B4B"}  # 11/12 起不收盤勢新聞，盤勢只寫在今日重點摘要
+TAG_MAX = {"總經": 2, "政策": 2, "個股": 3, "產業": 2, "地緣": 2}
+REGION = ("美國", "台灣", "亞洲", "歐洲", "中國", "全球")
+MKT = re.compile(r"(道瓊|標普|那指|那斯達克|費半|費城半導體|日經|韓股|KOSPI|加權指數|台股|大盤|美股)[^。；，、]{0,6}(大漲|大跌|上漲|下跌|收漲|收跌|收高|收低|收黑|收紅|漲|跌)\s*[\d０-９]")
+HL_RULE = [("美股", r"(道瓊|標普|那指|那斯達克|費半|美股)"), ("美國總經", r"(Fed|聯準會|CPI|PCE|PPI|非農|殖利率|美元|黃金|油|升息|降息|就業|美債)"),
+           ("重大訊息", r"；"), ("亞股", r"(台股|加權)")]
 IMPACT = ("美股", "那斯達克", "費半", "台股", "日股", "韓股", "陸股", "美債殖利率", "2年期殖利率", "美元", "新台幣", "油價", "黃金", "升息機率")
 
 
@@ -65,26 +74,32 @@ def heat_color(v, m):
     return "#%02X%02X%02X" % c, ("#FFFFFF" if t > 0.45 else "#1F2937")
 
 
+HW = (W - 20) // 2
+HCOL = [round(HW * x) for x in (0.29, 0.27, 0.19, 0.25)]
+
+
 def heat_rows(title, tiles):
     """tiles: [(名稱, 最新值, 主數字, 數值或None, 色階上限, 註記)]；一列一個市場，整列依漲跌上色"""
     r = [f'<tr><td colspan="4" style="{F_JH};font-size:10.5pt;font-weight:bold;color:#0B2545;padding:7px 0 3px">{esc(title)}</td></tr>']
     for n, lv, big, v, m, nt in tiles:
         bg, fg = heat_color(v, m)
         td = f'background-color:{bg};color:{fg};border-bottom:2px solid #FFFFFF;padding:4px 6px;white-space:nowrap'
-        r.append(f'<tr><td bgcolor="{bg}" style="{td};{F_JH};font-size:10pt;font-weight:bold">{esc(n)}</td>'
-                 f'<td bgcolor="{bg}" style="{td};{F_AP};font-size:10pt;text-align:right">{esc(lv) if lv else "&nbsp;"}</td>'
-                 f'<td bgcolor="{bg}" style="{td};{F_AP};font-size:11pt;font-weight:bold;text-align:right">{esc(big)}</td>'
-                 f'<td bgcolor="{bg}" style="{td};{F_AP};font-size:9pt;text-align:right">{esc(nt) if nt else "&nbsp;"}</td></tr>')
+        a, b, c, d = HCOL
+        r.append(f'<tr><td width="{a}" bgcolor="{bg}" style="{td};{F_JH};font-size:10pt;font-weight:bold"><font color="{fg}">{esc(n)}</font></td>'
+                 f'<td width="{b}" align="right" bgcolor="{bg}" style="{td};{F_AP};font-size:10pt;text-align:right"><font color="{fg}">{esc(lv) if lv else "&nbsp;"}</font></td>'
+                 f'<td width="{c}" align="right" bgcolor="{bg}" style="{td};{F_AP};font-size:11pt;font-weight:bold;text-align:right"><font color="{fg}">{esc(big)}</font></td>'
+                 f'<td width="{d}" align="right" bgcolor="{bg}" style="{td};{F_AP};font-size:9pt;text-align:right"><font color="{fg}">{esc(nt) if nt else "&nbsp;"}</font></td></tr>')
     return "".join(r)
 
 
 def heat_block():
-    col = lambda parts: ('<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout:fixed">'
-                         '<colgroup><col width="29%"><col width="27%"><col width="19%"><col width="25%"></colgroup>' + "".join(heat_rows(*x) for x in parts) + "</table>")
+    col = lambda parts: (f'<table role="presentation" width="{HW}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{HW}px;table-layout:fixed">'
+                         + "".join(heat_rows(*x) for x in parts) + "</table>")
     left = col([("美股", us_tiles()), ("亞股", asia_tiles())])
     right = col([("美國公債殖利率", ust_tiles()), ("匯率與商品", macro_tiles())])
-    return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout:fixed;margin:4px 0 0"><tr>'
-            f'<td width="50%" style="vertical-align:top;padding-right:10px">{left}</td><td width="50%" style="vertical-align:top;padding-left:10px">{right}</td></tr></table>')
+    return (f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed"><tr>'
+            f'<td width="{HW}" valign="top" style="vertical-align:top">{left}</td><td width="20" style="font-size:1px">&nbsp;</td>'
+            f'<td width="{HW}" valign="top" style="vertical-align:top">{right}</td></tr></table>')
 
 
 def preopen_line():
@@ -98,8 +113,9 @@ def preopen_line():
         else:
             parts.append(f"{name} {pct(x['pct'])}")
     if not parts: return ""
-    return (f'<p style="{F_JH};font-size:9.5pt;color:#374151;margin:6px 0 0;padding:5px 8px;background-color:#F3F4F6">'
-            f'<b>開盤前指標</b>　{esc("｜".join(parts))}</p>')
+    return (gap(6) + f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="width:{W}px"><tr>'
+            f'<td bgcolor="#F3F4F6" style="background-color:#F3F4F6;{F_JH};font-size:9.5pt;color:#374151;padding:5px 8px">'
+            f'<b>開盤前指標</b>　{esc("｜".join(parts))}</td></tr></table>')
 
 
 def bp_value(s):
@@ -158,12 +174,13 @@ def macro_tiles():
 def fedwatch():
     fw = D["fedwatch"]
     rows = []
+    LW = 92; BW = W - LW
     for label, cut, hold, h1, h2_ in fw["rows"]:
-        segs = "".join(f'<td width="{p:g}%" height="22" bgcolor="{c}" style="background-color:{c};width:{p:g}%;height:22px;color:{fc};{F_AP};font-size:9.5pt;text-align:center;font-weight:bold">'
+        segs = "".join(f'<td width="{round(BW * p / 100)}" height="22" bgcolor="{c}" style="background-color:{c};width:{round(BW * p / 100)}px;height:22px;color:{fc};{F_AP};font-size:9.5pt;text-align:center;font-weight:bold">'
                        f'<font color="{fc}">{(f"{p:g}%") if p >= 8 else "&nbsp;"}</font></td>'
                        for p, (c, fc) in ((cut, FW_COL["cut"]), (hold, FW_COL["hold"]), (h1, FW_COL["hike1"]), (h2_, FW_COL["hike2"])) if p > 0)
-        rows.append(f'<tr><td width="16%" nowrap style="{F_JH};font-size:10.5pt;padding:4px 8px 4px 0;width:16%;white-space:nowrap;{"font-weight:bold" if label == "最新" else ""}">{esc(label)}</td>'
-                    f'<td style="padding:4px 0"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;table-layout:fixed"><tr>{segs}</tr></table></td></tr>'
+        rows.append(f'<tr><td width="{LW}" nowrap style="{F_JH};font-size:10.5pt;padding:4px 8px 4px 0;width:{LW}px;white-space:nowrap;{"font-weight:bold" if label == "最新" else ""}">{esc(label)}</td>'
+                    f'<td width="{BW}" style="padding:4px 0"><table role="presentation" width="{BW}" cellspacing="0" cellpadding="0" border="0" style="width:{BW}px;border-collapse:collapse;table-layout:fixed"><tr>{segs}</tr></table></td></tr>'
                     '<tr><td colspan="2" height="6" style="height:6px;font-size:1px;line-height:1px">&nbsp;</td></tr>')
     legend = ('<table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;margin:6px 0 4px"><tr>' +
               "".join(f'<td nowrap style="{F_JH};font-size:9.5pt;color:#374151;padding:0 14px 0 0;white-space:nowrap">'
@@ -171,40 +188,53 @@ def fedwatch():
                       for n, (c, _) in (("降息", FW_COL["cut"]), ("維持不變", FW_COL["hold"]), ("升息1碼", FW_COL["hike1"]), ("升息2碼以上", FW_COL["hike2"]))) + "</tr></table>")
     return (h2("FedWatch 利率預期") +
             f'<p style="{F_JH};font-size:11pt;margin:0 0 6px">{esc(fw["meeting"])} FOMC 會議｜目前利率區間 {esc(fw["range"])}｜CME {esc(fw["asof"])} 更新（依前一日期貨結算）</p>'
-            f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse">{"".join(rows)}</table>'
+            f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="width:{W}px;border-collapse:collapse">{"".join(rows)}</table>'
             f'{legend}'
             f'<p style="{F_JH};font-size:11pt;line-height:1.6;margin:4px 0 12px">{esc(fw["note"])}</p>')
 
 
 # ---------- 重點摘要、新聞卡、台股籌碼面 ----------
 def highlight_box():
-    li = "".join(f'<tr><td style="{F_AP};font-size:11pt;vertical-align:top;padding:3px 6px 3px 0;white-space:nowrap">{i}.</td>'
-                 f'<td style="{F_JH};font-size:11pt;line-height:1.65;padding:3px 0"><b>{esc(h)}：</b>{esc(t)}</td></tr>'
+    li = "".join(f'<tr><td width="22" valign="top" style="{F_AP};font-size:11pt;vertical-align:top;padding:3px 4px 3px 0;white-space:nowrap">{i}.</td>'
+                 f'<td valign="top" style="{F_JH};font-size:11pt;line-height:1.6;padding:3px 0"><b>{esc(h)}：</b>{esc(t)}</td></tr>'
                  for i, (h, t) in enumerate(D["highlight"], 1))
-    return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 0 4px"><tr>'
+    return (f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px"><tr>'
             f'<td bgcolor="#FEF6D2" style="background-color:#FEF6D2;border:1px solid #E9D47A;padding:12px 16px">'
-            f'<div style="{F_JH};font-size:12pt;font-weight:bold;color:#1F2937;margin-bottom:6px">本期重點摘要</div>'
-            f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0">{li}</table></td></tr></table>')
+            f'<p style="{F_JH};font-size:12pt;font-weight:bold;color:#1F2937;margin:0 0 6px">今日重點摘要</p>'
+            f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">{li}</table></td></tr></table>' + gap(4))
+
+
+def text_px(text, size="9pt"):
+    """估算文字寬度（px），給 Outlook／Word 用的 width 屬性；CJK 約 1 個字高，其餘約 0.6。"""
+    pt = float(size.rstrip("pt")) * 4 / 3
+    plain = re.sub(r"&[a-z]+;", " ", re.sub(r"<[^>]+>", "", text))
+    return round(sum(pt if ord(ch) > 0x2E80 else pt * 0.62 for ch in plain))
+
+
+def chip_td(text, bg, fg, bold=False, size="9pt", font=F_JH):
+    w = text_px(text, size) + 16
+    return (f'<td width="{w}" nowrap bgcolor="{bg}" style="width:{w}px;background-color:{bg};{font};font-size:{size};{"font-weight:bold;" if bold else ""}'
+            f'color:{fg};padding:1px 7px;white-space:nowrap"><font color="{fg}">{text}</font></td>')
 
 
 def impact_chip(n, a):
-    up = a == "▲"
-    bg, fg = ("#FBE9E8", "#A61B1B") if up else ("#E6F4EC", "#1E7A55")
-    return (f'<span style="display:inline-block;{F_JH};font-size:9pt;line-height:16px;padding:0 7px;margin:0 0 0 6px;'
-            f'background-color:{bg};color:{fg}">{esc(n)}&nbsp;{a}</span>')
+    bg, fg = ("#FBE9E8", "#A61B1B") if a == "▲" else ("#E6F4EC", "#1E7A55")
+    return '<td width="6" style="font-size:1px">&nbsp;</td>' + chip_td(f"{esc(n)}&nbsp;{a}", bg, fg)
 
 
 def news_card(i, e):
     tag = e["tag"]
     chips = "".join(impact_chip(n, a) for n, a in e.get("impact") or [])
-    bl = "".join(f'<tr><td style="{F_JH};font-size:11pt;vertical-align:top;padding:2px 8px 2px 4px">•</td>'
+    head = (f'<table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse"><tr>'
+            + chip_td(esc(tag), TAG[tag], "#FFFFFF", bold=True, size="9.5pt")
+            + f'<td width="{text_px(e["date"], "10pt") + 14}" nowrap style="{F_AP};font-size:10pt;color:#6B7280;padding:1px 4px 1px 8px;white-space:nowrap">{esc(e["date"])}</td>'
+            + chips + '</tr></table>')
+    bl = "".join(f'<tr><td width="18" valign="top" style="{F_JH};font-size:11pt;vertical-align:top;padding:2px 6px 2px 4px">•</td>'
                  f'<td style="{F_JH};font-size:10.5pt;line-height:1.6;padding:2px 0;color:#000">{esc(b)}</td></tr>' for b in e["bullets"])
-    return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 0 12px"><tr>'
-            f'<td style="border:1px solid #E5E7EB;padding:12px 16px;background-color:#FFFFFF">'
-            f'<div><span style="{F_JH};font-size:9.5pt;font-weight:bold;color:#FFFFFF;background-color:{TAG[tag]};padding:2px 8px">{esc(tag)}</span>'
-            f'&nbsp;&nbsp;<span style="{F_AP};font-size:10pt;color:#6B7280">{esc(e["date"])}</span>{chips}</div>'
+    return (f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px"><tr>'
+            f'<td bgcolor="#FFFFFF" style="border:1px solid #E5E7EB;padding:12px 16px;background-color:#FFFFFF">{head}'
             f'<p style="{F_JH};font-size:12pt;font-weight:bold;line-height:1.4;margin:7px 0 6px">{i}. <a href="{html.escape(e["url"])}" style="{LINK}">{esc(e["title"])}</a></p>'
-            f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0">{bl}</table></td></tr></table>')
+            f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">{bl}</table></td></tr></table>' + gap(12))
 
 
 def chips_block():
@@ -216,33 +246,38 @@ def chips_block():
     if d != idx_date and inst["date"][5:].replace("-", "/") != idx_date:
         return ""
     mx = max(1.0, *(abs(inst[k] or 0) for k in ("foreign", "trust", "dealer", "total")))
+    C1, C2, C3, C4 = 130, 190, 100, W - 130 - 380 - 100
     bars = []
     for n, k, st in (("外資及陸資", "foreign", ch.get("foreign_streak")), ("投信", "trust", ch.get("trust_streak")), ("自營商", "dealer", None), ("三大法人合計", "total", None)):
         v = inst.get(k) or 0
-        w = max(2, round(abs(v) / mx * 100))
-        left = (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td width="{100-w}%"></td><td width="{w}%" bgcolor="#3E9C76" style="background-color:#3E9C76;height:14px;font-size:1px">&nbsp;</td></tr></table>') if v < 0 else ""
-        right = (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td width="{w}%" bgcolor="#D9534F" style="background-color:#D9534F;height:14px;font-size:1px">&nbsp;</td><td width="{100-w}%"></td></tr></table>') if v > 0 else ""
+        w = max(3, round(abs(v) / mx * C2))
+        bar = lambda c: f'<td width="{w}" height="14" bgcolor="{c}" style="background-color:{c};width:{w}px;height:14px;font-size:1px;line-height:1px">&nbsp;</td>'
+        pad = f'<td width="{C2 - w}" style="font-size:1px;line-height:1px">&nbsp;</td>'
+        tb = lambda inner: f'<table role="presentation" width="{C2}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{C2}px"><tr>{inner}</tr></table>'
+        left = tb(pad + bar("#3E9C76")) if v < 0 else "&nbsp;"
+        right = tb(bar("#D9534F") + pad) if v > 0 else "&nbsp;"
         col = "#B42318" if v > 0 else "#1E7A55"
-        stx = ""
+        stx = "&nbsp;"
         if st and abs(st) >= 2:
-            stx = (f'<span style="{F_JH};font-size:8.5pt;padding:0 6px;background-color:{"#FBE9E8" if st > 0 else "#E6F4EC"};color:{col}">連{abs(st)}{"買" if st > 0 else "賣"}</span>')
-        bars.append(f'<tr><td width="20%" style="{F_JH};font-size:10pt;text-align:right;padding:2px 8px;white-space:nowrap;{"font-weight:bold" if "合計" in n else ""}">{n}</td>'
-                    f'<td width="27%" style="padding:2px 0;border-right:1px solid #9CA3AF">{left}</td><td width="27%" style="padding:2px 0">{right}</td>'
-                    f'<td width="14%" style="{F_AP};font-size:10pt;font-weight:bold;color:{col};padding:2px 6px;white-space:nowrap">{sgn(v)}{abs(v):,.2f}</td>'
-                    f'<td width="12%" style="padding:2px 0;white-space:nowrap">{stx}</td></tr>')
-    bars = '<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout:fixed">' + "".join(bars) + "</table>"
+            stx = ('<table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr>'
+                   + chip_td(f'連{abs(st)}{"買" if st > 0 else "賣"}', "#FBE9E8" if st > 0 else "#E6F4EC", col, size="8.5pt") + '</tr></table>')
+        bars.append(f'<tr><td width="{C1}" align="right" style="{F_JH};font-size:10pt;text-align:right;padding:2px 8px;white-space:nowrap;{"font-weight:bold" if "合計" in n else ""}">{n}</td>'
+                    f'<td width="{C2}" style="padding:2px 0;border-right:1px solid #9CA3AF">{left}</td><td width="{C2}" style="padding:2px 0">{right}</td>'
+                    f'<td width="{C3}" style="{F_AP};font-size:10pt;font-weight:bold;color:{col};padding:2px 6px;white-space:nowrap"><font color="{col}">{sgn(v)}{abs(v):,.2f}</font></td>'
+                    f'<td width="{C4}" style="padding:2px 0;white-space:nowrap">{stx}</td></tr>')
+    bars = f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;table-layout:fixed;width:{W}px">' + "".join(bars) + "</table>"
 
     def top(title, rows, color):
         t = "".join(f'<tr><td style="{F_JH};font-size:10pt;padding:2px 0;white-space:nowrap">{esc(x["name"])}</td>'
                     f'<td style="{F_AP};font-size:10pt;font-weight:bold;text-align:right;color:{color};white-space:nowrap">{sgn(x["amt"])}{abs(x["amt"]):,.1f}</td>'
                     f'<td style="{F_AP};font-size:9pt;text-align:right;color:#6B7280;white-space:nowrap;padding-left:6px">{sgn(x["lots"])}{abs(x["lots"]):,}張</td></tr>'
                     for x in rows[:3]) or f'<tr><td style="{F_JH};font-size:9pt;color:#9CA3AF">—</td></tr>'
-        return (f'<td width="33%" style="vertical-align:top;background-color:#F8FAFC;border:1px solid #E2E8F0;padding:5px 8px">'
+        return (f'<td width="{(W - 24) // 3}" valign="top" bgcolor="#F8FAFC" style="vertical-align:top;background-color:#F8FAFC;border:1px solid #E2E8F0;padding:5px 8px">'
                 f'<div style="{F_JH};font-size:9.5pt;color:#475569;margin-bottom:2px">{title}</div>'
                 f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0">{t}</table></td>')
-    tops = ('<table role="presentation" width="100%" cellspacing="6" cellpadding="0" style="table-layout:fixed;margin:4px 0 0"><tr>' +
-            top("外資賣超前三（億元）", ch.get("foreign_sell_top") or [], "#1E7A55") + top("外資買超前三（億元）", ch.get("foreign_buy_top") or [], "#B42318") +
-            top("投信買超前三（億元）", ch.get("trust_buy_top") or [], "#B42318") + "</tr></table>")
+    tops = (gap(6) + f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="table-layout:fixed;width:{W}px"><tr>' +
+            top("外資賣超前三（億元）", ch.get("foreign_sell_top") or [], "#1E7A55") + '<td width="12" style="font-size:1px">&nbsp;</td>' + top("外資買超前三（億元）", ch.get("foreign_buy_top") or [], "#B42318") +
+            '<td width="12" style="font-size:1px">&nbsp;</td>' + top("投信買超前三（億元）", ch.get("trust_buy_top") or [], "#B42318") + "</tr></table>")
     extra = []
     ts = ch.get("tsmc")
     if ts and ts.get("foreign_streak"):
@@ -317,11 +352,11 @@ def _calendar():
         is_today, past, wknd = d == today, d < today, d.weekday() >= 5
         bg = "#164A73" if is_today else ("#E5E7EB" if past or wknd else "#243B53")
         fg = "#FFFFFF" if is_today or not (past or wknd) else "#6B7280"
-        tag = (f'<div style="{F_JH};font-size:8.5pt;font-weight:bold;background-color:#FACC15;color:#111827;'
-               f'display:inline-block;padding:1px 6px;margin-top:3px">今天</div>') if is_today else ""
+        tag = ('<table role="presentation" align="center" cellspacing="0" cellpadding="0" border="0" style="margin-top:3px"><tr>'
+               + chip_td("今天", "#FACC15", "#111827", bold=True, size="8.5pt") + '</tr></table>') if is_today else ""
         h = d.isoformat()
         hl = f'<div style="{F_JH};font-size:8pt;margin-top:3px">{esc(hol[h])}</div>' if h in hol else ""
-        head.append(f'<th width="{w:g}%" style="width:{w:g}%;background-color:{bg};color:{fg};border:1px solid #D9D9D9;padding:7px 3px;text-align:center;vertical-align:middle">'
+        head.append(f'<th width="{round(W * w / 100)}" style="width:{round(W * w / 100)}px;background-color:{bg};color:{fg};border:1px solid #D9D9D9;padding:7px 3px;text-align:center;vertical-align:middle">'
                     f'<div style="{F_JH};font-size:10pt;font-weight:bold">{"週" if not wknd else ""}{WD[d.weekday()]}</div>'
                     f'<div style="{F_AP};font-size:{9 if wknd else 10}pt">{d:%m/%d}</div>{tag}{hl}</th>')
         evs = cal_events(d)
@@ -333,7 +368,7 @@ def _calendar():
                      f'<font color="{c}"><span style="color:{c};font-size:11pt">■</span></font>&nbsp;{t}</td>' for t, c in CAT.items())
     return (h2("未來關注事件") +
             f'<p style="{F_JH};font-size:9.5pt;color:#4B5563;margin:-4px 0 8px">{esc(sub)}</p>'
-            f'<table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;table-layout:fixed">'
+            f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed">'
             f'<tr>{"".join(head)}</tr><tr>{"".join(body)}</tr></table>'
             f'<table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:6px 0 4px"><tr>{legend}</tr></table>')
 
@@ -356,7 +391,8 @@ def calendar_text():
 
 
 def build():
-    P = ['<!doctype html><html><head><meta charset="UTF-8"></head><body style="margin:0;padding:20px;background:#fff;color:#000"><div style="max-width:900px;margin:0 auto">',
+    P = ['<!doctype html><html><head><meta charset="UTF-8"></head><body style="margin:0;padding:0;background:#FFFFFF;color:#000">'
+         f'<table role="presentation" width="{W}" align="center" cellspacing="0" cellpadding="0" border="0" style="width:{W}px;border-collapse:collapse"><tr><td style="padding:16px 0">',
          f'<h1 style="{F_JH};font-size:14pt;font-weight:bold;color:#000;margin:0 0 8px">每日金融市場摘要</h1>',
          f'<p style="{F_JH};font-size:11pt;margin:0 0 12px">{esc(D["date_line"])}</p>']
     P.append(highlight_box())
@@ -382,11 +418,11 @@ def build():
     P.append(h2("壽險業新聞"))
     for i, (t, u, s) in enumerate(D["life"], 1):
         P += [p_title(i, t, u), p_body(s)]
-    return "".join(P) + "</div></body></html>"
+    return "".join(P) + "</td></tr></table></body></html>"
 
 
 def build_text():
-    L = ["每日金融市場摘要", D["date_line"], "", "本期重點摘要"] + [f"{i}. {h}：{t}" for i, (h, t) in enumerate(D["highlight"], 1)]
+    L = ["每日金融市場摘要", D["date_line"], "", "今日重點摘要"] + [f"{i}. {h}：{t}" for i, (h, t) in enumerate(D["highlight"], 1)]
     for title, tiles in (("美股", us_tiles()), ("亞股", asia_tiles()), ("美國公債殖利率", ust_tiles()), ("匯率與商品", macro_tiles())):
         L += ["", title, "｜".join(f"{n} {lv} {big}（{nt}）".replace("  ", " ").replace("（）", "") for n, lv, big, v, m, nt in tiles)]
     po = re.sub(r"<[^>]+>", "", preopen_line()).replace("開盤前指標", "開盤前指標：", 1).strip()
@@ -453,10 +489,18 @@ def impact_value(name):
 def checks(h):
     E = []
     N = D["news"]
-    if not 6 <= len(N) <= 7: E.append("重大新聞須6–7則")
-    if not 4 <= len(D["highlight"]) <= 5: E.append("本期重點摘要須4–5點")
-    for hd, tx in D["highlight"]:
-        if not hd or not tx or len(hd) > 16: E.append(f"重點摘要導語須≤16字且內文不可空：{hd}")
+    if not 7 <= len(N) <= 8: E.append("重大新聞須7–8則")
+    HL = D["highlight"]
+    if len(HL) != 4: E.append("今日重點摘要須固定4點：美股市場、美國總經、美國或世界重大訊息、亞股市場")
+    for k, (hd, tx) in enumerate(HL[:4]):
+        name, pat = HL_RULE[k]
+        if not hd or not tx or len(hd) > 12: E.append(f"重點摘要第{k+1}點導語須≤12字且內文不可空：{hd}")
+        lim = 80 if k == 2 else 70
+        if len(tx) > lim: E.append(f"重點摘要第{k+1}點（{name}）內文{len(tx)}字，上限{lim}字：{hd}")
+        if not re.search(pat, hd + tx): E.append(f"重點摘要第{k+1}點須為「{name}」：{hd}")
+    if len(HL) == 4:
+        if HL[2][1].count("；") < 1: E.append("重點摘要第3點須彙整2件以上重大訊息，以「；」分隔")
+        if not re.search(r"昨日（\d{1,2}/\d{1,2}）", HL[3][0] + HL[3][1]): E.append("重點摘要第4點須標明「昨日（M/D）」亞股收盤時點")
     if len(D["index_rows"]) != 7: E.append("指數列須7列＋美債1列")
     if len(D["life"]) != 3: E.append("壽險新聞須3則")
     for t, u, s in D["life"]:
@@ -464,8 +508,23 @@ def checks(h):
         if not re.match(r"^https?://[^/]+/.+", u): E.append(f"連結非具體文章：{u}")
     tags = [e.get("tag") for e in N]
     if any(t not in TAG for t in tags): E.append(f"新聞主題須為{list(TAG)}：{tags}")
-    if tags.count("盤勢") > 2: E.append("盤勢新聞最多2則（美股1、亞股1）")
+    for t_, mx in TAG_MAX.items():
+        if tags.count(t_) > mx: E.append(f"「{t_}」新聞最多{mx}則，目前{tags.count(t_)}則")
     if len(set(tags)) < 4: E.append(f"新聞至少涵蓋4類主題，目前{sorted(set(tags))}")
+    stories = [str(e.get("story") or "").strip() for e in N]
+    if any(not x for x in stories): E.append("每則新聞須有 story（事件名稱），同一事件只能寫一則")
+    dup_s = {x for x in stories if x and stories.count(x) > 1}
+    if dup_s: E.append(f"同一事件寫成多則新聞：{sorted(dup_s)}")
+    seen = {}
+    for i, e in enumerate(N, 1):
+        for ent in e.get("entities") or []:
+            if ent in seen: E.append(f"主角「{ent}」同時出現在第{seen[ent]}則與第{i}則，請合併或改選其他新聞")
+            seen.setdefault(ent, i)
+        if not e.get("entities"): E.append(f"新聞須列 entities（主角公司或機構）：{e.get('title')}")
+        if e.get("region") not in REGION: E.append(f"新聞 region 須為{REGION}之一：{e.get('title')}")
+    regions = [e.get("region") for e in N]
+    if "台灣" not in regions: E.append("至少1則台灣新聞（央行、金管會、政策、企業營收或公告；不含盤勢）")
+    if not any(r_ in ("亞洲", "歐洲", "中國", "全球") for r_ in regions): E.append("至少1則美國與台灣以外的國際新聞")
     inst = D.get("inst") or {}
     inst_tokens = [f"{abs(inst[k]):,.2f}" for k in ("foreign", "trust", "dealer", "total") if inst.get(k)]
     oi = (D.get("chips") or {}).get("tx_foreign_net_oi")
@@ -486,8 +545,8 @@ def checks(h):
             if tok in body: E.append(f"新聞重複籌碼面數字「{tok}」（法人金額／期貨口數交給籌碼面區塊）：{t}")
         dup = [x for x in STK.findall(body) if any(x in r[4] for r in D["index_rows"])]
         if len(dup) > 1: E.append(f"新聞重複表格個股漲跌幅{dup}：{t}")
-        if e.get("tag") == "盤勢" and any(k in t for k in ("日經", "韓股", "台股", "亞股", "日股", "KOSPI")) and not re.match(r"^（\d{1,2}/\d{1,2}）", t):
-            E.append(f"亞股盤勢新聞標題須以收盤日開頭，例如「（11/10）…」：{t}")
+        m_ = MKT.search(body)
+        if m_: E.append(f"重大新聞不寫盤勢（指數漲跌寫在今日重點摘要與指數表）：「{m_.group(0)}」｜{t}")
         imp = e.get("impact") or []
         if len(imp) > 3: E.append(f"影響標籤最多3個：{t}")
         for n, a in imp:
@@ -507,7 +566,7 @@ def checks(h):
     idx = h.split("匯率、商品與利率")[0]
     if len(re.findall(r"\(\d{2}/\d{2}市場收盤\)", idx)) != 8: E.append("指數表日期標籤須8個")
     if D["ust"][2] not in ("殖利率上升", "殖利率下降", "殖利率持平"): E.append("美債升降註記")
-    if "本期重點摘要" not in h or "今日新聞重點摘要" in h: E.append("重點摘要標題須為「本期重點摘要」")
+    if "今日重點摘要" not in h or "本期重點摘要" in h: E.append("重點摘要標題須為「今日重點摘要」")
     for bad in ("主要指數變動", "資料截至"):
         if bad in h: E.append(f"不應出現：{bad}")
     if "未來關注事件" not in h: E.append("缺未來關注事件")
@@ -567,8 +626,8 @@ def checks(h):
     if um and any(len(r) != 6 for r in um.get("rows", [])): E.append("美國總經數據每列須6欄")
     order = ["全球盤勢一覽", "FedWatch 利率預期", "重大新聞", "主要指數", "匯率、商品與利率", "未來關注事件", "壽險業新聞"]
     pos = [h.find(f">{x}</h2>") for x in order]
-    if -1 in pos or pos != sorted(pos): E.append("區塊順序須為：本期重點摘要→" + "→".join(order))
-    if h.find("本期重點摘要") > pos[0]: E.append("本期重點摘要須在最上方")
+    if -1 in pos or pos != sorted(pos): E.append("區塊順序須為：今日重點摘要→" + "→".join(order))
+    if h.find("今日重點摘要") > pos[0]: E.append("今日重點摘要須在最上方")
     if D.get("chips") and not chips_block(): E.append("籌碼面資料日期與台股指數日期不符，區塊已略過（請確認 inst／chips 日期）")
     return E
 
