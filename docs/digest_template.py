@@ -280,7 +280,7 @@ def chips_block():
             '<td width="12" style="font-size:1px">&nbsp;</td>' + top("投信買超前三（億元）", ch.get("trust_buy_top") or [], "#B42318") + "</tr></table>")
     extra = []
     ts = ch.get("tsmc")
-    if ts and ts.get("foreign_streak"):
+    if ts and abs(ts.get("foreign_streak") or 0) >= 2:
         st = ts["foreign_streak"]
         extra.append(f'台積電外資連{abs(st)}日{"買" if st > 0 else "賣"}超（{sgn(ts["foreign_lots"])}{abs(ts["foreign_lots"]):,}張）')
     oi = ch.get("tx_foreign_net_oi")
@@ -425,7 +425,7 @@ def build_text():
     L = ["每日金融市場摘要", D["date_line"], "", "今日重點摘要"] + [f"{i}. {h}：{t}" for i, (h, t) in enumerate(D["highlight"], 1)]
     for title, tiles in (("美股", us_tiles()), ("亞股", asia_tiles()), ("美國公債殖利率", ust_tiles()), ("匯率與商品", macro_tiles())):
         L += ["", title, "｜".join(f"{n} {lv} {big}（{nt}）".replace("  ", " ").replace("（）", "") for n, lv, big, v, m, nt in tiles)]
-    po = re.sub(r"<[^>]+>", "", preopen_line()).replace("開盤前指標", "開盤前指標：", 1).strip()
+    po = html.unescape(re.sub(r"<[^>]+>", "", preopen_line())).replace("\xa0", "").replace("開盤前指標", "開盤前指標：", 1).strip()
     if po: L += ["", po]
     fw = D["fedwatch"]
     L += ["", "FedWatch 利率預期", f"{fw['meeting']} FOMC 會議｜目前利率區間 {fw['range']}｜CME {fw['asof']} 更新"]
@@ -443,11 +443,13 @@ def build_text():
     cb = chips_block()
     if cb:
         ch, inst = D["chips"], D["inst"]
-        L += ["", f"台股籌碼面（{inst['date']} 上市，億元）",
-              f"外資及陸資 {inst['foreign']:+,.2f}（連{abs(ch.get('foreign_streak') or 0)}日）｜投信 {inst['trust']:+,.2f}（連{abs(ch.get('trust_streak') or 0)}日）｜自營商 {inst['dealer']:+,.2f}｜合計 {inst['total']:+,.2f}"]
+        mk = lambda v: f"{sgn(v)}{abs(v):,.2f}"
+        stk = lambda s_: f"（連{abs(s_)}{'買' if s_ > 0 else '賣'}）" if s_ and abs(s_) >= 2 else ""
+        L += ["", f"台股籌碼面（{inst['date'][5:].replace('-', '/')} 上市，億元）",
+              f"外資及陸資 {mk(inst['foreign'])}{stk(ch.get('foreign_streak'))}｜投信 {mk(inst['trust'])}{stk(ch.get('trust_streak'))}｜自營商 {mk(inst['dealer'])}｜合計 {mk(inst['total'])}"]
         for title, key in (("外資賣超前三", "foreign_sell_top"), ("外資買超前三", "foreign_buy_top"), ("投信買超前三", "trust_buy_top")):
-            L.append(f"{title}：" + "、".join(f"{x['name']} {x['amt']:+,.1f}億（{x['lots']:+,}張）" for x in (ch.get(key) or [])[:3]))
-        L.append(re.sub(r"<[^>]+>", "", cb.split("</table>")[-1]).strip())
+            L.append(f"{title}：" + "、".join(f"{x['name']} {sgn(x['amt'])}{abs(x['amt']):,.1f}億（{sgn(x['lots'])}{abs(x['lots']):,}張）" for x in (ch.get(key) or [])[:3]))
+        L.append(html.unescape(re.sub(r"<[^>]+>", "", cb.split("</table>")[-1])).replace("\xa0", " ").strip())
     L += ["", "匯率、商品與利率"]
     for n, lv, ch, nt, r, _a, d in D["macro_rows"]:
         L.append(f"{n}｜{lv}{lbl(d)}｜{ch}{'（' + nt + '）' if nt else ''}｜{r}")
