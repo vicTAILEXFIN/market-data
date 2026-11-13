@@ -30,5 +30,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
           git diff --cached --quiet || git commit -m "data $(TZ=Asia/Taipei date +%F)"
-          git pull --rebase origin main
-          git push
+          # GitHub 偶發 500／連線錯誤（11/13 06:17 push 被拒，當日資料沒存上），重試 5 次、間隔遞增
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then echo "push ok (try $i)"; exit 0; fi
+            echo "push failed (try $i), retry in $((i*20))s"; sleep $((i*20))
+          done
+          echo "::error::push failed after 5 tries"; exit 1
