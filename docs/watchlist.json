@@ -1,0 +1,381 @@
+{
+ "note": "A＝上市公司：GitHub 每天從 Yahoo 取財報日，落在日曆範圍內一律上日曆。B＝未上市／重大事件：GitHub 每天用 Google News 查近 7 天標題，篩 IPO、定價、掛牌、財報、募資等關鍵字。GENERIC＝不在清單上的大型 IPO。清單以 Notion「追蹤公司清單」為準，調整後由 Claude 同步到本檔。",
+ "updated": "2026-11-13",
+ "A": [
+  {
+   "sym": "NVDA",
+   "name": "輝達",
+   "sector": "AI晶片",
+   "existing": true,
+   "why": "AI 算力龍頭、四大指數權值"
+  },
+  {
+   "sym": "AMD",
+   "name": "超微",
+   "sector": "AI晶片",
+   "existing": true,
+   "why": "GPU／CPU 第二供應商"
+  },
+  {
+   "sym": "AVGO",
+   "name": "博通",
+   "sector": "AI晶片",
+   "existing": true,
+   "why": "客製 ASIC、網通晶片"
+  },
+  {
+   "sym": "INTC",
+   "name": "英特爾",
+   "sector": "半導體",
+   "existing": true,
+   "why": "晶圓代工與 PC 處理器"
+  },
+  {
+   "sym": "MU",
+   "name": "美光",
+   "sector": "記憶體",
+   "existing": true,
+   "why": "HBM 與記憶體週期"
+  },
+  {
+   "sym": "TSM",
+   "name": "台積電",
+   "sector": "晶圓代工",
+   "existing": true,
+   "why": "全球代工龍頭（ADR 財報日＝台股法說）"
+  },
+  {
+   "sym": "ASML",
+   "name": "艾司摩爾",
+   "sector": "半導體設備",
+   "existing": false,
+   "why": "EUV 獨家、資本支出領先指標"
+  },
+  {
+   "sym": "ARM",
+   "name": "安謀",
+   "sector": "AI晶片",
+   "existing": false,
+   "why": "晶片架構授權，AI 端點滲透"
+  },
+  {
+   "sym": "CBRS",
+   "name": "Cerebras",
+   "sector": "AI晶片",
+   "existing": false,
+   "why": "晶圓級 AI 晶片，輝達替代方案"
+  },
+  {
+   "sym": "2454.TW",
+   "name": "聯發科",
+   "sector": "IC設計",
+   "existing": true,
+   "why": "台股權值、ASIC 布局"
+  },
+  {
+   "sym": "3711.TW",
+   "name": "日月光投控",
+   "sector": "封測",
+   "existing": false,
+   "why": "先進封裝（CoWoS 外溢）"
+  },
+  {
+   "sym": "005930.KS",
+   "name": "三星電子",
+   "sector": "記憶體",
+   "existing": true,
+   "why": "韓股權值、HBM"
+  },
+  {
+   "sym": "000660.KS",
+   "name": "SK海力士",
+   "sector": "記憶體",
+   "existing": true,
+   "why": "HBM 龍頭"
+  },
+  {
+   "sym": "8035.T",
+   "name": "東京威力科創",
+   "sector": "半導體設備",
+   "existing": true,
+   "why": "日經權值、設備景氣"
+  },
+  {
+   "sym": "6857.T",
+   "name": "愛德萬測試",
+   "sector": "半導體設備",
+   "existing": true,
+   "why": "AI 晶片測試"
+  },
+  {
+   "sym": "MSFT",
+   "name": "微軟",
+   "sector": "雲端",
+   "existing": true,
+   "why": "Azure、OpenAI 夥伴"
+  },
+  {
+   "sym": "AMZN",
+   "name": "亞馬遜",
+   "sector": "雲端",
+   "existing": true,
+   "why": "AWS、Anthropic 股東"
+  },
+  {
+   "sym": "GOOGL",
+   "name": "Alphabet",
+   "sector": "雲端",
+   "existing": true,
+   "why": "Google Cloud、TPU、道瓊成分股"
+  },
+  {
+   "sym": "META",
+   "name": "Meta",
+   "sector": "AI平台",
+   "existing": true,
+   "why": "AI 資本支出大戶"
+  },
+  {
+   "sym": "ORCL",
+   "name": "甲骨文",
+   "sector": "雲端",
+   "existing": false,
+   "why": "AI 資料中心合約與舉債"
+  },
+  {
+   "sym": "CRWV",
+   "name": "CoreWeave",
+   "sector": "AI雲端",
+   "existing": false,
+   "why": "AI 雲端租賃、信用風險指標"
+  },
+  {
+   "sym": "PLTR",
+   "name": "Palantir",
+   "sector": "AI軟體",
+   "existing": false,
+   "why": "AI 軟體應用龍頭"
+  },
+  {
+   "sym": "2317.TW",
+   "name": "鴻海",
+   "sector": "AI伺服器",
+   "existing": true,
+   "why": "AI 伺服器組裝"
+  },
+  {
+   "sym": "2382.TW",
+   "name": "廣達",
+   "sector": "AI伺服器",
+   "existing": false,
+   "why": "AI 伺服器 ODM"
+  },
+  {
+   "sym": "6669.TW",
+   "name": "緯穎",
+   "sector": "AI伺服器",
+   "existing": false,
+   "why": "雲端客戶伺服器"
+  },
+  {
+   "sym": "2308.TW",
+   "name": "台達電",
+   "sector": "電源",
+   "existing": true,
+   "why": "AI 電源與散熱"
+  },
+  {
+   "sym": "AAPL",
+   "name": "蘋果",
+   "sector": "消費電子",
+   "existing": true,
+   "why": "道瓊、標普最大權值之一"
+  },
+  {
+   "sym": "TSLA",
+   "name": "特斯拉",
+   "sector": "電動車",
+   "existing": false,
+   "why": "電動車與自駕"
+  },
+  {
+   "sym": "SPCX",
+   "name": "SpaceX",
+   "sector": "太空／AI",
+   "existing": false,
+   "why": "2026/6 掛牌，含 xAI"
+  },
+  {
+   "sym": "373220.KS",
+   "name": "LG新能源",
+   "sector": "電池",
+   "existing": true,
+   "why": "韓股電池龍頭"
+  },
+  {
+   "sym": "GS",
+   "name": "高盛",
+   "sector": "金融",
+   "existing": true,
+   "why": "投行景氣、道瓊權值"
+  },
+  {
+   "sym": "JPM",
+   "name": "摩根大通",
+   "sector": "金融",
+   "existing": false,
+   "why": "美國銀行業龍頭、財報季開跑"
+  },
+  {
+   "sym": "CAT",
+   "name": "開拓重工",
+   "sector": "工業",
+   "existing": true,
+   "why": "景氣循環指標"
+  },
+  {
+   "sym": "LLY",
+   "name": "禮來",
+   "sector": "醫療",
+   "existing": false,
+   "why": "減重藥、標普權值"
+  },
+  {
+   "sym": "XOM",
+   "name": "埃克森美孚",
+   "sector": "能源",
+   "existing": false,
+   "why": "油價傳導"
+  },
+  {
+   "sym": "WMT",
+   "name": "沃爾瑪",
+   "sector": "零售",
+   "existing": false,
+   "why": "美國消費指標"
+  },
+  {
+   "sym": "9983.T",
+   "name": "迅銷",
+   "sector": "零售",
+   "existing": true,
+   "why": "日經最大權值"
+  },
+  {
+   "sym": "9984.T",
+   "name": "軟銀集團",
+   "sector": "AI投資",
+   "existing": true,
+   "why": "OpenAI 股東、日經權值"
+  },
+  {
+   "sym": "2882.TW",
+   "name": "國泰金",
+   "sector": "台灣金控",
+   "existing": true,
+   "why": "壽險同業"
+  },
+  {
+   "sym": "2881.TW",
+   "name": "富邦金",
+   "sector": "台灣金控",
+   "existing": true,
+   "why": "壽險同業"
+  },
+  {
+   "sym": "2883.TW",
+   "name": "凱基金",
+   "sector": "台灣金控",
+   "existing": true,
+   "why": "壽險同業"
+  },
+  {
+   "sym": "2887.TW",
+   "name": "台新新光金",
+   "sector": "台灣金控",
+   "existing": true,
+   "why": "壽險同業"
+  },
+  {
+   "sym": "2891.TW",
+   "name": "中信金",
+   "sector": "台灣金控",
+   "existing": true,
+   "why": "壽險同業"
+  }
+ ],
+ "B": [
+  {
+   "name": "Anthropic",
+   "query": "Anthropic",
+   "sector": "AI模型",
+   "status": "已定價區間 70–78 美元，預計 11/19 那斯達克掛牌（ANT）",
+   "watch": "IPO 定價、掛牌、首日表現"
+  },
+  {
+   "name": "OpenAI",
+   "query": "OpenAI",
+   "sector": "AI模型",
+   "status": "未上市；公司稱最快 2026 年底或 2027 年",
+   "watch": "財報數字、募資、S-1 送件",
+   "kw": "Stargate|compute deal"
+  },
+  {
+   "name": "Databricks",
+   "query": "Databricks",
+   "sector": "資料／AI平台",
+   "status": "未上市；市場預期 2026 下半年送件",
+   "watch": "S-1 送件、估值、營收"
+  },
+  {
+   "name": "Stripe",
+   "query": "Stripe",
+   "sector": "金融科技",
+   "status": "未上市；公司稱不急於上市",
+   "watch": "估值、IPO 動向"
+  },
+  {
+   "name": "字節跳動",
+   "query": "ByteDance",
+   "sector": "社群／AI",
+   "status": "未上市",
+   "watch": "TikTok 美國案、估值、AI 資本支出",
+   "kw": "TikTok"
+  },
+  {
+   "name": "Mistral AI",
+   "query": "Mistral AI",
+   "sector": "AI模型（歐洲）",
+   "status": "未上市",
+   "watch": "募資、估值"
+  },
+  {
+   "name": "Perplexity",
+   "query": "Perplexity AI",
+   "sector": "AI搜尋",
+   "status": "未上市",
+   "watch": "募資、估值、版權訴訟",
+   "kw": "lawsuit|sue[sd]?"
+  },
+  {
+   "name": "Safe Superintelligence",
+   "query": "Safe Superintelligence",
+   "sector": "AI模型",
+   "status": "未上市",
+   "watch": "募資、估值"
+  },
+  {
+   "name": "Anduril",
+   "query": "Anduril",
+   "sector": "國防科技",
+   "status": "未上市",
+   "watch": "募資、IPO 動向、國防合約",
+   "kw": "contract|Pentagon"
+  }
+ ],
+ "generic": [
+  "IPO prices shares",
+  "files for IPO",
+  "largest IPO"
+ ]
+}

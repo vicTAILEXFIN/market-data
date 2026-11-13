@@ -840,6 +840,68 @@ def twse_contrib(today, idx):
             "top_weights": [{"sym": r["sym"], "name": r["name"], "weight": r["weight"]} for r in top_w]}
 
 
+# ---------- 追蹤公司清單（docs/watchlist.json；Notion「追蹤公司清單」為編輯來源）----------
+WATCH_KW = __import__("re").compile(r"\b(IPO|S-1|F-1|listing|lists|debut|pric(e|es|ed|ing)|valuation|fundrais\w*|raises?|funding|tender offer|"
+                                    r"earnings|revenue|results|quarter|files? (for|to)|go(es|ing)? public|oversubscribed)\b|上市|掛牌|募資|估值|財報", 2)
+
+
+def gnews(query, days=7, n=30):
+    """Google News RSS（英文版），回傳 [(title, source, pub_utc_iso, link)]，近 days 天。"""
+    import re
+    from email.utils import parsedate_to_datetime
+    from urllib.parse import quote
+    x = get(f"https://news.google.com/rss/search?q={quote(query)}+when:{days}d&hl=en-US&gl=US&ceid=US:en", timeout=30).decode("utf-8", "ignore")
+    out = []
+    for it in re.findall(r"<item>(.*?)</item>", x, re.S)[:n]:
+        t = re.search(r"<title>(.*?)</title>", it, re.S); p = re.search(r"<pubDate>(.*?)</pubDate>", it); l = re.search(r"<link>(.*?)</link>", it)
+        s = re.search(r"<source[^>]*>(.*?)</source>", it, re.S)
+        if not t: continue
+        title = re.sub(r"<!\[CDATA\[|\]\]>", "", t.group(1)).replace("&amp;", "&").replace("&#39;", "'").replace("&quot;", '"').strip()
+        try:
+            pub = parsedate_to_datetime(p.group(1)).astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ") if p else None
+        except Exception:  # noqa
+            pub = None
+        out.append((title, s.group(1).strip() if s else "", pub, l.group(1).strip() if l else ""))
+    return out
+
+
+def corp_watch(today, back=7, ahead=14):
+    """A：上市公司財報日（Yahoo calendar）→ corp_events；B：未上市公司＋通用 IPO 查詢（Google News）→ watch_news。"""
+    import yfinance as yf
+    W = json.load(open("docs/watchlist.json", encoding="utf-8"))
+    lo, hi = today - dt.timedelta(days=back), today + dt.timedelta(days=ahead)
+    events, miss = [], []
+    for c in W["A"]:
+        try:
+            cal = yf.Ticker(c["sym"]).calendar
+            ds = cal.get("Earnings Date") if isinstance(cal, dict) else None
+            ds = [d for d in (ds or []) if isinstance(d, dt.date)]
+            if not ds:
+                miss.append(c["sym"]); continue
+            d = min(ds)
+            if lo <= d <= hi:
+                events.append({"sym": c["sym"], "name": c["name"], "type": "財報", "date_local": d.isoformat(),
+                               "estimated": len(ds) > 1, "source": "yahoo_calendar"})
+        except Exception:  # noqa
+            miss.append(c["sym"])
+    news = []
+    for c in W["B"] + [{"name": f"通用：{g}", "query": g, "generic": True} for g in W.get("generic", [])]:
+        try:
+            q = f'"{c["query"]}"' if not c.get("generic") else c["query"]
+            extra = __import__("re").compile(c["kw"], 2) if c.get("kw") else None
+            hits = [h for h in gnews(q) if WATCH_KW.search(h[0]) or (extra and extra.search(h[0]))]
+            if c.get("generic"):
+                hits = [h for h in hits if __import__("re").search(r"\bIPO\b|public", h[0], 2)]
+        except Exception as e:  # noqa
+            errors.append(f"watch_news {c['name']} 失敗：{e}"); continue
+        hits = sorted(hits, key=lambda h: h[2] or "", reverse=True)[: (4 if c.get("generic") else 6)]
+        if hits:
+            news.append({"company": c["name"], "generic": bool(c.get("generic")),
+                         "items": [{"title": t, "source": s, "pub_utc": p, "link": l} for t, s, p, l in hits]})
+    return {"window": [lo.isoformat(), hi.isoformat()], "events": sorted(events, key=lambda e: e["date_local"]),
+            "no_date": miss}, news
+
+
 def main():
     now = dt.datetime.now(dt.timezone.utc)
     ct = now.astimezone(CT)
@@ -980,6 +1042,12 @@ def main():
             out["contributors"][sym] = fn(idx)
         except Exception as ex:  # noqa
             errors.append(f"contributors {sym} 失敗：{ex}")
+
+    try:
+        out["corp_events"], out["watch_news"] = corp_watch(today)
+    except Exception as ex:  # noqa
+        out["corp_events"], out["watch_news"] = None, None
+        errors.append(f"corp_watch 失敗：{ex}")
 
     try:
         out["fixed_events"] = fixed_events(today)
