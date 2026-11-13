@@ -1,103 +1,103 @@
 {
- "generated_at_utc": "2026-11-11T22:15:43Z",
- "taipei_date": "2026-11-12",
+ "generated_at_utc": "2026-11-13T01:07:52Z",
+ "taipei_date": "2026-11-13",
  "indices": {
   "^DJI": {
    "name": "道瓊工業指數",
-   "date": "2026-11-11",
-   "close": 52486.49,
-   "prev_date": "2026-11-10",
-   "prev_close": 52231.89,
-   "chg": 254.6,
-   "pct": 0.49
+   "date": "2026-11-12",
+   "close": 52297.09,
+   "prev_date": "2026-11-11",
+   "prev_close": 52486.49,
+   "chg": -189.4,
+   "pct": -0.36
   },
   "^GSPC": {
    "name": "標準普爾500指數",
-   "date": "2026-11-11",
-   "close": 7619.38,
-   "prev_date": "2026-11-10",
-   "prev_close": 7520.93,
-   "chg": 98.45,
-   "pct": 1.31
+   "date": "2026-11-12",
+   "close": 7592.4,
+   "prev_date": "2026-11-11",
+   "prev_close": 7619.38,
+   "chg": -26.98,
+   "pct": -0.35
   },
   "^IXIC": {
    "name": "那斯達克綜合指數",
-   "date": "2026-11-11",
-   "close": 25466.19,
-   "prev_date": "2026-11-10",
-   "prev_close": 25065.87,
-   "chg": 400.32,
-   "pct": 1.6
+   "date": "2026-11-12",
+   "close": 25366.09,
+   "prev_date": "2026-11-11",
+   "prev_close": 25466.19,
+   "chg": -100.1,
+   "pct": -0.39
   },
   "^SOX": {
    "name": "費城半導體指數",
-   "date": "2026-11-11",
-   "close": 10564.11,
-   "prev_date": "2026-11-10",
-   "prev_close": 9998.33,
-   "chg": 565.78,
-   "pct": 5.66
+   "date": "2026-11-12",
+   "close": 10506.67,
+   "prev_date": "2026-11-11",
+   "prev_close": 10564.11,
+   "chg": -57.44,
+   "pct": -0.54
   },
   "^N225": {
    "name": "日經225指數",
-   "date": "2026-11-11",
-   "close": 61285.47,
-   "prev_date": "2026-11-10",
-   "prev_close": 60459.58,
-   "chg": 825.89,
-   "pct": 1.37,
+   "date": "2026-11-12",
+   "close": 60798.84,
+   "prev_date": "2026-11-11",
+   "prev_close": 61248.59,
+   "chg": -449.75,
+   "pct": -0.73,
    "source": "yahoo_intraday_fill"
   },
   "^KS11": {
    "name": "韓國綜合股價指數",
-   "date": "2026-11-11",
-   "close": 5372.43,
-   "prev_date": "2026-11-10",
-   "prev_close": 5239.13,
-   "chg": 133.3,
-   "pct": 2.54,
+   "date": "2026-11-12",
+   "close": 5321.25,
+   "prev_date": "2026-11-11",
+   "prev_close": 5375.36,
+   "chg": -54.11,
+   "pct": -1.01,
    "source": "yahoo_intraday_fill"
   },
   "^TWII": {
    "name": "台灣加權指數",
-   "date": "2026-11-11",
-   "close": 44257.15,
-   "prev_close": 42711.92,
-   "chg": 1545.23,
-   "pct": 3.62,
+   "date": "2026-11-12",
+   "close": 43091.87,
+   "prev_close": 44257.15,
+   "chg": -1165.28,
+   "pct": -2.63,
    "source": "twse_mi_index",
-   "prev_date": "2026-11-10"
+   "prev_date": "2026-11-11"
   }
  },
  "ust10y": {
-  "date": "2026-11-10",
-  "yield": 4.98,
-  "bp": 10,
+  "date": "2026-11-12",
+  "yield": 5.1,
+  "bp": 12,
   "source": "treasury"
  },
  "sse": {
   "name": "上證綜合",
-  "date": "2026-11-10",
-  "close": 3663.72,
-  "prev_date": "2026-11-09",
-  "prev_close": 3660.79,
-  "chg": 2.93,
-  "pct": 0.08
+  "date": "2026-11-11",
+  "close": 3680.64,
+  "prev_date": "2026-11-10",
+  "prev_close": 3663.72,
+  "chg": 16.92,
+  "pct": 0.46
  },
  "ust_curve": {
-  "date": "2026-11-10",
+  "date": "2026-11-12",
   "source": "treasury",
   "y2": {
-   "yield": 4.73,
-   "bp": 17
+   "yield": 4.86,
+   "bp": 13
   },
   "y10": {
-   "yield": 4.98,
-   "bp": 10
+   "yield": 5.1,
+   "bp": 12
   },
   "y30": {
-   "yield": 5.35,
-   "bp": 9
+   "yield": 5.43,
+   "bp": 8
   }
  },
  "stocks": {
@@ -108,7 +108,7 @@
   },
   "MSFT": {
    "date": "2026-11-11",
-   "close": 521.12,
+   "close": 521.13,
    "pct": -2.26
   },
   "NVDA": {
@@ -167,145 +167,145 @@
    "pct": 4.25
   },
   "2330.TW": {
-   "date": "2026-11-11",
-   "close": 2395.0,
-   "pct": 4.81
+   "date": "2026-11-12",
+   "close": 2340.0,
+   "pct": -2.3
   },
   "2317.TW": {
-   "date": "2026-11-11",
-   "close": 242.0,
-   "pct": 0.21
+   "date": "2026-11-12",
+   "close": 240.0,
+   "pct": -0.83
   },
   "2454.TW": {
-   "date": "2026-11-11",
-   "close": 3990.0,
-   "pct": 4.18
+   "date": "2026-11-12",
+   "close": 3850.0,
+   "pct": -3.51
   },
   "2308.TW": {
-   "date": "2026-11-11",
-   "close": 1295.0,
-   "pct": 1.57
+   "date": "2026-11-12",
+   "close": 1240.0,
+   "pct": -4.25
   },
   "005930.KS": {
-   "date": "2026-11-11",
-   "close": 206000.0,
-   "pct": 3.57
+   "date": "2026-11-12",
+   "close": 208000.0,
+   "pct": 0.97
   },
   "000660.KS": {
-   "date": "2026-11-11",
-   "close": 1277000.0,
-   "pct": 5.36
+   "date": "2026-11-12",
+   "close": 1254000.0,
+   "pct": -1.8
   },
   "373220.KS": {
-   "date": "2026-11-11",
-   "close": 335500.0,
-   "pct": 1.51
+   "date": "2026-11-12",
+   "close": 329500.0,
+   "pct": -1.79
   },
   "9983.T": {
-   "date": "2026-11-11",
-   "close": 80480.0,
-   "pct": -1.34
+   "date": "2026-11-12",
+   "close": 80190.0,
+   "pct": -0.36
   },
   "8035.T": {
-   "date": "2026-11-11",
-   "close": 9272.0,
-   "pct": 2.95
+   "date": "2026-11-12",
+   "close": 9304.0,
+   "pct": 0.35
   },
   "6857.T": {
-   "date": "2026-11-11",
-   "close": 31440.0,
-   "pct": 5.89
+   "date": "2026-11-12",
+   "close": 29985.0,
+   "pct": -4.63
   },
   "9984.T": {
-   "date": "2026-11-11",
-   "close": 3855.0,
-   "pct": -0.44
+   "date": "2026-11-12",
+   "close": 3738.0,
+   "pct": -3.04
   }
  },
  "macro": {
   "TWD=X": {
    "name": "美元兌新台幣",
-   "date": "2026-11-11",
-   "close": 32.832,
-   "prev_date": "2026-11-10",
-   "prev_close": 32.858,
-   "chg": -0.026,
-   "pct": -0.08,
+   "date": "2026-11-12",
+   "close": 32.932,
+   "prev_date": "2026-11-11",
+   "prev_close": 32.832,
+   "chg": 0.1,
+   "pct": 0.3,
    "method": "30m參考K棒"
   },
   "JPY=X": {
    "name": "美元兌日圓",
-   "date": "2026-11-11",
-   "close": 159.78,
-   "prev_date": "2026-11-10",
-   "prev_close": 158.73,
-   "chg": 1.05,
-   "pct": 0.66,
+   "date": "2026-11-12",
+   "close": 159.82,
+   "prev_date": "2026-11-11",
+   "prev_close": 159.78,
+   "chg": 0.04,
+   "pct": 0.03,
    "method": "30m參考K棒"
   },
   "BZ=F": {
    "name": "布蘭特原油",
-   "date": "2026-11-11",
-   "close": 92.62,
-   "prev_date": "2026-11-10",
-   "prev_close": 91.49,
-   "chg": 1.13,
-   "pct": 1.24,
+   "date": "2026-11-12",
+   "close": 95.88,
+   "prev_date": "2026-11-11",
+   "prev_close": 92.76,
+   "chg": 3.12,
+   "pct": 3.36,
    "method": "30m參考K棒＋已結算日K前收"
   },
   "GC=F": {
    "name": "黃金（COMEX近月期貨）",
-   "date": "2026-11-11",
-   "close": 3999.9,
-   "prev_date": "2026-11-10",
-   "prev_close": 4030.2,
-   "chg": -30.3,
-   "pct": -0.75,
+   "date": "2026-11-12",
+   "close": 3886.2,
+   "prev_date": "2026-11-11",
+   "prev_close": 4000.5,
+   "chg": -114.3,
+   "pct": -2.86,
    "method": "30m參考K棒＋已結算日K前收"
   },
   "DX-Y.NYB": {
    "name": "美元指數",
-   "date": "2026-11-11",
-   "close": 102.91,
-   "prev_date": "2026-11-10",
-   "prev_close": 102.25,
-   "chg": 0.67,
-   "pct": 0.65,
+   "date": "2026-11-12",
+   "close": 103.18,
+   "prev_date": "2026-11-11",
+   "prev_close": 102.91,
+   "chg": 0.26,
+   "pct": 0.25,
    "method": "30m參考K棒"
   }
  },
  "fedwatch": {
   "meeting": "12/09",
   "range": "3.75%–4.00%",
-  "asof": "11/11",
+  "asof": "11/12",
   "rows": [
    [
     "最新",
-    0.0,
-    0.0,
-    87.3,
-    12.7
-   ],
-   [
-    "1天前",
     0.0,
     0.0,
     90.1,
     9.9
    ],
    [
+    "1天前",
+    0.0,
+    0.0,
+    85.9,
+    14.1
+   ],
+   [
     "1週前",
     0.0,
-    18.3,
-    81.7,
+    33.8,
+    66.2,
     0.0
    ],
    [
     "1個月前",
     0.0,
-    15.0,
-    70.3,
-    14.7
+    12.4,
+    70.7,
+    16.9
    ]
   ],
   "source": "computed_from_ZQ",
@@ -604,17 +604,17 @@
    "mode": "level",
    "release_id": 180,
    "release": "Unemployment Insurance Weekly Claims Report",
-   "last_updated": "2026-11-05 07:34:30-06",
-   "release_date": "2026-11-05",
-   "period": "10/31當週",
-   "period_date": "2026-10-31",
-   "value": 189000.0,
-   "actual": "18.9萬",
-   "prev_period": "10/24當週",
-   "prev": 195000.0,
-   "prev_display": "19.5萬",
-   "chg_vs_prev": "−0.6萬",
-   "released_prev_us_day": false
+   "last_updated": "2026-11-12 07:37:26-06",
+   "release_date": "2026-11-12",
+   "period": "11/07當週",
+   "period_date": "2026-11-07",
+   "value": 200000.0,
+   "actual": "20.0萬",
+   "prev_period": "10/31當週",
+   "prev": 191000.0,
+   "prev_display": "19.1萬",
+   "chg_vs_prev": "+0.9萬",
+   "released_prev_us_day": true
   },
   {
    "name": "JOLTS職缺數",
@@ -714,16 +714,6 @@
  ],
  "us_calendar": [
   {
-   "event": "美國初領失業金人數",
-   "taipei": "11/12 21:30",
-   "us_date": "2026-11-12",
-   "et": "08:30",
-   "release": "Unemployment Insurance Weekly Claims Report",
-   "metrics": [
-    "初領失業金人數"
-   ]
-  },
-  {
    "event": "美國PPI",
    "taipei": "11/13 21:30",
    "us_date": "2026-11-13",
@@ -777,37 +767,29 @@
  ],
  "errors": [],
  "notes": [
-  "日經225指數 日K缺 2026-11-11，改用小時K最後一根",
-  "韓國綜合股價指數 日K缺 2026-11-11，改用小時K最後一根",
-  "台灣加權指數 日K缺 2026-11-11，改用小時K最後一根",
-  "台灣加權 Yahoo 44041.66 與證交所 44257.15 不符，採證交所"
+  "日經225指數 日K缺 2026-11-12，改用小時K最後一根",
+  "韓國綜合股價指數 日K缺 2026-11-12，改用小時K最後一根",
+  "台灣加權指數 日K缺 2026-11-12，改用小時K最後一根",
+  "台灣加權 Yahoo 43022.62 與證交所 43091.87 不符，採證交所"
  ],
  "twd_official": {
   "name": "美元兌新台幣",
-  "date": "2026-11-11",
-  "close": 32.86,
-  "prev_date": "2026-11-10",
-  "prev_close": 32.865,
-  "chg": -0.005,
-  "pct": -0.02,
+  "date": "2026-11-12",
+  "close": 32.889,
+  "prev_date": "2026-11-11",
+  "prev_close": 32.86,
+  "chg": 0.029,
+  "pct": 0.09,
   "source": "cbc_taipeiforex_close"
  },
  "ust_auctions": {
   "upcoming": [
    {
-    "term": "30-Year",
-    "type": "Bond",
-    "auction_date_et": "2026-11-12",
-    "taipei_time": "11/13 02:00",
-    "offering_bn": 25.0,
-    "reopening": false
-   },
-   {
     "term": "20-Year",
     "type": "Bond",
     "auction_date_et": "2026-11-18",
     "taipei_time": "11/19 02:00",
-    "offering_bn": null,
+    "offering_bn": 16.0,
     "reopening": false
    },
    {
@@ -815,11 +797,21 @@
     "type": "Note",
     "auction_date_et": "2026-11-19",
     "taipei_time": "11/20 02:00",
-    "offering_bn": null,
+    "offering_bn": 19.0,
     "reopening": true
    }
   ],
   "results": [
+   {
+    "term": "30-Year",
+    "type": "Bond",
+    "auction_date_et": "2026-11-12",
+    "taipei_time": "11/13 02:00",
+    "offering_bn": 25.0,
+    "reopening": false,
+    "high_yield": 5.441,
+    "bid_to_cover": 2.36
+   },
    {
     "term": "10-Year",
     "type": "Note",
@@ -843,115 +835,115 @@
   ]
  },
  "tw_institutional": {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "unit": "億元",
-  "foreign": -7.66,
-  "trust": 185.85,
-  "dealer": 62.57,
-  "total": 240.76
+  "foreign": -6.85,
+  "trust": 125.68,
+  "dealer": -65.41,
+  "total": 53.42
  },
  "taifex_foreign_tx": {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "contract": "臺股期貨",
-  "foreign_net_oi": -104271,
+  "foreign_net_oi": -99573,
   "header": "多空未平倉口數淨額",
-  "prev_date": "2026-11-10",
-  "prev_net_oi": -103473
+  "prev_date": "2026-11-11",
+  "prev_net_oi": -104271
  },
  "tw_chips": {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "unit": "億元",
-  "foreign_streak": -10,
-  "trust_streak": 22,
+  "foreign_streak": -11,
+  "trust_streak": 23,
   "foreign_sell_top": [
    {
-    "sym": "3653",
-    "name": "健策",
-    "lots": -829,
-    "amt": -51.6
+    "sym": "2330",
+    "name": "台積電",
+    "lots": -3955,
+    "amt": -92.56
    },
    {
-    "sym": "2383",
-    "name": "台光電",
-    "lots": -1078,
-    "amt": -48.5
+    "sym": "2382",
+    "name": "廣達",
+    "lots": -13463,
+    "amt": -37.49
    },
    {
-    "sym": "2308",
-    "name": "台達電",
-    "lots": -3143,
-    "amt": -40.71
+    "sym": "6213",
+    "name": "聯茂",
+    "lots": -6730,
+    "amt": -35.13
    }
   ],
   "foreign_buy_top": [
    {
-    "sym": "2330",
-    "name": "台積電",
-    "lots": 6038,
-    "amt": 144.62
-   },
-   {
-    "sym": "2408",
-    "name": "南亞科",
-    "lots": 8566,
-    "amt": 33.75
-   },
-   {
-    "sym": "6669",
-    "name": "緯穎",
-    "lots": 1428,
-    "amt": 23.98
-   }
-  ],
-  "trust_buy_top": [
-   {
-    "sym": "2330",
-    "name": "台積電",
-    "lots": 2385,
-    "amt": 57.13
-   },
-   {
-    "sym": "1303",
-    "name": "南亞",
-    "lots": 15637,
-    "amt": 48.94
+    "sym": "1802",
+    "name": "台玻",
+    "lots": 140326,
+    "amt": 114.65
    },
    {
     "sym": "2454",
     "name": "聯發科",
-    "lots": 590,
-    "amt": 23.53
+    "lots": 1638,
+    "amt": 63.06
+   },
+   {
+    "sym": "2317",
+    "name": "鴻海",
+    "lots": 8391,
+    "amt": 20.14
+   }
+  ],
+  "trust_buy_top": [
+   {
+    "sym": "3443",
+    "name": "創意",
+    "lots": 400,
+    "amt": 31.42
+   },
+   {
+    "sym": "1303",
+    "name": "南亞",
+    "lots": 6361,
+    "amt": 18.64
+   },
+   {
+    "sym": "2454",
+    "name": "聯發科",
+    "lots": 304,
+    "amt": 11.71
    }
   ],
   "trust_sell_top": [
    {
-    "sym": "3189",
-    "name": "景碩",
-    "lots": -3752,
-    "amt": -27.8
+    "sym": "2303",
+    "name": "聯電",
+    "lots": -7465,
+    "amt": -7.54
    },
    {
-    "sym": "2327",
-    "name": "國巨*",
-    "lots": -4656,
-    "amt": -19.76
+    "sym": "2492",
+    "name": "華新科",
+    "lots": -2768,
+    "amt": -7.53
    },
    {
-    "sym": "2408",
-    "name": "南亞科",
-    "lots": -4943,
-    "amt": -19.47
+    "sym": "6669",
+    "name": "緯穎",
+    "lots": -464,
+    "amt": -7.29
    }
   ],
   "tsmc": {
-   "foreign_lots": 6038,
-   "foreign_amt": 144.62,
-   "trust_lots": 2385,
-   "foreign_streak": 1
+   "foreign_lots": -3955,
+   "foreign_amt": -92.56,
+   "trust_lots": 120,
+   "foreign_streak": -1
   },
-  "tx_foreign_net_oi": -104271,
-  "tx_prev_net_oi": -103473,
-  "tx_chg": -798
+  "tx_foreign_net_oi": -99573,
+  "tx_prev_net_oi": -104271,
+  "tx_chg": 4698
  },
  "preopen": {
   "TSM": {
@@ -965,62 +957,62 @@
   },
   "NKD=F": {
    "name": "日經期貨（CME）",
-   "date": "2026-11-11",
-   "close": 62040.0,
-   "prev_date": "2026-11-10",
-   "prev_close": 60090.0,
-   "chg": 1950.0,
-   "pct": 3.25
+   "date": "2026-11-12",
+   "close": 61810.0,
+   "prev_date": "2026-11-11",
+   "prev_close": 62040.0,
+   "chg": -230.0,
+   "pct": -0.37
   },
   "TXF_NIGHT": {
    "name": "台指期夜盤",
    "contract": "202611",
-   "trade_date": "2026-11-12",
-   "last": 44606.0,
-   "chg": 470.0,
-   "pct": 1.06,
+   "trade_date": "2026-11-13",
+   "last": 43676.0,
+   "chg": 548.0,
+   "pct": 1.27,
    "volume": null,
    "note": "最後成交價，較前一日一般交易時段結算價"
   }
  },
  "contributors": {
   "^DJI": {
-   "date": "2026-11-11",
+   "date": "2026-11-12",
    "method": "price_weighted_divisor",
-   "divisor": 0.163633,
+   "divisor": 0.162839,
    "n": 30,
-   "index_chg": 254.6,
-   "implied_chg": 226.48,
+   "index_chg": -189.4,
+   "implied_chg": 227.57,
    "top_up": [
     {
      "sym": "CAT",
      "name": "開拓重工",
      "pct": 2.91,
-     "pts": 104.14
+     "pts": 104.64
     },
     {
      "sym": "GS",
      "name": "高盛",
      "pct": 1.83,
-     "pts": 101.57
+     "pts": 102.06
     },
     {
      "sym": "AAPL",
      "name": "蘋果",
      "pct": 2.04,
-     "pts": 43.51
+     "pts": 43.72
     },
     {
      "sym": "NVDA",
      "name": "輝達",
      "pct": 2.87,
-     "pts": 29.58
+     "pts": 29.72
     },
     {
      "sym": "CRM",
      "name": "Salesforce",
      "pct": 2.12,
-     "pts": 27.68
+     "pts": 27.82
     }
    ],
    "top_down": [
@@ -1028,176 +1020,169 @@
      "sym": "MSFT",
      "name": "微軟",
      "pct": -2.26,
-     "pts": -73.52
+     "pts": -73.88
     },
     {
      "sym": "MCD",
      "name": "麥當勞",
      "pct": -2.61,
-     "pts": -45.04
+     "pts": -45.26
     },
     {
      "sym": "AMZN",
      "name": "亞馬遜",
      "pct": -1.74,
-     "pts": -28.72
+     "pts": -28.86
     },
     {
      "sym": "UNH",
      "name": "聯合健康",
      "pct": -0.54,
-     "pts": -13.32
+     "pts": -13.39
     },
     {
      "sym": "TRV",
      "name": "旅行家保險",
      "pct": -0.33,
-     "pts": -8.07
+     "pts": -8.11
     }
    ]
   },
   "^TWII": {
-   "date": "2026-11-11",
+   "date": "2026-11-12",
    "method": "cap_weighted_issued_shares",
    "n": 1094,
-   "index_chg": 1545.23,
-   "implied_chg": 1539.96,
+   "index_chg": -1165.28,
+   "implied_chg": -1161.13,
    "top_up": [
     {
-     "sym": "2330",
-     "name": "台積電",
-     "pct": 4.81,
-     "pts": 870.47,
-     "weight": 42.33
+     "sym": "2360",
+     "name": "致茂",
+     "pct": 3.65,
+     "pts": 6.49,
+     "weight": 0.4
     },
     {
-     "sym": "2454",
-     "name": "聯發科",
-     "pct": 4.18,
-     "pts": 78.36,
-     "weight": 4.39
+     "sym": "1802",
+     "name": "台玻",
+     "pct": 6.52,
+     "pts": 4.44,
+     "weight": 0.15
     },
     {
-     "sym": "1303",
-     "name": "南亞",
-     "pct": 8.3,
-     "pts": 58.08,
-     "weight": 1.64
+     "sym": "2891",
+     "name": "中信金",
+     "pct": 0.94,
+     "pts": 4.2,
+     "weight": 1.01
     },
     {
-     "sym": "3017",
-     "name": "奇鋐",
-     "pct": 8.96,
-     "pts": 29.96,
-     "weight": 0.78
+     "sym": "6446",
+     "name": "藥華藥",
+     "pct": 2.25,
+     "pts": 3.87,
+     "weight": 0.39
     },
     {
-     "sym": "3443",
-     "name": "創意",
-     "pct": 9.97,
-     "pts": 29.24,
-     "weight": 0.69
+     "sym": "2885",
+     "name": "元大金",
+     "pct": 0.98,
+     "pts": 2.96,
+     "weight": 0.68
     }
    ],
    "top_down": [
     {
-     "sym": "2356",
-     "name": "英業達",
-     "pct": -6.74,
-     "pts": -4.05,
-     "weight": 0.14
+     "sym": "2330",
+     "name": "台積電",
+     "pct": -2.3,
+     "pts": -435.31,
+     "weight": 42.83
     },
     {
-     "sym": "2324",
-     "name": "仁寶",
-     "pct": -4.45,
-     "pts": -1.95,
-     "weight": 0.1
+     "sym": "2454",
+     "name": "聯發科",
+     "pct": -3.51,
+     "pts": -68.58,
+     "weight": 4.42
     },
     {
-     "sym": "910322",
-     "name": "康師傅-DR",
-     "pct": -2.83,
-     "pts": -1.37,
-     "weight": 0.11
+     "sym": "1303",
+     "name": "南亞",
+     "pct": -6.39,
+     "pts": -48.41,
+     "weight": 1.71
     },
     {
-     "sym": "6770",
-     "name": "力積電",
-     "pct": -1.18,
-     "pts": -1.01,
-     "weight": 0.2
+     "sym": "2308",
+     "name": "台達電",
+     "pct": -4.25,
+     "pts": -43.6,
+     "weight": 2.32
     },
     {
-     "sym": "1795",
-     "name": "美時",
-     "pct": -6.31,
-     "pts": -0.87,
-     "weight": 0.03
+     "sym": "2383",
+     "name": "台光電",
+     "pct": -8.78,
+     "pts": -43.2,
+     "weight": 1.11
     }
    ],
    "top_weights": [
     {
      "sym": "2330",
      "name": "台積電",
-     "weight": 42.33
+     "weight": 42.83
     },
     {
      "sym": "2454",
      "name": "聯發科",
-     "weight": 4.39
+     "weight": 4.42
     },
     {
      "sym": "2317",
      "name": "鴻海",
-     "weight": 2.43
+     "weight": 2.35
     },
     {
      "sym": "2308",
      "name": "台達電",
-     "weight": 2.37
+     "weight": 2.32
     },
     {
      "sym": "3711",
      "name": "日月光投控",
-     "weight": 1.94
+     "weight": 1.91
     },
     {
      "sym": "1303",
      "name": "南亞",
-     "weight": 1.64
+     "weight": 1.71
     },
     {
      "sym": "2881",
      "name": "富邦金",
-     "weight": 1.53
+     "weight": 1.54
     },
     {
      "sym": "2882",
      "name": "國泰金",
-     "weight": 1.15
+     "weight": 1.14
     },
     {
      "sym": "2383",
      "name": "台光電",
-     "weight": 1.12
+     "weight": 1.11
     },
     {
      "sym": "2891",
      "name": "中信金",
-     "weight": 1.04
+     "weight": 1.01
     }
    ]
   }
  },
  "fixed_events": [
-  {
-   "date": "2026-11-05",
-   "time": "20:00",
-   "cat": "總經與市場",
-   "title": "英國央行利率決策",
-   "note": ""
-  },
   {
    "date": "2026-11-12",
    "time": "清晨",
