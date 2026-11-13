@@ -884,7 +884,7 @@ def tw_announcements(codes):
     return out
 
 
-SEC_UA = {"User-Agent": "vicTAILEXFIN market-data research 41898282+github-actions[bot]@users.noreply.github.com"}
+SEC_UA = {"User-Agent": f"market-data research {os.environ.get('SEC_CONTACT', '')}".strip()}  # SEC 要求真實聯絡信箱（GitHub secret SEC_CONTACT）
 
 
 def sec_filings(tickers, days=3):
@@ -956,12 +956,15 @@ def corp_watch(today, back=7, ahead=14):
     except Exception as e:  # noqa
         errors.append(f"證交所重大訊息失敗：{e}")
     try:
+        if not os.environ.get("SEC_CONTACT"):
+            raise RuntimeError("未設定 SEC_CONTACT，略過")
         us = {c["sym"]: c["name"] for c in listed if "." not in c["sym"]}
         f, miss = sec_filings(list(us))
         for t, L in f.items():
             filings.setdefault(us[t], []).extend(L)
     except Exception as e:  # noqa
-        errors.append(f"SEC 申報失敗：{e}")
+        if "SEC_CONTACT" not in str(e):
+            errors.append(f"SEC 申報失敗：{e}")
 
     # 新聞線索（上市公司近 2 天、未上市 7 天；台股用中文）
     big = W.get("big_move_pct", 5.0)
@@ -977,6 +980,9 @@ def corp_watch(today, back=7, ahead=14):
                     if kw.search(h[0]) or (extra and extra.search(h[0]))]
             if c.get("generic"):
                 hits = [h for h in hits if re.search(r"\bIPO\b|public", h[0], re.I)]
+            else:  # 標題必須出現公司名稱（Google News 也比對內文，會混進無關報導）
+                tk = c.get("title_kw") or (c["name"] if c.get("lang") == "zh" else c["query"].split()[0])
+                hits = [h for h in hits if re.search(re.escape(tk), h[0], re.I)]
             items = [{"title": t, "source": s, "pub_utc": p, "link": l} for t, s, p, l in sorted(hits, key=lambda h: h[2] or "", reverse=True)[:5]]
         except Exception as e:  # noqa
             errors.append(f"watch_news {c['name']} 失敗：{e}")

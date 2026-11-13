@@ -647,7 +647,8 @@ def checks(h):
                 E.append(f"追蹤公司財報未上日曆：{ce['name']} {ce['date_local']}（或在 calendar_skip 寫理由）")
     except Exception as ex:  # noqa
         E.append(f"日曆資料錯誤：{ex}")
-    # B 層：watch_news 每家命中都要在 watch_review 判斷（news／calendar／news+calendar／skip＋理由）
+    # 追蹤清單：watch_news 每家（有新聞、公告或單日大漲跌）都要在 watch_review 判斷
+    #   news／calendar／news+calendar／table（寫進指數表原因說明）／skip（須寫理由）
     WN = D.get("watch_news")
     if WN:
         RV = {str(x.get("company")): x for x in (D.get("watch_review") or []) if isinstance(x, dict)}
@@ -655,7 +656,9 @@ def checks(h):
             c = g.get("company"); x = RV.get(c)
             if not x: E.append(f"watch_news「{c}」有命中，須在 watch_review 判斷寫新聞、上日曆或略過"); continue
             act, nm = str(x.get("action") or ""), str(x.get("name") or c)
-            if act not in ("news", "calendar", "news+calendar", "skip"): E.append(f"watch_review「{c}」action 須為 news／calendar／news+calendar／skip")
+            if act not in ("news", "calendar", "news+calendar", "table", "skip"): E.append(f"watch_review「{c}」action 須為 news／calendar／news+calendar／table／skip")
+            if act == "table" and not any(nm in str(r[4]) for r in D["index_rows"]):
+                E.append(f"watch_review「{c}」標為 table，但主要指數表原因說明找不到「{nm}」")
             if act == "skip" and not x.get("reason"): E.append(f"watch_review「{c}」略過須寫理由")
             if "news" in act and not any(nm in str(e.get("title")) or nm in (e.get("entities") or []) for e in N):
                 E.append(f"watch_review「{c}」標為 news，但新聞卡找不到「{nm}」")

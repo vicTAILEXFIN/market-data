@@ -24,6 +24,7 @@ jobs:
       - run: python fetch.py
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
