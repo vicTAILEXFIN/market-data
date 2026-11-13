@@ -39,6 +39,27 @@ def table(hdrs, widths, rows, left=()):
     return "".join(o) + "</table>" + gap(12)
 
 
+def market_table(first, rows):
+    """rows: [(名稱, 數值, 日期, 主數字, 次行, 註記, 色階值, 色階上限, 說明)]；版本C（11/13 定案）"""
+    C = (125, 120, 110, W - 355)
+    th = lambda t, w, a: (f'<th width="{w}" align="{a}" style="{F_JH};font-size:9pt;font-weight:normal;color:#6B7280;text-align:{a};'
+                          f'padding:4px 8px;border-bottom:2px solid #243B53">{t}</th>')
+    o = [f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed"><tr>'
+         + th(first, C[0], "left") + th("最新數據", C[1], "right") + th("漲跌", C[2], "center") + th("主要原因說明", C[3], "left") + "</tr>"]
+    bd = "border-bottom:1px solid #E5E7EB;vertical-align:top"
+    for n, val, d, big, sub, note, v, m, reason in rows:
+        bg, fg = heat_color(v, m)
+        badge = (f'<span style="background-color:{bg};color:{fg};{F_AP};font-size:10.5pt;font-weight:bold;padding:2px 8px">'
+                 f'<font color="{fg}">&nbsp;{esc(big)}&nbsp;</font></span>')
+        extra = "".join(f'<br><span style="{F_JH};font-size:8.5pt;color:#6B7280">{x}</span>' for x in (sub, note) if x)
+        o.append(f'<tr><td width="{C[0]}" valign="top" style="{F_JH};font-size:10.5pt;font-weight:bold;padding:9px 8px;{bd}">{n}</td>'
+                 f'<td width="{C[1]}" valign="top" align="right" style="{F_AP};font-size:10.5pt;text-align:right;padding:9px 8px;{bd}">{val}'
+                 f'<br><span style="{F_AP};font-size:8.5pt;color:#9CA3AF">{lbl(d)}</span></td>'
+                 f'<td width="{C[2]}" valign="top" align="center" style="text-align:center;padding:9px 4px;line-height:1.55;{bd}">{badge}{extra}</td>'
+                 f'<td width="{C[3]}" valign="top" align="left" style="{F_JH};font-size:10.5pt;line-height:1.6;color:#000;padding:8px 8px;{bd}">{reason}</td></tr>')
+    return "".join(o) + "</table>" + gap(12)
+
+
 gap = lambda h: f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="{h}" style="height:{h}px;font-size:1px;line-height:1px">&nbsp;</td></tr></table>'
 
 
@@ -301,9 +322,11 @@ def us_macro():
 
 
 # ---------- 未來關注事件：日曆（以天為欄；週五＝今天＋週六到下週五，其餘＝本週一到週五）----------
-CAT = {"總經與市場": "#1D4ED8", "政策公布": "#7C3AED", "法說／財報": "#C2410C", "產品發布": "#15803D"}
+CAT = {"總經與市場": "#1D4ED8", "政策公布": "#7C3AED", "公司事件": "#C2410C", "產品發布": "#15803D"}  # 公司事件＝財報、法說、IPO（11/13 起，原「法說／財報」）
+for _e in D.get("events") or []:
+    if _e.get("cat") == "法說／財報": _e["cat"] = "公司事件"
 WD = "一二三四五六日"
-CAT_SHORT = {"總經與市場": "總經", "政策公布": "政策", "法說／財報": "財報", "產品發布": "發布"}
+CAT_SHORT = {"總經與市場": "總經", "政策公布": "政策", "公司事件": "公司", "產品發布": "發布"}
 TWORD = {"全日": "00:00", "清晨": "05:00", "午間": "12:00", "收盤": "13:30", "美股收盤": "23:59"}
 
 
@@ -404,16 +427,21 @@ def build():
     P.append(h2("重大新聞", "16px 0 8px"))
     for i, e in enumerate(D["news"], 1):
         P.append(news_card(i, e))
-    rows = [[brk(n), f"{c:,.2f}<br>{lbl(d)}", f"{pts(ch)}（{pct(pc)}）", esc(r)] for n, c, ch, pc, r, d in D["index_rows"]]
+    rows = [(brk(n), f"{c:,.2f}", d, pct(pc), pts(ch), None, pc, 6, esc(r)) for n, c, ch, pc, r, d in D["index_rows"]]
     lv, bp, note, r, d = D["ust"]
-    rows.append(["美國10年期公債殖利率", f"{lv}<br>{lbl(d)}", f"{bp}<br>({note})", esc(r)])
+    rows.append(("美國10年期<br>公債殖利率", esc(lv), d, esc(bp), None, f"({esc(note)})", bp_value(bp) if lv != "未取得" else None, 15, esc(r)))
     P.append(h2("主要指數"))
-    P.append(table(["指數", "最新數據", "漲跌", "主要原因說明"], ["19%", "18%", "16%", "47%"], rows, left=(3,)))
+    P.append(market_table("指數", rows))
     P.append(chips_block())
     P.append(h2("匯率、商品與利率"))
-    rows = [[brk(n), f"{esc(lv)}<br>{lbl(d)}", esc(ch) + (f"<br>({esc(nt)})" if nt else ""), esc(r)]
-            for n, lv, ch, nt, r, _a, d in D["macro_rows"]]
-    P.append(table(["項目", "最新數據", "漲跌", "主要原因說明"], ["19%", "18%", "16%", "47%"], rows, left=(3,)))
+    rows = []
+    for n, lv, ch, nt, r, a, d in D["macro_rows"]:
+        if a:  # a=[數值, 漲跌, 百分比]
+            rows.append((brk(n), esc(lv).replace("美元/", "<br>美元/"), d, pct(a[2]), esc(re.sub(r"（[^）]*）$", "", ch)), f"({esc(nt)})" if nt else None,
+                         a[2], SCALE.get(n, 1), esc(r)))
+        else:
+            rows.append((brk(n), esc(lv), d, esc(ch), None, None, None, 1, esc(r)))
+    P.append(market_table("項目", rows))
     P.append(us_macro())
     P.append(calendar())
     P.append(h2("壽險業新聞"))
@@ -607,10 +635,32 @@ def checks(h):
         for e in evs:
             past = e.get("date") < today.isoformat() or (e.get("date") == today.isoformat() and TWORD.get(e.get("time"), str(e.get("time"))) <= "07:45")
             if past and not e.get("result"): E.append(f"已發生事件須附 result：{e.get('title')}")
-            if past and e.get("cat") in ("法說／財報", "總經與市場", "政策公布") and e.get("result") and not any(str(e.get("title"))[:6] in x for x in fu_events):
+            if past and e.get("cat") in ("公司事件", "總經與市場", "政策公布") and e.get("result") and not any(str(e.get("title"))[:6] in x for x in fu_events):
                 E.append(f"已發生事件須在 followups 登記並於新聞／摘要分析：{e.get('title')}")
+        # A 層：追蹤公司財報日落在日曆範圍內者必須上日曆（美股盤後公布，台北日期可能 +1 天）
+        skips = {str(x.get("name")) for x in (D.get("calendar_skip") or []) if isinstance(x, dict) and x.get("reason")}
+        for ce in ((D.get("corp_events") or {}).get("events") or []):
+            d0 = dt.date.fromisoformat(ce["date_local"])
+            cand = {d0.isoformat(), (d0 + dt.timedelta(days=1)).isoformat()}
+            if not cand & win or ce["name"] in skips: continue
+            if not any(ce["name"] in str(e.get("title")) and e.get("date") in cand for e in evs):
+                E.append(f"追蹤公司財報未上日曆：{ce['name']} {ce['date_local']}（或在 calendar_skip 寫理由）")
     except Exception as ex:  # noqa
         E.append(f"日曆資料錯誤：{ex}")
+    # B 層：watch_news 每家命中都要在 watch_review 判斷（news／calendar／news+calendar／skip＋理由）
+    WN = D.get("watch_news")
+    if WN:
+        RV = {str(x.get("company")): x for x in (D.get("watch_review") or []) if isinstance(x, dict)}
+        for g in WN:
+            c = g.get("company"); x = RV.get(c)
+            if not x: E.append(f"watch_news「{c}」有命中，須在 watch_review 判斷寫新聞、上日曆或略過"); continue
+            act, nm = str(x.get("action") or ""), str(x.get("name") or c)
+            if act not in ("news", "calendar", "news+calendar", "skip"): E.append(f"watch_review「{c}」action 須為 news／calendar／news+calendar／skip")
+            if act == "skip" and not x.get("reason"): E.append(f"watch_review「{c}」略過須寫理由")
+            if "news" in act and not any(nm in str(e.get("title")) or nm in (e.get("entities") or []) for e in N):
+                E.append(f"watch_review「{c}」標為 news，但新聞卡找不到「{nm}」")
+            if "calendar" in act and not any(nm in str(e.get("title")) for e in (D.get("events") or [])):
+                E.append(f"watch_review「{c}」標為 calendar，但日曆找不到「{nm}」")
     fu = D.get("followups")
     if not isinstance(fu, list): E.append("缺 followups（無已發生事件時填 []）")
     hl_text = "".join(h_ + t_ for h_, t_ in D["highlight"])
