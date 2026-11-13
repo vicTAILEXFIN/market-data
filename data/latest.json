@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-11-13T01:19:11Z",
+ "generated_at_utc": "2026-11-13T03:39:26Z",
  "taipei_date": "2026-11-13",
  "indices": {
   "^DJI": {
@@ -83,7 +83,7 @@
   "prev_close": 3680.64,
   "chg": -24.81,
   "pct": -0.67,
-  "source": "meta_fill"
+  "source": "meta_prev"
  },
  "ust_curve": {
   "date": "2026-11-12",
@@ -105,90 +105,79 @@
   "AAPL": {
    "date": "2026-11-12",
    "close": 354.88,
-   "pct": -0.21,
-   "source": "meta_fill"
+   "pct": -0.21
   },
   "MSFT": {
    "date": "2026-11-12",
    "close": 523.0,
-   "pct": 0.36,
-   "source": "meta_fill"
+   "pct": 0.36
   },
   "NVDA": {
    "date": "2026-11-12",
    "close": 166.19,
-   "pct": -4.34,
-   "source": "meta_fill"
+   "pct": -4.34
   },
   "AMZN": {
    "date": "2026-11-12",
    "close": 267.44,
-   "pct": 0.48,
-   "source": "meta_fill"
+   "pct": 0.48
   },
   "GOOGL": {
    "date": "2026-11-12",
    "close": 298.7,
-   "pct": 1.79,
-   "source": "meta_fill"
+   "pct": 1.79
   },
   "META": {
    "date": "2026-11-12",
    "close": 623.61,
-   "pct": -0.82,
-   "source": "meta_fill"
+   "pct": -0.82
   },
   "AVGO": {
    "date": "2026-11-12",
    "close": 364.36,
-   "pct": 5.54,
-   "source": "meta_fill"
+   "pct": 5.54
   },
   "GS": {
    "date": "2026-11-12",
    "close": 913.6,
-   "pct": -1.43,
-   "source": "meta_fill"
+   "pct": -1.43
   },
   "CAT": {
    "date": "2026-11-12",
    "close": 605.28,
-   "pct": 0.61,
-   "source": "meta_fill"
+   "pct": 0.61
   },
   "MU": {
    "date": "2026-11-12",
    "close": 798.44,
-   "pct": -1.59,
-   "source": "meta_fill"
+   "pct": -1.59
   },
   "INTC": {
    "date": "2026-11-12",
    "close": 61.2,
-   "pct": -2.08,
-   "source": "meta_fill"
+   "pct": -2.08
   },
   "AMD": {
    "date": "2026-11-12",
    "close": 585.3,
-   "pct": 5.86,
-   "source": "meta_fill"
+   "pct": 5.86
   },
   "TSM": {
    "date": "2026-11-12",
    "close": 405.49,
-   "pct": -1.9,
-   "source": "meta_fill"
+   "pct": -1.9
   },
   "2330.TW": {
    "date": "2026-11-12",
    "close": 2340.0,
-   "pct": -2.3
+   "pct": -2.3,
+   "source": "meta_prev"
   },
   "2317.TW": {
    "date": "2026-11-12",
    "close": 240.0,
-   "pct": -0.83
+   "pct": -0.83,
+   "source": "meta_prev"
   },
   "2454.TW": {
    "date": "2026-11-12",
@@ -199,7 +188,8 @@
   "2308.TW": {
    "date": "2026-11-12",
    "close": 1240.0,
-   "pct": -4.25
+   "pct": -4.25,
+   "source": "meta_prev"
   },
   "005930.KS": {
    "date": "2026-11-12",
@@ -305,8 +295,8 @@
     "最新",
     0.0,
     0.0,
-    90.1,
-    9.9
+    87.3,
+    12.7
    ],
    [
     "1天前",
@@ -791,8 +781,8 @@
  "notes": [
   "日經225指數 2026-11-12：盤中重跑，日K缺前一交易日，以交易所公布的前日收盤補上",
   "韓國綜合股價指數 2026-11-12：盤中重跑，日K缺前一交易日，以交易所公布的前日收盤補上",
-  "台灣加權指數 2026-11-12：日K缺最新一天，以交易所正式收盤補上",
-  "上證綜合 2026-11-12：日K缺最新一天，以交易所正式收盤補上"
+  "台灣加權指數 2026-11-12：盤中重跑，日K缺前一交易日，以交易所公布的前日收盤補上",
+  "上證綜合 2026-11-12：盤中重跑，日K缺前一交易日，以交易所公布的前日收盤補上"
  ],
  "twd_official": {
   "name": "美元兌新台幣",
@@ -975,17 +965,16 @@
    "prev_date": "2026-11-11",
    "prev_close": 413.35,
    "chg": -7.86,
-   "pct": -1.9,
-   "source": "meta_fill"
+   "pct": -1.9
   },
   "NKD=F": {
    "name": "日經期貨（CME）",
    "date": "2026-11-12",
-   "close": 61560.0,
+   "close": 61695.0,
    "prev_date": "2026-11-11",
    "prev_close": 62040.0,
-   "chg": -480.0,
-   "pct": -0.77
+   "chg": -345.0,
+   "pct": -0.56
   },
   "TXF_NIGHT": {
    "name": "台指期夜盤",
@@ -1206,6 +1195,429 @@
    ]
   }
  },
+ "corp_events": {
+  "window": [
+   "2026-11-06",
+   "2026-11-27"
+  ],
+  "events": [
+   {
+    "sym": "6669.TW",
+    "name": "緯穎",
+    "type": "財報",
+    "date_local": "2026-11-06",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "CRWV",
+    "name": "CoreWeave",
+    "type": "財報",
+    "date_local": "2026-11-10",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2382.TW",
+    "name": "廣達",
+    "type": "財報",
+    "date_local": "2026-11-11",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "CBRS",
+    "name": "Cerebras",
+    "type": "財報",
+    "date_local": "2026-11-12",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2317.TW",
+    "name": "鴻海",
+    "type": "財報",
+    "date_local": "2026-11-12",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "NVDA",
+    "name": "輝達",
+    "type": "財報",
+    "date_local": "2026-11-17",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "WMT",
+    "name": "沃爾瑪",
+    "type": "財報",
+    "date_local": "2026-11-19",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2891.TW",
+    "name": "中信金",
+    "type": "財報",
+    "date_local": "2026-11-20",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2883.TW",
+    "name": "凱基金",
+    "type": "財報",
+    "date_local": "2026-11-23",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2882.TW",
+    "name": "國泰金",
+    "type": "財報",
+    "date_local": "2026-11-27",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2887.TW",
+    "name": "台新新光金",
+    "type": "財報",
+    "date_local": "2026-11-27",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   }
+  ],
+  "no_date": []
+ },
+ "watch_news": [
+  {
+   "company": "Anthropic",
+   "generic": false,
+   "items": [
+    {
+     "title": "Jim Cramer has three lingering questions about Anthropic ahead of its historic IPO - CNBC",
+     "source": "CNBC",
+     "pub_utc": "2026-11-12T23:45Z",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQnlTTmVFZXFUUnAyZTUwM056dW9MeUdWRVdzQ2lQa2dsRnJEN19FRVp6eENzbV9JU1NBMHEyX3FwX3ZYbTljT3JBSXhRU1FNSWJhSUVMbUItTEpXeWhSZnNPQjdQYmoyaERsTFZycnJpaWkxUzliSEFRZFRTQnRBZFNiempKYXdsUXfSAY8BQVVfeXFMTTAxRG1oeTU5a2VlaWdvQXJST2wxZU9WM0hFemc5TzBqMEtXOS1DbFZUU3JEb25WcGVEakRCbjJkQWJUZTlmZ0xjVEZ6RkV0TF9BYXlZaUZUYTl3Q3ZjNlFnNlluNjF0eUxuckhlNG1BYnJKWUplOFZNQmg4TFMwTTVPX3lqSE5CRkNvWGx2NG8?oc=5"
+    },
+    {
+     "title": "AI Trade Barometer: Anthropic’s IPO Is Reportedly Six-Times Oversubscribed - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-12T23:14Z",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTFRGS1QxUlprRjJ5a0tUV1Q0eXRGSUtWZWlHSHpUVi1ESVZDcmJXVzl4MWRKdC05WnhBSUQ0Y0pWUGdzRG9DclBwR3dXNDVFSlpFaHFFV0RDX3Qwc3RfQmtfOS11dFlMcFlhMV90akRvSXM0RkhaOTZ1RTBvQ1VBTWYtS2VhWHluVk53T1liSTdaS0N6MW5IYUYwbGd6QQ?oc=5"
+    },
+    {
+     "title": "Anthropic's IPO is about six times oversubscribed, Bloomberg News reports - Reuters",
+     "source": "Reuters",
+     "pub_utc": "2026-11-12T21:31Z",
+     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNN0pUQzVjV3ltd2hkZ29PSjdjWElOb3dmUlNPSG5HMC01V1EzSnlQdUl0Tm9WNnhJdktOamVLa1JWOTF5SGJZYTFrNWpBbElkc1lGUklCUUNVLXhHNWM1M0JmaHZTTmVaODlldER3Ulc3Q19zVGtOUDl1NzdCQWNuYkR5LWRVcXFUOGFTQXFDUDlTb2VLVzE3Z1M2dnlfeFFwSVV0MEpNNzExRHNxTlpsZGcyTlE1bE5LbEdLNGVtczd3M2hra1E?oc=5"
+    },
+    {
+     "title": "Anthropic IPO could draw record retail buying, Vanda Research says - Reuters",
+     "source": "Reuters",
+     "pub_utc": "2026-11-11T17:23Z",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPSkc4cW15aGVaZG4tLTR1YVpRUWJzNXVtQ0RyR2d1bEFXTFFIU2xhWEduUmxTUFJWZEt0cVh3ZDNxNnRwV2k0WFlnMlNycWpycVVSNGl0Qy1NMlhvZVBUWVhVVGhISDZpcUxBdGVFQnRXRzhCTGZYZVEzUEh1MjlBOFZ6X2p3eG4tUlF3a3NNUXhzYzU5d0NmcVhqS1QzcG5DMUItVWlDdlJ3U1ZoU0tscy1xa3Fxbnh2dHhPYmpNQ1VZOUk0?oc=5"
+    },
+    {
+     "title": "Anthropic: We See the Stock as Undervalued in the IPO Pricing Range - Morningstar",
+     "source": "Morningstar",
+     "pub_utc": "2026-11-11T11:19Z",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQY1hSaVQ0ZjlQWE1Oa1JBZXV4YmM4eTM1MmNYMnlTd1hMZ2x2NWFNaWp3NUFjZFRvMWN0azRLZVdQelkwWS13V1F0dFh2eHRjZ1ZuNExQOXd1c2lnUmxsMGNFUUtmeUxmUHloZzJvb3pfOUljQ2lXS25JRDUwWGhtb2hBcGRoRU9iWHZyd1h3NjZOYkE4SW94eFZxbW8?oc=5"
+    },
+    {
+     "title": "Anthropic says a key AI safety alarm has been triggered, days before its IPO - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-11T06:00Z",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUTRqOU1uQ3V4RzE1YnpNX004b0JjUGlWUjgxbHd5MDAtaGpjREpoTE9DYUNUTVhqQnhDc0loMnRLY3NYRkJWVlZFNm1aU080UEtla1R1MmdoMGVSSEFJZmdFME1nTUx5akx0MW5vYUlaWTVpRTdLeW1iVmRCY3lrQU55SmluSWt2ZU1GNWVjaDR1UDZiUWk2NFF0WnhwWjhFS3pWbXd5TmdmSmlnSnM5cEU5SjNnQzN4ZWVYa2NmMklMYWpWVEV5NmttazQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "OpenAI",
+   "generic": false,
+   "items": [
+    {
+     "title": "OpenAI’s quarterly revenue reportedly crosses $10B for the first time - TechCrunch",
+     "source": "TechCrunch",
+     "pub_utc": "2026-11-11T16:14Z",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd0N2OFdtbV9VNWVjZlRCMUVMZFVweGM5VWh0UTlSNDFibkFSNk9SaldWOVhfWk9YV1JpTk5PWHVKaks5T3JadGFkRWNjTTdyVkJQTndvTGFrQlNxUW5ZMGNSQlVaWmZNMlA3Zmw1RkRSRDFJME50bXIxTkJQc19iRHBwaXpQYkl2RDd0VFJEOFVERUdNYlBQdzNFQkh2Vk9tMWhRWA?oc=5"
+    },
+    {
+     "title": "Exclusive | OpenAI Continues to Suffer Heavy Losses as Revenue Rises to $10 Billion - WSJ",
+     "source": "WSJ",
+     "pub_utc": "2026-11-11T01:02Z",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQ1Z2WGlSZFF1REswbldRM3lQRXJJNWdHVEFlNDNPNFhRRXRzSEdySWZFa281U1lzVFBiNVU0bE5GUlNTLU9YT1ZuV2VOa2VobmpRVmh4eGs2LTJVSzZKRWJwTWxKNzBRZGpZeHU2VV9GUTlfemk5all2aDM2RE9ENWowMGgtcnFXMEJSQ3dZTHVHMkpoT2tOTGpGOWRWdU8tUVdRT3JEVVcxTy1yUU5GYU9GcWtCZFdI?oc=5"
+    },
+    {
+     "title": "OpenAI Third-Quarter Revenue Soars Nearly 50% to $10 Billion - Bloomberg.com",
+     "source": "Bloomberg.com",
+     "pub_utc": "2026-11-11T00:57Z",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPRDhDaVpHZTR4QzFGMnM1bVhVOUJVM2FkeU1wTUxKYUUzMldHbEVGVC1XR25iZ3hrdGhIbHdheUJhd1Q2T0tqX3cycXFhU0ppemhfZ3dHcG11RDdaS2JPVU5vSThNZmUtYWdveWNiOUplbG1MTFFCY2hLenNVRUxhQ2xibktrUzNaU2pVMVk3UlVqWFhGQllxcGtYclZfMlF5a1pTR2x3ZkhhUkNSNUE?oc=5"
+    },
+    {
+     "title": "OpenAI posts steep losses even as quarterly revenue rises to $10 billion, WSJ reports - Reuters",
+     "source": "Reuters",
+     "pub_utc": "2026-11-10T23:54Z",
+     "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSWgwbFNYa2Z4R1pzeU83WUhSVTUwSG9vTC1tT0lfV0FMZk1oWGlNellpU083T2M2VGJDV19fLXhJY3N4dHJUUnUxMTNSeU1XdVdtd3YxNWZ6RWxlcTE1RTRyZDB5UDAweUhFTk9wRjVmNGlzSFUxOEpZTkc0TEdJY05DN3VNRDlidmJnVlJHTEY5dTJaakVFX0x3Mkl2TEZFTDBfN3dBTXhZVkxVRG41X2lyMENmWVFJQ2hHbWs0bHdzem5NSER6d0xhMjl0dw?oc=5"
+    },
+    {
+     "title": "OpenAI CFO: Q3 was a ‘blockbuster quarter,’ as revenue jumped 50% - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-10T21:52Z",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYy1vZWJ3T2doMjVHX2lQb0tVMFJhb216eWhXT1NPSzVUZm1RZVhxRTBOLTZfR3dnT3Q4eVQ3eXREY2s4bEdsbkdLM3F3U2Mwc0pZMWlmSVQzMFM1WXl0UDhsTFZFUVUyWXpkcG1qbzBCWVloWmw2Z0hBdHdMaE1OSzJDRHNtemo2MUVzNExfdVdPb3JoZ1UwTUNaSDBRaVg5NklhMU5pblpwSWtSanAxOGljUHdqX2VY?oc=5"
+    },
+    {
+     "title": "OpenAI gets $11 billion funding at $1.25 trillion valuation, source says - Reuters",
+     "source": "Reuters",
+     "pub_utc": "2026-11-08T21:14Z",
+     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNdlpNRm5XVy11c3hLY0NRdjh2T3VmOE1LOWQ2LXlvcFhmZlFJYkQya3N3QWxud2UteUZpWVlCTXVHUXZZTjIwRlVQaUhqOGhyM2lDaDJTSGcxMnE5MzhOZ1NHYlJIc1p5bHRxaVZjZDd4MFY2RWMtRkNlYkhSVkdpMlRBWi1PYUNmZGNydXZnOTZFMTFoOHR0azBpUlU1aHpVdFA4dlhCV0dDNm91VE0xSVg0bXZhcF9jaVAzcXYzaldOdw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "字節跳動",
+   "generic": false,
+   "items": [
+    {
+     "title": "TikTok-owner ByteDance plans buyback at $400 billion valuation, The Information reports - WHBL News",
+     "source": "WHBL News",
+     "pub_utc": "2026-11-13T01:43Z",
+     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQdnJpcS1IUjY4ZnlTS3dlVGZDUGlDR3YydEx2SmZxcWxjSi1lRVFjMVRHNW1qVnF6R0NCQTRlZ0lCZnROMGpGT1lFZzVBcXAwb0VMcGY3ZTlhQUMtY3NUcWNWTFRDWEJwQVpucVN0Qk54MHVlN1dwWHcxV0trb2dUWjZrd3N6TlVEU2VOdW50YWxROWdYUmx6T0hYdUxpVUVGZ04yR2hONHJ3ci1mdlQxOG1IOFY?oc=5"
+    },
+    {
+     "title": "ByteDance plans $6bn share buyback at about $400 billion valuation, up 20% in a year - investingLive",
+     "source": "investingLive",
+     "pub_utc": "2026-11-13T01:16Z",
+     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPU0Y5QXNJd1N6TmpWRDhteGNrUFRmT2c2WFJmeTFJMUM5UFZfdzBEeXlwcVFobnRzZ3RpMHBTeDlHSlJ3ZmVTOFVtdHNZSm9iaXkteFJPX1BEcGpPdFdGR3NINGZuYUtFUTlIeV81dklUdjNCYzlDbGk2UlNTSFFMNVJINFBPNWh0aU00czJuWEVJeGdvcWI2cGZwZ2dCbjRNUmpMYTRJS2hXMWRKLUp5SldCSHg?oc=5"
+    },
+    {
+     "title": "ByteDance to Buy Back Shares at $400 Billion Valuation - The Information",
+     "source": "The Information",
+     "pub_utc": "2026-11-13T00:47Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPQkFZQV9HSXRYX1ZTZlAtRTh2X2pvTlBySEk0THVsbldEVTJSZkVNQml2amlHY1p3aW9RQTF5ZkFDSmc4c1o1V1VzNlM0eHg4MmdybUg2NHBhNE94YjVkUGtpOEtKUUJfa3J2cG1ZSG1iRFRyb1k3b29WanhUdXR6NFlGdWRHSUdMUEgtY1pjb3g?oc=5"
+    },
+    {
+     "title": "TikTok-owner ByteDance plans buyback at $400 billion valuation, The Information reports - Central Oregon Daily",
+     "source": "Central Oregon Daily",
+     "pub_utc": "2026-11-13T00:05Z",
+     "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPZHhvVVYzT2VIRUtEUFFTaWRsczdwdk80Qm8wcU9XVGF2b1dZTkt3eGFOVXhjSWFIcDB1OUdZaXRBSFM0U2pOTW9EY2ZHM1VzeVlyLXNhbGtjeVFjRV9kbEI2XzNPamV6bDJXZUZiM19jelkzR2p2d2pHdG91Q3hUR2s1ejU2SVVHb1Ezd1pjZ2ZDZDU1U3hEcmJIOHdyMWVDcWppVFpYZ3hZaGhsOXh2UnZEdXA2Y25YQzh4RTJyNkV1dGdlWUNBTWg2RnQ0ZHZQSEkxUldwc2xfUjBmc2FxQVJsZGxIOVY0SlZSVjFhaUlTSUMyN1pjMEV6clJEMzFyX1FRUTdyWjVyejMxVnRSdGlR?oc=5"
+    },
+    {
+     "title": "Leaked TikTok org chart shows how execs from China have gained power in its US e-commerce operations - Business Insider",
+     "source": "Business Insider",
+     "pub_utc": "2026-11-09T17:37Z",
+     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNlp3SE55N2t4QUxjSEpjeTN4T1RGTGlINC1vVzF4dlpNTlFrY2liTXZDWUhxanpMWVRxQ1YwTjRtbnFEWm9kWWQ2T0xheWx4eWtoNVYzQUxxaE5RZUxHajNTSDMxRmo4YVFpa1hjNi1DWkxITmxpR2dGRHVlYV9iUHY5YkxZRXpxM1RWVUNRSlhVN09KY1E?oc=5"
+    },
+    {
+     "title": "TikTok owner ByteDance weighs data center expansion in Brazil, Bloomberg News reports - Bellingham Herald",
+     "source": "Bellingham Herald",
+     "pub_utc": "2026-11-06T16:44Z",
+     "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9jLUlKMjdWNVJ6dkRoOUx4MXhLTXhtOFJTYndPVzB4SEZpVUw5enpndlVQR0p6aWNsT0xDbzhPbU1QTEMtdlBINlAyRFAtVTNzbTIxNEZ2TDVuVEVEZjd0a2c4UVR0NWU1ZTREaDlrZGhGT044M0xn?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Mistral AI",
+   "generic": false,
+   "items": [
+    {
+     "title": "Mistral AI Pricing 2026: Vibe Plans, API and Large 4 Costs - Fello AI",
+     "source": "Fello AI",
+     "pub_utc": "2026-11-11T05:35Z",
+     "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5IOTcwSDgxdzY5WDV2Qll4M0VQcWVWZ3pDRWZsZmU0TGpFN1lnOENyN01yd0FqUmZuTkdnY01JUGZaeWdrREM0c3BnRXd0TXVW?oc=5"
+    },
+    {
+     "title": "Upcoming IPOs 2026: 40+ Startups in the IPO Pipeline - Access IPOs",
+     "source": "Access IPOs",
+     "pub_utc": "2026-11-10T13:22Z",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1wa2owUkNTZG1zQk56MEsyUU5uZ2h5T19sNVgyOTZ4aVdYMWVrR0tmYWVQLWNicGIxaXc4R1E2TzB1YzlyVFdYaDljSy0tUQ?oc=5"
+    },
+    {
+     "title": "Energy is only about 10% of compute costs, capital is the bottleneck: Mensch on Mistral's buildout and a European IPO - Dealroom",
+     "source": "Dealroom",
+     "pub_utc": "2026-11-09T19:16Z",
+     "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZFRjaUtKWFBiODg2NGtWOEZoQzZtXzhELWJLdHlWNzlINjR1Qzd2NHR3Ulc3RXNUSExxbkFEOWdGOThvVENIV2h3Q3ZudWJZWExRcmR6dHVWdkNEbjBJbUQxeTlSSTJnLUhNdmktWDJhYUhBX0FZS1ozWjNSc2tadThvTDctV2stMXVNY3dEbXN4b0hDem1IcVZheWY5T1hMLW5mS09MUDZ3UlpvMElOeWNJeFdzN0hFXzJSMERDSmR1QjdadmVqcEdXRHQyQXB3Z3ZsdEE0SHZxZEwySUk5RE1B?oc=5"
+    },
+    {
+     "title": "Mistral Large 4 (Le Chonk): Open Weights, License, Price and Benchmarks - Fello AI",
+     "source": "Fello AI",
+     "pub_utc": "2026-11-07T08:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE96LTczOTQ4ZExvRC0zR2hUNlpFbXBiMVJGWlRrUl9mWnQ0ZW5CUjlhR1lhZmkzX0xYa2ZUeUZhcnp3cDNsY1ZlOWJGZnM?oc=5"
+    },
+    {
+     "title": "Mistral Raises €3B to Expand AI Research and Infrastructure - HPCwire",
+     "source": "HPCwire",
+     "pub_utc": "2026-11-06T08:00Z",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPUi1TYXhZUVZBVURFTjJoLTF6THp0UnBieHZ2ODNGLWNtelgxb25NQmhxR0ZCRTFJUUVscm9fbzhCMnNJTndtVnhDVjZwMk5NSFFhVUZnTU82VHFXVThXZTBqODc1Y1NjYW02WnpROHZFa1NteEhnVldVa1lQbm1scGpXbVUzSnF4cG1tR0ZsMnRMQWJaRHBsYlBHSEFIRHJfakhYYVZjcVFzU0trX1E?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Perplexity",
+   "generic": false,
+   "items": [
+    {
+     "title": "Perplexity AI sued over undisclosed usage caps on paid subscription features - Top Class Actions",
+     "source": "Top Class Actions",
+     "pub_utc": "2026-11-12T16:03Z",
+     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNY256QV83NXJIbkptX25yb2dPdldqUHU2YXVBYmJPZWNJalktSkhjdkI0aEdBbkY3b0dJakU3V1l5SEo5WGxxVkxtZ2NPY28tbXZSbGFzU0pPWXQ1N3M3c2ZlSUd4T0Y0dGRIMG5wQlZXNEhhdDYwQ2lrWmhYbU5uY3NVbVZaQ19abzF6WTYxbVEzdldyOFBQa2VLam84bzlYNFJ2ZS1UdlY0ZTE4dkYtbm5HSEpnWlhaaXZQQXp2UHlQbnhHcDU5SkZPLTg0SGxyaUYzQg?oc=5"
+    },
+    {
+     "title": "Is Claude Bearish On Its Own Stock? Claude AI Predicts a Woeful Anthropic IPO - Coinspeaker",
+     "source": "Coinspeaker",
+     "pub_utc": "2026-11-11T16:30Z",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdjdEdF9nRkdLb0lhdmR5cFBFRGRhMThKcHdPVXJvNHZUaVBHNWszRWlfRlBWMXJQYTNUN0ViWkthaDRObVlEZE8wZUx4cFY0WHNlSGRJNGVDeDJaYktTNmliMU4zTUlucXN3ZGU0TnAwQjF0S1RYVzVpZllLRmJOTnhqRFV1clFXTFlNZVBrRzAtZnRYaENJbDIyTE9xWUl2Z1p1ONIBqgFBVV95cUxPQkphWDctdjVieUZqeVVObG5jME1ZbzlxbFFUNjd5N01XWHpSTjdvZktYX3Z3Q3dDaFNnaTVrcV93cU1KSFZQUWdoMUFsUlY4ZVpPWG5BaHlIOGlMWkdfMGQ0Q0FKS3V3c1ZscVI1ZFJNSVdhelJzYUtGaTZQZXhEMHZzdWZPVTE4N01yZTZLTlVuRFY0YU0tcDB1M0p1LXVoSlNEZGRhNHR2UQ?oc=5"
+    },
+    {
+     "title": "Aravind Sviniras Perplexity AI Predicts a Mega-Bullish XRP Price Move - Cryptonews",
+     "source": "Cryptonews",
+     "pub_utc": "2026-11-09T21:01Z",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSU03dlpySjRfZ0JhMmY2TkItcXVWaXBDcUZnRmFySGZ5UnBsdmhQLVpHWFYweVMyOWR6S1FaY0VVdi1ndTJ6amdTSU1FRm0wNXM4c2RTeWZIdnBpOVJldjk0UldPWjVuMGlManc1aDF2djRtbG13Y3FBSFNyT2JqNVBXYy1ib294NURvTnRB?oc=5"
+    },
+    {
+     "title": "Elvis Estate and Eminem Publisher Sue Suno in Escalating AI Music Copyright War - OpenTools",
+     "source": "OpenTools",
+     "pub_utc": "2026-11-08T08:22Z",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOT0JHUVZXNnctYlJXcl9ndDZsQzZjYWs4Z1ZDSzRIamZERU9XbnJNVEx4bXFldmZWUDJxNmt0ak9NMlp0SEpWNUYxUm1ZLVdFdGc1UVdUWUtVN0lBd0ViZ0ZaNzh1aTlqX3ZhY0FGYWtmLXlBUW5UWFJjRXNQM1lZLS1qRWdnNWdieFc0?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Anduril",
+   "generic": false,
+   "items": [
+    {
+     "title": "Anduril eyes IPO within 2 years as it challenges defense giants - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-12T20:40Z",
+     "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeVpTSXhONGRFRHI2TzNDWS05UU5VTlZFd1NGRDFSNFFReDJpc3I2TEh5bzJLcjRxRWV6eHpUVWJiUXJzTjlocnFhTTZ3MGxreWhnSnR6MEI1WERaUjN4eXhNNHBJMGxJaW9pOHRkYnhRT1dDc3BlaWR4QnpERWVrR2haUTVOOF9MTnlUTlBESXRsbFhFRWdFUVZtbVl6eGNqZ0oyT0Y2ODdSOTNOTG9vdkhDWnpURmwzbWJjeWRVYURqc0RyUFB5bFFuOXNzWTZBa0JHR2laR2w1NG0yYVE?oc=5"
+    },
+    {
+     "title": "Anduril eyes IPO within 2 years as it challenges defense giants (PPA:NYSEARCA) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-12T20:40Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPeC15V2hXM19jQ1V5bHpTclZ2MTg4cXJIZEw1b295RXgzSWNGYWtDaG5fMHUzbGFjODVmTS1pN3k5bFFPOC16ekgzd2NaVmZQR3E0cDVXN1RhZHJyTDVzazdGMl9VVzdxeE0zeFI5dU5UWkFtNXZnS3lzTVVhcmk3SVFyVkJoSHFFbmtZcm1FYzRkMTJvMVlldmUyNVotb0NPMTFZ?oc=5"
+    },
+    {
+     "title": "Safe Pro Group Wins U.S. Army Contract, Teams with Anduril on Ghost-X Drone Intelligence for Tank Protection - EIN Presswire",
+     "source": "EIN Presswire",
+     "pub_utc": "2026-11-10T21:42Z",
+     "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQQjdMLW5ZWVJCdkhaa0N4c3d6SnhyY3JXaU5mdVJhT1dpM1ktLU9oeko1OHVoZmFWcVhVMXdIbEl3eUxPTmRQa3BZUDQ1RFNSNHVrX2J0QWR2LWJEMXRKQk12SVlReDA3LWx6YW1hZ0Z2enQ3bGJUenNXMkNYZ2pDNTVBY196QTJTeVZMdWpySkUzTmYzaFBfczlKZl9ab0RndzNhSGw2YUw5bk1taXBqNVBIQ09xNGcxUkZZM2l5OG5Ud29FTXluS05iZVhyNV8yNG51UmEyUFhtUnlEN2lKV3lwSWZVb2x4?oc=5"
+    },
+    {
+     "title": "Anduril-area site with mixed-use development potential lists for $13.9M - The Business Journals",
+     "source": "The Business Journals",
+     "pub_utc": "2026-11-10T19:20Z",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWlBPVGFLZVZ6MFV5M09Mc0dfZUtwcGZBVUxiOHRBdGpzV0tsdjZIOGFzd1VHSmRydER4OHBjZVRiVWxsQjBnbURDOExjLTdodk9pcjhoWk1QN0dQZE5RUGFmV1B1aGpDenkwbTI5SEZnbkQ5ZHNmVlprbmRKWW5PUUhwM2oxLUtTVUV5VkM1Y2tTVTRBcmhnV3V3MW0tdzlaLVE?oc=5"
+    },
+    {
+     "title": "Safe Pro To Integrate Automatic Mine Detection Software On Anduril UAS Under First Prime Contract - Defense Daily",
+     "source": "Defense Daily",
+     "pub_utc": "2026-11-10T14:41Z",
+     "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNcjBFWjNua0x3bDhmWUthQzZram10ZmxybHhITE91NlR1akxYNmgyVHJDaG16UVBaMTlUd0ZTd1FaUmoxUkk5TWRkcnVHR0FJMTV3S1NtWVl6Tnk4Ui1jQnBmM2h5RDVNX0xEWDA1b3RDcTZWTUlVMVcyQzgxMjhpWDJkUEpxMEVqZ3M3TklLUVBmU01wemU1SlNsUlFRYVV6aGF5dzZ6M2tRUU95WFJYYnRnVlNNNW1CMDJTclUtTFhjVXlqdHotZFlHTjNkWUl2YlZ5ak9fdWNrUG1FT0lHckFBR1RoR3ZTQUZRc29jM1ZYQkhXSmxR?oc=5"
+    },
+    {
+     "title": "Safe Pro Group Awarded US Army Prime Contract, Teams With Anduril For Super Intelligence On Ghost-X Drone For Tank Protection - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-10T13:45Z",
+     "link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPQmlIdklsdkF5S21fZWZaZlNQaTNfVWt1YmtkT0N1TUpBTmtycVJ1bWJ3QV9fOFFsVk82NTVOYzg2Y2E5OXVCOWh5T1JxZk5PMnZidWtLS3FObG5taHFiRUVTUzhQa3FvMTJycWZxZ2hDRmczdnRKQkVJcGItMTJ1RXhpZUFpUXNsRWZZZjRuZkhFNnQtc3lnRTF4U2pXOTRrRThRejc1WjZ1bkJQNWdTaThHYkZ6VlJMUlJVSGtnSzM0MGQtc1YzckI5OC1Hb05sRGFzSWxBLUE5VzQ5ZFlwOXhqVFdEdHRNUXZBWHBXZm54MnBJUnVsTThQTU9xdkx0VXZyQXhXTzZhTlo2YzFqbzJXdEpSWFJGWmxRcFhzbw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "通用：IPO prices shares",
+   "generic": true,
+   "items": [
+    {
+     "title": "Anthropic’s IPO Price Isn’t So Outlandish. Here’s the Case for the Stock. - Barron's",
+     "source": "Barron's",
+     "pub_utc": "2026-11-12T22:01Z",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1USjhqd0lCMDVDNGJneXpZbzBrVVE1WW80X28yNDVCYzg5dzhBazVsUEc4Z0UyUHRQWVVSZ2JYeGU5dHA4ZUUxZGI2M2pBNGRjVGZ6V1Z2QldrckFBdmMwT0JBc0lObTBWVUpzV0F0WFZidTBwV0hSc3dfWQ?oc=5"
+    },
+    {
+     "title": "IP Group Plc (IPO.L) stock price, news, quote and history - Yahoo Finance UK",
+     "source": "Yahoo Finance UK",
+     "pub_utc": "2026-11-12T16:31Z",
+     "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1oMnZHS0lOQzRYbWRnS3NWODZSa3RTVzU1dkFuNHRhMXJmU2EyY0xfcWNMX3lpSjM4TjVxNGtrUkNnUzFOVWJVX3BVV0h1UWdMcHRF?oc=5"
+    },
+    {
+     "title": "Q&A: How Nasdaq Supports the IPO Process - Nasdaq",
+     "source": "Nasdaq",
+     "pub_utc": "2026-11-12T13:00Z",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1mT3FsV0VBUm1tVmJNaTNnMWxJZ1l3SUt5czJVQ19GOGlwX1pjMTZ5eGVzUE04dlN0MHRtd2M4QXJvSzV6d00xOEpNcmRJcGZaR2gtT1NyNjFiTTE2UTFBWWhscS1vWV9LMG9pUHd1TXo?oc=5"
+    },
+    {
+     "title": "Anthropic IPO: What investors should know before buying on day one - Scripps News",
+     "source": "Scripps News",
+     "pub_utc": "2026-11-12T12:17Z",
+     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdEhwZy1iRTU5MHJQQk5wTlVYM255a0pFeWY4QXp5QUNaaGVtS3lTdEhpQVZaTHBrckphTlBsM3NQWXFjMk9Ia3NBUDE5SW41WE5uYUN4Rlgtal8yQnpxenFQWm5uazNDemFYVndRX08tdTE5SWZVRWh5S3U3Y1RLM2VqMVQ4cnVqQ0pyQ1pZaS1Gek5UMUJNVjFySlZSU243SFNjakFWVWtXVFE3V0Zv?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "通用：files for IPO",
+   "generic": true,
+   "items": [
+    {
+     "title": "Barrick files for IPO with $1.25B dividend plan - The Northern Miner",
+     "source": "The Northern Miner",
+     "pub_utc": "2026-11-11T15:01Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPYzlKa2VNNlNqd1NmMWxQaC01SmtQdFBOaWNMaUFuN1g4eVY5Z3Y1Z1I0Z3E1MnhvRm0yWEZnR3JuM0tldEQ3QzBkanpWdUxmZUxZWjJFLWR3STFHZnNnZmhzckdqaUh6UEdSYTRqd2NCRk54UVFjSDNoaXpqdXZzekwxX1o1eFFueDdQMVBvQ2hydTR2M3RsbQ?oc=5"
+    },
+    {
+     "title": "Canada's Barrick Mining files for IPO of North American business in New York - The Lufkin Daily News",
+     "source": "The Lufkin Daily News",
+     "pub_utc": "2026-11-11T11:04Z",
+     "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPNU1EdkZOZksxeFZiOFQyQjVRRGZmMHdxX213dmZPMmpqYkh1Q1oxNFFwV2VHa2stMGhUTWFTYm92V2JxaXlsZHE3Z3ZsbnJ3c1pyZlh6SG13elNxcHVfa0Vnb2ctMlN3aTc0a25QVkZVTEtjVTlaWlEyVUlBMDN2dTRDNWM2OVhPTzRaOVZldkpYZkN0WldtSnFKVVBSODlWODVxRXJxMHZsNEFUSVpkRG9vNFVYNEN3bWlrUEJKVkpQY1dwNjN4dXFOSmZMdjdFMWd4ZzItZ2N4RjhsdjhhMEg4Rmhwd0w0Nm5mblp2VkhWUXg2WEl4OE1SMmZabTRheVFpWkhB?oc=5"
+    },
+    {
+     "title": "Anthropic says a key AI safety alarm has been triggered, days before its IPO - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-11T06:00Z",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUTRqOU1uQ3V4RzE1YnpNX004b0JjUGlWUjgxbHd5MDAtaGpjREpoTE9DYUNUTVhqQnhDc0loMnRLY3NYRkJWVlZFNm1aU080UEtla1R1MmdoMGVSSEFJZmdFME1nTUx5akx0MW5vYUlaWTVpRTdLeW1iVmRCY3lrQU55SmluSWt2ZU1GNWVjaDR1UDZiUWk2NFF0WnhwWjhFS3pWbXd5TmdmSmlnSnM5cEU5SjNnQzN4ZWVYa2NmMklMYWpWVEV5NmttazQ?oc=5"
+    },
+    {
+     "title": "Inside Anthropic’s blockbuster IPO: What we know about the AI giant’s plans - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-11T05:35Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQlQ4NldHMG5hNlVnay14bFh4QlBweEl3eDVoQVc1Xy1yUW1MV2pTWUdiTXFlWFIzVUdNQjRGT3RiamVmZTBqYjRjWWZqcjhzNmlMSzA0cTNVd3lQQ1ZMU19sSVA0b3M1R2VGbmROZkttQzh3a3JaVERuVnVsTVFmSDVmb2tKUDJkOGd5cWp2dVhTejFqRFVXNjdYd2hQMWJPWEo4?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "通用：largest IPO",
+   "generic": true,
+   "items": [
+    {
+     "title": "Should you buy Anthropic’s IPO and which UK platforms offer access? - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-12T16:09Z",
+     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVmluYjZxcmFjVDVPeW82SThZSGJGdUpjN05HSkJibUNsZldfRDQza2RRVGxpU3FEMll0d2NCN3k4M3ZGbUlrbXdkbzR2UXROTHFlRW54bjlPSjdBcHM4NkZBWlctcm0wUDd5NmloV0V3UU81NnI1ZVFDV1MzdVB5VEtMcGJ6VC1SX2pDc3NZQUFOSVlGc213ajZn?oc=5"
+    },
+    {
+     "title": "SpaceX's IPO reveals a $19 billion opportunity for Anthropic - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-12T11:14Z",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQaEtocm9OdTlkYWo2ZlB2MHVaMGhfd0xac1FkZlJZX1FLaDFlVXRaYXVlM3drUVpBbkw5MlVWMGRnZEF0WGljTXZLWnNvNlVXSHRUb2xQUEJPTFdxbko3XzJhVTdCQlA4d3FfNFRXSjAwOHU4by0yN0ZXeGdpWjA0bnJxR1YxWkRnNEVZcWFyd1pRdS14VVFqNDVsTQ?oc=5"
+    },
+    {
+     "title": "Should You Buy Anthropic IPO Stock? Here’s What History Says - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-12T09:10Z",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNWF2cU94MWJnMGNnU2l0eUtfTWdYOVg3N3FlVzJoQmQ4LWlOV3phanJfTElXWU03c2FTTS16SWRDNnFBVXR1U0o1SzlFc2NtYXdWRFM4YkFiLVY3czN1Y1VXV01oU0E5NzlBbWFkREI0SDNiUmxfM0V1YkFNazJqNFJtREtXcGhuMGljcmFjT2dWRWVZZy1pVVJSb3A?oc=5"
+    },
+    {
+     "title": "Anthropic IPO could lead to ‘large correction’ in markets, Fed official says - Semafor",
+     "source": "Semafor",
+     "pub_utc": "2026-11-11T13:00Z",
+     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRzZTbzJKS01EWkNjeTg2WmhpeWJid09rdjRFZHRGZmRLT1FGNGFFenZQcl83OVlqZl84TzVqd1BQVGwyTTlZZ0gyTkJQTUREaEpCeklqckYtRXV0RVVDVy1zQjJpNFFOdFRmOW9MWEdZc0oxQ0VQTm11WXJOak5qMVRzZDZhNkVpQ2VIckUxdmJxcWVRSFFJLUxGbzhBVVE2MlpUQmlUbXVKU3pLUzZfekVWcUdYekE?oc=5"
+    }
+   ]
+  }
+ ],
  "fixed_events": [
   {
    "date": "2026-11-12",
