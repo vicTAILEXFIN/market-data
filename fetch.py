@@ -32,6 +32,7 @@ FOMC = [dt.date.fromisoformat(x) for x in FOMC]
 MCODE = "FGHJKMNQUVXZ"
 
 errors = []
+DIAG = {}  # 檢查未過時的明細，寫進 latest.json 方便事後追查
 
 
 def r(x, n=4):
@@ -378,6 +379,18 @@ def meta_close(meta):
     return t.date(), float(px)
 
 
+def prev_close_meta(symbol):
+    import yfinance as yf
+    try:
+        t = yf.Ticker(symbol)
+        t.history(period="1d", interval="1d", auto_adjust=False)
+        m = t.history_metadata or {}
+        v = m.get("chartPreviousClose") or m.get("previousClose")
+        return float(v) if v else None
+    except Exception:  # noqa
+        return None
+
+
 def closes(symbol, today, name=None, hourly_fallback=False):
     """收盤序列 [(date, close)]（日期 < 台北今天）。
     Yahoo 日K常缺最新一天（亞股 06:15、美股盤後數小時內都遇過），或最新一根不是正式收盤；
@@ -397,6 +410,14 @@ def closes(symbol, today, name=None, hourly_fallback=False):
             return dl[:-1] + [(d, c)], "meta_fix"
         else:
             return dl, "daily"
+    if mc is None and meta:
+        # 盤中（例如台北 08:00 後手動重跑，日韓已開盤）：前一交易日正式收盤＝1 天期圖表的 chartPreviousClose，
+        # 日期取小時K中今天以前最後一個交易日
+        last = intraday_last(symbol, today)
+        pc = prev_close_meta(symbol)
+        if last and pc and dl and last[0] >= dl[-1][0] and abs(pc / last[1] - 1) < 0.05:
+            base = dl if last[0] > dl[-1][0] else dl[:-1]
+            return base + [(last[0], pc)], "meta_prev"
     if hourly_fallback and dl:
         last = intraday_last(symbol, today)
         if last and last[0] > dl[-1][0]:
@@ -412,6 +433,7 @@ def pair_src(symbol, today, name, digits=2, notes=None, hourly_fallback=False):
         if notes is not None:
             msg = {"meta_fill": "日K缺最新一天，以交易所正式收盤補上",
                    "meta_fix": "日K最新一根與正式收盤不符，已改用正式收盤",
+                   "meta_prev": "盤中重跑，日K缺前一交易日，以交易所公布的前日收盤補上",
                    "hourly_approx": "日K與正式收盤都取不到，暫用小時K最後一根（不含收盤競價，為近似值）"}[src]
             notes.append(f"{name} {p['date']}：{msg}")
     return p
@@ -743,7 +765,8 @@ def dow_contrib(today, idx, universe):
     每檔成分股的收盤日必須等於指數收盤日，否則排除（11/13 曾因個股日K落後一天，排行用到前一天的漲跌）。"""
     rows, prev_sum, stale = [], 0.0, []
     for s in universe["dow"]:
-        p = pair(closes(s, today, s)[0], s, 2)
+        ser, src_ = closes(s, today, s)
+        p = pair(ser, s, 2)
         if not p:
             continue
         if p["date"] != idx["date"]:
@@ -758,6 +781,7 @@ def dow_contrib(today, idx, universe):
         r["pts"] = round(r["chg"] / div, 2)
     implied = round(sum(r["pts"] for r in rows), 2)
     if abs(implied - idx["chg"]) > max(15, abs(idx["chg"]) * 0.15):
+        DIAG["dow"] = {"index": idx, "divisor": div, "rows": [{k: r[k] for k in ("sym", "prev", "chg", "pct", "pts")} for r in rows]}
         raise ValueError(f"道瓊貢獻合計 {implied} 與指數漲跌 {idx['chg']} 差距過大，不輸出")
     up, dn = rank(rows)
     keep = lambda r: {k: r[k] for k in ("sym", "name", "pct", "pts")}
@@ -961,6 +985,8 @@ def main():
         out["fixed_events"] = None
         errors.append(f"fixed_events 失敗：{ex}")
 
+    if DIAG:
+        out["diag"] = DIAG
     for path in ("data/latest.json", f"data/{today.isoformat()}.json"):
         with open(path, "w", encoding="utf-8") as f:
             json.dump(out, f, ensure_ascii=False, indent=1)
