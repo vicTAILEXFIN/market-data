@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-11-13T01:07:52Z",
+ "generated_at_utc": "2026-11-13T01:13:15Z",
  "taipei_date": "2026-11-13",
  "indices": {
   "^DJI": {
@@ -46,7 +46,7 @@
    "prev_close": 61248.59,
    "chg": -449.75,
    "pct": -0.73,
-   "source": "yahoo_intraday_fill"
+   "source": "hourly_approx"
   },
   "^KS11": {
    "name": "韓國綜合股價指數",
@@ -56,7 +56,7 @@
    "prev_close": 5375.36,
    "chg": -54.11,
    "pct": -1.01,
-   "source": "yahoo_intraday_fill"
+   "source": "hourly_approx"
   },
   "^TWII": {
    "name": "台灣加權指數",
@@ -77,12 +77,13 @@
  },
  "sse": {
   "name": "上證綜合",
-  "date": "2026-11-11",
-  "close": 3680.64,
-  "prev_date": "2026-11-10",
-  "prev_close": 3663.72,
-  "chg": 16.92,
-  "pct": 0.46
+  "date": "2026-11-12",
+  "close": 3655.83,
+  "prev_date": "2026-11-11",
+  "prev_close": 3680.64,
+  "chg": -24.81,
+  "pct": -0.67,
+  "source": "meta_fill"
  },
  "ust_curve": {
   "date": "2026-11-12",
@@ -102,69 +103,82 @@
  },
  "stocks": {
   "AAPL": {
-   "date": "2026-11-11",
-   "close": 355.63,
-   "pct": 2.04
+   "date": "2026-11-12",
+   "close": 354.88,
+   "pct": -0.21,
+   "source": "meta_fill"
   },
   "MSFT": {
-   "date": "2026-11-11",
-   "close": 521.13,
-   "pct": -2.26
+   "date": "2026-11-12",
+   "close": 523.0,
+   "pct": 0.36,
+   "source": "meta_fill"
   },
   "NVDA": {
-   "date": "2026-11-11",
-   "close": 173.73,
-   "pct": 2.87
+   "date": "2026-11-12",
+   "close": 166.19,
+   "pct": -4.34,
+   "source": "meta_fill"
   },
   "AMZN": {
-   "date": "2026-11-11",
-   "close": 266.17,
-   "pct": -1.74
+   "date": "2026-11-12",
+   "close": 267.44,
+   "pct": 0.48,
+   "source": "meta_fill"
   },
   "GOOGL": {
-   "date": "2026-11-11",
-   "close": 293.45,
-   "pct": 2.11
+   "date": "2026-11-12",
+   "close": 298.7,
+   "pct": 1.79,
+   "source": "meta_fill"
   },
   "META": {
-   "date": "2026-11-11",
-   "close": 628.77,
-   "pct": -1.97
+   "date": "2026-11-12",
+   "close": 623.61,
+   "pct": -0.82,
+   "source": "meta_fill"
   },
   "AVGO": {
-   "date": "2026-11-11",
-   "close": 345.22,
-   "pct": 3.99
+   "date": "2026-11-12",
+   "close": 364.36,
+   "pct": 5.54,
+   "source": "meta_fill"
   },
   "GS": {
-   "date": "2026-11-11",
-   "close": 926.81,
-   "pct": 1.83
+   "date": "2026-11-12",
+   "close": 913.6,
+   "pct": -1.43,
+   "source": "meta_fill"
   },
   "CAT": {
-   "date": "2026-11-11",
-   "close": 601.61,
-   "pct": 2.91
+   "date": "2026-11-12",
+   "close": 605.28,
+   "pct": 0.61,
+   "source": "meta_fill"
   },
   "MU": {
-   "date": "2026-11-11",
-   "close": 811.3,
-   "pct": 11.89
+   "date": "2026-11-12",
+   "close": 798.44,
+   "pct": -1.59,
+   "source": "meta_fill"
   },
   "INTC": {
-   "date": "2026-11-11",
-   "close": 62.5,
-   "pct": 7.52
+   "date": "2026-11-12",
+   "close": 61.2,
+   "pct": -2.08,
+   "source": "meta_fill"
   },
   "AMD": {
-   "date": "2026-11-11",
-   "close": 552.9,
-   "pct": 7.32
+   "date": "2026-11-12",
+   "close": 585.3,
+   "pct": 5.86,
+   "source": "meta_fill"
   },
   "TSM": {
-   "date": "2026-11-11",
-   "close": 413.35,
-   "pct": 4.25
+   "date": "2026-11-12",
+   "close": 405.49,
+   "pct": -1.9,
+   "source": "meta_fill"
   },
   "2330.TW": {
    "date": "2026-11-12",
@@ -765,12 +779,14 @@
    ]
   }
  ],
- "errors": [],
+ "errors": [
+  "contributors ^DJI 失敗：道瓊貢獻合計 -227.27 與指數漲跌 -189.4 差距過大，不輸出"
+ ],
  "notes": [
-  "日經225指數 日K缺 2026-11-12，改用小時K最後一根",
-  "韓國綜合股價指數 日K缺 2026-11-12，改用小時K最後一根",
-  "台灣加權指數 日K缺 2026-11-12，改用小時K最後一根",
-  "台灣加權 Yahoo 43022.62 與證交所 43091.87 不符，採證交所"
+  "日經225指數 2026-11-12：日K與正式收盤都取不到，暫用小時K最後一根（不含收盤競價，為近似值）",
+  "韓國綜合股價指數 2026-11-12：日K與正式收盤都取不到，暫用小時K最後一根（不含收盤競價，為近似值）",
+  "台灣加權指數 2026-11-12：日K缺最新一天，以交易所正式收盤補上",
+  "上證綜合 2026-11-12：日K缺最新一天，以交易所正式收盤補上"
  ],
  "twd_official": {
   "name": "美元兌新台幣",
@@ -948,21 +964,22 @@
  "preopen": {
   "TSM": {
    "name": "台積電ADR",
-   "date": "2026-11-11",
-   "close": 413.35,
-   "prev_date": "2026-11-10",
-   "prev_close": 396.48,
-   "chg": 16.87,
-   "pct": 4.25
+   "date": "2026-11-12",
+   "close": 405.49,
+   "prev_date": "2026-11-11",
+   "prev_close": 413.35,
+   "chg": -7.86,
+   "pct": -1.9,
+   "source": "meta_fill"
   },
   "NKD=F": {
    "name": "日經期貨（CME）",
    "date": "2026-11-12",
-   "close": 61810.0,
+   "close": 61635.0,
    "prev_date": "2026-11-11",
    "prev_close": 62040.0,
-   "chg": -230.0,
-   "pct": -0.37
+   "chg": -405.0,
+   "pct": -0.65
   },
   "TXF_NIGHT": {
    "name": "台指期夜盤",
@@ -976,78 +993,6 @@
   }
  },
  "contributors": {
-  "^DJI": {
-   "date": "2026-11-12",
-   "method": "price_weighted_divisor",
-   "divisor": 0.162839,
-   "n": 30,
-   "index_chg": -189.4,
-   "implied_chg": 227.57,
-   "top_up": [
-    {
-     "sym": "CAT",
-     "name": "開拓重工",
-     "pct": 2.91,
-     "pts": 104.64
-    },
-    {
-     "sym": "GS",
-     "name": "高盛",
-     "pct": 1.83,
-     "pts": 102.06
-    },
-    {
-     "sym": "AAPL",
-     "name": "蘋果",
-     "pct": 2.04,
-     "pts": 43.72
-    },
-    {
-     "sym": "NVDA",
-     "name": "輝達",
-     "pct": 2.87,
-     "pts": 29.72
-    },
-    {
-     "sym": "CRM",
-     "name": "Salesforce",
-     "pct": 2.12,
-     "pts": 27.82
-    }
-   ],
-   "top_down": [
-    {
-     "sym": "MSFT",
-     "name": "微軟",
-     "pct": -2.26,
-     "pts": -73.88
-    },
-    {
-     "sym": "MCD",
-     "name": "麥當勞",
-     "pct": -2.61,
-     "pts": -45.26
-    },
-    {
-     "sym": "AMZN",
-     "name": "亞馬遜",
-     "pct": -1.74,
-     "pts": -28.86
-    },
-    {
-     "sym": "UNH",
-     "name": "聯合健康",
-     "pct": -0.54,
-     "pts": -13.39
-    },
-    {
-     "sym": "TRV",
-     "name": "旅行家保險",
-     "pct": -0.33,
-     "pts": -8.11
-    }
-   ]
-  },
   "^TWII": {
    "date": "2026-11-12",
    "method": "cap_weighted_issued_shares",
