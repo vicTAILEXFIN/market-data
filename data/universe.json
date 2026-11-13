@@ -30,8 +30,8 @@
   "TRV",
   "UNH",
   "V",
-  "VZ",
+  "GOOGL",
   "WMT"
  ],
- "dow_source": "previous_or_fallback"
+ "dow_source": "manual_fix_2026-11-13 (GOOGL replaced VZ on 2026-06-29)"
 }

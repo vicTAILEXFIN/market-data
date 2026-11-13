@@ -724,7 +724,7 @@ def fixed_events(today, back=7, ahead=14):
 # ---------- 指數貢獻度（動態權值股）----------
 # 名單每月更新一次存 data/universe.json；貢獻度每天以當日價格計算。
 DOW_FALLBACK = ["AAPL", "AMGN", "AMZN", "AXP", "BA", "CAT", "CRM", "CSCO", "CVX", "DIS", "GS", "HD", "HON", "IBM", "JNJ",
-                "JPM", "KO", "MCD", "MMM", "MRK", "MSFT", "NKE", "NVDA", "PG", "SHW", "TRV", "UNH", "V", "VZ", "WMT"]
+                "JPM", "KO", "MCD", "MMM", "MRK", "MSFT", "NKE", "NVDA", "PG", "SHW", "TRV", "UNH", "V", "GOOGL", "WMT"]  # 2026-06-29 Alphabet 取代 Verizon
 ZH = {"AAPL": "蘋果", "AMGN": "安進", "AMZN": "亞馬遜", "AXP": "美國運通", "BA": "波音", "CAT": "開拓重工", "CRM": "Salesforce",
       "CSCO": "思科", "CVX": "雪佛龍", "DIS": "迪士尼", "GS": "高盛", "HD": "家得寶", "HON": "漢威聯合", "IBM": "IBM",
       "JNJ": "嬌生", "JPM": "摩根大通", "KO": "可口可樂", "MCD": "麥當勞", "MMM": "3M", "MRK": "默克", "MSFT": "微軟",
@@ -742,7 +742,9 @@ def load_universe(today):
     try:
         html_ = get("https://www.slickcharts.com/dowjones").decode("utf-8", "ignore")
         etf = {"SPY", "QQQ", "DIA", "IWM", "VOO", "VTI"}
-        syms = [x for x in dict.fromkeys(re.findall(r'href="/symbol/([A-Z.]+)"', html_)) if x not in etf]
+        # 只解析成分股表格（第一個 tbody）；整頁抓會混進側欄熱門代號（11/10 解析到 33 檔而失敗）
+        body = html_.split("<tbody", 1)[1].split("</tbody>", 1)[0] if "<tbody" in html_ else html_
+        syms = [x for x in dict.fromkeys(re.findall(r'href="/symbol/([A-Z.]+)"', body)) if x not in etf]
         if len(syms) != 30:
             raise ValueError(f"解析到 {len(syms)} 檔")
         new["dow"], new["dow_source"] = syms, "slickcharts"
