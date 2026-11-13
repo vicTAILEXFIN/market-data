@@ -63,6 +63,7 @@ REGION = ("美國", "台灣", "亞洲", "歐洲", "中國", "全球")
 MKT = re.compile(r"(道瓊|標普|那指|那斯達克|費半|費城半導體|日經|韓股|KOSPI|加權指數|台股|大盤|美股)[^。；，、]{0,6}(大漲|大跌|上漲|下跌|收漲|收跌|收高|收低|收黑|收紅|漲|跌)\s*[\d０-９]")
 HL_RULE = [("美股", r"(道瓊|標普|那指|那斯達克|費半|美股)"), ("美國總經", r"(Fed|聯準會|CPI|PCE|PPI|非農|殖利率|美元|黃金|油|升息|降息|就業|美債)"),
            ("重大訊息", r"；"), ("亞股", r"(台股|加權)")]
+TW_WORDS = re.compile(r"(台灣|台股|加權|金管會|保險局|立法院|行政院|主計總處|證交所|櫃買|國發會|經濟部|新台幣|壽險)")  # 重點摘要第3點只寫美國或世界
 IMPACT = ("美股", "那斯達克", "費半", "台股", "日股", "韓股", "陸股", "美債殖利率", "2年期殖利率", "美元", "新台幣", "油價", "黃金", "升息機率")
 
 
@@ -503,6 +504,22 @@ def checks(h):
     if len(HL) == 4:
         if HL[2][1].count("；") < 1: E.append("重點摘要第3點須彙整2件以上重大訊息，以「；」分隔")
         if not re.search(r"昨日（\d{1,2}/\d{1,2}）", HL[3][0] + HL[3][1]): E.append("重點摘要第4點須標明「昨日（M/D）」亞股收盤時點")
+        m3 = TW_WORDS.search(HL[2][0] + HL[2][1])
+        if m3: E.append(f"重點摘要第3點限美國或世界訊息，台灣新聞留在新聞卡：「{m3.group(0)}」")
+    # 跨日去重：recent_sent＝近5封正式摘要（不含重跑／通知信）已用過的新聞與壽險 [{"title","url"}]
+    RS = D.get("recent_sent")
+    if not isinstance(RS, list) or len(RS) < 10:
+        E.append("須提供 recent_sent（近5封正式摘要的新聞與壽險標題、網址，不含重跑／通知信），至少10筆")
+    else:
+        norm = lambda s: re.sub(r"[\s　，、。：:「」『』（）()／/｜|‧·-]", "", str(s or ""))
+        nu = lambda u: re.sub(r"[?#].*$", "", str(u or "")).rstrip("/")
+        urls = {nu(x.get("url")) for x in RS if x.get("url")}
+        titles = {norm(x.get("title")) for x in RS if x.get("title")}
+        for t, u, s in D["life"]:
+            if nu(u) in urls or norm(t) in titles: E.append(f"壽險新聞與近5封摘要重複：{t}")
+        for e in N:
+            if nu(e.get("url")) in urls and not e.get("new_development"):
+                E.append(f"重大新聞連結與近5封摘要重複（有新進展請換新進展的文章並填 new_development）：{e.get('title')}")
     if len(D["index_rows"]) != 7: E.append("指數列須7列＋美債1列")
     if len(D["life"]) != 3: E.append("壽險新聞須3則")
     for t, u, s in D["life"]:
