@@ -342,6 +342,81 @@ def intraday_last(symbol, before):
     return d, out[d]
 
 
+def yf_daily_meta(symbol, period="10d", tries=3):
+    """日K＋history_metadata（regularMarketPrice／regularMarketTime＝交易所最新正式收盤）。"""
+    import yfinance as yf
+    for i in range(tries):
+        try:
+            t = yf.Ticker(symbol)
+            df = t.history(period=period, interval="1d", auto_adjust=False)
+            meta = dict(t.history_metadata or {})
+            if df is not None and len(df):
+                return df, meta
+        except Exception:  # noqa
+            pass
+        time.sleep(3 * (i + 1))
+    errors.append(f"{symbol} 1d 取不到")
+    return None, {}
+
+
+def meta_close(meta):
+    """metadata → (交易所當地日期, 收盤價)；盤中或欄位缺漏回傳 None。"""
+    px, t = meta.get("regularMarketPrice"), meta.get("regularMarketTime")
+    if px is None or t is None or (isinstance(px, float) and math.isnan(px)):
+        return None
+    tz = ZoneInfo(meta.get("exchangeTimezoneName") or "UTC")
+    if isinstance(t, (int, float)):
+        t = dt.datetime.fromtimestamp(t, dt.timezone.utc)
+    try:
+        t = t.astimezone(tz)
+    except Exception:  # noqa
+        t = t.tz_convert(tz)
+    period = (meta.get("currentTradingPeriod") or {}).get("regular") or {}
+    end = period.get("end")
+    if end is not None and not isinstance(end, (int, float)) and t.date() == end.date() and t < end:
+        return None  # 盤中，尚未收盤
+    return t.date(), float(px)
+
+
+def closes(symbol, today, name=None, hourly_fallback=False):
+    """收盤序列 [(date, close)]（日期 < 台北今天）。
+    Yahoo 日K常缺最新一天（亞股 06:15、美股盤後數小時內都遇過），或最新一根不是正式收盤；
+    以 history_metadata 的正式收盤補上／覆蓋。metadata 也拿不到時，才視需要用小時K（不含收盤競價，標記為近似）。
+    回傳 (series, source)；source ∈ daily / meta_fill / meta_fix / hourly_approx。"""
+    name = name or symbol
+    df, meta = yf_daily_meta(symbol)
+    dl = daily_closes(df, today)
+    mc = meta_close(meta) if meta else None
+    if mc and mc[0] < today and dl:
+        d, c = mc
+        if abs(c / dl[-1][1] - 1) > 0.25:
+            errors.append(f"{name} metadata 收盤 {c} 與日K {dl[-1][1]} 差距過大，不採用")
+        elif d > dl[-1][0]:
+            return dl + [(d, c)], "meta_fill"
+        elif d == dl[-1][0] and abs(c / dl[-1][1] - 1) > 0.0005:
+            return dl[:-1] + [(d, c)], "meta_fix"
+        else:
+            return dl, "daily"
+    if hourly_fallback and dl:
+        last = intraday_last(symbol, today)
+        if last and last[0] > dl[-1][0]:
+            return dl + [last], "hourly_approx"
+    return dl, "daily"
+
+
+def pair_src(symbol, today, name, digits=2, notes=None, hourly_fallback=False):
+    series, src = closes(symbol, today, name, hourly_fallback)
+    p = pair(series, name, digits)
+    if p and src != "daily":
+        p["source"] = src
+        if notes is not None:
+            msg = {"meta_fill": "日K缺最新一天，以交易所正式收盤補上",
+                   "meta_fix": "日K最新一根與正式收盤不符，已改用正式收盤",
+                   "hourly_approx": "日K與正式收盤都取不到，暫用小時K最後一根（不含收盤競價，為近似值）"}[src]
+            notes.append(f"{name} {p['date']}：{msg}")
+    return p
+
+
 def prev_business_day_local(d):
     d = d - dt.timedelta(days=1)
     while d.weekday() >= 5:
@@ -502,10 +577,13 @@ def txf_night(today):
 def preopen(today, tx_night=None):
     """開盤前領先指標：台積電 ADR、CME 日經期貨（美元）、台指期夜盤。"""
     out = {}
-    for s, n in (("TSM", "台積電ADR"), ("NKD=F", "日經期貨（CME）")):
-        p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), n, 2)
-        if p:
-            out[s] = p
+    p = pair_src("TSM", today, "台積電ADR", 2)
+    if p:
+        out["TSM"] = p
+    # CME 日經期貨：metadata 是即時成交價而非結算價，維持日K
+    p = pair(daily_closes(yf_hist("NKD=F", "10d", "1d"), today), "日經期貨（CME）", 2)
+    if p:
+        out["NKD=F"] = p
     if tx_night:
         out["TXF_NIGHT"] = tx_night
     return out
@@ -661,25 +739,31 @@ def rank(rows, n=5):
 
 
 def dow_contrib(today, idx, universe):
-    """道瓊：價格加權，除數＝前收價總和÷前日指數；貢獻點數＝股價變動÷除數。"""
-    rows, prev_sum, dates = [], 0.0, set()
+    """道瓊：價格加權，除數＝前收價總和÷前日指數；貢獻點數＝股價變動÷除數。
+    每檔成分股的收盤日必須等於指數收盤日，否則排除（11/13 曾因個股日K落後一天，排行用到前一天的漲跌）。"""
+    rows, prev_sum, stale = [], 0.0, []
     for s in universe["dow"]:
-        p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), s, 2)
+        p = pair(closes(s, today, s)[0], s, 2)
         if not p:
             continue
+        if p["date"] != idx["date"]:
+            stale.append(f"{s}({p['date']})"); continue
         rows.append({"sym": s, "name": ZH.get(s, s), "pct": p["pct"], "chg": p["chg"], "prev": p["prev_close"]})
-        prev_sum += p["prev_close"]; dates.add(p["date"])
+        prev_sum += p["prev_close"]
     if len(rows) < 28:
-        raise ValueError(f"道瓊成分股只取到 {len(rows)} 檔")
+        raise ValueError(f"道瓊成分股只取到 {len(rows)} 檔與指數同日（{idx['date']}）；日期不符：{', '.join(stale) or '無'}")
     prev_index = idx["close"] - idx["chg"]
     div = prev_sum / prev_index
     for r in rows:
         r["pts"] = round(r["chg"] / div, 2)
     implied = round(sum(r["pts"] for r in rows), 2)
+    if abs(implied - idx["chg"]) > max(15, abs(idx["chg"]) * 0.15):
+        raise ValueError(f"道瓊貢獻合計 {implied} 與指數漲跌 {idx['chg']} 差距過大，不輸出")
     up, dn = rank(rows)
     keep = lambda r: {k: r[k] for k in ("sym", "name", "pct", "pts")}
     return {"date": idx["date"], "method": "price_weighted_divisor", "divisor": round(div, 6), "n": len(rows),
-            "index_chg": idx["chg"], "implied_chg": implied, "top_up": [keep(r) for r in up], "top_down": [keep(r) for r in dn]}
+            "excluded_stale": stale, "index_chg": idx["chg"], "implied_chg": implied,
+            "top_up": [keep(r) for r in up], "top_down": [keep(r) for r in dn]}
 
 
 def twse_contrib(today, idx):
@@ -693,6 +777,13 @@ def twse_contrib(today, idx):
     if not (kc and ks):
         raise ValueError(f"t187ap03_L 欄位找不到；欄位={list(info[0])}")
     shares = {str(x[kc]).strip(): (num(x[ks]), str(x.get(kn) or "").strip()) for x in info}
+    ds = {str(x.get("Date", "")).strip() for x in day[:50] if x.get("Date")}
+    if ds:
+        roc = max(ds)
+        if roc.isdigit() and len(roc) == 7:
+            d = dt.date(int(roc[:3]) + 1911, int(roc[3:5]), int(roc[5:]))
+            if d.isoformat() != idx["date"]:
+                raise ValueError(f"STOCK_DAY_ALL 日期 {d} 與加權指數 {idx['date']} 不同")
     rows, cap_prev = [], 0.0
     for x in day:
         code = str(x.get("Code", "")).strip()
@@ -743,18 +834,10 @@ def main():
 
     expected = prev_business_day_local(today)  # 亞股最新應有的收盤日（不含休市）
     for s, n in INDICES.items():
-        dl = daily_closes(yf_hist(s, "10d", "1d"), today)
-        p = pair(dl, n, 2)
-        if s in ("^N225", "^KS11", "^TWII") and dl and dl[-1][0] < expected:
-            # Yahoo 日K缺最新一天：用小時K補最後一根，前收用日K最後一筆
-            last = intraday_last(s, today)
-            if last and last[0] > dl[-1][0]:
-                d1, c1 = last
-                d0, c0 = dl[-1]
-                p = {"name": n, "date": d1.isoformat(), "close": r(c1, 2), "prev_date": d0.isoformat(), "prev_close": r(c0, 2),
-                     "chg": r(c1 - c0, 2), "pct": r((c1 / c0 - 1) * 100, 2), "source": "yahoo_intraday_fill"}
-                out["notes"].append(f"{n} 日K缺 {d1}，改用小時K最後一根")
+        p = pair_src(s, today, n, 2, out["notes"], hourly_fallback=s in ("^N225", "^KS11", "^TWII"))
         if p:
+            if s in ("^N225", "^KS11") and p["date"] < expected.isoformat():
+                out["notes"].append(f"{n} 最新收盤日 {p['date']} 早於預期 {expected}（休市或資料延遲）")
             out["indices"][s] = p
     try:
         tw = twii_official(today)
@@ -771,7 +854,7 @@ def main():
         y1, y0 = f(tnx[-1][1]), f(tnx[-2][1])
         out["ust10y"] = {"date": tnx[-1][0].isoformat(), "yield": r(y1, 3), "prev": r(y0, 3),
                          "bp": int(round((y1 - y0) * 100))}
-    p = pair(daily_closes(yf_hist("000001.SS", "10d", "1d"), today), "上證綜合", 2)
+    p = pair_src("000001.SS", today, "上證綜合", 2, out["notes"])
     if p:
         out["sse"] = p
     try:
@@ -807,9 +890,11 @@ def main():
         out["preopen"] = None
         errors.append(f"preopen 取不到：{e}")
     for s in STOCKS:
-        p = pair(daily_closes(yf_hist(s, "10d", "1d"), today), s, 2)
+        p = pair_src(s, today, s, 2)
         if p:
             out["stocks"][s] = {"date": p["date"], "close": p["close"], "pct": p["pct"]}
+            if p.get("source"):
+                out["stocks"][s]["source"] = p["source"]
 
     for s, (n, tz, hm, settled_prev) in MACRO.items():
         refs = [x for x in ref_closes(yf_hist(s, "5d", "30m"), tz, hm) if x[0] < today]
