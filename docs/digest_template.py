@@ -450,9 +450,8 @@ def build():
     return "".join(P) + "</td></tr></table></body></html>"
 
 
-# ---------- 精簡版（信件本文，11/16 起）：完整版約 90KB，超過 Gmail 102KB 會被截斷，且排程無法整份照抄；
-#            本文改寄精簡版（上限 LITE_MAX），完整版作為附件 ----------
-LITE_MAX = 45000  # bytes
+# ---------- 信件本文（11/16 起）：完整版約 90KB，超過 Gmail 102KB 會被截斷，且排程無法整份照抄；
+#            本文用 build_body（縮減版 1115 設計，上限 BODY_MAX），完整版轉純 ASCII 作為附件 ----------
 NAVY = "#243B53"
 LF = "font-family:Microsoft JhengHei,Arial,sans-serif"
 LB = "border:1px solid #D9D9D9"
@@ -490,109 +489,77 @@ def l_market(first, rows):
     return l_table([first, "最新數據", "漲跌", "主要原因說明"], out, (120, 115, 110, W - 345))
 
 
-def build_lite():
-    P = ['<!doctype html><html><head><meta charset="UTF-8"></head><body style="margin:0;background:#FFFFFF">'
-         f'<div style="{LF};font-size:10.5pt;color:#000;line-height:1.55;max-width:{W}px">',
-         f'<p style="font-size:14pt;font-weight:bold;margin:0">每日金融市場摘要</p><p style="margin:2px 0 10px">{esc(D["date_line"])}</p>']
-    hl = "<br>".join(f"{i}. <b>{esc(h)}：</b>{esc(t)}" for i, (h, t) in enumerate(D["highlight"], 1))
-    P.append(f'<table width="{W}" cellpadding="10" cellspacing="0" style="border-collapse:collapse;width:{W}px"><tr>'
-             f'<td bgcolor="#FEF6D2" style="background:#FEF6D2;border:1px solid #E9D47A;{LF};font-size:10.5pt;line-height:1.6">'
-             f'<b style="font-size:12pt">今日重點摘要</b><br>{hl}</td></tr></table>')
-    # 全球盤勢一覽：左美股＋亞股、右美債＋匯率商品
-    L, R = us_tiles() + asia_tiles(), ust_tiles() + macro_tiles()
-    cellrow = lambda t: (l_td(f"<b>{esc(t[0])}</b>") + l_td(esc(t[1]) if t[1] else "", ";text-align:right")
-                         + l_heat(esc(t[2]) + (f'<br><span style="font-size:8.5pt;font-weight:normal">{esc(t[5])}</span>' if t[5] else ""), t[3], t[4]))
-    rows = "".join(f"<tr>{cellrow(a)}{cellrow(b)}</tr>" for a, b in zip(L, R))
-    P.append(l_h2("全球盤勢一覽"))
-    P.append(f'<table width="{W}" cellpadding="4" cellspacing="0" style="border-collapse:collapse;width:{W}px;{LF};font-size:10pt">'
-             f'<tr>{l_white("美股／亞股", extra="")}{l_white("最新")}{l_white("漲跌")}{l_white("美債／匯率與商品")}{l_white("最新")}{l_white("漲跌")}</tr>{rows}</table>')
-    po = preopen_line()
-    if po:
-        P.append(f'<p style="margin:6px 0">{html.unescape(re.sub(r"<[^>]+>", " ", po)).strip()}</p>')
-    fw = D["fedwatch"]
-    P.append(l_h2("FedWatch 利率預期"))
-    P.append(f'<p style="margin:0 0 4px">{esc(fw["meeting"])} FOMC 會議｜目前利率區間 {esc(fw["range"])}｜CME {esc(fw["asof"])} 更新</p>')
-    if fw["rows"]:
-        fr = "".join(f'<tr>{l_td("<b>" + esc(r[0]) + "</b>")}' + "".join(l_td(f"{x:g}%", ";text-align:center") for x in r[1:]) + "</tr>" for r in fw["rows"])
-        P.append(l_table(["", "降息", "維持不變", "升息1碼", "升息2碼以上"], [fr], (120, 145, 145, 145, 145)))
-    P.append(f'<p style="margin:4px 0">{esc(fw["note"])}</p>')
-    # 重大新聞：每則外框
-    P.append(l_h2("重大新聞"))
-    for i, e in enumerate(D["news"], 1):
-        c = TAG.get(e["tag"], "#6B7280")
-        imp = "　".join(f'<font color="{"#A61B1B" if a == "▲" else "#1E7A55"}">{esc(n)}{a}</font>' for n, a in e.get("impact") or [])
-        bl = "<br>".join(f"• {esc(b)}" for b in e["bullets"])
-        P.append(f'<table width="{W}" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:{W}px;margin:0 0 8px"><tr>'
-                 f'<td style="{LB};{LF};font-size:10.5pt;line-height:1.6">'
-                 f'<span style="background:{c};color:#FFFFFF;padding:1px 6px;font-weight:bold"><font color="#FFFFFF">{esc(e["tag"])}</font></span>'
-                 f'&nbsp;<font color="#6B7280">{esc(e["date"])}</font>&nbsp;{imp}<br>'
-                 f'<b>{i}. <a href="{html.escape(e["url"])}" style="color:#164A73">{esc(e["title"])}</a></b><br>{bl}</td></tr></table>')
-    # 主要指數
-    rows = [(brk(n), f"{c:,.2f}", d, pct(pc), pts(ch), None, pc, 6, esc(r)) for n, c, ch, pc, r, d in D["index_rows"]]
-    lv, bp, note, r, d = D["ust"]
-    rows.append(("美國10年期<br>公債殖利率", esc(lv), d, esc(bp), None, f"({esc(note)})", bp_value(bp) if lv != "未取得" else None, 15, esc(r)))
-    P.append(l_h2("主要指數"))
-    P.append(l_market("指數", rows))
-    # 台股籌碼面（精簡為文字表）
+def l_chips():
+    """台股籌碼面表格版（本文超過容量時改用）"""
     ch, inst = D.get("chips"), D.get("inst")
-    if chips_block():
-        st = lambda k: (lambda s: f"（連{abs(s)}{'買' if s > 0 else '賣'}）" if s and abs(s) >= 2 else "")(ch.get(k))
-        line = "｜".join(f"{n} {sgn(inst[k] or 0)}{abs(inst[k] or 0):,.2f}億{st(sk) if sk else ''}"
-                        for n, k, sk in (("外資", "foreign", "foreign_streak"), ("投信", "trust", "trust_streak"), ("自營商", "dealer", None), ("合計", "total", None)))
-        tops = lambda rows: "、".join(f"{x['name']} {sgn(x['amt'])}{abs(x['amt']):,.1f}" for x in rows[:3]) or "—"
-        trs = [f'<tr>{l_td("<b>三大法人（億元）</b>")}{l_td(esc(line))}</tr>',
-               f'<tr>{l_td("<b>外資賣超前三</b>")}{l_td(esc(tops(ch.get("foreign_sell_top") or [])))}</tr>',
-               f'<tr>{l_td("<b>外資買超前三</b>")}{l_td(esc(tops(ch.get("foreign_buy_top") or [])))}</tr>',
-               f'<tr>{l_td("<b>投信買超前三</b>")}{l_td(esc(tops(ch.get("trust_buy_top") or [])))}</tr>']
-        oi = ch.get("tx_foreign_net_oi")
-        if oi is not None:
-            trs.append(f'<tr>{l_td("<b>外資台指期淨未平倉</b>")}{l_td(f"{oi:+,} 口" + (f"（較前日 {ch['tx_chg']:+,}）" if ch.get("tx_chg") else ""))}</tr>')
-        idx_date = next((r[5] for r in D["index_rows"] if r[0] == "台灣加權指數"), "")
-        P.append(l_h2(f"台股籌碼面（{idx_date} 上市）"))
-        P.append(l_table(["項目", "內容"], trs, (150, W - 150)))
-    # 匯率、商品與利率
-    rows = []
-    for n, lv, chg, nt, r, a, d in D["macro_rows"]:
-        if a:
-            rows.append((brk(n), esc(lv), d, pct(a[2]), esc(re.sub(r"（[^）]*）$", "", chg)), f"({esc(nt)})" if nt else None, a[2], SCALE.get(n, 1), esc(r)))
-        else:
-            rows.append((brk(n), esc(lv), d, esc(chg), None, None, None, 1, esc(r)))
-    P.append(l_h2("匯率、商品與利率"))
-    P.append(l_market("項目", rows))
-    um = D.get("us_macro")
-    if um and um.get("rows"):
-        P.append(l_h2(f"美國總經數據（{um['date']} 發布）"))
-        P.append(l_table(["指標", "實際", "預期", "前值", "與預期差", "解讀"],
-                         [f'<tr>{l_td(esc(n))}{l_td("<b>" + esc(a) + "</b>", ";text-align:center")}{l_td(esc(e), ";text-align:center")}'
-                          f'{l_td(esc(p), ";text-align:center")}{l_td(esc(df), ";text-align:center")}{l_td(esc(rd))}</tr>' for n, a, e, p, df, rd in um["rows"]],
-                         (150, 70, 70, 70, 90, W - 450)))
-    # 未來關注事件：日曆表格
-    try:
-        today, days = cal_days()
-        hol = D.get("holidays") or {}
-        head = "".join(l_white(f'{"週" if d.weekday() < 5 else ""}{WD[d.weekday()]}<br>{d:%m/%d}' + ("<br>（今天）" if d == today else "")
-                               + (f"<br>{esc(hol[d.isoformat()])}" if d.isoformat() in hol else ""),
-                               bg="#164A73" if d == today else NAVY, extra=";text-align:center") for d in days)
-        cells = []
-        for d in days:
-            evs = "".join(f'<div style="border-left:3px solid {CAT.get(e["cat"], "#6B7280")};padding-left:4px;margin:0 0 6px">'
-                          f'<b>{esc(e["time"])}</b> <font color="#6B7280">{esc(CAT_SHORT.get(e["cat"], e["cat"]))}</font><br>'
-                          f'<b>{esc(e["title"])}</b><br><font color="#374151">{esc(e["note"])}</font>'
-                          + (f'<br><font color="#065F46"><b>已公布：{esc(e["result"])}</b></font>' if e.get("result") else "") + "</div>"
-                          for e in cal_events(d)) or "&nbsp;"
-            cells.append(f'<td valign="top" bgcolor="{"#FFFBEB" if d == today else "#FFFFFF"}" style="{LB};vertical-align:top;font-size:9pt">{evs}</td>')
-        sub = calendar_text()[0]
-        P.append(l_h2("未來關注事件") + f'<p style="margin:0 0 4px;color:#6B7280">時間為台北時間</p>')
-        P.append(f'<table width="{W}" cellpadding="5" cellspacing="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed;{LF};font-size:9.5pt">'
-                 f'<tr>{head}</tr><tr>{"".join(cells)}</tr></table>')
-    except Exception as ex:  # noqa
-        P.append(l_h2("未來關注事件") + f"<p>日曆資料錯誤：{esc(str(ex))}</p>")
-    P.append(l_h2("壽險業新聞"))
-    for i, (t, u, s) in enumerate(D["life"], 1):
-        P.append(f'<p style="margin:10px 0 2px"><b>{i}. <a href="{html.escape(u)}" style="color:#164A73">{esc(t)}</a></b></p><p style="margin:0 0 8px">{esc(s)}</p>')
-    P.append('<p style="margin:16px 0 0;color:#6B7280;font-size:9pt">完整版（熱力格、FedWatch 長條、籌碼面圖表）見附件 HTML。</p></div></body></html>')
-    return "".join(P)
+    if not chips_block():
+        return ""
+    st = lambda k: (lambda s: f"（連{abs(s)}{'買' if s > 0 else '賣'}）" if s and abs(s) >= 2 else "")(ch.get(k))
+    line = "｜".join(f"{n} {sgn(inst[k] or 0)}{abs(inst[k] or 0):,.2f}億{st(sk) if sk else ''}"
+                    for n, k, sk in (("外資", "foreign", "foreign_streak"), ("投信", "trust", "trust_streak"), ("自營商", "dealer", None), ("合計", "total", None)))
+    tops = lambda rows: "、".join(f"{x['name']} {sgn(x['amt'])}{abs(x['amt']):,.1f}" for x in rows[:3]) or "—"
+    trs = [f'<tr>{l_td("<b>三大法人（億元）</b>")}{l_td(esc(line))}</tr>',
+           f'<tr>{l_td("<b>外資賣超前三</b>")}{l_td(esc(tops(ch.get("foreign_sell_top") or [])))}</tr>',
+           f'<tr>{l_td("<b>外資買超前三</b>")}{l_td(esc(tops(ch.get("foreign_buy_top") or [])))}</tr>',
+           f'<tr>{l_td("<b>投信買超前三</b>")}{l_td(esc(tops(ch.get("trust_buy_top") or [])))}</tr>']
+    oi = ch.get("tx_foreign_net_oi")
+    if oi is not None:
+        trs.append(f'<tr>{l_td("<b>外資台指期淨未平倉</b>")}{l_td(f"{oi:+,} 口" + (f"（較前日 {ch['tx_chg']:+,}）" if ch.get("tx_chg") else ""))}</tr>')
+    idx_date = next((r[5] for r in D["index_rows"] if r[0] == "台灣加權指數"), "")
+    return h2(f"台股籌碼面（{idx_date} 上市）") + l_table(["項目", "內容"], trs, (150, W - 150))
 
+
+def bw_tables():
+    """主要指數、匯率商品：藍白表格（深藍表頭白字、斑馬列），11/16 起用於信件本文"""
+    rows = [[brk(n), f"{c:,.2f}<br>{lbl(d)}", f"{pts(ch)}<br>（{pct(pc)}）", esc(r)] for n, c, ch, pc, r, d in D["index_rows"]]
+    lv, bp, note, r, d = D["ust"]
+    rows.append(["美國10年期<br>公債殖利率", f"{esc(lv)}<br>{lbl(d)}", f"{esc(bp)}<br>({esc(note)})", esc(r)])
+    idx = h2("主要指數") + table(["指數", "最新數據", "漲跌", "主要原因說明"], ["19%", "18%", "16%", "47%"], rows, left=(3,))
+    rows = [[brk(n), f"{esc(lv)}<br>{lbl(d)}", esc(ch) + (f"<br>({esc(nt)})" if nt else ""), esc(r)]
+            for n, lv, ch, nt, r, _a, d in D["macro_rows"]]
+    mac = h2("匯率、商品與利率") + table(["項目", "最新數據", "漲跌", "主要原因說明"], ["19%", "18%", "16%", "47%"], rows, left=(3,))
+    return idx, mac
+
+
+BODY_MAX = 80000  # bytes：信件本文上限（Gmail 超過約 102KB 截斷；11/16 實測排程可一次寄出約 85KB）
+BODY_FONT = "font-family:Aptos,Microsoft JhengHei,Arial,sans-serif"
+
+
+def compact(h):
+    """不影響畫面的縮減：字型改由外層與 <style> 統一指定（英數 Aptos、中文微軟正黑），
+    移除與 bgcolor 屬性重複的 background-color、role 屬性與多餘空白"""
+    h = re.sub(r"font-family:(Microsoft JhengHei|Aptos),Arial,sans-serif;?", "", h)
+
+    def dedupe_bg(m):
+        tag = m.group(0)
+        bg = re.search(r'bgcolor="(#[0-9A-Fa-f]{6})"', tag)
+        return re.sub(r"background-color:%s;?" % bg.group(1), "", tag) if bg else tag
+    h = re.sub(r"<t[dh][^>]*>", dedupe_bg, h)
+    h = h.replace("overflow-wrap:break-word;", "").replace(' role="presentation"', "")
+    h = h.replace(' cellspacing="0" cellpadding="0" border="0"', ' cellspacing="0" cellpadding="0"').replace(' style=""', "")
+    return re.sub(r">\s+<", "><", h)
+
+
+def build_body(chips_html=None):
+    """信件本文：1115 設計，全球盤勢、FedWatch 保留；主要指數、匯率商品改藍白表格；籌碼面預設圖表版"""
+    idx, mac = bw_tables()
+    P = [f'<!doctype html><html><head><meta charset="UTF-8"><style>body,table,td,th,p,div,span,h1,h2,a,b{{{BODY_FONT}}}</style></head>'
+         f'<body style="margin:0;padding:0;background:#FFFFFF;color:#000;{BODY_FONT}">'
+         f'<table width="{W}" align="center" cellspacing="0" cellpadding="0" style="width:{W}px;border-collapse:collapse;{BODY_FONT}"><tr><td style="padding:16px 0;{BODY_FONT}">',
+         f'<h1 style="{F_JH};font-size:14pt;font-weight:bold;color:#000;margin:0 0 8px">每日金融市場摘要</h1>',
+         f'<p style="{F_JH};font-size:11pt;margin:0 0 12px">{esc(D["date_line"])}</p>',
+         highlight_box(), h2("全球盤勢一覽", "14px 0 0"), heat_block(), preopen_line(), fedwatch(), h2("重大新聞", "16px 0 8px")]
+    P += [news_card(i, e) for i, e in enumerate(D["news"], 1)]
+    P += [idx, chips_block() if chips_html is None else chips_html, mac, us_macro(), calendar(), h2("壽險業新聞")]
+    for i, (t, u, s) in enumerate(D["life"], 1):
+        P += [p_title(i, t, u), p_body(s)]
+    P.append(f'<p style="{F_JH};font-size:9pt;color:#6B7280;margin:16px 0 0">完整版見附件 HTML。</p>')
+    return compact("".join(P) + "</td></tr></table></body></html>")
+
+
+def ascii_html(h):
+    """附件用：非 ASCII 字元一律轉成 &#x..; 數字實體，附件傳輸若被轉成 ASCII 也不會變成「?」（11/16 附件亂碼）"""
+    return "".join(c if ord(c) < 128 else f"&#x{ord(c):X};" for c in h)
 
 def build_text():
     L = ["每日金融市場摘要", D["date_line"], "", "今日重點摘要"] + [f"{i}. {h}：{t}" for i, (h, t) in enumerate(D["highlight"], 1)]
@@ -850,19 +817,23 @@ def checks(h):
 
 if __name__ == "__main__":
     import hashlib, os
-    h, t, lite = build(), build_text(), build_lite()
-    open("email_full.html", "w", encoding="utf-8").write(h)
-    open("email.html", "w", encoding="utf-8").write(lite)
+    h, t = build(), build_text()
+    body = build_body()
+    chips_mode = "圖表版"
+    if len(body.encode()) > BODY_MAX:
+        body, chips_mode = build_body(l_chips()), "表格版（圖表版超過容量）"
+    open("email_full.html", "w", encoding="ascii").write(ascii_html(h))
+    open("email.html", "w", encoding="utf-8").write(body)
     open("email.txt", "w", encoding="utf-8").write(t)
-    e = checks(h)
-    lb = len(lite.encode())
-    if lb > LITE_MAX: e.append(f"精簡版 {lb} bytes 超過上限 {LITE_MAX}（請縮短新聞條列或原因說明）")
-    for s in ("今日重點摘要", "重大新聞", "主要指數", "匯率、商品與利率", "未來關注事件", "壽險業新聞"):
-        if s not in lite: e.append(f"精簡版缺少區塊：{s}")
+    e = checks(h) + [x for x in checks(body) if x not in checks(h)]
+    bb = len(body.encode())
+    if bb > BODY_MAX: e.append(f"信件本文 {bb} bytes 超過上限 {BODY_MAX}（請縮短新聞條列或原因說明）")
+    if re.search(r"[^\x00-\x7f]", open("email_full.html", encoding="ascii", errors="replace").read()): e.append("附件含非 ASCII 字元")
     full = os.path.abspath("email_full.html")
     sha = hashlib.sha256(open(full, "rb").read()).hexdigest()
-    print("lite bytes", lb, "（信件本文 htmlBody＝email.html 全文）")
+    print("body bytes", bb, f"（信件本文 htmlBody＝email.html 全文；籌碼面：{chips_mode}）")
+    print("attachment bytes", os.path.getsize(full), "（純 ASCII）")
     print(f"ATTACH: sha256:{sha}:{full}")
-    print("full html bytes", len(h.encode()), "| text bytes", len(t.encode()), "| life", [len(x[2]) for x in D["life"]])
+    print("full html bytes (utf-8)", len(h.encode()), "| text bytes", len(t.encode()), "| life", [len(x[2]) for x in D["life"]])
     print("CHECKS:", "PASS" if not e else e)
     sys.exit(1 if e else 0)
