@@ -521,7 +521,8 @@ def bw_tables():
     return idx, mac
 
 
-BODY_MAX = 80000  # bytes：信件本文上限（Gmail 超過約 102KB 截斷；11/16 實測排程可一次寄出約 85KB）
+BODY_MAX = 45000  # bytes：信件本文上限。限制來自排程須把本文逐字抄進寄信指令（附件與圖片可用檔案參照，本文不行）；
+# 11/16 實測：約 35–40KB 可正確照抄寄出，78KB 排程判斷無法保證而未寄送
 BODY_FONT = "font-family:Aptos,Microsoft JhengHei,Arial,sans-serif"
 
 
@@ -540,21 +541,78 @@ def compact(h):
     return re.sub(r">\s+<", "><", h)
 
 
-def build_body(chips_html=None):
-    """信件本文：1115 設計，全球盤勢、FedWatch 保留；主要指數、匯率商品改藍白表格；籌碼面預設圖表版"""
+def split_h2(block):
+    """區塊開頭的 h2 標題留在本文（文字），其餘畫成圖片"""
+    m = re.match(r"(<h2[^>]*>.*?</h2>)(.*)$", block, re.S)
+    return (m.group(1), m.group(2)) if m else ("", block)
+
+
+def render_png(name, inner):
+    """用 Chromium 把區塊畫成 PNG（2 倍解析度），回傳 (路徑, 顯示高度 px)；失敗回傳 None"""
+    import os
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception:
+        return None
+    path = os.path.abspath(f"img_{name}.png")
+    page_html = (f'<!doctype html><html><head><meta charset="UTF-8"><style>body{{margin:0;background:#FFFFFF;color:#000;{BODY_FONT}}}'
+                 f'body,table,td,th,p,div,span,h1,h2,a,b{{{BODY_FONT}}}</style></head>'
+                 f'<body><div id="b" style="display:inline-block;min-width:{W}px;padding:2px 0;background:#FFFFFF">{inner}</div></body></html>')
+    try:
+        with sync_playwright() as p:
+            b = p.chromium.launch()
+            pg = b.new_page(viewport={"width": W + 200, "height": 600}, device_scale_factor=2)
+            pg.set_content(page_html)
+            el = pg.query_selector("#b")
+            el.screenshot(path=path)
+            bb = el.bounding_box()
+            hgt = bb["height"] * W / max(bb["width"], W)  # 內容超出版寬時圖片等比縮到 700px
+            b.close()
+        return path, round(hgt)
+    except Exception as ex:  # noqa
+        print("render_png 失敗：", name, ex)
+        return None
+
+
+def img_tag(i, alt, hgt):
+    return (f'<img src="cid:att{i}" width="{W}" height="{hgt}" alt="{esc(alt)}" '
+            f'style="display:block;width:100%;max-width:{W}px;height:auto;border:0;margin:4px 0 0">')
+
+
+def build_body(use_images=True, chips_html=None):
+    """信件本文（11/16 定案）：1115 設計。視覺區塊（全球盤勢熱力格＋開盤前指標、FedWatch、台股籌碼面圖表、
+    未來關注事件日曆）畫成圖片嵌入本文；重點摘要、新聞卡、藍白表格、壽險新聞維持 HTML 文字。
+    回傳 (html, 圖片清單[(路徑, alt)])；圖片產生失敗時退回純 HTML（籌碼面改表格版）。"""
     idx, mac = bw_tables()
+    imgs = []
+
+    def visual(name, alt, block):
+        if not block:
+            return ""
+        head, inner = split_h2(block)
+        r = render_png(name, inner) if use_images else None
+        if r is None:
+            return block
+        imgs.append((r[0], alt))
+        return head + img_tag(len(imgs) - 1, alt, r[1])
+
+    heat = visual("heat", "全球盤勢一覽", heat_block() + preopen_line())
+    fw = visual("fedwatch", "FedWatch 利率預期", fedwatch())
+    cb = chips_block() if chips_html is None else chips_html
+    chips = visual("chips", "台股籌碼面", cb) if chips_html is None else cb
+    cal = visual("calendar", "未來關注事件", calendar())
     P = [f'<!doctype html><html><head><meta charset="UTF-8"><style>body,table,td,th,p,div,span,h1,h2,a,b{{{BODY_FONT}}}</style></head>'
          f'<body style="margin:0;padding:0;background:#FFFFFF;color:#000;{BODY_FONT}">'
          f'<table width="{W}" align="center" cellspacing="0" cellpadding="0" style="width:{W}px;border-collapse:collapse;{BODY_FONT}"><tr><td style="padding:16px 0;{BODY_FONT}">',
          f'<h1 style="{F_JH};font-size:14pt;font-weight:bold;color:#000;margin:0 0 8px">每日金融市場摘要</h1>',
          f'<p style="{F_JH};font-size:11pt;margin:0 0 12px">{esc(D["date_line"])}</p>',
-         highlight_box(), h2("全球盤勢一覽", "14px 0 0"), heat_block(), preopen_line(), fedwatch(), h2("重大新聞", "16px 0 8px")]
+         highlight_box(), h2("全球盤勢一覽", "14px 0 0"), heat, fw, h2("重大新聞", "16px 0 8px")]
     P += [news_card(i, e) for i, e in enumerate(D["news"], 1)]
-    P += [idx, chips_block() if chips_html is None else chips_html, mac, us_macro(), calendar(), h2("壽險業新聞")]
+    P += [idx, chips, mac, us_macro(), cal, h2("壽險業新聞")]
     for i, (t, u, s) in enumerate(D["life"], 1):
         P += [p_title(i, t, u), p_body(s)]
     P.append(f'<p style="{F_JH};font-size:9pt;color:#6B7280;margin:16px 0 0">完整版見附件 HTML。</p>')
-    return compact("".join(P) + "</td></tr></table></body></html>")
+    return compact("".join(P) + "</td></tr></table></body></html>"), imgs
 
 
 def ascii_html(h):
@@ -818,22 +876,28 @@ def checks(h):
 if __name__ == "__main__":
     import hashlib, os
     h, t = build(), build_text()
-    body = build_body()
-    chips_mode = "圖表版"
-    if len(body.encode()) > BODY_MAX:
-        body, chips_mode = build_body(l_chips()), "表格版（圖表版超過容量）"
+    body, imgs = build_body()
+    mode = f"圖片版（{len(imgs)} 張圖）" if imgs else "純 HTML 版（圖片產生失敗）"
+    if len(body.encode()) > BODY_MAX and not imgs:
+        body, imgs = build_body(use_images=False, chips_html=l_chips())
+        mode = "純 HTML 版（圖片產生失敗，籌碼面表格版）"
     open("email_full.html", "w", encoding="ascii").write(ascii_html(h))
     open("email.html", "w", encoding="utf-8").write(body)
     open("email.txt", "w", encoding="utf-8").write(t)
     e = checks(h) + [x for x in checks(body) if x not in checks(h)]
     bb = len(body.encode())
-    if bb > BODY_MAX: e.append(f"信件本文 {bb} bytes 超過上限 {BODY_MAX}（請縮短新聞條列或原因說明）")
+    if bb > BODY_MAX: e.append(f"信件本文 {bb} bytes 超過上限 {BODY_MAX}（請縮短新聞條列、原因說明或壽險摘要）")
     if re.search(r"[^\x00-\x7f]", open("email_full.html", encoding="ascii", errors="replace").read()): e.append("附件含非 ASCII 字元")
-    full = os.path.abspath("email_full.html")
-    sha = hashlib.sha256(open(full, "rb").read()).hexdigest()
-    print("body bytes", bb, f"（信件本文 htmlBody＝email.html 全文；籌碼面：{chips_mode}）")
-    print("attachment bytes", os.path.getsize(full), "（純 ASCII）")
-    print(f"ATTACH: sha256:{sha}:{full}")
+    if len(re.findall(r'src="cid:att\d+"', body)) != len(imgs): e.append("本文圖片數與附件數不符")
+    ref = lambda f: f"sha256:{hashlib.sha256(open(f, 'rb').read()).hexdigest()}:{os.path.abspath(f)}"
+    ymd = D["today"].replace("-", "")
+    atts = [{"content": ref(p), "filename": f"{os.path.basename(p)}", "mimeType": "image/png", "inline": True} for p, _alt in imgs]
+    atts.append({"content": ref("email_full.html"), "filename": f"每日金融市場摘要_完整版_{ymd}.html", "mimeType": "text/html"})
+    json.dump(atts, open("attachments.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("body bytes", bb, f"／上限 {BODY_MAX}（htmlBody＝email.html 全文；{mode}）")
+    print("attachment bytes", os.path.getsize("email_full.html"), "（純 ASCII）；圖片", [f"{os.path.basename(p)} {os.path.getsize(p)//1024}KB" for p, _ in imgs])
+    print("ATTACHMENTS（原樣放進 send_message 的 attachments，順序不可改；圖片 i 對應本文 cid:att{i}）：")
+    print(json.dumps(atts, ensure_ascii=False))
     print("full html bytes (utf-8)", len(h.encode()), "| text bytes", len(t.encode()), "| life", [len(x[2]) for x in D["life"]])
     print("CHECKS:", "PASS" if not e else e)
     sys.exit(1 if e else 0)
