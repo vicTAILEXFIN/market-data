@@ -1,0 +1,4134 @@
+{
+ "generated_at_utc": "2026-11-16T22:15:38Z",
+ "taipei_date": "2026-11-17",
+ "indices": {
+  "^DJI": {
+   "name": "道瓊工業指數",
+   "date": "2026-11-16",
+   "close": 51608.17,
+   "prev_date": "2026-11-13",
+   "prev_close": 52347.55,
+   "chg": -739.38,
+   "pct": -1.41
+  },
+  "^GSPC": {
+   "name": "標準普爾500指數",
+   "date": "2026-11-16",
+   "close": 7416.59,
+   "prev_date": "2026-11-13",
+   "prev_close": 7561.67,
+   "chg": -145.08,
+   "pct": -1.92
+  },
+  "^IXIC": {
+   "name": "那斯達克綜合指數",
+   "date": "2026-11-16",
+   "close": 24509.76,
+   "prev_date": "2026-11-13",
+   "prev_close": 25136.27,
+   "chg": -626.51,
+   "pct": -2.49
+  },
+  "^SOX": {
+   "name": "費城半導體指數",
+   "date": "2026-11-16",
+   "close": 9610.65,
+   "prev_date": "2026-11-13",
+   "prev_close": 10146.32,
+   "chg": -535.67,
+   "pct": -5.28
+  },
+  "^N225": {
+   "name": "日經225指數",
+   "date": "2026-11-16",
+   "close": 59662.02,
+   "prev_date": "2026-11-13",
+   "prev_close": 61142.35,
+   "chg": -1480.33,
+   "pct": -2.42,
+   "source": "meta_fill"
+  },
+  "^KS11": {
+   "name": "韓國綜合股價指數",
+   "date": "2026-11-16",
+   "close": 5100.5,
+   "prev_date": "2026-11-13",
+   "prev_close": 5290.53,
+   "chg": -190.03,
+   "pct": -3.59,
+   "source": "meta_fill"
+  },
+  "^TWII": {
+   "name": "台灣加權指數",
+   "date": "2026-11-16",
+   "close": 41040.08,
+   "prev_close": 43675.12,
+   "chg": -2635.04,
+   "pct": -6.03,
+   "source": "twse_mi_index",
+   "prev_date": "2026-11-13"
+  }
+ },
+ "ust10y": {
+  "date": "2026-11-16",
+  "yield": 5.12,
+  "bp": -3,
+  "source": "treasury"
+ },
+ "sse": {
+  "name": "上證綜合",
+  "date": "2026-11-16",
+  "close": 3602.57,
+  "prev_date": "2026-11-13",
+  "prev_close": 3634.35,
+  "chg": -31.78,
+  "pct": -0.87,
+  "source": "meta_fill"
+ },
+ "ust_curve": {
+  "date": "2026-11-16",
+  "source": "treasury",
+  "y2": {
+   "yield": 4.83,
+   "bp": -5
+  },
+  "y10": {
+   "yield": 5.12,
+   "bp": -3
+  },
+  "y30": {
+   "yield": 5.46,
+   "bp": -1
+  }
+ },
+ "stocks": {
+  "AAPL": {
+   "date": "2026-11-16",
+   "close": 352.78,
+   "pct": -0.98
+  },
+  "MSFT": {
+   "date": "2026-11-16",
+   "close": 517.99,
+   "pct": -1.12
+  },
+  "NVDA": {
+   "date": "2026-11-16",
+   "close": 156.14,
+   "pct": -4.12
+  },
+  "AMZN": {
+   "date": "2026-11-16",
+   "close": 257.75,
+   "pct": -3.34
+  },
+  "GOOGL": {
+   "date": "2026-11-16",
+   "close": 283.72,
+   "pct": -4.07
+  },
+  "META": {
+   "date": "2026-11-16",
+   "close": 626.41,
+   "pct": -2.38
+  },
+  "AVGO": {
+   "date": "2026-11-16",
+   "close": 333.4,
+   "pct": -3.92
+  },
+  "GS": {
+   "date": "2026-11-16",
+   "close": 891.54,
+   "pct": -2.73
+  },
+  "CAT": {
+   "date": "2026-11-16",
+   "close": 570.49,
+   "pct": -4.95
+  },
+  "MU": {
+   "date": "2026-11-16",
+   "close": 719.02,
+   "pct": -7.62
+  },
+  "INTC": {
+   "date": "2026-11-16",
+   "close": 55.47,
+   "pct": -7.02
+  },
+  "AMD": {
+   "date": "2026-11-16",
+   "close": 504.28,
+   "pct": -5.58
+  },
+  "TSM": {
+   "date": "2026-11-16",
+   "close": 373.45,
+   "pct": -6.34
+  },
+  "2330.TW": {
+   "date": "2026-11-16",
+   "close": 2215.0,
+   "pct": -5.74
+  },
+  "2317.TW": {
+   "date": "2026-11-16",
+   "close": 218.5,
+   "pct": -9.34
+  },
+  "2454.TW": {
+   "date": "2026-11-16",
+   "close": 3795.0,
+   "pct": -7.89
+  },
+  "2308.TW": {
+   "date": "2026-11-16",
+   "close": 1120.0,
+   "pct": -9.68
+  },
+  "005930.KS": {
+   "date": "2026-11-16",
+   "close": 196800.0,
+   "pct": -4.47
+  },
+  "000660.KS": {
+   "date": "2026-11-16",
+   "close": 1120000.0,
+   "pct": -7.89
+  },
+  "373220.KS": {
+   "date": "2026-11-16",
+   "close": 318500.0,
+   "pct": -1.85
+  },
+  "9983.T": {
+   "date": "2026-11-16",
+   "close": 83740.0,
+   "pct": 1.97
+  },
+  "8035.T": {
+   "date": "2026-11-16",
+   "close": 8794.0,
+   "pct": -7.05
+  },
+  "6857.T": {
+   "date": "2026-11-16",
+   "close": 27205.0,
+   "pct": -11.12
+  },
+  "9984.T": {
+   "date": "2026-11-16",
+   "close": 3416.0,
+   "pct": -3.69
+  }
+ },
+ "macro": {
+  "TWD=X": {
+   "name": "美元兌新台幣",
+   "date": "2026-11-16",
+   "close": 32.971,
+   "prev_date": "2026-11-13",
+   "prev_close": 32.838,
+   "chg": 0.133,
+   "pct": 0.41,
+   "method": "30m參考K棒"
+  },
+  "JPY=X": {
+   "name": "美元兌日圓",
+   "date": "2026-11-16",
+   "close": 159.45,
+   "prev_date": "2026-11-13",
+   "prev_close": 159.69,
+   "chg": -0.23,
+   "pct": -0.15,
+   "method": "30m參考K棒"
+  },
+  "BZ=F": {
+   "name": "布蘭特原油",
+   "date": "2026-11-16",
+   "close": 92.43,
+   "prev_date": "2026-11-13",
+   "prev_close": 95.84,
+   "chg": -3.41,
+   "pct": -3.56,
+   "method": "30m參考K棒＋已結算日K前收"
+  },
+  "GC=F": {
+   "name": "黃金（COMEX近月期貨）",
+   "date": "2026-11-16",
+   "close": 3852.2,
+   "prev_date": "2026-11-13",
+   "prev_close": 3886.3,
+   "chg": -34.1,
+   "pct": -0.88,
+   "method": "30m參考K棒＋已結算日K前收"
+  },
+  "DX-Y.NYB": {
+   "name": "美元指數",
+   "date": "2026-11-16",
+   "close": 103.58,
+   "prev_date": "2026-11-13",
+   "prev_close": 103.41,
+   "chg": 0.17,
+   "pct": 0.16,
+   "method": "30m參考K棒"
+  }
+ },
+ "fedwatch": {
+  "meeting": "12/09",
+  "range": "3.75%–4.00%",
+  "asof": "11/16",
+  "rows": [
+   [
+    "最新",
+    0.0,
+    0.0,
+    95.7,
+    4.3
+   ],
+   [
+    "1天前",
+    0.0,
+    0.0,
+    88.7,
+    11.3
+   ],
+   [
+    "1週前",
+    0.0,
+    16.9,
+    83.1,
+    0.0
+   ],
+   [
+    "1個月前",
+    0.0,
+    8.2,
+    77.4,
+    14.4
+   ]
+  ],
+  "source": "computed_from_ZQ",
+  "effr": 3.88
+ },
+ "us_macro_fred": [
+  {
+   "name": "非農就業人數變動",
+   "series_id": "PAYEMS",
+   "units": "chg",
+   "mode": "diff_k",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:43:20-06",
+   "release_date": null,
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 165.0,
+   "actual": "+16.5萬",
+   "prev_period": "2026年9月",
+   "prev": 60.0,
+   "prev_display": "+6.0萬",
+   "chg_vs_prev": "+10.5萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "失業率",
+   "series_id": "UNRATE",
+   "units": "lin",
+   "mode": "level",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:43:15-06",
+   "release_date": null,
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 4.1,
+   "actual": "4.1%",
+   "prev_period": "2026年9月",
+   "prev": 4.2,
+   "prev_display": "4.2%",
+   "chg_vs_prev": "−0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "平均時薪月增率",
+   "series_id": "CES0500000003",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:42:53-06",
+   "release_date": null,
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 0.3698,
+   "actual": "0.4%",
+   "prev_period": "2026年9月",
+   "prev": 0.2648,
+   "prev_display": "0.3%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "平均時薪年增率",
+   "series_id": "CES0500000003",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 50,
+   "release": "Employment Situation",
+   "last_updated": "2026-11-06 09:42:53-06",
+   "release_date": null,
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 3.1208,
+   "actual": "3.1%",
+   "prev_period": "2026年9月",
+   "prev": 3.1608,
+   "prev_display": "3.2%",
+   "chg_vs_prev": "0.0個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "CPI月增率",
+   "series_id": "CPIAUCSL",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:12:46-06",
+   "release_date": "2026-11-10",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 0.3503,
+   "actual": "0.4%",
+   "prev_period": "2026年9月",
+   "prev": 0.6485,
+   "prev_display": "0.6%",
+   "chg_vs_prev": "−0.3個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "CPI年增率",
+   "series_id": "CPIAUCSL",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:12:46-06",
+   "release_date": "2026-11-10",
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 3.7172,
+   "actual": "3.7%",
+   "prev_period": "2026年8月",
+   "prev": 3.353,
+   "prev_display": "3.4%",
+   "chg_vs_prev": "+0.4個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心CPI月增率",
+   "series_id": "CPILFESL",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:13:38-06",
+   "release_date": "2026-11-10",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 0.2963,
+   "actual": "0.3%",
+   "prev_period": "2026年9月",
+   "prev": 0.3348,
+   "prev_display": "0.3%",
+   "chg_vs_prev": "0.0個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心CPI年增率",
+   "series_id": "CPILFESL",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 10,
+   "release": "Consumer Price Index",
+   "last_updated": "2026-11-10 08:13:38-06",
+   "release_date": "2026-11-10",
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 2.5658,
+   "actual": "2.6%",
+   "prev_period": "2026年8月",
+   "prev": 2.4462,
+   "prev_display": "2.4%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "PPI月增率",
+   "series_id": "PPIFIS",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 46,
+   "release": "Producer Price Index",
+   "last_updated": "2026-11-13 09:20:45-06",
+   "release_date": "2026-11-13",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 0.3475,
+   "actual": "0.3%",
+   "prev_period": "2026年9月",
+   "prev": 1.4078,
+   "prev_display": "1.4%",
+   "chg_vs_prev": "−1.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "PPI年增率",
+   "series_id": "PPIFIS",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 46,
+   "release": "Producer Price Index",
+   "last_updated": "2026-11-13 09:20:45-06",
+   "release_date": "2026-11-13",
+   "period": "2026年10月",
+   "period_date": "2026-10-01",
+   "value": 6.5242,
+   "actual": "6.5%",
+   "prev_period": "2026年9月",
+   "prev": 6.2924,
+   "prev_display": "6.3%",
+   "chg_vs_prev": "+0.2個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "PCE物價年增率",
+   "series_id": "PCEPI",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 54,
+   "release": "Personal Income and Outlays",
+   "last_updated": "2026-10-29 07:43:37-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 3.6489,
+   "actual": "3.6%",
+   "prev_period": "2026年8月",
+   "prev": 3.4442,
+   "prev_display": "3.4%",
+   "chg_vs_prev": "+0.2個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心PCE物價月增率",
+   "series_id": "PCEPILFE",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 54,
+   "release": "Personal Income and Outlays",
+   "last_updated": "2026-10-29 07:43:35-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 0.3165,
+   "actual": "0.3%",
+   "prev_period": "2026年8月",
+   "prev": 0.262,
+   "prev_display": "0.3%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "核心PCE物價年增率",
+   "series_id": "PCEPILFE",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 54,
+   "release": "Personal Income and Outlays",
+   "last_updated": "2026-10-29 07:43:35-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 3.1212,
+   "actual": "3.1%",
+   "prev_period": "2026年8月",
+   "prev": 3.0344,
+   "prev_display": "3.0%",
+   "chg_vs_prev": "+0.1個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "零售銷售月增率",
+   "series_id": "RSAFS",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 9,
+   "release": "Advance Monthly Sales for Retail and Food Services",
+   "last_updated": "2026-10-15 07:38:17-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 0.7708,
+   "actual": "0.8%",
+   "prev_period": "2026年8月",
+   "prev": 1.2888,
+   "prev_display": "1.3%",
+   "chg_vs_prev": "−0.5個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "實質GDP季增年率",
+   "series_id": "A191RL1Q225SBEA",
+   "units": "lin",
+   "mode": "level",
+   "release_id": 53,
+   "release": "Gross Domestic Product",
+   "last_updated": "2026-10-29 08:01:39-05",
+   "release_date": null,
+   "period": "2026Q3",
+   "period_date": "2026-07-01",
+   "value": 3.4,
+   "actual": "3.4%",
+   "prev_period": "2026Q2",
+   "prev": 2.2,
+   "prev_display": "2.2%",
+   "chg_vs_prev": "+1.2個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "初領失業金人數",
+   "series_id": "ICSA",
+   "units": "lin",
+   "mode": "level",
+   "release_id": 180,
+   "release": "Unemployment Insurance Weekly Claims Report",
+   "last_updated": "2026-11-12 07:37:26-06",
+   "release_date": "2026-11-12",
+   "period": "11/07當週",
+   "period_date": "2026-11-07",
+   "value": 200000.0,
+   "actual": "20.0萬",
+   "prev_period": "10/31當週",
+   "prev": 191000.0,
+   "prev_display": "19.1萬",
+   "chg_vs_prev": "+0.9萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "JOLTS職缺數",
+   "series_id": "JTSJOL",
+   "units": "lin",
+   "mode": "level_k",
+   "release_id": 192,
+   "release": "Job Openings and Labor Turnover Survey",
+   "last_updated": "2026-11-03 09:10:46-06",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 7523.0,
+   "actual": "752.3萬",
+   "prev_period": "2026年8月",
+   "prev": 7190.0,
+   "prev_display": "719.0萬",
+   "chg_vs_prev": "+33.3萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "工業生產月增率",
+   "series_id": "INDPRO",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 13,
+   "release": "G.17 Industrial Production and Capacity Utilization",
+   "last_updated": "2026-10-16 08:20:19-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 0.6626,
+   "actual": "0.7%",
+   "prev_period": "2026年8月",
+   "prev": 0.0638,
+   "prev_display": "0.1%",
+   "chg_vs_prev": "+0.6個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "新屋開工（年化）",
+   "series_id": "HOUST",
+   "units": "lin",
+   "mode": "level_k",
+   "release_id": 27,
+   "release": "New Residential Construction",
+   "last_updated": "2026-10-20 07:33:37-05",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 1221.0,
+   "actual": "122.1萬",
+   "prev_period": "2026年8月",
+   "prev": 1288.0,
+   "prev_display": "128.8萬",
+   "chg_vs_prev": "−6.7萬",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "耐久財訂單月增率",
+   "series_id": "DGORDER",
+   "units": "pch",
+   "mode": "mom",
+   "release_id": 95,
+   "release": "Manufacturer's Shipments, Inventories, and Orders (M3) Survey",
+   "last_updated": "2026-11-03 09:36:38-06",
+   "release_date": null,
+   "period": "2026年9月",
+   "period_date": "2026-09-01",
+   "value": 1.9125,
+   "actual": "1.9%",
+   "prev_period": "2026年8月",
+   "prev": 0.1432,
+   "prev_display": "0.1%",
+   "chg_vs_prev": "+1.8個百分點",
+   "released_prev_us_day": false
+  },
+  {
+   "name": "非農生產力年增率",
+   "series_id": "OPHNFB",
+   "units": "pc1",
+   "mode": "yoy",
+   "release_id": 47,
+   "release": "Productivity and Costs",
+   "last_updated": "2026-11-05 07:38:56-06",
+   "release_date": null,
+   "period": "2026Q3",
+   "period_date": "2026-07-01",
+   "value": 2.0575,
+   "actual": "2.1%",
+   "prev_period": "2026Q2",
+   "prev": 2.2867,
+   "prev_display": "2.3%",
+   "chg_vs_prev": "−0.2個百分點",
+   "released_prev_us_day": false
+  }
+ ],
+ "us_calendar": [
+  {
+   "event": "美國零售銷售",
+   "taipei": "11/17 21:30",
+   "us_date": "2026-11-17",
+   "et": "08:30",
+   "release": "Advance Monthly Sales for Retail and Food Services",
+   "metrics": [
+    "零售銷售月增率"
+   ]
+  },
+  {
+   "event": "美國工業生產",
+   "taipei": "11/17 22:15",
+   "us_date": "2026-11-17",
+   "et": "09:15",
+   "release": "G.17 Industrial Production and Capacity Utilization",
+   "metrics": [
+    "工業生產月增率"
+   ]
+  },
+  {
+   "event": "美國新屋開工",
+   "taipei": "11/18 21:30",
+   "us_date": "2026-11-18",
+   "et": "08:30",
+   "release": "New Residential Construction",
+   "metrics": [
+    "新屋開工（年化）"
+   ]
+  },
+  {
+   "event": "美國初領失業金人數",
+   "taipei": "11/19 21:30",
+   "us_date": "2026-11-19",
+   "et": "08:30",
+   "release": "Unemployment Insurance Weekly Claims Report",
+   "metrics": [
+    "初領失業金人數"
+   ]
+  },
+  {
+   "event": "美國新屋開工",
+   "taipei": "11/25 21:30",
+   "us_date": "2026-11-25",
+   "et": "08:30",
+   "release": "New Residential Construction",
+   "metrics": [
+    "新屋開工（年化）"
+   ]
+  },
+  {
+   "event": "美國GDP",
+   "taipei": "11/25 21:30",
+   "us_date": "2026-11-25",
+   "et": "08:30",
+   "release": "Gross Domestic Product",
+   "metrics": [
+    "實質GDP季增年率"
+   ]
+  },
+  {
+   "event": "美國個人所得與支出（PCE物價）",
+   "taipei": "11/25 21:30",
+   "us_date": "2026-11-25",
+   "et": "08:30",
+   "release": "Personal Income and Outlays",
+   "metrics": [
+    "PCE物價年增率",
+    "核心PCE物價月增率",
+    "核心PCE物價年增率"
+   ]
+  },
+  {
+   "event": "美國耐久財訂單",
+   "taipei": "11/25 21:30",
+   "us_date": "2026-11-25",
+   "et": "08:30",
+   "release": "Manufacturer's Shipments, Inventories, and Orders (M3) Survey",
+   "metrics": [
+    "耐久財訂單月增率"
+   ]
+  },
+  {
+   "event": "美國初領失業金人數",
+   "taipei": "11/25 21:30",
+   "us_date": "2026-11-25",
+   "et": "08:30",
+   "release": "Unemployment Insurance Weekly Claims Report",
+   "metrics": [
+    "初領失業金人數"
+   ]
+  }
+ ],
+ "errors": [
+  "watch_news 博通 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 美光 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 鎧俠 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 亞馬遜 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 甲骨文 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news Palantir 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news Databricks 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 蘋果 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 現代汽車 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 韓華航太 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 統一 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 貴州茅台 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 高盛 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news Stripe 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 國泰金 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 台新新光金 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news KB金融 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 禮來 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 中國石油 失敗：HTTP Error 429: Too Many Requests",
+  "watch_news 通用：largest IPO 失敗：HTTP Error 429: Too Many Requests"
+ ],
+ "notes": [
+  "日經225指數 2026-11-16：日K缺最新一天，以交易所正式收盤補上",
+  "韓國綜合股價指數 2026-11-16：日K缺最新一天，以交易所正式收盤補上",
+  "台灣加權指數 2026-11-16：日K缺最新一天，以交易所正式收盤補上",
+  "上證綜合 2026-11-16：日K缺最新一天，以交易所正式收盤補上"
+ ],
+ "twd_official": {
+  "name": "美元兌新台幣",
+  "date": "2026-11-16",
+  "close": 32.886,
+  "prev_date": "2026-11-13",
+  "prev_close": 32.838,
+  "chg": 0.048,
+  "pct": 0.15,
+  "source": "cbc_taipeiforex_close"
+ },
+ "ust_auctions": {
+  "upcoming": [
+   {
+    "term": "20-Year",
+    "type": "Bond",
+    "auction_date_et": "2026-11-18",
+    "taipei_time": "11/19 02:00",
+    "offering_bn": 16.0,
+    "reopening": false
+   },
+   {
+    "term": "9-Year 8-Month",
+    "type": "Note",
+    "auction_date_et": "2026-11-19",
+    "taipei_time": "11/20 02:00",
+    "offering_bn": 19.0,
+    "reopening": true
+   },
+   {
+    "term": "2-Year",
+    "type": "Note",
+    "auction_date_et": "2026-11-23",
+    "taipei_time": "11/24 02:00",
+    "offering_bn": null,
+    "reopening": false
+   },
+   {
+    "term": "1-Year 11-Month",
+    "type": "Note",
+    "auction_date_et": "2026-11-24",
+    "taipei_time": "11/25 02:00",
+    "offering_bn": null,
+    "reopening": true
+   },
+   {
+    "term": "5-Year",
+    "type": "Note",
+    "auction_date_et": "2026-11-24",
+    "taipei_time": "11/25 02:00",
+    "offering_bn": null,
+    "reopening": false
+   },
+   {
+    "term": "7-Year",
+    "type": "Note",
+    "auction_date_et": "2026-11-25",
+    "taipei_time": "11/26 02:00",
+    "offering_bn": null,
+    "reopening": false
+   }
+  ],
+  "results": [
+   {
+    "term": "30-Year",
+    "type": "Bond",
+    "auction_date_et": "2026-11-12",
+    "taipei_time": "11/13 02:00",
+    "offering_bn": 25.0,
+    "reopening": false,
+    "high_yield": 5.441,
+    "bid_to_cover": 2.36
+   },
+   {
+    "term": "10-Year",
+    "type": "Note",
+    "auction_date_et": "2026-11-10",
+    "taipei_time": "11/11 02:00",
+    "offering_bn": 42.0,
+    "reopening": false,
+    "high_yield": 5.02,
+    "bid_to_cover": 2.46
+   },
+   {
+    "term": "3-Year",
+    "type": "Note",
+    "auction_date_et": "2026-11-09",
+    "taipei_time": "11/10 02:00",
+    "offering_bn": 58.0,
+    "reopening": false,
+    "high_yield": 4.627,
+    "bid_to_cover": 2.53
+   }
+  ]
+ },
+ "tw_institutional": {
+  "date": "2026-11-16",
+  "unit": "億元",
+  "foreign": -701.89,
+  "trust": -183.02,
+  "dealer": -259.03,
+  "total": -1143.94
+ },
+ "taifex_foreign_tx": {
+  "date": "2026-11-16",
+  "contract": "臺股期貨",
+  "foreign_net_oi": -96787,
+  "header": "多空未平倉口數淨額",
+  "prev_date": "2026-11-13",
+  "prev_net_oi": -100870
+ },
+ "tw_chips": {
+  "date": "2026-11-16",
+  "unit": "億元",
+  "foreign_streak": -1,
+  "trust_streak": -1,
+  "foreign_sell_top": [
+   {
+    "sym": "2330",
+    "name": "台積電",
+    "lots": -8466,
+    "amt": -187.53
+   },
+   {
+    "sym": "1303",
+    "name": "南亞",
+    "lots": -23380,
+    "amt": -64.06
+   },
+   {
+    "sym": "2317",
+    "name": "鴻海",
+    "lots": -28939,
+    "amt": -63.23
+   }
+  ],
+  "foreign_buy_top": [
+   {
+    "sym": "3443",
+    "name": "創意",
+    "lots": 263,
+    "amt": 20.4
+   },
+   {
+    "sym": "3406",
+    "name": "玉晶光",
+    "lots": 2109,
+    "amt": 18.75
+   },
+   {
+    "sym": "2059",
+    "name": "川湖",
+    "lots": 237,
+    "amt": 16.89
+   }
+  ],
+  "trust_buy_top": [
+   {
+    "sym": "3665",
+    "name": "貿聯-KY",
+    "lots": 1079,
+    "amt": 15.86
+   },
+   {
+    "sym": "3661",
+    "name": "世芯-KY",
+    "lots": 213,
+    "amt": 7.8
+   },
+   {
+    "sym": "2881",
+    "name": "富邦金",
+    "lots": 3544,
+    "amt": 5.39
+   }
+  ],
+  "trust_sell_top": [
+   {
+    "sym": "2330",
+    "name": "台積電",
+    "lots": -2303,
+    "amt": -51.02
+   },
+   {
+    "sym": "2303",
+    "name": "聯電",
+    "lots": -21333,
+    "amt": -20.31
+   },
+   {
+    "sym": "2887",
+    "name": "台新新光金",
+    "lots": -36384,
+    "amt": -14.04
+   }
+  ],
+  "tsmc": {
+   "foreign_lots": -8466,
+   "foreign_amt": -187.53,
+   "trust_lots": -2303,
+   "foreign_streak": -3
+  },
+  "tx_foreign_net_oi": -96787,
+  "tx_prev_net_oi": -100870,
+  "tx_chg": 4083
+ },
+ "preopen": {
+  "TSM": {
+   "name": "台積電ADR",
+   "date": "2026-11-16",
+   "close": 373.45,
+   "prev_date": "2026-11-13",
+   "prev_close": 398.73,
+   "chg": -25.28,
+   "pct": -6.34
+  },
+  "NKD=F": {
+   "name": "日經期貨（CME）",
+   "date": "2026-11-16",
+   "close": 59000.0,
+   "prev_date": "2026-11-13",
+   "prev_close": 61090.0,
+   "chg": -2090.0,
+   "pct": -3.42
+  },
+  "TXF_NIGHT": {
+   "name": "台指期夜盤",
+   "contract": "202611",
+   "trade_date": "2026-11-17",
+   "last": 40935.0,
+   "chg": 154.0,
+   "pct": 0.38,
+   "volume": null,
+   "note": "最後成交價，較前一日一般交易時段結算價"
+  }
+ },
+ "contributors": {
+  "^DJI": {
+   "date": "2026-11-16",
+   "method": "price_weighted_divisor",
+   "divisor": 0.168248,
+   "n": 30,
+   "excluded_stale": [],
+   "index_chg": -739.38,
+   "implied_chg": -739.38,
+   "top_up": [
+    {
+     "sym": "UNH",
+     "name": "聯合健康",
+     "pct": 1.12,
+     "pts": 27.1
+    },
+    {
+     "sym": "PG",
+     "name": "寶僑",
+     "pct": 1.9,
+     "pts": 19.14
+    },
+    {
+     "sym": "MCD",
+     "name": "麥當勞",
+     "pct": 0.99,
+     "pts": 16.05
+    },
+    {
+     "sym": "V",
+     "name": "Visa",
+     "pct": 0.16,
+     "pts": 4.16
+    },
+    {
+     "sym": "SHW",
+     "name": "宣偉",
+     "pct": 0.19,
+     "pts": 3.86
+    }
+   ],
+   "top_down": [
+    {
+     "sym": "CAT",
+     "name": "開拓重工",
+     "pct": -4.95,
+     "pts": -176.58
+    },
+    {
+     "sym": "GS",
+     "name": "高盛",
+     "pct": -2.73,
+     "pts": -148.71
+    },
+    {
+     "sym": "GOOGL",
+     "name": "Alphabet",
+     "pct": -4.07,
+     "pts": -71.62
+    },
+    {
+     "sym": "AMZN",
+     "name": "亞馬遜",
+     "pct": -3.34,
+     "pts": -52.96
+    },
+    {
+     "sym": "JPM",
+     "name": "摩根大通",
+     "pct": -2.31,
+     "pts": -47.43
+    }
+   ]
+  },
+  "^TWII": {
+   "date": "2026-11-16",
+   "method": "cap_weighted_issued_shares",
+   "n": 1094,
+   "index_chg": -2635.04,
+   "implied_chg": -2631.64,
+   "top_up": [
+    {
+     "sym": "6949",
+     "name": "沛爾生醫*-創",
+     "pct": 10.0,
+     "pts": 1.8,
+     "weight": 0.04
+    },
+    {
+     "sym": "2615",
+     "name": "萬海",
+     "pct": 1.86,
+     "pts": 1.71,
+     "weight": 0.21
+    },
+    {
+     "sym": "2923",
+     "name": "鼎固-KY",
+     "pct": 9.94,
+     "pts": 1.38,
+     "weight": 0.03
+    },
+    {
+     "sym": "1229",
+     "name": "聯華",
+     "pct": 3.97,
+     "pts": 0.84,
+     "weight": 0.05
+    },
+    {
+     "sym": "9904",
+     "name": "寶成",
+     "pct": 3.08,
+     "pts": 0.72,
+     "weight": 0.05
+    }
+   ],
+   "top_down": [
+    {
+     "sym": "2330",
+     "name": "台積電",
+     "pct": -5.74,
+     "pts": -1068.03,
+     "weight": 42.57
+    },
+    {
+     "sym": "2454",
+     "name": "聯發科",
+     "pct": -7.89,
+     "pts": -159.13,
+     "weight": 4.62
+    },
+    {
+     "sym": "2317",
+     "name": "鴻海",
+     "pct": -9.34,
+     "pts": -96.62,
+     "weight": 2.37
+    },
+    {
+     "sym": "2308",
+     "name": "台達電",
+     "pct": -9.68,
+     "pts": -95.09,
+     "weight": 2.25
+    },
+    {
+     "sym": "1303",
+     "name": "南亞",
+     "pct": -9.87,
+     "pts": -72.58,
+     "weight": 1.68
+    }
+   ],
+   "top_weights": [
+    {
+     "sym": "2330",
+     "name": "台積電",
+     "weight": 42.57
+    },
+    {
+     "sym": "2454",
+     "name": "聯發科",
+     "weight": 4.62
+    },
+    {
+     "sym": "2317",
+     "name": "鴻海",
+     "weight": 2.37
+    },
+    {
+     "sym": "2308",
+     "name": "台達電",
+     "weight": 2.25
+    },
+    {
+     "sym": "3711",
+     "name": "日月光投控",
+     "weight": 1.87
+    },
+    {
+     "sym": "1303",
+     "name": "南亞",
+     "weight": 1.68
+    },
+    {
+     "sym": "2881",
+     "name": "富邦金",
+     "weight": 1.58
+    },
+    {
+     "sym": "2882",
+     "name": "國泰金",
+     "weight": 1.17
+    },
+    {
+     "sym": "2891",
+     "name": "中信金",
+     "weight": 1.08
+    },
+    {
+     "sym": "2383",
+     "name": "台光電",
+     "weight": 1.05
+    }
+   ]
+  }
+ },
+ "corp_events": {
+  "window": [
+   "2026-11-10",
+   "2026-12-01"
+  ],
+  "events": [
+   {
+    "sym": "CRWV",
+    "name": "CoreWeave",
+    "type": "財報",
+    "date_local": "2026-11-10",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2382.TW",
+    "name": "廣達",
+    "type": "財報",
+    "date_local": "2026-11-11",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "6505.TW",
+    "name": "台塑化",
+    "type": "財報",
+    "date_local": "2026-11-11",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "CBRS",
+    "name": "Cerebras",
+    "type": "財報",
+    "date_local": "2026-11-12",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2317.TW",
+    "name": "鴻海",
+    "type": "財報",
+    "date_local": "2026-11-12",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "BIDU",
+    "name": "百度",
+    "type": "財報",
+    "date_local": "2026-11-16",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "NVDA",
+    "name": "輝達",
+    "type": "財報",
+    "date_local": "2026-11-17",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "WMT",
+    "name": "沃爾瑪",
+    "type": "財報",
+    "date_local": "2026-11-19",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2891.TW",
+    "name": "中信金",
+    "type": "財報",
+    "date_local": "2026-11-20",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2883.TW",
+    "name": "凱基金",
+    "type": "財報",
+    "date_local": "2026-11-23",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2882.TW",
+    "name": "國泰金",
+    "type": "財報",
+    "date_local": "2026-11-27",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2887.TW",
+    "name": "台新新光金",
+    "type": "財報",
+    "date_local": "2026-11-27",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "2881.TW",
+    "name": "富邦金",
+    "type": "財報",
+    "date_local": "2026-11-30",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   },
+   {
+    "sym": "MRVL",
+    "name": "Marvell",
+    "type": "財報",
+    "date_local": "2026-12-01",
+    "estimated": false,
+    "source": "yahoo_calendar"
+   }
+  ]
+ },
+ "watch_news": [
+  {
+   "company": "輝達",
+   "sym": "NVDA",
+   "country": "美國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Trump says he ‘would not mind’ if Jensen Huang returned as Nvidia CEO - NBC News",
+     "source": "NBC News",
+     "pub_utc": "2026-11-16T22:07Z",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNklPOFpXVnJqNEZPX09lNVFUWlJZTFFNYmV2ZkVtZmFtd0xmUXE0TF8xaWZoM0hFVDVvQlAyU2lYcDFyY1pzWURiS1A3akFkb21neS03N0tZVHJmMXNXZmtob0lnUWpJSFZwQkJaUjNtRUZMdEM3V3ZIMFc1VGR2VmVYNGxwRHhFbUw1ek9Zbmlmc0ItZFFzRkNiT0VrTGtqQ2FqNQ?oc=5"
+    },
+    {
+     "title": "Nasdaq 100 Plunges as Nvidia Earnings, Anthropic IPO on Horizon - Bloomberg.com",
+     "source": "Bloomberg.com",
+     "pub_utc": "2026-11-16T21:19Z",
+     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUWtEOGtHd0VyaHpJRnEzcDYtRklURlFfcFByaFNfQ2dhLVJTbkFoSklXeDd3X1dwdVRRR2JVYVRxazF4NGFzd1o5TVZsR0xWbWFuYnd3eU1fRzNBMWNUY1FzeFZLcWQzWFRPT0Y4SmRCUUVleTVIZzFkRmhCQ1pKMjNlSTVjMGI4aTZnd3k5d3lPUG1XTFpnSHlHN2Zoa3BKUk1hUFdKdUczX20xNFEwNDU1Yw?oc=5"
+    },
+    {
+     "title": "Nvidia to report Q3 earnings amid Huang scandal - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T21:18Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUGhYaS1ZSloxYlVnRV9hQ0MyWVdfZU44cnI3dmRqRXAwSURBS2VxeGJZcExTV003YUxoMjNrelRscG9mWGVZM19yRmpRN0JhU09OWWc1bUZYZU1vRlBFeG0xM2VfVGRiLXBIS0lwZTZLd0ZBaldWVVJUS05BWU1sQkdFTU1yM3lIaTMzVnh3cVo0MmpRS2s3WDFmbGpTNzhWaVdGdlB0LW9JVUE?oc=5"
+    },
+    {
+     "title": "Wall Street ends sharply lower on AI jitters ahead of Nvidia results, Anthropic IPO - Reuters",
+     "source": "Reuters",
+     "pub_utc": "2026-11-16T21:01Z",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZEJobHpHMl90WUdVbnpzSGxLb1l3bi1BczhrN29iVW9rUzBtQWE4aFNuM2ZGS1RIQThLdEZPWmZjeExVaHhRaXBubkdqR3R3TXJYTlRqUmRYcXZxYS1pV1lyRlExUDdEUWJ3cTg4aktJVWcxbkg5UW9oeVRXLXhCZjdRQmFNeFJlLXhpWTRMM1lEUVlodGwxVHNCSE9ONTlnem0yekw1dDNraElYZGc?oc=5"
+    },
+    {
+     "title": "Nvidia’s Board Not Considering Reinstating Jensen Huang as CEO - WSJ",
+     "source": "WSJ",
+     "pub_utc": "2026-11-16T20:32Z",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQzR4SU1LOU9KUHEzaDg2Ym4xQ3kzbWZ2TTUtUHo3RDJGNENGcjFuYzI3ZDVRY1UyOWdzekVrR3hSQ19uRV8tSmszd0FCeF93SThvcWdySzJGN3cwOWx5NktTS1kwQVBZaFRSWkxUMkFKR1RjNXdZTk5CcnAweGljbkxpNnVGcFRUX0hKQUp2Tnlibk5tb3h1REFiS3ctR0p0?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "超微",
+   "sym": "AMD",
+   "country": "美國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -5.58,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "英特爾",
+   "sym": "INTC",
+   "country": "美國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -7.02,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "Intel is sued by shareholders after its stock lost 28.6% in one day - Startup Fortune",
+     "source": "Startup Fortune",
+     "pub_utc": "2026-11-16T21:27Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOM1JqQkNmVi02T01aS1hPVnVZY2xzbjF0TGc2R2RYOXVOUDIwNy1JSjZ1bzhUZWNxZERzQzNNdEYyeGZaZm11bjVRSEdtclo1SGxzSG0zVi1iZURlWmZmRjJpclVwZDVLQ3NGYXdKV1ppaGRObFU3cWJYSmN4cjJFbllUV2doRWRtbXRyQi1yclZpVDV3VWM3LQ?oc=5"
+    },
+    {
+     "title": "Intel Shareholder Lawsuit: 28.6% Plunge, $140B Lost - shattered.io",
+     "source": "shattered.io",
+     "pub_utc": "2026-11-16T20:45Z",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxObmtXRDFZV0hCTWxzVkd1YVBjN2hXdkhDbW5BVnNfS3p1UmYtT0tPQkR2QUtRUUZlV1l2VEEyZnZ3b2tPWXhIbXhFYlE5d05JWHNKOWVseXk1eW1MTVF0djFrMXFUeGNSZnFXRUtsX2d2MTJMTUt4eFBqdGI4NTRZZlZkWkZWWTdMZDFMWDRzZlhDdw?oc=5"
+    },
+    {
+     "title": "Shareholders sue Intel, its CEO and CFO after stock drops 28.6 percent in one day - Ars Technica",
+     "source": "Ars Technica",
+     "pub_utc": "2026-11-16T20:37Z",
+     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNRXQ2YjR2dkw3M2R6SkQ2am5pRDF5SnppaE9kRGxVaTRMcVdwWEhUQzJWZWxMNE1uS0RzYXUzUlFLSjV5ZUhwWmtsZ01KVzB6TEpwWFVzVlc2UFRfbFdmZDg4NlFrOEJQQ2JNT3pGQW01T2JBVkFjNnZMaTdXVzA1eU5FUWJhZDl6aFk5OFJBWU1YYzRJdGkyRTkyelZGcjd4OE81X1VaWkJoRDZPT2JKOUVEUEd2UktKZHRhYTZuN1hpQ1U?oc=5"
+    },
+    {
+     "title": "Why Is Intel Facing a Shareholder Lawsuit Over Its PC Slowdown? - BeInCrypto",
+     "source": "BeInCrypto",
+     "pub_utc": "2026-11-16T20:10Z",
+     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9wclVFaGhweFI1X1B2cUpTWVNyT0NYbE9ZaW5XdUpZcldlZGNWVWRKVUc3Rk9QRy15R05HZEMwMEFvdTVrMm8zNV9HU1h4X3drZVFMdVYwbXZOekRyMXZRWEJQdWJnU2NuNGtBR1VB?oc=5"
+    },
+    {
+     "title": "INTW 2X Intel ETF Tumbles 13% as Intel Drops Amid Shareholder Lawsuit and AI Chip Selloff; Taiwan Semiconductor Falls 5% - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-16T20:03Z",
+     "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPT0lEcGNlTVBvYV9uUEdhNHBMQnhEaS1DMXUybEYwTDdFWDNGc2hJendVWUM1M1ptTFVQMEs3cWlzWHFqZ3ZOOU5NNFhyMGpUTUVzWklhTjdnMF91WEd2YWNqU3JCQi0xaWJReEVOUmZrNjlETFo4NVgwQTI1VGVXaHhYaXZBeTRPeGpLSzZYbFVzWGVmTTRxNjlxZUZhS2hzaGRnQVRMRFFYSFpPdllWc2lMbFh3UVVyNWFld2ZqWWxUWUtXM3g2SDlUWmZ0Qjdka0Zxamc1ZlVBcEM2RjR2N0ZfWVl4em1fZW82WFM0cnBYcmM?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "美光",
+   "sym": "MU",
+   "country": "美國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -7.62,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "Cerebras",
+   "sym": "CBRS",
+   "country": "美國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -7.11,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "Cerebras Systems (NASDAQ:CBRS) Stock Falls 7.1% Following Analyst Downgrade - MarketBeat",
+     "source": "MarketBeat",
+     "pub_utc": "2026-11-16T22:04Z",
+     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPb1BlTUJELVpkZ3BUcVRPa1U0Q3p3ZlZuNzFSZmpYNFJid0xUNllmYXZhTVg2ME1UNGtEdXNZT3pYUE9iS2szRnVRbU1tRkZsS085Q0Zab3RBNDEyN1Z2OTk4S0RTM2ZOTHdGRzBtcnpQS1E4aklxVmdWWUJiVUE0dGVBTlhpWnhabTdhR3VFM3YyWG81TkV0eC1xSjl2UExLX0Z6M3FTU3JybjZPR29lYVg1ZGdTQXNfZ0FzVGQtRUlpUFJUNTU5V1phNA?oc=5"
+    },
+    {
+     "title": "Cerebras Stock Jumps on Q3 Cloud Revenue Up 265%, Raised Outlook (CORRECTED) - Benzinga",
+     "source": "Benzinga",
+     "pub_utc": "2026-11-16T21:17Z",
+     "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPTVY5c2RPbTJsQUo0d0prYlZBZ2pUbEg0aGZ4akZHdHh6Tl9aWVQzV0wzeVVCd0VRc2ZYdkxnaXhUaGNIY0ZiRjF3ZlBHU01ta2ZvSDBmWi01c29RTWZtS09WOWduTll3UWowSl9fODVmTzNLV0xSSk5LTTgyQmhhMlpVQkdvSkZwc0ZWSUV5YVZNcU9NSTFBWEtWRVZPT0VLYXZIUEViVXVRbFBnVi1jNUVIS1c5cVZycDU0c3JNdXBhMlBxbnEw?oc=5"
+    },
+    {
+     "title": "What Mattered Most In Cerebras’s Latest Quarter? - Trefis",
+     "source": "Trefis",
+     "pub_utc": "2026-11-16T19:20Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOY2ZoeVhON0hPSWk0RjV3Q2JaMkRESWRJRlM4QTY2ODRsR1p6dzAtbEJpa0g1TWpBQVlMbjFCbTdNNFJoNlhRWFVma1lkRktMNk5qU1NTd3phbDAwakJTdU9tTElaQW9vWko1UFFSUFpWSFdIMlVBMHpZVFhoZHBxTkJzYVAxSnd6ekU0UFV1bk5tcTluYmR3Y1ItQzBaUWVoZEtvNUVvbjBTY2M?oc=5"
+    },
+    {
+     "title": "Cerebras Systems Q3FY26 Results: Loss widens to $0.67 per share - scanx.trade",
+     "source": "scanx.trade",
+     "pub_utc": "2026-11-16T17:50Z",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOS1JNSWMxUDA1Qlh2VEo2Z05KdGczdlNwYXZRaTh0UTdkNmNKQTRZeE5YZmRINW1qaTNnRUowWEhfQnZ4ck9rSGlvejRFcnRkdXh3QUxqZ09FWjA0b3B3ZlVDc1dYSjltSWpwemdSSWJ2VC1ZSnlvUmlfVzRfYTNuN2M4ckU5VXBmbzNSNUZGMm56NEd0OThEdE55d1dUOXlheU5BOHZTSGpOUVdSbGhpem81cmlUQQ?oc=5"
+    },
+    {
+     "title": "Cerebras Systems Q3 revenue jumps 55%, EPS beats expectations, signaling strong growth potential. - Pluang",
+     "source": "Pluang",
+     "pub_utc": "2026-11-16T13:51Z",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbzRaRWZ0MlNPN1JoR1pIZWVQazNrbDNZYlQxMmE0TGZ5SFlOSmZaUkRIZnd0NVpUOVNRNFNlb3ZCTll6YXV3YnJvV0ZoYllJZlBaa3dqMWo1bGV3SzRVQW81T3JoaDFWNG9oT0NVUG1yOTF2UnhyYTVwOWlob1pRYzVCaFktV1l3Z3p6UHdFTjhUeHpxaWpKX19aN2tyQkVxbDZQMTZzQnd6QXVtWGc?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "安謀",
+   "sym": "ARM",
+   "country": "美國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -8.12,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "ARM's 50% Licensing Revenue Surge Signals Strong AI-Driven Demand - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T19:40Z",
+     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMjd5cU1YcGgwSnVZMHRvbDR1V2ZqRnVWbTFvN3NNRkk0aDNjZnFzTjBBRXB6NGlzLUU3eXA3ektTOWJMcFhhdHoxcEw1RGhsRGptNDJ0bW5udi1BUFNpNXZwS0VjVWtRdmRNU096WkdtdzZfQjVwX1VnTlVGS2J4R1BzZlE1a3psa3ZucmRhVk9XNFA0ME9jczV1ajlzaE8wd1M2MUQ5YUkweGlOVHk1V0JEN0RjV2tTbnNsVQ?oc=5"
+    },
+    {
+     "title": "Arm Stocks Slide 6.72% as Nvidia CEO Search Keeps Rene Haas in Focus - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T17:49Z",
+     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQYkRFc2ZPYjZJalZCUmtrZk9GLUZvdkhpakZxTjRPTHFjS1FldmZpTkljU01HSFVYMEtoWm9CQWlHekVfUDJzd0lOblVkdGFQazFZLXVlMDNIMGFzSG9UMU5JQkJhMXdGcXhDd1J2S2hWNG9yWmlaby10aWpnanQ0dm5oLTR6dzBtMGdRY20xd3psZ2dkTGk3ay0tTjZZRXpWSHNBWW1QUzUzQWdlRUFqaS0yTVAxYy1pSGk1YlhYMVlkNGVBZmc?oc=5"
+    },
+    {
+     "title": "Arm CEO Rene Haas Is at 23% Odds to Run Nvidia. That’s a Problem for Arm - TIKR.com",
+     "source": "TIKR.com",
+     "pub_utc": "2026-11-16T16:52Z",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVXFtWFVjR3ZlRlRPcXd5SVpfLTBCU2R3UVRUWkF3T01GbzRlNzQ2c1ExQkpIbFZKTHJTTHB3ZjNZZDAwazg5R0JIWGk4blROU3YzaE1BMzIzWWV3RlJXa2t6TkJobTJxVVp1emt2NUdvWXh3czhscUxrQ1FDS0pEenlJNTJiVjBTTUg4YlJJQUlRS3dCdjV5OHYzZUw?oc=5"
+    },
+    {
+     "title": "Mubadala Investment Co PJSC Cuts Share Stake In Nvidia, Arm Holdings, Raises In UnitedHealth - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T16:36Z",
+     "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPTnRQcnMtZmtUWE5IdDRyY2xpbmREVDFEOXdxR0xXVzItSnB0Y1piandLRzI1OW5fcE1namlyYnZGZ3Q5VEI1SFlKSXhFQmxpZE1ScDhqalRsOHpzNnMxWDBrUWR2dmhHSWZFOHhsajBJQjZPTkNldWdLTEFHQnBpUWp5aWFZZDZwUUhtNGZkSlROWk1TOHF5Y3cxTl96ZE5yRVgzdC1sUkxycWF6eU1GMUtvMm1mX2xyQlBab1JnYWRUMHFfNG5yZjBkZEZhTGpVeXlJZTRlN0xJOG5TdkNMOEp6SEtZLWFOR2JGTnpXVlFwZw?oc=5"
+    },
+    {
+     "title": "Arm Holdings (ARM) Stock Price Prediction: Analysts trim targets as post-earnings momentum cools - Blockchain News",
+     "source": "Blockchain News",
+     "pub_utc": "2026-11-16T12:18Z",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNT0JZOC1vakZEZ05za2xkaUtsVUt4cUJ3cTZzTVRJQ3NCZVF2UDE1dFhXV2MxWUVuMmlsU2d0NjJoakpjVUVDaVB1eklhUExFcFZmLTF5bldFY3V1aUNLd0NYdHR6ZENPeElQQ3c3b3BveVliTE9NOGhUUG5tN25Bb1RKLVY1STMxX3lKSXZzZUNSVVEyVVVLMEFDdUhmQQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Marvell",
+   "sym": "MRVL",
+   "country": "美國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -7.27,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "Marvell Technology stock falls 6% as chip selloff deepens after Nvidia CEO exit - Crypto Briefing",
+     "source": "Crypto Briefing",
+     "pub_utc": "2026-11-16T18:26Z",
+     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5sbkZBeVVCeUJOREVkZnQyY2dKN08zMElwbjFmQm9zaC1pakd2UGpvLXc0R0VNTEZtSjc1Nl83cXktWkltUTM0d0xDQkhXd0lZdGFab1lMODBJOGk2Rk12NEQ2b09kdVJnVGhoazExbXVEOGFZ?oc=5"
+    },
+    {
+     "title": "Marvell adds Walmart, Intuit, Lam executives ahead of Lumentum deal - The Business Journals",
+     "source": "The Business Journals",
+     "pub_utc": "2026-11-16T17:29Z",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQOEM5MHRWZjRiNF9pT0FwM2RJMmppSkdoWUpRSG90OVg2LWhQNXlfUG1NSzZqZnB3TFZEbDFJa3VMS25hTjdLMGZzRENoVVB0ck9ZYWN4TV92MDh5OHhIVjdweWFJMWJ1ZGhvc2taNExYUkdjZWN2cXhCUk1wOG1MUWp5ZkliWndTTzdRYlB1VG5LMHM?oc=5"
+    },
+    {
+     "title": "Marvell Stock in Focus After New AI Data Center Deal With Penguin Solutions - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T17:06Z",
+     "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQaUxBRC1RN3Qyb2tadl9MS2JMRElEZXVtc1VYVWYweXRDWTV4N2YyMEducWUwMXIwUThWQlo4NmlUdFFKLWlIanMtanNjZG5WaUlFODZyM3BpWDBYVGE0WThPZ2tUcWJOMFFnVTY2MmxUdUhXV0toWlgtaFpKTEl4VURmTGZxUzlJXzdnZEJvRkdlQmxmbVVmVjlwc2JDSnc1SHAxR2hmeXdKc25tcDQ4bTl0TzJ3a29LM1VsSDU4VHZIOEVNeG90QldObHBXQUFE?oc=5"
+    },
+    {
+     "title": "Arm and Marvell Sink 8% as AI Chip Selloff Deepens Ahead of NVIDIA Earnings; Applied Materials Drops 5% - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-16T16:02Z",
+     "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQNi00YzEwYTlPWjg4TnVZMTVnQW8wbmh0UVplcWFmY1pWenBNQ1MtUDJWNGVsdlBWZ3pZcXhRTnNnWmdZdUlyZnpTNlB2NldfR3RNdHp2eEVsRnNPSy0tZVRnVkVLdjZUQ3VzZ3EzZ3lUX0UxYXVmQ2pXeEI4RHpMQUpGa2RMR0x1WkJlcHY3X2tYaFVmNWpRVk1PM3NuRld6ajVtdWp2Y3dmNld0Xy05cGVPQ2stSEpNZjBEV2VWaV9ZSWFNaF9HN2VWb3lEQmZ0UmM4OTlNMVlWaUpS?oc=5"
+    },
+    {
+     "title": "Marvell Technology (MRVL) Stock Price Prediction: Lumentum deal resets the tape as MRVL trades below short- and medium-term trend lines - Blockchain News",
+     "source": "Blockchain News",
+     "pub_utc": "2026-11-16T12:35Z",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNX21FNlBDSnlVaTZNRk5FTTB2a3ktSlhWcnQteXZhdmEyQ3NjRVlRNmxYZ0JVVXBqVl93Q1hMY1RsN3BlZl80M0puTkhINzM5bmd2aG9lVnVHbkNQdTJRcE0yWUVsMllHREV3OG1vZzg1VG1YWUhHa2djUkVTUTlFdzBFLTJ4dktLN1FhWDVjM0tMclZmcl9n?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "台積電",
+   "sym": "2330.TW",
+   "country": "台灣",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -5.74,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "【即時新聞】最新台股季報出爐！台積電獲利與現金雙霸天，單季狂賺逾7630億！ - CMoney投資網誌",
+     "source": "CMoney投資網誌",
+     "pub_utc": "2026-11-16T22:14Z",
+     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQWl8zMDd1MHVRVWpmMmlVdFRVU2tQZmhHSE5YbGNvZFhxTmxSMDhOWnBvOHhBR1MyOXVybGtMM3NITldSazZycnNwNGZwT3lqSV8zMW9VWHF3d2IwdDMzbFlmY2pfN3JmQkQzQWRqdl82dF9Ob3BLeGl1S2JvWkdiVDFGcmVBRlFqZUQwYkxBa2dMSGkwTTU5dEVBZXRmamxYUFgzbHBrbTlJNHEwaEZZb1ZJR0xhcmpiZWhkUU1sUV9zZ0VaVktSenhydW9pQ3dQamc?oc=5"
+    },
+    {
+     "title": "台積電Q3財報超預期！法人喊明年EPS飆150 - Yahoo新聞",
+     "source": "Yahoo新聞",
+     "pub_utc": "2026-11-16T21:05Z",
+     "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPZFJSYnJHTzlrTUhTTVF0MGQxaWRXa2N1M2xqSWc3RVBIbmF0MVVoTW1SWFJpZlhDZEZkdUhOaUZ0TF96YjVBbllHaFJVTXdfczRzaUE0NXhNN0VVU21Fa0pyUUgyejFLQVNlMDFKczZiWVlrWVFZVm82VFBJRGhaaFdTWTFKQWYtT2Y5WEJKaWlPRHQtWkZCemhjX1ZMRDdxcXE4aUhSWlhTd2xWa0VzTm1UXzlBczZkaU1JSG5JUVJ3S2pjX3R4YzJ1TFlhUzNMOEE3YThrbk0zR0x3eHJkbkFVSDVRQTVYb3R1ZUpZUHJRaFhWVjFfbUVFaWFkMDdjLUtBZVRSQQ?oc=5"
+    },
+    {
+     "title": "上市櫃季報六天王打聚光燈 台積電包辦「獲利王」、「現金王」 - UDN",
+     "source": "UDN",
+     "pub_utc": "2026-11-16T19:15Z",
+     "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB5bkd5dU5hYTYtckV5Tm9kek12QnVFYUdUYUdEbmN4WUtrQ0JmV19Jd2FNekFEYVBERE9iVkVDZy1ubHZ0ZTRDRm5JQTBxVWhJ0gFWQVVfeXFMUEZZSUN3aTF3NFFPaVhsZDZsTDE2bHVTa2xxMFNJWEJfcGxWOUJVcTZSZ2JoRVFGSDhwUmQxV2JvNHVxUlBqa04tcHNqQlphaW94Y2NGNVE?oc=5"
+    },
+    {
+     "title": "Q3財報五天王台積電最賺- 日報 - 工商時報",
+     "source": "工商時報",
+     "pub_utc": "2026-11-16T19:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAxMmIwdkhEakp2ZUtxeVp1YlNCNGJWZDVZN3huS29HaWd4OU4wZmxabkNoOFYyQzV0b1FnVWtaelRrLU0zak1zZW1McnN5MU5lSUJ0UWNTY1lGVllCc2Zz?oc=5"
+    },
+    {
+     "title": "AI泡沫要破了！空方喊台積電再腰斬45.8％「1,200元以下才值得買？」法人1數據打臉：揭2字頭最佳上車區間- 上市櫃 - 旺得富理財網",
+     "source": "旺得富理財網",
+     "pub_utc": "2026-11-16T07:14Z",
+     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1JcHNWd2FZVFM1NlM0SVo3em1JOW1xSWp2eWdIc2hIRl9OLVlBTG5PNDJ0V01DWHVzM0pyZE1sWWxxZzFvTFQ5b29VWmVsU0NiXzA1WndlZzN6U0NJem0tenktcF9HYzV4d1E?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "聯發科",
+   "sym": "2454.TW",
+   "country": "台灣",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -7.89,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "輝達換帥添變數 郭明錤：Google TPU訂單看到2029年 聯發科成大贏家 - 民報",
+     "source": "民報",
+     "pub_utc": "2026-11-16T04:43Z",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBEb2FKNFk3Vm9Cb2I0WjBLbUhuWEs4bkMzX1BnOVd4R0FKc1kzeExYMlVoTTRzalA2WUQzUy1IdUkza2ZMM21faWlXOHliVkVkTnFhby1oRUVvdEdEaGRPUjVDSW8?oc=5"
+    },
+    {
+     "title": "Google TPU 能見度上看 2029！郭明錤：聯發科獨拿 v9、v10 訂單成最大贏家 - 鏈新聞 ABMedia",
+     "source": "鏈新聞 ABMedia",
+     "pub_utc": "2026-11-16T03:24Z",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONjNsTHFuR0VyTkhPOXBYZGZXXzlZaVVlV3RmYXZIQnlheDBRZlY3NUNCQkFtZkg4NlhCWk0wV3JmY0JFRURTV0QtM2ZWTUNSNk5NbTVVY2ZPNGtSSDBwQkEzQkE3eUhEZWFsR3dkczJtTjdrS19xNmpuY1hlc05ONWd2U2dKSC1VOTNQX2pR?oc=5"
+    },
+    {
+     "title": "AI晶片不只輝達！Google TPU訂單看到2029 聯發科成最大贏家 - 壹蘋新聞網",
+     "source": "壹蘋新聞網",
+     "pub_utc": "2026-11-16T03:12Z",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdEpjQW0yaVdhdDlCQUd3YzV3OXpUV1dPUkN2dF9yU1VBSmhPR25xWmNVNWJkQ1Z5UVpVWHJITDN5TEQ3bUl3Sk5QVDNQYUJFUDdQU0hhYXdTSUVfY05RTWR2VkRfZzExUVpyUEg3djVfOWZ2S0pRMjlyVTF5cHVJVmpB?oc=5"
+    },
+    {
+     "title": "聯發科迎來轉捩點？郭明錤：輝達換帥不確定性有利於谷歌TPU長期訂單 - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T02:45Z",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE02MUEzVWw3N05IZE9iWjN2TFdKYW5sQUtxUUFTNjFaU2REWDdRZ3BHcktPbGhXdHVTOVA0ZnFFUTJMTDB5WGVZVkZWWjZZb2ZSZzNLZHB5RGpxWnkxajlPRnNhMXY?oc=5"
+    },
+    {
+     "title": "聯發科迎來轉捩點？郭明錤：輝達換帥不確定性有利於谷歌TPU長期訂單 - 鉅亨網",
+     "source": "鉅亨網",
+     "pub_utc": "2026-11-16T02:45Z",
+     "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1rV0xyaE80YzdPQTBNckNIcjlVZk9GaEk1c2F1eUFvWTA3OTJpQTBPQ2J1MGx6N205T0ZTT2NFY1BOMjlsZ28xYmt0UmVXbkE?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "日月光投控",
+   "sym": "3711.TW",
+   "country": "台灣",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -8.03,
+    "date": "2026-11-16"
+   },
+   "filings": [
+    {
+     "code": "3711",
+     "date": "1151116",
+     "time": "144437",
+     "title": "代子公司矽品精密工業(股)公司公告取得廠務工程",
+     "clause": "第20款",
+     "source": "TWSE 重大訊息"
+    },
+    {
+     "code": "3711",
+     "date": "1151116",
+     "time": "162232",
+     "title": "代子公司日月光半導體製造(股)公司公告\r\n向EO Technics Co.,ltd取得供營業用之機器設備",
+     "clause": "第20款",
+     "source": "TWSE 重大訊息"
+    },
+    {
+     "code": "3711",
+     "date": "1151116",
+     "time": "174753",
+     "title": "代子公司環旭電子(股)公司公告2026年第二次臨時股東會重\r\n要決議事項",
+     "clause": "第18款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": []
+  },
+  {
+   "company": "鎧俠",
+   "sym": "285A.T",
+   "country": "日本",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -7.69,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "三星電子",
+   "sym": "005930.KS",
+   "country": "韓國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "CPI | Samsung, SK Hynix and Micron Lose Bid to Dismiss US DRAM Antitrust Suit - PYMNTS.com",
+     "source": "PYMNTS.com",
+     "pub_utc": "2026-11-16T20:47Z",
+     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQM3daenA2SGhsS09yeDlBRV9qaklMZTBoM1g2Z1p0RE1IOFpsejhZUmpPNmZvQzUtVVVhTmFROEVjZTJVXzlmVTc3OWtBYnRNTk9kcjBTSGxNOEpxS1RSa21ITnVmWDVMOFhuZXBKRXBQZkxRbzgzWWVqS0U2LXlIWERnZENhQktfYVVOdklNZ2dMSXFYcTY3Z3JBSXF1S0VzVWZJa3VnOA?oc=5"
+    },
+    {
+     "title": "Can Visa's Samsung Wallet Deal Unlock New Growth Across Asia-Pacific? - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T19:40Z",
+     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQeEpKbEVoOUNpLTI4c2w5V0xqMHlvRld3MlEzeE16RDlpT291WEt2ekFxZHItNFlxbWVrNWVhMEo5elNRQjVXZHo0ajh5bEkzRF9WRVU5UmQxdDhLNWswOF8tV2pJUzJVSlBseHN2aFVtZzVpVVpJdmtxVkhHaVRiU3lNcW5WN2xxV1pMR3JNV2dFN29lb09XQVNRRm9rZWtnOEJUeHhhcWJqUE5GajYzeVBSLW8xYkZqczlkQ281X0prQQ?oc=5"
+    },
+    {
+     "title": "Samsung Stocks Fall 4.47% as Nvidia Turmoil and DRAM Lawsuit Hit Seoul - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T18:54Z",
+     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQR0puQThqUV9sVGV4OEFoZmRsRkVKaGQ3UWcySkdOT1EzaElpQUVnRHhLRVBidVJsZVRvNnNLWmYtSkVFRHpyQXpOYkhjOVRxTXJOT0FFRHpOODl4ZUpycXdIYWpra1c2NlZHNnFKZzFiMTc2ZjQ1SEg2Xzk2WW1DRmtGUUtmZGE0b3FjMW1DV1FpVmNfNU9XRFR1VENQdE5PQk1xU1VaV0FoYmZFdEpmQWkxbVhnV00zZGR6TlpoaERseTNoWUFmOQ?oc=5"
+    },
+    {
+     "title": "Judge Allows DRAM Price-fixing Lawsuit Against Samsung, Micron And SK Hynix - Dataconomy",
+     "source": "Dataconomy",
+     "pub_utc": "2026-11-16T12:27Z",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSXRvaFpMSkY3V0QyZldxZUdqX0RWTEdUVUZJWEZnY0VoLTZtUUdCam5VNW1qc0JJVnB3dVNmVkktODFhQUZEcF9hWTVSY285U1Z1TS1Dd0RSZDhIWjdWTkJlcTliR2d3TURHdDRWdWhka2FHRjZwdzFfRUt4SW51N3pvQ2N2OHh4M1RpNy1oSW9NSEE?oc=5"
+    },
+    {
+     "title": "South Korea's Samsung Life Wins 7 Trillion Won in Savings Insurance from Samsung Electronics, Samsung Display; ~4% Yields Raise Negative-Spread Concerns - BigGo Finance",
+     "source": "BigGo Finance",
+     "pub_utc": "2026-11-16T08:55Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1NUDBKaGttX3dZNFBrTWJoMzRNQjZEMGNENkZvNllPY2kyRWdodnJDZjVnbUNBb1R2ZHlXMVE2YjNyTzlCZndERng3YTJvcnJaWGlaWWIyblRkZlZKd19PUlN3aUlIWm50YUtMNGR3ZTduVzA3NEE?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "SK海力士",
+   "sym": "000660.KS",
+   "country": "韓國",
+   "industry": "半導體",
+   "generic": false,
+   "big_move": {
+    "pct": -7.89,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "SK Hynix's HBM4 to Surpass HBM3E for First Time in Q4; Revenue Forecast at approximately $93.7 Billion, Operating Profit at approximately $76.4 Billion - BigGo Finance",
+     "source": "BigGo Finance",
+     "pub_utc": "2026-11-16T21:05Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5SQjRmUWI4NldYekF3ekdKaThONTFCbFNIbm5xeW1qbnZMUTV2VUVYOEpHVUVnVjhSLWFyM3d5RU4xUU9JWU5iOHBwaTJNSm44dnJBbUE0NDB3Sl9ZX2Q5MkZjU0ZfaTE5OGVoMGE1NGswMEcyUGc?oc=5"
+    },
+    {
+     "title": "CPI | Samsung, SK Hynix and Micron Lose Bid to Dismiss US DRAM Antitrust Suit - PYMNTS.com",
+     "source": "PYMNTS.com",
+     "pub_utc": "2026-11-16T20:47Z",
+     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQM3daenA2SGhsS09yeDlBRV9qaklMZTBoM1g2Z1p0RE1IOFpsejhZUmpPNmZvQzUtVVVhTmFROEVjZTJVXzlmVTc3OWtBYnRNTk9kcjBTSGxNOEpxS1RSa21ITnVmWDVMOFhuZXBKRXBQZkxRbzgzWWVqS0U2LXlIWERnZENhQktfYVVOdklNZ2dMSXFYcTY3Z3JBSXF1S0VzVWZJa3VnOA?oc=5"
+    },
+    {
+     "title": "Samsung, Micron, SK Hynix Can't Shake DRAM Antitrust Suit Over 500% Price Hike - HotHardware",
+     "source": "HotHardware",
+     "pub_utc": "2026-11-16T19:30Z",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQXZBVk5BTWJYUkhsRlRmZU42ZWNxeUJ3YUR5alVjYjRZNElvZVJNYUxIS1l3UU02bFQ3d2xOX092Y0RwblNfbWh6ZE1vT0R0bWhGYy1sellQQlNzV3U5cFZFaUJVOGdkcEw4b0M2N1lHTjZjb1gyRDdaRlZrZmRxbnFINGQtS1IyWlBFQVl6WUUxcmhDUmhvcXlyTXhjRFVlNG9zblBn?oc=5"
+    },
+    {
+     "title": "AI Chip Stocks Crash: SK Hynix Falls 8%, TSMC Drops 6% Ahead of Nvidia Earnings - Coinpaper",
+     "source": "Coinpaper",
+     "pub_utc": "2026-11-16T16:26Z",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNR0o4MFVZQ2s4NFJDWU95a1JRODZ3UE5RRXJ5UzVDV1VFanVSVWFMMVlRVFVkZGt0RWZGcllmQ3VzWmNsTHVGRDB2bVMyUW4tLW80ZHVYZnhVX2k1LXo5VU9USmRvVVp5QXdNX3JYU2ZFdFNvalNMaGszVmFlbTZ4QzFLcV9XUmY3UnZsd252eVczZEdQaUJCMFlfcFNHWm5wWkpYUWJB?oc=5"
+    },
+    {
+     "title": "Judge Allows DRAM Price-fixing Lawsuit Against Samsung, Micron And SK Hynix - Dataconomy",
+     "source": "Dataconomy",
+     "pub_utc": "2026-11-16T12:27Z",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSXRvaFpMSkY3V0QyZldxZUdqX0RWTEdUVUZJWEZnY0VoLTZtUUdCam5VNW1qc0JJVnB3dVNmVkktODFhQUZEcF9hWTVSY285U1Z1TS1Dd0RSZDhIWjdWTkJlcTliR2d3TURHdDRWdWhka2FHRjZwdzFfRUt4SW51N3pvQ2N2OHh4M1RpNy1oSW9NSEE?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "艾司摩爾",
+   "sym": "ASML",
+   "country": "美國",
+   "industry": "半導體設備",
+   "generic": false,
+   "big_move": {
+    "pct": -5.91,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "ASML's Berkshire Buzz Meets Nvidia's Earnings Test: What Actually Matters for the Stock - ad-hoc-news.de",
+     "source": "ad-hoc-news.de",
+     "pub_utc": "2026-11-16T17:41Z",
+     "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOa2FtdUtaMzNUOXJ1MkZMVlFaSk82RURBRjc0WDZ4Z1pkWmp1MTF4VnFJRHFSVkdxZ1FLNWZDcWhZbmZtNEcyQmc0UUpQODFPdURYdjFkN0xYZnpEa0RNSnVWS2c2cTg2MnkwMjE3Y3U2c3Y1MEZYbU9yRmc3YkI5bXloY3dsd1JIMjFrMnNZRVBka3otcmtsaHhlbFgxdGxUbUpkUTNQUENYLWotN1JwU2FCV2Y2UXRqMTBCTjFiZ0pLWEFweWpQV09WUXg4dkhTT0dKMFVCbkxfU3hSQkpUNmlEaUFicDhBb0tvOERrTQ?oc=5"
+    },
+    {
+     "title": "ASML reports transactions under its current share buyback program - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T13:00Z",
+     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYlFVSlRnVHh5eFFNUllxdmVOUWQ4T0NaTFZUYnMzQjRiWmFWdi04N0JDSFNXOGJRaGhhd0JvT2UwblZGcndaS04xY3BqNFBWc2twZnNKQlVKMnJLSjNNbEF6MGFsQWhmcDAzcEF3RTNLbGNoRU5XRkdRc215Zm9xVzJsMTBlOXRDY2tXeUJhbGw5ck4weXludWo5NWE1bFZiMENFbmdVUQ?oc=5"
+    },
+    {
+     "title": "ASML Stock Price Prediction: AI demand lifts guidance, but price action is still repairing damage - Blockchain News",
+     "source": "Blockchain News",
+     "pub_utc": "2026-11-16T12:26Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNE16OG80X3h6Um83WXp0LWpBVFllcXE0RmlmNjFnNHU2NVVSbV95WmlleXE1bGNuRE1hUVl3T196MDNGZDF6al9NeVlSYnRyUzBFXzdpQWVjaUlLTERteE1aQ0IwSnhtcVpxRlBZdnZiZWgwdXhmYWtCTlp3UHE5ZEdoR3p1c3RUT0JwWHdPdEZ2d3RCZWl5VVc4aVhSYU13VlRF?oc=5"
+    },
+    {
+     "title": "ASML's €563 Million Buyback Runs Alongside a Dutch Labour Rift Investors Can't Ignore - ad-hoc-news.de",
+     "source": "ad-hoc-news.de",
+     "pub_utc": "2026-11-16T02:20Z",
+     "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOaWZZTXc5WW9OS0VjbmV1NEs3V1l4cGhINkFNZUhHMS03dVZCUnZXdG51dWtDN0sxRWJLVE9vOEt1UTlBWC1jd0tSTmRLaXR6WlNiajJRWDN4ak1tLWtoM3d0N3ZIYmtpbS04WTR3ckR1TFg3R0h6TzdiMFVpUVc5UlUzbGw3WXNnejBSaC1vTkRBSDdtLTQ0amVaUENoYTZFWGR1d3J3eDVPdnhGcTlqdVgxdWRrWlBhYU9LdnRRUHNZYVpVbTEwejR2WV9hR1VFQTZlVDVHUzRSOUVQVXNweEVwN2JPbENPTWlyNg?oc=5"
+    },
+    {
+     "title": "Why ASML is a buy After Terafab Deal? - TradingKey",
+     "source": "TradingKey",
+     "pub_utc": "2026-11-15T14:39Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcHMyUmZQRDZQSUR1VWhLdkZDOG9pY0NwRXNZdG9WXzhEVTBWN1B0UXZCSldFbVU3bHdhQU40NWpNQXJBYVRaWnBpdWRVM0lyOHFSUy16VEw3VGNmNVA2S1lSUjNTeUNOTDNZaU1zZm5RMWkxbnJaQWJCLTYxYVhvcDFRZE9nS2xOY0hzTlRLanV0cWlJR2pLbHg5VVp6aTNQeG5qa29xUS1OeFl4czlCNw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "應用材料",
+   "sym": "AMAT",
+   "country": "美國",
+   "industry": "半導體設備",
+   "generic": false,
+   "big_move": {
+    "pct": -5.47,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "Freedom Broker cuts Applied Materials stock price target on valuation - Investing.com",
+     "source": "Investing.com",
+     "pub_utc": "2026-11-16T16:17Z",
+     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZ3Y5cC1qN2JXMzhjQ3ZsUFRqVldfdkhxZmxIdDFKcUpyZEN5Mkw1WDZqR0xjWlM3Sm5nVWY3ZHRkSkk5M013TmhiTDNVQ0JpTUZsZkNSOHo4V2VNMWNLa2Z2TTEyYmZDc3lnNUg4Q0N0bDg0YVFhdHZlelF3MzRwY1VFRW9UVnZ3TnlZY0RCOXJRa1BoYkxvUHlsY0JfbVR5VS1BOTNoUGpSdXJzdGpsYi0tZXU1M2NTdmxzOFB5c1htLUJWM2JxWA?oc=5"
+    },
+    {
+     "title": "Arm and Marvell Sink 8% as AI Chip Selloff Deepens Ahead of NVIDIA Earnings; Applied Materials Drops 5% - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-16T16:02Z",
+     "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQNi00YzEwYTlPWjg4TnVZMTVnQW8wbmh0UVplcWFmY1pWenBNQ1MtUDJWNGVsdlBWZ3pZcXhRTnNnWmdZdUlyZnpTNlB2NldfR3RNdHp2eEVsRnNPSy0tZVRnVkVLdjZUQ3VzZ3EzZ3lUX0UxYXVmQ2pXeEI4RHpMQUpGa2RMR0x1WkJlcHY3X2tYaFVmNWpRVk1PM3NuRld6ajVtdWp2Y3dmNld0Xy05cGVPQ2stSEpNZjBEV2VWaV9ZSWFNaF9HN2VWb3lEQmZ0UmM4OTlNMVlWaUpS?oc=5"
+    },
+    {
+     "title": "Why Applied Materials (AMAT) International Revenue Trends Deserve Your Attention - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T13:15Z",
+     "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMjJxOFNZYXY5ZnY2b2NGMFVGZzJHc0hxeW5fZ1FNYUh4dmdPRmpDMlNQVUNoa0tvSUVhV1FmaEl0Rzc1SmxPVHNITTFGSE1NZUIzNWZTMXg4d09VZWdWb2drWE1rZ3JNc0tFeXE1OFZVUllqQUstV2VRcmRtcGdnTDNGUDJHOVptRlNPU3VMQ2JqejJvNVQ4OEtCOVpLdFdUNlg2ZkJLSmE?oc=5"
+    },
+    {
+     "title": "Coatue Management Reports Stake In Salesforce; Raises In Tesla, Applied Materials, Micron; Cuts In GE Vernova, Synopsys - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T11:39Z",
+     "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPVkszV1lhbEF1REplazVGQ1kzZ1gxSzNRdk9IcnNHY3hvY2tzQVdqeWdFaTB5TVd1Mm1rUTFkY2tMWUV5d21FeGlrTUNRajU1N2ZoMnA4QWlBMm1IalJpNjJ0M2J3NVphaWM0V1c4UV8yYTFzdFE1ZF9uSGdOcW9SSjJMd0xJUlNxWWwzUnFnRFR2RmRnblZIcWg0RDJmS2FaMlhWb0lNcWJLVUxGSUZ2cXZzZm5hTnVyTHR1ZmktWkw1LTl6bDVDTVdobWJxU2dKaXNYYkQwZHlldmlWRFdXcXVITmw4eTBlcHFPOGNNTFpTbldHQnpaRkk2WGJMN3J4UlFlYnctdE5QZTR0d0F2djB3?oc=5"
+    },
+    {
+     "title": "How Strong Demand Outlook Will Impact Applied Materials Stock - Simply Wall St",
+     "source": "Simply Wall St",
+     "pub_utc": "2026-11-16T09:16Z",
+     "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOTDc1UTM4UkJPTXdVZ3BpRC1XRGVESndUNEljVzdwRTFPb055ME83LXdSdXJtYUZZQ0tZMllxcmgxU0FzWkZvVzFWa1REazVxQzZXM1FvRjNQRFJwNldXOUFIeVgtWjgxYTVPT01FYTAtdmVMdWpqTEtZZXZvWWU3aDVYWUJZdTJHVGItQTZVMUU5T0pRVDlZTGRCUGpMVl9nNjdxdmMxY2ZKYkhMTVpfMFdpRXJyVEExRnlUdzFLQVAxUUVlVmR3dF9aZ2V0aXh2bnNHUjBJdWV2UdIB3wFBVV95cUxNYXFwbnNhTWZjV252YjZiTUszRklsQ3dFZ1VZamxZY1hSM1pSa2lNZ25yY2xOWmpVMm5fSVlDckJhZUYzbUxvbDBzTHV6Nlc0S21lZ1NaWmJJbUVIZnhnMVhyX0R2WkRLMXNXT1lKZ3JuMWlFTWF4bjdfVlBCd1ljOHMyU0t2QVVLSkFpdzFVUFpqdzlZWkgyY21iZmM5RGt2QTVEamE5QUt6YlpCbDNZUUxqVlQ4cnZGdGUydmsyRHE4djFYUmZmWVdJQ05pRmZWUVlISlFmQVJBNFVOS3FZ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "東京威力科創",
+   "sym": "8035.T",
+   "country": "日本",
+   "industry": "半導體設備",
+   "generic": false,
+   "big_move": {
+    "pct": -7.05,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "愛德萬測試",
+   "sym": "6857.T",
+   "country": "日本",
+   "industry": "半導體設備",
+   "generic": false,
+   "big_move": {
+    "pct": -11.12,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "微軟",
+   "sym": "MSFT",
+   "country": "美國",
+   "industry": "軟體與雲端",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Microsoft reveals hidden bug behind global Outlook and Microsoft 365 outage - Fox Business",
+     "source": "Fox Business",
+     "pub_utc": "2026-11-16T21:12Z",
+     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQQWQ5ZldDc3JKb2V4TzR4b2JxZ1VjOHptcGg4cHl4V01Xd2hJNWl4eDgzT0dhMkpBZG9lQm9KaEFkVWNScTFTbHZkc1lfWW9TQ29jMDA0eFVFakZBaXpGWXJhbVk0MUdqUTMxamJ0Tm4tM3JYclM4bE05NkwxWVJWX1ZhTXJLSmxkWFN2SlVQY2NXbHN6cDU2ZE9ySXJnaFdySjQ0VnhOeF9jY0JZbXdF0gG0AUFVX3lxTFBqOWoyZUZjeTdmQmktLUptUDktQ1U1MjVWYWFiMWdDQ2lFLWxsd2N0cElicjA3YV9DaVRUN25rWTBvZ3ZyNGp1Mmx0RU1zZnJESVVlUHhKbnBfLXRmUVpOcVpEd1lOU2twZ2lrZy1YVm5pdnJQOUl2SmR1dXdja29pMFpQNnV2R3N1RGpTWm5wdEtSXy1GZFVKaUt3cC1aYVpDUGpnTl9FWGZlRVFiN1JZdDJKZQ?oc=5"
+    },
+    {
+     "title": "How a hidden bug broke Microsoft Outlook for 24 hours - PCWorld",
+     "source": "PCWorld",
+     "pub_utc": "2026-11-16T17:48Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQcEQ4U0dvbVJqRU5YTThYM0xhdWcyRGo1RklXaEwyZGJQUjZsSEhwb21NNTE4b2VVZ0xYUWtpYlh5RVB2dHVIMkxMMVBwMEVXV3I4bnFFbTZPQU5OcU41Z2JENkpreE43Vkc2N1dBMGJMR294Q0RTMEpaRHEwVlZqWEM5M3UwRkYzV01HMXJ5eURMT1JHb2JhTU0xcnpta1VQSHNr?oc=5"
+    },
+    {
+     "title": "Microsoft Outlook Down for Thousands Monday, Downdetector Shows - GV Wire",
+     "source": "GV Wire",
+     "pub_utc": "2026-11-16T16:23Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeHBJTTJhdlRjSnhScW9pcXhiemdDSWwxMDBOMkY3ZUt1VkdmcHZLUDVQSXA2VldrWkk5dU1nb1Q0WTVHZWF0a2x2ZjFlRW5BQ2xkTDlybUd5QWJLc25QWWtSM3ZRcmVrdUR3Zm9NOUMycl9BUURDNzY5RV9MRC02Vk9xQl9DU0lWUmRQWkhDTTdNQy1OeXRSQw?oc=5"
+    },
+    {
+     "title": "What went wrong with Outlook: Microsoft blames ‘thundering herds’ and a bug unnoticed for months - GeekWire",
+     "source": "GeekWire",
+     "pub_utc": "2026-11-16T15:31Z",
+     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPRkg1V2t1dU5XMHdfWm16YzF6QWVSQllFOGxxRWNRRnJxdUFmZVczRVBqRFAxU3MydmJyY3dJX2xXTTU3ME53eUh3NmJYT3FFZWtPV2NqOHpsRHQ0MGt4QU9aTzctdVVFZFIwUXpIOGFHUHRBclVmSnhaUHFsaHl5OHczVk9YdTNwNHNVb1lxZWxQZFJoY0cxWlktRmREbHZURDNUUXl3eF9iWlBybFZWY2VjMzJ0QnJKdEtRaTE3V0lSdw?oc=5"
+    },
+    {
+     "title": "Microsoft Outlook outage blamed after 15 injured in hotel pool chlorine incident - The Register",
+     "source": "The Register",
+     "pub_utc": "2026-11-16T14:42Z",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRGtLV1ZxNlZBNGVzUFoyQ1dWYmxlYnBSaUczajZDVXpjVm5BalNaSklBTUxMRldwbUZNeDNJRWZrU3IxbGt1VkRmckUzYTl1UFVCbFZRaVRfZ0JJRHZFdjJELVYwTU5JTGN5cWk5Y0dFRDJJSzdUaUVFeUkya1hheVhwOW8zT3NJQXVtdE9wU3Q1UDh3TVFaczE5SUlPM1FLdk5FNjF3NFN5MXdHOGJMMGdLOHZRNGl3djk1QWhnRHJodGgtQUdlelloMkI?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "CoreWeave",
+   "sym": "CRWV",
+   "country": "美國",
+   "industry": "軟體與雲端",
+   "generic": false,
+   "big_move": {
+    "pct": -6.12,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "Wall Street Analyst Picks a Winner Between CoreWeave and Nebius After Earnings - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T17:43Z",
+     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOR1dPd1BnQUpVcFRwaGltMmMxbUFPeC10SkVNcUlaR3cxbGxQZnFSSHlYZE5yT2h0ZTgydDBhZ3JwRWVSc182ZE94Y01pY2xYaTBuM0tkVFRDTjhDVlc5MURRUFVudVZGenk1TUtQUXliaTZXVk1RTzQwdkNiZW55MTNfeUxVWkxhblFYUXp5c1JmcnVDRUFQeVNpTFNPb2FGZm1Wcjg0MV85Nm9LY29LeWk4WFQtRmRmLVlOZmRQTzBnSjJqOGhOODJnNnJXMzRHOTliMw?oc=5"
+    },
+    {
+     "title": "CoreWeave: Walking The Leverage Tightrope (Rating Downgrade) (NASDAQ:CRWV) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-16T14:25Z",
+     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOa2lSNUpZWGJpdjV0YkRBc1M5aXd5aDFUUG9XOHNSbDVIejQ0ZWgwV3RBS2ZNeFVrMnFMcmFIc0o5aGpOYUNBQTdPTlhMMDhQUVFTVUdXei1HNTNEYVg3RVMwSHRNbjBfREVranlKSHRqMUxZTHlaVkJGb1Q2TlowOFliR1ZoTVpp?oc=5"
+    },
+    {
+     "title": "CoreWeave, Nebius lead neocloud decline as AI stocks prepare for Nvidia earnings (CRWV:NASDAQ) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-16T14:19Z",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdmR5M1RfbGt3eTcxeGZUWGQ1enZLYXJodXRlNWZQR2pCTExfNllHdzNNMHdDS1FOU3A5RS1EbzNYTmJueXNqYnljYTdLbV94NXd6Yy1HZnB1TXZCZmV4Z3RTRVlRTm9qc0lpcHFVNi1LbmtPSjhZWklXRmRGMS1MVWRUV3BjR1pLTklwbllpck9IaUh1aU9BcEluWTNicjVHNlJPTXYzdU1pc0VwMEhKT2MwajlWMHYt?oc=5"
+    },
+    {
+     "title": "Weekly Equities Outlook: Cisco, CoreWeave, ITV - StoneX",
+     "source": "StoneX",
+     "pub_utc": "2026-11-16T14:04Z",
+     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNTkZoeGVOSy1VcDNaT3llc3RVc1p1VS1GbEJQNkZMaGZHVjdzdjVsVEw2elU3UktVTk1yRFd3bGt3SEtWdjYxY05rbkhXeW9tTk5MYUJZRzNLM0N0Tm8zSGFMb01qN00xdXNleUFhSUF5emowY0VUMFFGS3ZQLUVmaEFNMDZGT0pZVFU3S3A5aXR3WWZVQUE?oc=5"
+    },
+    {
+     "title": "CoreWeave Q3 FY 2026: AI Compute Scarcity Strengthens Pricing Power - The Futurum Group",
+     "source": "The Futurum Group",
+     "pub_utc": "2026-11-16T14:01Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVTdIRzJ3aXNuLWF4akVBNEpqOEctNG1VOEg1bnhkMU5HNUttRlNtS2NKcTRXV1BLdmlSSWFNUWxIX2o5T2tRRnRtckhjNFA3elRXazhMRjNGWDl0UWJKU0VFRjRGVHhtVm8tR3VvRExlM092OHBKRk5ISlFqRFM0WDF2MlBMcndubF9nY1lnOG02UzF2Qk5aWFJzYnlnTW5XUEVF?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Anthropic",
+   "sym": null,
+   "country": "美國",
+   "industry": "AI模型",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Anthropic IPO guide: Everything you need to know - CNBC",
+     "source": "CNBC",
+     "pub_utc": "2026-11-16T14:22Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBLU0lVTlg1SkFpbXFSd2FtWk9CUndzSjNqV0U3TUNMazRUV0hySTJNQTl1WlB5czJXZHF0a3BGZnVzTW1vN1d2U1Zuem9sdjBvRHJDOHIyTXhYQ3hTOWlrdjI2ZmE5LXZyNTFsa3VPNW9lUTlKT1E?oc=5"
+    },
+    {
+     "title": "Anthropic's Dario Amodei is 'just setting himself up' with IPO, veteran tech investor warns - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T13:52Z",
+     "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNR0VnRWFnN0o3am4ydmh5a3hTenhOU29heTF4MGxYZy03R1VGNC1FNU5Wd2lDRzhMLWJoYmQydTk1ZzlOTXNHaGVhVlFiUmNSUGkzUjdkSGtDemJXTWdITkZGdzlKZDByR2Zhb05pZ1dOOV9yeG9HclNXb2xFbF9yZFMxelMxb0l4SF9RRGFrUnlXa1JQSGR2aFVubW9mNzB2bWZfa0FkMXhpbUx0MVNOYnEyUTRHbFhLOFhWR1AxMU9FTnNTVmJQU3V3WFFpa1JEb2FJb3A1OTgxMFB1RklMTlQzdkVZdw?oc=5"
+    },
+    {
+     "title": "Anthropic promises to pursue humanity’s benefit. Its IPO filing gives it wiggle room - AP News",
+     "source": "AP News",
+     "pub_utc": "2026-11-16T13:06Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONDBQUWx1WG8xT3E3UVgzQUpRUEVJNnhmWElUMk1ESEZWWEZ0TWNUQzA5SzhsZEV0Zk94bXptUTNaREtaUmRIT0RtWE1tTHpVRDFmUWtleFJrTXBkVEx0TENpZXZHX3NhVmd5eUVwdEQ2YmVJRHV2anFPRjBrSl82Wnp3anRGemY2V3lvUzBjamhpdkVWZXZWWQ?oc=5"
+    },
+    {
+     "title": "Everything you need to know ahead of Anthropic's IPO - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T12:40Z",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUkN1VHFrREJneU9DdUV5UVBuT29PM1hOdXN5aU5udTZqc21yV1VMS0VySEJqa1NrLWlhcTdYdVM1Nmo3MDdJWWtEc2JRWDVrVXBKX2tJS0t4TTg0eG4zLVJqWFBNNUlCd1hDR3YxeHlvUmFqdks1cHFQUGk5U2RaX2JuYnl5REFlN0pRX25DdU9SX2s?oc=5"
+    },
+    {
+     "title": "The Investors Set to Win Big in Anthropic’s IPO - WSJ",
+     "source": "WSJ",
+     "pub_utc": "2026-11-16T10:33Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWGJLdWJHSUxsNW9wWEdzVEVVazhoUF9JelpHaWVfS2l2N0NUQ1VLdktRdlZnMW1taDQ0cGpuQ3pWVGZaMW9jc3JTZmJ3WDQtZnBVeEtwbjB2QW90OGlVV3hXWGVhQVJpMGJfR3h1S0JrdnVGdXBiZm1yemh5VkRfV2NGcXozRWdQcUNUUFdraFVjQnliVEU5Qw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "OpenAI",
+   "sym": null,
+   "country": "美國",
+   "industry": "AI模型",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Anthropic’s giant IPO puts the heat on OpenAI - The Economist",
+     "source": "The Economist",
+     "pub_utc": "2026-11-15T19:49Z",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNRTd6eHRac3JHWEQ5TElWUXZZUWRsMHdXckRQbjJ6X3ZvOFUtVHZDcjFBVWVqOE9LVnNPS3NWeDROZUtsRFdEdklzRzctYlpWbWszbElsMU94VWxtUm5OZ1ozdUxWWnVGRlpGM3ozYWxISG5fS1Y5QlB1bVQ0Z09sVGphWmgzMlpKMWduNkZYX0N1b1Br?oc=5"
+    },
+    {
+     "title": "OpenAI’s quarterly revenue reportedly crosses $10B for the first time - TechCrunch",
+     "source": "TechCrunch",
+     "pub_utc": "2026-11-11T16:14Z",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd0N2OFdtbV9VNWVjZlRCMUVMZFVweGM5VWh0UTlSNDFibkFSNk9SaldWOVhfWk9YV1JpTk5PWHVKaks5T3JadGFkRWNjTTdyVkJQTndvTGFrQlNxUW5ZMGNSQlVaWmZNMlA3Zmw1RkRSRDFJME50bXIxTkJQc19iRHBwaXpQYkl2RDd0VFJEOFVERUdNYlBQdzNFQkh2Vk9tMWhRWA?oc=5"
+    },
+    {
+     "title": "Exclusive | OpenAI Continues to Suffer Heavy Losses as Revenue Rises to $10 Billion - WSJ",
+     "source": "WSJ",
+     "pub_utc": "2026-11-11T01:02Z",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQ1Z2WGlSZFF1REswbldRM3lQRXJJNWdHVEFlNDNPNFhRRXRzSEdySWZFa281U1lzVFBiNVU0bE5GUlNTLU9YT1ZuV2VOa2VobmpRVmh4eGs2LTJVSzZKRWJwTWxKNzBRZGpZeHU2VV9GUTlfemk5all2aDM2RE9ENWowMGgtcnFXMEJSQ3dZTHVHMkpoT2tOTGpGOWRWdU8tUVdRT3JEVVcxTy1yUU5GYU9GcWtCZFdI?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Perplexity",
+   "sym": null,
+   "country": "美國",
+   "industry": "AI模型",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "‘Your Grit and Perseverance Should Always Be Remembered’: Perplexity CEO Aravind Srinivas Pays Tribute to Jensen Huang After Nvidia Exit - Pragativadi",
+     "source": "Pragativadi",
+     "pub_utc": "2026-11-13T06:11Z",
+     "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQeFV5aU9mVm1MYkMtaVBVTll5STZmajAzWEJ3LVNSbXRKWUR4WUdidWpMeUc3cmM2VkkzNm5zUHo2WExiN1RzRG5EeG9pel80SERVTHBpbWVhbVFQRkdaRE5QeTBGX2IwUlpHazFONVBub1JNQ2FoOFNrU2ozd3c4R19kNUljdnpTckZCM0JCRUJOUXhLQTRjTXFtbXVtbzcyaml2cVRBNExPaV9Kcnh3cUZJTnNONkZDREdsa1RQdTZNSlBURnd3aVM5czk2a3VlMUpGcGJsYmNyZzZKUTg5MVg5NEhmTVBTUXB5SFd1cw?oc=5"
+    },
+    {
+     "title": "Perplexity AI sued over undisclosed usage caps on paid subscription features - Top Class Actions",
+     "source": "Top Class Actions",
+     "pub_utc": "2026-11-12T16:03Z",
+     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNY256QV83NXJIbkptX25yb2dPdldqUHU2YXVBYmJPZWNJalktSkhjdkI0aEdBbkY3b0dJakU3V1l5SEo5WGxxVkxtZ2NPY28tbXZSbGFzU0pPWXQ1N3M3c2ZlSUd4T0Y0dGRIMG5wQlZXNEhhdDYwQ2lrWmhYbU5uY3NVbVZaQ19abzF6WTYxbVEzdldyOFBQa2VLam84bzlYNFJ2ZS1UdlY0ZTE4dkYtbm5HSEpnWlhaaXZQQXp2UHlQbnhHcDU5SkZPLTg0SGxyaUYzQg?oc=5"
+    },
+    {
+     "title": "Perplexity Pricing 2026: Plans, Limits, API Costs & Comet - Fello AI",
+     "source": "Fello AI",
+     "pub_utc": "2026-11-11T08:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rNzljbS1pV0NqMFJVMWVXUGlDdmNGMkdBdVZOcnFTNG5Zam13TVprSDNSS19VZjFDTmd6eVFpSDhadUZpdWhnWlZ4Y2dSS1hW?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "百度",
+   "sym": "BIDU",
+   "country": "中國",
+   "industry": "AI模型",
+   "generic": false,
+   "big_move": {
+    "pct": -5.37,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "Baidu ad revenue drops 22% as AI cloud infrastructure sales nearly double - PPC Land",
+     "source": "PPC Land",
+     "pub_utc": "2026-11-16T21:45Z",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZGt4djhSNnVwRnZnTk9ZUlRMcDQ1YVRHaHNXSGVVR243QkphWkxoblRQZ0VYU0std1lEc2dtT0lfUVVRUzRxU3lLTHY4VzRNNUhtQXUxeXE1RWlZajRfNmU5alItd3JxNFZnQ2FRY242dnVCTWx4VEN1Vkg3Q0RlSXlxc1VObEN1ZWctekZzSGFDY3h4?oc=5"
+    },
+    {
+     "title": "Baidu Drops 5.5% on Earnings Day: What Investors Need to Know - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-16T19:30Z",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQWmVDTWZieHlUXzNvMUF6VmNBX3ZJZVZZY2Jyd09mTmM5Zll5cHo1OFViSVZnSkc3aVRMQ01qRm1OTlMybW1NMEhxTGJhUTRlWk1HTDJoTVp1OXQydnBHZWNySUZCcENGU3BlYkkwc2FKdzI4V0VYMmk5aWpFRGlaMi1LYjNWeXR2U1U5WTlB?oc=5"
+    },
+    {
+     "title": "Why Baidu Slipped Monday: Soft Q3 Revenue, Ad Headwinds and 94% AI Cloud Jump - Benzinga",
+     "source": "Benzinga",
+     "pub_utc": "2026-11-16T17:53Z",
+     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOWVN3WTlLVmxndFBNbmw3OHNkZU5rRGNhSElwYk5ZOHRTSnFHVUtjZlJNRnJlanRzamNBOHloTV9CbC0tR2Q0TjllQTdlemJtdHV4WE5Tb3RfX04xZzNZNThxLThEM0I1RjFtbmxaR0l1Y29lQTdfYXJaOWFRMjVER3EzNTZVajNmYVhPaXZYRjloeDVENDlsOVAxSERMc3JLaWstbld6ZldWQmw5SW1OblcyczA5aHUtVkNSaXZMWkNNNDBaVTM2MnJuMA?oc=5"
+    },
+    {
+     "title": "CATL, Baidu, Unitree to Attend APEC CEO Summit in Shenzhen - Bloomberg.com",
+     "source": "Bloomberg.com",
+     "pub_utc": "2026-11-16T16:54Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPeWZrNHRvb2NLYmlsckJpVUZJbzNHOE12RXpHUTBKaEhxbnR3aFQwRnIyNGg2OElBQ3RnUXlSb0I1eURjekxhdDQtUmVJSkZXanpJY1RTLWtpR2hVeFR3aWFxcEpuRGVvc3o5V2gwQjJITUttMmtvTmtINjJxNHcxWE9PNFFkTm94alo3dUhONHV2NWx2Szl5eF91X1Mtcnd2WXBVOUdkX25mN1E?oc=5"
+    },
+    {
+     "title": "Baidu Sees Sixth Straight Revenue Drop as AI Push Tries to Fill the Gap - Briefs Finance",
+     "source": "Briefs Finance",
+     "pub_utc": "2026-11-16T16:45Z",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOX2F1WVBvbjZVMVVJNWhZU3dnMHppb1RMeXh5aUM2RkFhQkh0cnFHMmExQngzLS1wT2Q5NkFUWVdzSEx5NGc1Ny1leU1nMzExb3lBeUJmQmhveTNfOFh0OWhBN2tQZktNaU53dWVEZi1QTmJZclRodEhMcXJwQUZ2NXRpMnZNOWhRSlgybGx0U3hZZw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "美超微",
+   "sym": "SMCI",
+   "country": "美國",
+   "industry": "硬體與AI伺服器",
+   "generic": false,
+   "big_move": {
+    "pct": -6.87,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": [
+    {
+     "title": "Super Micro: $19.9B Quarterly Revenue And A Legal Breakthrough Make 4.2 P/E Absurd (SMCI) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-16T19:39Z",
+     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZTg1eUFJSGVXYXozNHJTRHMyRjVUd2RaLUsyRVFmTTNhWXRJTmxrOEZSUk11S05BN0RvdG5mS3RUQ3NBa1d5Wm5hRGZpR0QwVVN3VlNyV0lOa2E2b0tKWmNTZG1EUXNGajVtYjYtMEY0REpKSEdlc29PaXlhMkx2WDFObHBnMnNQekRwYWRJLXl1dkFIdC02dFB4azZlcFQ3RGRUaENGaGdNbE44UXl5WXVrVE00eEZtOWUySFh3?oc=5"
+    },
+    {
+     "title": "Here’s the 1 Number From Super Micro’s Earnings That Matters Most - The Globe and Mail",
+     "source": "The Globe and Mail",
+     "pub_utc": "2026-11-16T15:53Z",
+     "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOemktbDRuMzdMcURyRkpsUXZYZVF5RzE0Y3pYYmtvZFB4aUI0NjFjR1ZPQ2RpMUdvdnVkaml5UFVXVmJidVdyRWlRdTMzMlNBYndPWGxHWGpINXpQOUdUMEZyMEFkc0c4VHQ0SmdabHVqRkF2ckRzU01wcDVfUkNFdU5rbThINEk3UkdiZ2VKc2NTU0JfcTczaFlaNFBiY2FvMWdnanpzbUtEWjZHeWs5WEltUlVKNFhDTmZBbXdWNmZRRDJoVHRMTTFkazZxV0RRNVlBRlhBVTlicmFEeHMyQnNR?oc=5"
+    },
+    {
+     "title": "Super Micro Falls 5% as Reported DOJ Smuggling Probe Weighs for a Third Session; Dell and Hewlett Packard Enterprise Drop 4% - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T15:02Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWkN1dERaUmlja09pZmNNZmhVTHRqYlZyVWp3ZkMtd3hNUUwxam1PRFlDa3Q2RXEyWDIwQk5ZZTRSWHM2aldhZVJSYVJpTXZWblF0dEVPQUxoZS1CYXVOenFNZDNuNGtGWU5PVk9SbW9oVGJEeW93MzFyR3Z4cW81MDB0SW96ckJIRUladjQ0SkxSS0NuejZ2LQ?oc=5"
+    },
+    {
+     "title": "Here’s the 1 Number From Super Micro’s Earnings That Matters Most - The Motley Fool",
+     "source": "The Motley Fool",
+     "pub_utc": "2026-11-16T12:33Z",
+     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNLXlZd3NzZDNnUVR4U3U0MDlXd25fN0RoSnN0bGdpeUJneDB1ZGl4V1Rnc1JOc24xMlN4QWYzWWw5aEYwcklnMWdNaTl2aXVpNUdkalFTdTR5UkFvejlIcU4tWjhuVUpOQUdrUy1GanlCeGV5ZHJxS0FlM2d2Z1dKSkRpd3NHSHIxUkNRbk9mZk84QXY4RDc3WHlmVlMtQ1kwRy1Pc3NxUGg4X0l4?oc=5"
+    },
+    {
+     "title": "Super Micro Is Priced Like It “Goes Bankrupt Next Quarter” Despite $16B of Equity - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T02:10Z",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQUTROZmRsa1VfY3AtRFlndGxxTFVmcXA1MjF3MWc0UXJYTVlkcl9lSFVmWnJCdHlmazFSYzlzclVRSG9wUWx4V3lndnRieThuUGZlclA0aGxWQ1pNSXBCbWtHXzVwb25rN1FGeXlTbW5RMVNDZmw2TklsTm00bUV3TU96U3UzaUpDNllPYjFoZ0toNTFUbkpGeTNFX09Zdw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "康寧",
+   "sym": "GLW",
+   "country": "美國",
+   "industry": "硬體與AI伺服器",
+   "generic": false,
+   "big_move": {
+    "pct": -6.93,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "鴻海",
+   "sym": "2317.TW",
+   "country": "台灣",
+   "industry": "硬體與AI伺服器",
+   "generic": false,
+   "big_move": {
+    "pct": -9.34,
+    "date": "2026-11-16"
+   },
+   "filings": [
+    {
+     "code": "2317",
+     "date": "1151116",
+     "time": "184026",
+     "title": "代重要子公司富士康工業互聯網股份有限公司公告臨時\r\n股東會重要決議",
+     "clause": "第18款",
+     "source": "TWSE 重大訊息"
+    },
+    {
+     "code": "2317",
+     "date": "1151116",
+     "time": "184045",
+     "title": "代重要子公司富士康工業互聯網股份有限公司公告召開\r\n2026年第三季度業績說明會",
+     "clause": "第12款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": [
+    {
+     "title": "單季稅後淨利775億元！鴻海Q3獲利超預期 投顧喊買新目標價曝 - Yahoo新聞",
+     "source": "Yahoo新聞",
+     "pub_utc": "2026-11-16T21:52Z",
+     "link": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxPM2ZGakdiSkw1YzFjcmotX0U3Qkw0WjVzVFZOeTkyTXpqa013SFNiYWZtZFJyX25uT0xJbTBseW9wT1ZLbEpEYklGUFc0ZXJTQ1dHU1pvbXBkNnFhTGFqb3VrLUdfdWctOWlrMWRQVjZxMXpPcmR4eDNVcVJLNGtDTklPbHU3RkVmYUk5VHBKd2ZUOEVpMVdkLWdyZ0x4c2IxU1lLeFZ6WkdjSERxem1XbUZvbjVMeXhTQ3M0ZmJyZHNkVE51ejBscWVGcGV2MGJ4N18wR0kxQllqbmNEb2w2czZMbVR2bG9HU3RqbXd3c0tGUVF5d2pwMWFXQVVJeGtQcDI1cFRNS1NIMF9JV3ktNlgtQmdqZy1GYkU4UnRpVkhZWnlNM0tGZjYySkNwanFuUmk5bEhTUGFibHo1bEUwSnJGaXZDUE9IYlA3Z1Rac2cxQTIxaFVoQ21oeUNZd1dkcWM5WjBDTHlFdzZVNlI1Ums1V3RHQ3IxSDNvMw?oc=5"
+    },
+    {
+     "title": "廣達營收暴增125％、緯創翻倍，鴻海只成長46％，為何股價最能扛？AI伺服器三雄現在買誰？現金流藏玄機 - 今周刊",
+     "source": "今周刊",
+     "pub_utc": "2026-11-16T02:56Z",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUGpUckd1UUpVQWwwQWNhd0NvTWVDdHRNRmQ4RlJPMUtiWThBQWtNUVdxUlVPRnVYOTRZN0ZJZzBWVFBUajA3bGVrSlFoYjktSmx2VTdsV3lYdWl1YzdoLVd3a2dabndBU0JHZ2VXX0VhdTZRQWxjbDl4d09zaU9EOQ?oc=5"
+    },
+    {
+     "title": "【即時新聞】鴻海目標價遭大和下修至320元，最新AI估值修正引發市場關注 - CMoney投資網誌",
+     "source": "CMoney投資網誌",
+     "pub_utc": "2026-11-15T22:08Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObjg2ZU9McjFzWlhqb2ZhTlVTZW1JclducFQzeGRlYm1kbzlyTkFYR0dQelItOEE1OWJhN253RXRaRHZPY0VTS0ctTURmZ1BrbzlhdE5TTlBQb1NYRGZjcmRSVmJfbUhDRi12Z1p4WkRERzRjRGhrelROblF5U0Izczl0OFpacXVPTC1TVGM3Mk0?oc=5"
+    },
+    {
+     "title": "【即時新聞】最新外資法人出具報告，鴻海獲利上調但目標價微降至320元！ - CMoney投資網誌",
+     "source": "CMoney投資網誌",
+     "pub_utc": "2026-11-15T16:05Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPV25hTnExSmdTbFBZazFxRkJLU1duV1VNcG5yX25ISzJRVzVmam9xeW5FQVgyVlBuUDdnRUM0QXY2SHI5UzZCWmRxTHdXZEp4eC00eGs3enRZeVNCVEZoeTc3Ym9Yck9TakN4Z2wwS3VrSC1HaVl5QzNFaWxSTXpEVFB4UkU5Ri1neHMtdkJoUkU?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "廣達",
+   "sym": "2382.TW",
+   "country": "台灣",
+   "industry": "硬體與AI伺服器",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "黃仁勳驚傳密謀復辟！背後竟藏華府最大殺機「鴻海、廣達危險了？」法人示警台廠恐面臨這件事- 上市櫃 - 旺得富理財網",
+     "source": "旺得富理財網",
+     "pub_utc": "2026-11-16T04:29Z",
+     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1hOEZteWI0Q0gwOTZPd2UtbWdqM0VaVmdjSW1sTWl6Q09BWlVSMkppWmk5TEpTV19aYnl2X29fZHl5VVRGRU9sbURRWUYzNXUtYXV5QW13WGJMUlBZQzBPbzJFZExfMTB1RUE?oc=5"
+    },
+    {
+     "title": "廣達營收暴增125％、緯創翻倍，鴻海只成長46％，為何股價最能扛？AI伺服器三雄現在買誰？現金流藏玄機 - 今周刊",
+     "source": "今周刊",
+     "pub_utc": "2026-11-16T02:56Z",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUGpUckd1UUpVQWwwQWNhd0NvTWVDdHRNRmQ4RlJPMUtiWThBQWtNUVdxUlVPRnVYOTRZN0ZJZzBWVFBUajA3bGVrSlFoYjktSmx2VTdsV3lYdWl1YzdoLVd3a2dabndBU0JHZ2VXX0VhdTZRQWxjbDl4d09zaU9EOQ?oc=5"
+    },
+    {
+     "title": "輝達人事地震後首份財報倒數！鴻海、廣達、緯穎三大風險浮現 - 理財周刊",
+     "source": "理財周刊",
+     "pub_utc": "2026-11-16T01:05Z",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE50X1h4SlRqNllJMTRLTUYxOXhUYjRfN0x4QnVRZU5zbWlYTW1kNzNzY2Z3elJpd3FadFZoaUN6QWY0N25WeU9XZGNxdV9TOGRXM1VtYjVmbG05U3RRa1VPWk8xbjJPWERxZjhpUHJXOA?oc=5"
+    },
+    {
+     "title": "黃仁勳離職了AI訂單還在！鴻海、廣達等4大廠看旺2027年 「這2家」喊高雙位數成長 - FTNN",
+     "source": "FTNN",
+     "pub_utc": "2026-11-15T23:46Z",
+     "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE15WTNRcHNJT3otSlh0dGdiS3dCX09TWEg3S01ZWmxZbFVlckUxZUI2aWxWd2RjWlg5WDhXM0hmb2pPb0lVN1lpUEtUdw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "緯穎",
+   "sym": "6669.TW",
+   "country": "台灣",
+   "industry": "硬體與AI伺服器",
+   "generic": false,
+   "big_move": {
+    "pct": -7.34,
+    "date": "2026-11-16"
+   },
+   "filings": [
+    {
+     "code": "6669",
+     "date": "1151116",
+     "time": "150414",
+     "title": "公告本公司將於115年12月21日提前贖回第一次海外無擔保\r\n可轉換公司債(ISIN:XS2853493117)",
+     "clause": "第51款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": [
+    {
+     "title": "擁抱不完美的力量！緯穎科技董事長洪麗寗談「轉念」：要記得欣賞你自己 - Harper's BAZAAR",
+     "source": "Harper's BAZAAR",
+     "pub_utc": "2026-11-16T14:11Z",
+     "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaHQzUGQ1WkJaa0Rmc1RELWRUS2pVa3ZDcDFPbW9saTRnX1hEZmU5T2lnRTJhM0JxSXIzV0trNkRXWnprVnByWE9IWVZhOHBoYlZQS2hrNjJ5c2pkWkpxVXg4b0N4NmVvTEkzOVhGYWtyQnFwSTIxeDZUcEJNZnQzR21fWjl0Z3k3d0tfYVltZmwxelBlMUhqM1B3c2R6WXdFeUIwMWtPYkpBUQ?oc=5"
+    },
+    {
+     "title": "緯創和緯穎EPS預估 緯穎過去2年的Q4毛利率都會驟降，所... - 股市爆料同學會 - CMoney",
+     "source": "CMoney",
+     "pub_utc": "2026-11-16T09:19Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9TblNDZmNEN3JjZU56LVF5VFhfSzc5SUxmVXMxdlZZZEVVWHdQUm5NREFoU2k2X0ZjeGx5cWhVTWhsTkd6bjlwSEF4SEhRbzd6ODl4LXQxWmE?oc=5"
+    },
+    {
+     "title": "輝達人事地震後首份財報倒數！鴻海、廣達、緯穎三大風險浮現 - 理財周刊",
+     "source": "理財周刊",
+     "pub_utc": "2026-11-16T01:05Z",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE50X1h4SlRqNllJMTRLTUYxOXhUYjRfN0x4QnVRZU5zbWlYTW1kNzNzY2Z3elJpd3FadFZoaUN6QWY0N25WeU9XZGNxdV9TOGRXM1VtYjVmbG05U3RRa1VPWk8xbjJPWERxZjhpUHJXOA?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "台達電",
+   "sym": "2308.TW",
+   "country": "台灣",
+   "industry": "硬體與AI伺服器",
+   "generic": false,
+   "big_move": {
+    "pct": -9.68,
+    "date": "2026-11-16"
+   },
+   "filings": [
+    {
+     "code": "2308",
+     "date": "1151116",
+     "time": "195318",
+     "title": "(補充公告)本公司代子公司Delta Electronics Int'l (Singapore) Pte. Ltd.\r\n公告董事會決議擬增資DEM",
+     "clause": "第20款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": [
+    {
+     "title": "台達電(2308) (補充公告)本公司代子公司Delta Electronics Int'l (Singapore) Pte. Ltd. 公告董事會決議擬增資DEM - GeneOnline",
+     "source": "GeneOnline",
+     "pub_utc": "2026-11-16T12:14Z",
+     "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPVWlMSU9tRkpFV1Q5QkJwWWNUS2dJNVpMSlZlX3hyR1lmQWNiQUU3eDd0Vy0wYWt6MFcwSHpaZng3eGNKTFBRUHdNZFhhREluVUZXbWxaYmVCaUUxYWIwSFFCdVBvVzB0RHB6VmVSeFFwSVhYYkU5SDUtTjI0a0p2enN4WTFac2hRSkctYlJ3dThlSG93Q3kwX29idkNVOTkzTWRDQUJIdFQtckp5OXBuMi0xZFExRWZudDI1MXkxY0c1Y1MxOGp6dGxVM3paZnY2a09YMi1RNjJmOUVLUmpRTkNBUHk5YlJheDJXei1iYnItd3FCblJRUk1Ydm80dms4MXdLNUlGTno4VjMyZEV5MXJIWlZLNDNramZINm5GN0R6cWc?oc=5"
+    },
+    {
+     "title": "台股暴跌2635點寫史上第二大跌點！台積電挫逾5%、台達電鎖跌停 上市櫃170檔個股慘亮綠燈 - Yahoo股市",
+     "source": "Yahoo股市",
+     "pub_utc": "2026-11-16T06:19Z",
+     "link": "https://news.google.com/rss/articles/CBMiggRBVV95cUxQandGdlJFM3Z0ZGg0VU81RlAxQ3Ytc3JuRDhnczFST0twcFRheFJFUFNqREFibFo0OFUzbC1qQ2hDTmZULUc5R1JhcnBFNWd1YjJJb19rWEVvOEhtMU5mTTlJb09IbFdIeVcxbjVQb0tIM010TFBZYUNQb1pyYWJNbnNueEdlN2RBMm9INHZ0LVRhcTZwSmI5SU5pQXFfSmN0MGg2WFI3YThzWTVBM09QbjBmdzVwQTJlMUtwZk95RFJSVldWUUV5ZmE0cy0wUXNyRTZWOTllNzQ0NThvd1lFVmlaRi1GNlk0bzNtQlFoemdtaUZua3J4eHdoMk5WWWMtMmM4cUZYVEZIVDlZOTRSS082NjViTllnY1JqVWRuTjI0a0JKUjhmVmVHbGdZazYwQXdFb2VkOEZxcExGbFBaN1AwLTlGQjItWHNGeFhDMGF3THZ6TVM4NmZoSnlyWkJ0RmdEUEtacTZrazNqUHFucE5MbUhoM3JCWV81WEtCc3Y0WjFrODRFU0hNYTAzU2tnamQ2SzRPSGZwa2FjbTR1aVktODB1VkMwLUt6WUJPX3Jib1FsOWhNX2pyTTlQbHlwblRyVWRTdWtrQ0x6MmRDT0o1ZGJYSkR0VHBEeUc3X2NCS0pHcWlpMGhfcWhycUlDaDlFMlJZUU9yRVI3bzVxeXJ3?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "工業富聯",
+   "sym": "601138.SS",
+   "country": "中國",
+   "industry": "硬體與AI伺服器",
+   "generic": false,
+   "big_move": {
+    "pct": -9.68,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "Alphabet",
+   "sym": "GOOGL",
+   "country": "美國",
+   "industry": "通訊與網路平台",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Druckenmiller’s Duquesne Lists Three Gold Miner Stakes, No Alphabet Shares - www.tokenpost.com",
+     "source": "www.tokenpost.com",
+     "pub_utc": "2026-11-16T21:11Z",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8zczZ6NVp5VC1fTlBpS282aUk0Z0xpOW1acHNPVmh0YkhSazNpOGNhaEV1RTRlN29STXBZQnQ1bmRycU9pRWZVaDQ4UHhkN0ZWcTc2NGFOVVZ5UQ?oc=5"
+    },
+    {
+     "title": "Alphabet Inc Class A (GOOGL) Stock Analysis & Forecast - TradingKey",
+     "source": "TradingKey",
+     "pub_utc": "2026-11-16T10:56Z",
+     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBIbWpfWjFuT1NPbjJwSUxycC1PbERoRjhRejdSTDBNYmctdHdIc3lxVGRDZHNNWDdOMTlGbF9GNllWTE5KMkZhbHU2Z2lndzM3bzhXMHVoX1ByM0JtZTJobDhtSXpnMnM?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Meta",
+   "sym": "META",
+   "country": "美國",
+   "industry": "通訊與網路平台",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Italy’s $887 Million Meta Fine Challenges CFO’s Global Growth Economics - PYMNTS.com",
+     "source": "PYMNTS.com",
+     "pub_utc": "2026-11-16T19:55Z",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbWdxNnFsVFl4NVhENEV2NmU4em9vU21fSHllQ3ZQanRyc0xVaktjWlluc3M2WWtucTExaUF5YmFVZ1lUc0l2LTY3d3ZmN0Q3dTNVb192bDRVMTBnN1RWSVpNUkRqRjBPbW9QbkU4TEZiYVlTN2hIZzhWSFVzdXBfWUlpVEJWU1RHQzR0eGFNbV9ySFhEYUllQWdLWGs5cDBzYmswWVhR?oc=5"
+    },
+    {
+     "title": "Trump Media Sinks 12% Ahead of Convertible-Note Deadline and TAE Merger Vote; Rumble Tumbles 11%, Meta Declines 2% - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-16T17:02Z",
+     "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOeUxTUVdfTm04SGMwazYyWTluajc4LTZHVjZNSnJNTGxxUXNpd28xVDQwN1E5OW92U0ZOQXl6UVR1Y1dfY0E5a0t3bkRaWU1LS1lLZEtiblpkWkNxMklfM2h2X1JvZkkwckJrY3JVYlNvM2l3Y3lSVDVMdjVHc0x6UVR3ZmdZZU1MRF9vQmwyWmRlY2UxeXdoWVJfcG5XUWpJdkY2bE0zVVE1QV9NMmlKdkhEVnVPNy13TUp4ZnVHN3lBSkFfb1hlSlR1M2hvQ2ZVazZseEtoQjlsQkFMT2ZOWmsyZHE5VE10?oc=5"
+    },
+    {
+     "title": "Meta Platforms stock outlook: Buyers keep control as $655.08 resistance approaches - Traders Union",
+     "source": "Traders Union",
+     "pub_utc": "2026-11-16T14:17Z",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQTElmbG5yNUdLZ3ZrMlJFNVhJeDVzMVBYWlg3OVN6aVl1ZGpWVXJGcGYtTVNtWklfOEhWZ1lJNlg1MzZnOFhfTDAyNGFHeHBLQjhkeWEwRlVTZHVHM3lHdzlOX2VMbmR4dXV2NGFsUXY4YldoWFpxMGhYT1NjMWljcVBnV3plTzhGWXNJ?oc=5"
+    },
+    {
+     "title": "Meta Plunged After Earnings in 2025 Too. Here’s What Buyers Got a Year Later - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-16T13:48Z",
+     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPY1U3di1QYW5mN3NoYXJWUUdqVHVDSHNOV3hnbTVNZE9zQmE5YjZSMXp0SW9BWjJORjNfakJibjZDa01zWmFzajZHUDdpc1U4UmJmeEpucTFrcnRsWGtOaE1DOGNTaEhzR0lrSFdkY3o2QTdlSTNBTWh2SWN4el9ZQ1Z1Ukg2a3dPNTVSdzVkZEc3RGdGRm5JdDdjSVRLVmNRQ1AtTHNHVUQ2ZlBGdlNCa0VfWTZhVEtjR0E?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "軟銀集團",
+   "sym": "9984.T",
+   "country": "日本",
+   "industry": "通訊與網路平台",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Agile Robots raises $500 million led by SoftBank at $8.5 billion valuation - jawlah.co",
+     "source": "jawlah.co",
+     "pub_utc": "2026-11-15T13:34Z",
+     "link": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE5id1FCZnVrME9wamVjdUg0cWNNVGd0cWZzVmpVVDdzbGJmX0JTZ0pxakNxcHVyZ0hHQll6YUxrUQ?oc=5"
+    },
+    {
+     "title": "SoftBank loses $7 billion as data centers and Arm drag results - Pasquale Pillitteri",
+     "source": "Pasquale Pillitteri",
+     "pub_utc": "2026-11-15T08:43Z",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMWs0VmdJS2VkbS1YcWlEamk2cXRDVERqenBoamR0UGlucnFwNU1KTkdhbkZ4YkUwT0ZRMlo0VDY1QXJ6UnpBTkNjYkctY2p0RHZoTzFOOW1fbDYwOVl4MzR1cHQ5XzZSNVVGTFJIdXhxNnJYeVgzcWROeldPX2NQOFJmeV9mZU1PX2UtbjdpODRqaDQ0U1BJ?oc=5"
+    },
+    {
+     "title": "🧭 Rowan’s $1.5B Raise, SoftBank-Grab $1.85B Malaysia, Fermi’s $200M Prepay - Global Data Center Hub",
+     "source": "Global Data Center Hub",
+     "pub_utc": "2026-11-15T02:00Z",
+     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0tXy1DYXVLaVZoeEdXVkI3YW13eGRlWDJDcnNnakU0ZEdMV3RUR1c5ekEyUHdTMjJvR0lFbmpCeG14VXlqSnUyTnNwZnpWTFdnenZkT2hxZE9Wa01QaENqdGdfVmVkSzZ3NWlWMTZ5VWc2TDhwbnZ5QXd0OXhYQQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Naver",
+   "sym": "035420.KS",
+   "country": "韓國",
+   "industry": "通訊與網路平台",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "South Korea's Fair Trade Commission Opens Review of Naver Financial's Merger with Upbit Operator Dunamu, Won-Denominated Stablecoin Market Also in Scope - BigGo Finance",
+     "source": "BigGo Finance",
+     "pub_utc": "2026-11-16T08:55Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5BdHdoWkkzR0tOdnRhYTN2TGV1b2E2SWJ6cFJ3elphUTRUbkpLS0U4LXc1bUhMNVY2OWRDTkw4UzNhZU5JMzl4VW1GU2xhZGJUWWx2VEZxVXdCTXp0SUJ6VWJKckdDdkZucVVVbVM4endUQ0dlUEE?oc=5"
+    },
+    {
+     "title": "Naver shares slide on weak earnings, Nvidia leadership uncertainty - The Korea Times",
+     "source": "The Korea Times",
+     "pub_utc": "2026-11-16T07:03Z",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUjhjZG41aXN5ZFlkaVJLeG5KcW1BLXh0UWcwdm1oR0VZZHJEM29DTDd4Z2NtU3VKOE9QRkRIXzRtemx3N083WGZZT09aZjJteFdZUkdZcWxQY3hzWTRYRHNWMjZISGJYNFNLeEZjWnV6RENHSG14eC13ZkdxanRhRlFrZkdBTVlkcVM5ZEZDUE1sS19EcGhtYXZON3JjT3RWaTFEZVhXeV93SlF4c3VWRFdyZU1PNno2T3ZKMjF4SUJzQUtv0gHEAUFVX3lxTE5SOGNkbjVpc3lkWWRpUkt4bkpxbUEteHRRZzB2bWhHRVlkckQzb0NMN3hnY21TdUo4T1BGREhfNG16bHc3TzdYZllPT1pmMm14V1lSR1lxbFBjeHNZNFhEc1YyNkhIYlg0U0t4RmNadXpEQ0dIbXh4LXdmR3FqdGFGUWtmR0FNWWRxUzlkRkNQTWxLX0RwaG1hdk43cmNPdFZpMURlWFd5X3dKUXhzdVZEV3JlTU82ejZPdkoyMXhJQnNBS28?oc=5"
+    },
+    {
+     "title": "[IT Cafe] 'Naver Mate' Sets Itself Apart from ChatGPT... High Earnings Draw Attention - 아시아경제",
+     "source": "아시아경제",
+     "pub_utc": "2026-11-16T02:56Z",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5QOVhWT1lUZnRmd0s3c0hkZDFpb0ZqZmlBclNFVTdIRE41VnlET2JaV0lHTjJZQTF6bGMwVDZHMVhwZ2R2ZFhMU3B4VFhQY21PYmFQcC1hYm9QS2k3TTJ3NVQwaU0?oc=5"
+    },
+    {
+     "title": "InBody grows overseas on obesity drug boom; Naver ties raise AI push as succession lingers - Chosunbiz",
+     "source": "Chosunbiz",
+     "pub_utc": "2026-11-15T21:01Z",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQk1KQl9fcDdsTkppTkMtNjc1ZGdJZlZzc0hRMjNseWhSSWN3VjE3S0tzOENSTktQQm4wUDVrZi1PeW1HWWxPTlhMRUlnS21rWW12NU5oYkV1WE1Xc2VNR3hCejlLRUFhSjJkbkJ5eGVnZFZQV0pzUHp4bVNHNlJueC1UM2MtMmlMdG1Ya0E1aTY4bGNz0gGUAUFVX3lxTFBCTUpCX19wN2xOSmlOQy02NzVkZ0lmVnNzSFEyM2x5aFJJY3dWMTdLS3M4Q1JOS1BCbjBQNWtmLU95bUdZbE9OWExFSWdLbWtZbXY1TmhiRXVYTVdzZU1HeEJ6OUtFQWFKMmRuQnl4ZWdkVlBXSnNQenhtU0c2Um54LVQzYy0yaUx0bVhrQTVpNjhsY3M?oc=5"
+    },
+    {
+     "title": "Jensen Huang's Departure Raises Questions for 'AI Alliance' Partners Naver, Hyundai, and Samsung and SK - SBS 뉴스",
+     "source": "SBS 뉴스",
+     "pub_utc": "2026-11-15T05:40Z",
+     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9teUt2WThWRFdiWnR6SHVWbmhUX0o5X3pzRW9uVkFSN3JSdEpSWU1veFI4RjFwbWpncTVxd2lqQkpzanZqeU1aRmthREpFa2xncUdSRjhrdHIwdUczWDJxblFfTm5mdDQ1UGwwQnRB0gFmQVVfeXFMTmp0Y281MnJjYjZRSHRrcXZKQVJyYWtGQnV5RnljQTVremFxZFZVOWI1QU5GbldhdjZMY0VyQS1HV2xwZkxmNUN6bTRVVldxNGd1bVNCbWh4LS1STTBPZW91by1DcnhB?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "字節跳動",
+   "sym": null,
+   "country": "中國",
+   "industry": "通訊與網路平台",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "ByteDance sued by automotive photography firm EVOX, alleging TikTok parent copied 7,095 images to train its Seedream AI image generator - Music Business Worldwide",
+     "source": "Music Business Worldwide",
+     "pub_utc": "2026-11-16T15:41Z",
+     "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQZkJEWVZ4Y1RfbTZoR21ka3FqVGxHVW8zQ2lWLUtJdDV5LUtKeGxkc3hXZEMwdTN2N0x5ek9kaWc3WC1wRU03bnEzclpDVnpGTldDMFlxWWt5cVdzWlhvTm4xNmZsSmtQSEctMVFTSFhWdHp3XzN5MHBwMlk5STlCc3pqdmZXeHNRR2k5TkZBYy14SFRUajZRd3NtQzZQQXhmV0l5eFR6WUFveXZMTi1fVzJOUWdUa1JDcEFCeTFPLWFNeDJkZlJLd2NjOVp5ano3aW9VUVN6cjNrbV91T2lVYUpJOWFNLTJMREJBZU1udHhycURORi1jNUxuUXJuR1NWX3R3?oc=5"
+    },
+    {
+     "title": "Meta Faces $400B TikTok Rival ByteDance - Meta Platforms (NASDAQ:META), Oracle (NYSE:ORCL) - Benzinga",
+     "source": "Benzinga",
+     "pub_utc": "2026-11-13T14:38Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaWU4ZXFwVGhwREdfVGktOGRndWNLX3RGSjZybXV2OHJkSTBpc3MxYXVyUzh4NHM0V0M3ZEhtM3BxZnpXZVZRN0Y3TEVxd2NaLUFGNTNWQzdOQ1JWTWRhbjZ3ZEhNUEpGUG9NaTVzZ296ajA1V0c2RjdqQjBHd1hjVExQc3ZtaXM1TTlKS0FNUnViMGt6OTdwZw?oc=5"
+    },
+    {
+     "title": "ByteDance’s New $6 Billion Buyback Puts A $400 Billion Tag On TikTok’s Owner - Finimize",
+     "source": "Finimize",
+     "pub_utc": "2026-11-13T12:46Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNUl2c0g3elpnS2lkNnZ1MUZMNS1rVE9KcXlZMUo4N1hVYy1QU2hFVmluUnJYQmJ1NmlnR2FSWWYwb1RORE4zY3VIQ0dnMWN0enB2YW85VklTYlpzTzIzalhUbVFxV2t5aTZFdWRwSG1PZTUyWWlDMk5FZ1AwcWROX19wbHR1NTJrMkx4b3o0VHhkRkQwczhzLWlIZHdLbGpmWmRv?oc=5"
+    },
+    {
+     "title": "TikTok owner ByteDance is planning a buyback of up to $6 billion at about $400 billion - Quartz",
+     "source": "Quartz",
+     "pub_utc": "2026-11-13T12:24Z",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5fc2w2UkJWNHZManN4S2J6SkZSMGZsV1JwaC1ueXZfWkpQdmVPb3daZmVKQ0JCNjU1anIyZnFUWVd1Qzg5NEdkem9QTkUxZjA2NVptdk5ybENNaUg1SlBpdjhsUmJmM09kQU9kdTdLU2h6RjBJUm5HQmtGRQ?oc=5"
+    },
+    {
+     "title": "ByteDance marks itself at $400B in $6B buyback, up 20% - Dealroom",
+     "source": "Dealroom",
+     "pub_utc": "2026-11-13T10:44Z",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbTJ0RGFicWtBYUVQR2pYalM2V2p5eFVVNE9ERFBzdDF1YWhPdUZjNXBCSW56TnREYy1tSW1rQnNKazVtSTNadDFFb2JTNVJnbC1WcV9fN1JHYkRlQjV4ZUxpNWVpTVAzbDEzS3cyREFZS0gzNVZwRHdPaHhSbm8zZEFReGhsLWJXZXVENg?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "索尼",
+   "sym": "6758.T",
+   "country": "日本",
+   "industry": "消費電子",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Can Anime Save PlayStation? Sony CEO Hiroki Totoki’s Plan for 127 Million Accounts - Observer",
+     "source": "Observer",
+     "pub_utc": "2026-11-16T20:15Z",
+     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNS1o5VWFPRDB3OFhDeXB1c0owaHQ4UXJnUjBRVDVKc1F3THVxSGExZ3E5cm5PYW1ZQUlha21aNXkyQ0RScFJRalJZZlFYY0NCZTZ1UWtkZnpKOE1iSWFsUkp1emxiWUZRVl9MYTU5SXotMTFqS2JsMElYdktzQ2tNUXlNc3g?oc=5"
+    },
+    {
+     "title": "Sony Group (TSE:6758) Lifted Sales And Dividend, Is The Stock Still Undervalued? - Simply Wall St",
+     "source": "Simply Wall St",
+     "pub_utc": "2026-11-16T12:13Z",
+     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOWUUxR2NLaG90dGhOQk1tVFdyUldMR2ExZ2FyaUd3VThseHprTkRpOEpnSDdqVkZtRkRyMkhYdFF3NjhFS2FIYlotY01TNFJld3oxWVcxM3BLWk1nTmdnVkY5SXNjVEdjd241emdxbmlaVzhrRGZNaUJibl9lNkc0VTJJZXBSQ21pZWFZNUw0ZE1EMG45V0haakxMRzI1cWRfdHIwMXVtZklnci1OeW9jelQ5Um9yOTE0QnJlLWlLUDBsdDNZd3ZUR1BUczJVMEVvczdqSTh5WlVzalhMRnFZ0gHfAUFVX3lxTE5ZRTFHY0tob3R0aE5CTW1UV3JSV0xHYTFnYXJpR3dVOGx4emtORGk4SmdIN2pWRm1GRHIySFh0UXc2OEVLYUhiWi1jTVM0UmV3ejFZVzEzcEtaTWdOZ2dWRjlJc2NUR2N3bjV6Z3FuaVpXOGtEZk1pQmJuX2U2RzRVMkllcFJDbWllYVk1TDRkTUQwbjlXSFpqTExHMjVxZF90cjAxdW1mSWdyLU55b2N6VDlSb3I5MTRCcmUtaUtQMGx0M1l3dlRHUFRzMlUwRW9zN2pJOHlaVXNqWExGcVk?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "特斯拉",
+   "sym": "TSLA",
+   "country": "美國",
+   "industry": "汽車與電池",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Tesla’s Model Y Decision Makes Hyundai Ioniq 5 An Even Better Deal - CarBuzz",
+     "source": "CarBuzz",
+     "pub_utc": "2026-11-16T21:00Z",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBDUGJPOFRfYlNhRDNkUnBxSGstZ05LbXJMcFl1eGFvanU3dDBoRzE0S0xiYzgwQlROQ1RYNFl2dkwwVlRCWHNReFVNOG4wTjdPTmxOY0wxUG8wQzBWcklIRkJwTWJYam01Z0taWW05b3I?oc=5"
+    },
+    {
+     "title": "Tesla: Wall Street Keeps Getting It Wrong, And The Price Is Still Too High (Rating Downgrade) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-16T20:12Z",
+     "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOSTN5SGIzTEhaNXFtTTZ0TVVKVkVaZURhSnRKMlFCcXdVUlc3cHVsNEJrS2dDSmVXZTBMNnpNYktXbmd5a3VBNkJEYktKZlZ3YmpaNUJjTl82c2FmVU1ycC16RGtmTVA3RFZLWTI0Sm9vWEp6QUtOLXY1Z1Atd21TczBjYVJtUHFJNjRQUjhNeDkzY01kTkE3bUxUWHp4UE9xNGRYRlItcXpZWWh0QUdYRktpb005RU1hSURPYzRSOUY4dXRkbC0zWUJB?oc=5"
+    },
+    {
+     "title": "Prediction market odds for Tesla-SpaceX merger by April 2027 top 60% - CNBC",
+     "source": "CNBC",
+     "pub_utc": "2026-11-16T15:48Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxObnp3dHFnTmYtS3p4SXA0T1B4TzhnVmtuclBhcl9BeEM1VVNyYllTblFVWUE2WUxoVUFGUFZyZ2tNZGdxbEJ0LUJkMmNUX1BMekp5aDlmRFlKNEFsRElGU2hRVXZMZFdQRE5fM2h2eUEzUGdvYVVIUTNmeVZTaVBsNDlmdW5jbVhRNVVMRmozSnltOUxyTE1xRkFXbHlTU3VKTnprVlpmdi1qR1lGSGhhZdIBtgFBVV95cUxQak1HZ3VpdXd0RVg2czhCeGZkdHVLSEVJMzdETUg2RXZFMWdjQllnaTVBcnZsN1BMYjNhRDE1Z09MSmNWOHBQZU9TUWs1NDJQT0ZBdFkxbzFURmtXVFFlWG1BNVJuZU9xRmNIaVkxZUJrNnduSnBkSW9jLWxiN3l1XzIweldrNVpmVzlnbW11cnFNMmkzVnVoT3RwVTVKZmJOeG82UnJ4V2x2RFhXZVJZemJTUDRRQQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "豐田汽車",
+   "sym": "7203.T",
+   "country": "日本",
+   "industry": "汽車與電池",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Haig Partners Raises Multiples for Lexus, Mercedes-Benz, BMW and Toyota While Overall Blue Sky Values Fall 10.4% - FinancialContent",
+     "source": "FinancialContent",
+     "pub_utc": "2026-11-16T21:16Z",
+     "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQc01aRHdkRFRITmpSbTJqeEhpVk0xRXJHb2N3djRlWWhnWno0R29oekFSaFRkZjZwR1JidG5CckNsUmtUNkE0SDVIbWllV0QzbWFGd00yR3g4QzAwM2dEY09ZSlpVY0hqVlc1MEJxd1BGRUJ6ZnlkMjhxVzBrRGNtY3Z4TUNoVlBpX3ZGQUZjbGY5bnhKRGllejJfa2VLakJuMTBhVHRwMl9teUhWR1puelR2YmJiZWI0S0tLS2pRcXdDekdtXzdGcG1MMk5GaTJ0TDZPcVJ4NDkyYmxjcWZ4WGlnM1FNbHpLWnB3ZFJJbmt4TVNRQ3ozR0ZEQ1JPNktWR21HNnZlTXJsMkU?oc=5"
+    },
+    {
+     "title": "Toyota targets 2027 race debut for hydrogen-engine linear drive - Nikkei Asia",
+     "source": "Nikkei Asia",
+     "pub_utc": "2026-11-16T20:55Z",
+     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOY2lCWndudWlWVG8wOWpzMXg4bjZFVUNaNEZsbTN1X2NoYWJ3Z0ludVljaGxMU25FNmFnWElWZjVpUWRwT0J6dTZVVDdhdUMyUVRQVzlrV05YckpBTWZmcThRVGpTM2RteEpMZUpHOUE5QTVnajRGX1RXYUtTQXRsNWwtb1BSbFV6NGVNRngwcm5na3lOS2JjQ0hnUTdNdlRQamdvZE9MNUpHZ1Na?oc=5"
+    },
+    {
+     "title": "Toyota Sued Over Camry Hybrid It Allegedly Sold With a Known Defect - Autoblog",
+     "source": "Autoblog",
+     "pub_utc": "2026-11-16T12:15Z",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQN2tmdEgybHlONURxTjlCN19SN0hUOUZ3ZFlJcF9DMnFZVDR1cm1SLTVYbVJBTklrZ3hZUmFKLWJRZmhfQXhTaE9ZWDRDX2xydDdVYWNMS29aaFZLM2tPZXBLQ1hLMEhwOVRObFVYZ2RXSDJ3ckRBdlIwVFZ2U3RWZjA1WmRMbkRUOFhvRVF3VHFybnlIVGNXX0IteXBadw?oc=5"
+    },
+    {
+     "title": "Woman Sees Toyota RAV4 For $41,000. Then The Dealership Gives Her The Out-The-Door Number: 'I Got A Great Deal For You' - Motor1.com",
+     "source": "Motor1.com",
+     "pub_utc": "2026-11-16T06:08Z",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1fVFpRSHdLMkMzRzAySkVJdWJxWkdxeXMxRWl0WjcyWVI0MUxfaTFNc0JPQkFqWmV0UElGMVIxcW1YM0syX0s5bzl0TUVaMVNWSWhBWUJOOXd2dUFySzN3TjNyM3g?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "LG新能源",
+   "sym": "373220.KS",
+   "country": "韓國",
+   "industry": "汽車與電池",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Palliser urges LG Chem to step up buybacks, overhaul board to narrow 74% valuation gap - KED Global",
+     "source": "KED Global",
+     "pub_utc": "2026-11-16T14:40Z",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5wcXVtLTcxdXlKT2ZvWUdBalVFVjljdV9vNzhlbTJUZkl1WlR4d3dHdlhkSUR4dHhEN191bEZRLVlRMEFTOXJ2RnBmMGxrN2o4bzNnSnU0Q1d6YVZiXy0wNlg0VUtkR0J0QWxMMHNqdTUwU0QxM3dzT1lzSQ?oc=5"
+    },
+    {
+     "title": "LG Energy Solution CEO Kim Dongmyung Sends Gifts of Support to 210 Employees' Children Ahead of CSAT - 아시아경제",
+     "source": "아시아경제",
+     "pub_utc": "2026-11-16T05:45Z",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBYUUdpQ1EwdUxBVEpzU0FKamJ3X0N5dlQwS0tpSzNfMktnbHdrQUI2azlKenc4UG1PUk0zZDBGMVBaM3RRU3hXUDJISXFMVHNMVnU4NXpDZ1o1UlJfMUlTeFhNQzE?oc=5"
+    },
+    {
+     "title": "LG Energy Solution CEO sends gifts and words of encouragement to employees' children ahead of college entrance exam - 헤럴드경제",
+     "source": "헤럴드경제",
+     "pub_utc": "2026-11-16T05:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1FUW1FUXBSaURIQXBuckl3TzJZcEJ6NFlUTzZOU2phVGhCZ3FOTzMwZ0dsZnNXc3k1NWVkUGNuU25kTjdsOGhXTlh1X2RCc3NqdDdBYVJGSQ?oc=5"
+    },
+    {
+     "title": "LG Chem Buyback Falls Short, Palliser Says, Pressing for Board Changes - Businesskorea",
+     "source": "Businesskorea",
+     "pub_utc": "2026-11-16T02:06Z",
+     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5BNklwazQ3NUpCcUxSUUdOZ3B1c1p5RjBTeVVzMG53azFYZ092Z21mdGpMM0N3eUM1bk5oNU1PSGxfY0EyYVZRVEo5Ulk1U09wZDg3aFJXbkhYMFh3MElJcEV6TVpLcVJ3cFZ4cHhGQW5YOFhS?oc=5"
+    },
+    {
+     "title": "Palliser Calls LG Chem's 300 Billion Won Buyback Insufficient, Sets Up Board Fight at Next Year's Shareholder Meeting - BigGo Finance",
+     "source": "BigGo Finance",
+     "pub_utc": "2026-11-16T01:35Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9HejBNRFJqT1p5Vk9hWll5VXgzN3BjdWV3azFRMEtaYVNMOU9MNUNDQkw3Q1RhbWN1cjJ1TVNFTFpXSHUtS0FGLXNSQ1RBQmI2Vk5ZcnFTVDNtTW9SZFZPMlAtS0gtY2VicGpScl9FbkFWUVJUN3c?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "比亞迪",
+   "sym": "002594.SZ",
+   "country": "中國",
+   "industry": "汽車與電池",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "BYD’s Denza luxury brand makes India debut with two EVs - Yahoo Autos",
+     "source": "Yahoo Autos",
+     "pub_utc": "2026-11-16T14:53Z",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPWEY1RkxIMng4MkhkZGxQazJBMElGdTRzYTlqWm83LUkwdDNfSkI5eG5RVlNpNlB1emJnb2lBZW90YjBtbTRnV0REOWVkSTVPa0JrRGx0TWRxMUlNZ3NqQ2p6WUtzRnJHdGE3ZWQ4QmRvdWxzQmxYMTBrVVE0RUV2dDBndWk2enB2VktjdWw0TldXUzl2UG05YkNJUQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "開拓重工",
+   "sym": "CAT",
+   "country": "美國",
+   "industry": "工業航太國防",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Walmart appoints Caterpillar CEO Joe Creed to Board of Directors - KNWA FOX24",
+     "source": "KNWA FOX24",
+     "pub_utc": "2026-11-16T20:16Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNREFfYy12WGhCYmVxb25FeVpGRnI2RnhVWW9nMjE1UWE1R2trb2JIcTZvZlhqdmpZZnFpNkg2aHpGaHdUblg3dDQwOVRuUEhVYTU5bkhMOTBUNm5RRkR2WmZLeUJDTE9taE5wU1paMVBtSlZkNTNBSUxSWFVyZFVLVlVUYjVBbjhBVlZBckNZSVZiWXluMjRGVnJUSkRyWTdzZ0FSUlF2QkZoUGxoY3RGTdIBtgFBVV95cUxNU2g0VmJwZUV6QW9IdHFwbnpzYXFKQ2IxemQ5RGJjNS1mbGpBS3pHbzgzWXdIRkJUaG9ZdGNKZWRJU083VjQyaGdwR01sYk94Nl9xaUx1TVQwbFZiVl8wbVY0MGxuRmp2LThlY1paQkd1REZDaEZVNXZSeHhwdnlPTXlncXRMSjdiX3lrcmxhQkxET1ZwU3oyT1lOY2lLVFU4S3lwanFKV09GNjFnSU9tdzE1NzdDUQ?oc=5"
+    },
+    {
+     "title": "Walmart adds Caterpillar CEO to its board - Talk Business & Politics",
+     "source": "Talk Business &amp; Politics",
+     "pub_utc": "2026-11-16T19:22Z",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOek5KQzJIZDhVLVpXdmRtTzQ1R1lSeTRVU19id0REZlkxbTRPWF9JNWlXbmxUQXVJUkY1ZGE5LW40b015R29xRzZiLTZLZGNoUFpGSDNfZEVUekRBZ1pOZVJERnlPa0thcExfWjg4VFNiUkREbkdPcnhkTFRTbW1SLQ?oc=5"
+    },
+    {
+     "title": "Walmart Adds Caterpillar CEO Joe Creed to Board of Directors - Progressive Grocer",
+     "source": "Progressive Grocer",
+     "pub_utc": "2026-11-16T17:34Z",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOemh2QXByc3UwQkJWLXQzZzFIV2hBbl9GZGR0Nk9pTVdiX2d6LURiNmtRRWhRdk5keHpZOHh0Y0RPazVQNkZnT0VFa3ZldHNsWGxjNURBOUstTzhqcF81VGRPUzM3a0pQMk9vVERtMlRBTUcwSFY4VG1MMmRiRXVETTVESmdRdjFQeTZ4dg?oc=5"
+    },
+    {
+     "title": "Walmart Adds Caterpillar CEO Joe Creed To Board - The Shelby Report",
+     "source": "The Shelby Report",
+     "pub_utc": "2026-11-16T16:40Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcUNjOS1MTzl5YUhzVWV5QmZPTlNZdU0zX0YwLVktQi1zU1ByMmdPb0xob21hVkhDOEpQaXFueGUzeERjQWtINGhFV1ZpMEgwVktkUGY4Q0M3S0kwbWYyS0l1QzRWZXM2YUVpLU5PSV95aGFEUkRweUZ0NzAzTXM2M3JnN01yMlFoMk1HeElRaUQ?oc=5"
+    },
+    {
+     "title": "Walmart names Caterpillar CEO Joe Creed to its board - Mass Market Retailers",
+     "source": "Mass Market Retailers",
+     "pub_utc": "2026-11-16T15:02Z",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNX2ZJMjlkUV9RZm5YYlg5R2lyT2xpTGpLU20xT09vTW4yVDZCYndrUHB2LTg1SlBLVVdFTGZVV296TEVjSDhvNlBYQzBQQllqdnI3YVplX0FMUktyT281eHRjMkhPeEp5QkdBM25kZ3Jzbktrc0gwTmlLSnZIaEx6SkdEZ3dSRWM5TDRIZWx3?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "GE航太",
+   "sym": "GE",
+   "country": "美國",
+   "industry": "工業航太國防",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "PAL finalizes deal for 15 Dreamliners, GE engines - The Manila Times",
+     "source": "The Manila Times",
+     "pub_utc": "2026-11-16T16:03Z",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPc1dDcG90NGwyQVlkWmtRa2VBYmFzeVRlS1R4bXBwTGhpX3c1a09YQ090bk81QjdSM3o5QlZiM005NlpCTkVfbTQ3VW1YRDNWeUNtWG5iQjlsY2JyemJBZUt5Wm44M1Nlc0tqTVkzdm14UEphdFNtZDhxaHctYnBCVjhfRVBjLXRRMEo5eUdGY3IzMkFvaU45SWJhcWxXMDJIcUNxNEFsRERVY0oyb2fSAbMBQVVfeXFMTmtJSlQzamwzYk5kT0tlN25MekQ4MGNOWWJtSEw3OXpOR3FsUzk4SWp2ZUtXdmhIZ2pNTEFLcTI0QUlJakJuTDFVVzBEQ28yUjR5T3l0bEZ3aTJCWnF1NTBiN1pxNFVuZXFIWnNRcEJwS09YM2x4ZE1mUnh2M0ZqRUV4U3RGcWo1R0hIQVAwVGNVR1ppdVJUQktxb0ZmNE0zMWwydlFRdFQxRFNzSmZQaEVkMkk?oc=5"
+    },
+    {
+     "title": "Is General Electric (GE) Priced Too Rich For Its Cash Flow? - Simply Wall St",
+     "source": "Simply Wall St",
+     "pub_utc": "2026-11-16T15:19Z",
+     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQODJ0MTJPVmI3bkNmalN5Q1E2cWo1WEhSY0JSSWVXRDI5WUNIWWN2c19zWUNyNmhuZ3dseFpTMGRXNVhkZnVQN1JSTm80cTY1bkFoZTEwdlJIeC1TRko4ckxxb295RmYyN1dOR29yN0dpd0VaYXp5ZUpPOEM1X0VFZUxySmotdml0amVpaVdobFM4Qjl6XzZkQ1hRaUJCbzlyQWZMRmY2c3pDYWNrbTFfeXQ5U2Zubm9obkdFTDRPdjJ0Q2ZETVhuQjBsWGEwaGtJY0HSAdIBQVVfeXFMUDgydDEyT1ZiN25DZmpTeUNRNnFqNVhIUmNCUkllV0QyOVlDSFljdnNfc1lDcjZobmd3bHhaUzBkVzVYZGZ1UDdSUk5vNHE2NW5BaGUxMHZSSHgtU0ZKOHJMcW9veUZmMjdXTkdvcjdHaXdFWmF6eWVKTzhDNV9FRWVMckpqLXZpdGplaWlXaGxTOEI5el82ZENYUWlCQm85ckFmTEZmNnN6Q2Fja20xX3l0OVNmbm5vaG5HRUw0T3YydENmRE1YbkIwbFhhMGhrSWNB?oc=5"
+    },
+    {
+     "title": "GE Aerospace $GE Stock Acquired by William Blair Investment Management LLC - MarketBeat",
+     "source": "MarketBeat",
+     "pub_utc": "2026-11-16T13:15Z",
+     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNcktDY3N2S3I5cE92LVBmbVlGWWtOaDM3TGxRSHluem1ZZHljeG5HZ3BUR0NMcHlXS0I3LU5USjVJeXlhaUpISjdmMDhzVVhFRmRGaHVnT0pwdEZvRzdwQ3JRdmFoS0t5QklIbnlYbFFCZGQ2UURFcXZJU3IyMkNDbnA2Tk5RME41NloyRXBRQjhRUExyREJmNW5GV2lmWk5kbWRmdEFkRDdNRTJJZVZmaDNsSGNnSzBPVHpPTGQxU000VnNjYWJTTkNtenRvc3M?oc=5"
+    },
+    {
+     "title": "Philippine Airlines firms order for up to 20 Boeing 787-10s with GE engines - AeroTime",
+     "source": "AeroTime",
+     "pub_utc": "2026-11-16T11:40Z",
+     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOLVJFYmVLSnVMMkprdXZSUzhUc2dNb0dyZ2pRS0V1ZC1vWFdXTm5wczZDczJ6QWg3UnNfY0VxOHBZX0t0eDNrWnhLb2ljZmZpWDZUVmZjemtFd2VYeDdCMy16VTRwclgzS052dG1KWmZJaHhCSTFNZkZkbU5vbkF3Zlh5SXRxTE4xTlp6aklaM1J2STBaOWpaOThhS3k5OXdhZDZkbG5jekRxNVVJdHVZ0gG0AUFVX3lxTE1qaUZJOElYSUtaY0U4WWlxSFZTMi1kbUVZSlR6bDR6d3poRkFKcFlBQW8xUEVGNUxPV0lWSXRORTlGY1pySS16U3otRDZseGxwVWtBVW9rMVZsWVpXSjBSWUlGUmdnWWs2akJIdUM1WU1aWERPc3RLRWE5MjZxVEtobTFOYUR0SHMwQW54Mk5kZnZWejZHU196eVJvU3dXTkRpUjJldFk0T01NNTlPczk5eU0zQg?oc=5"
+    },
+    {
+     "title": "PAL inks Boeing Dreamliner order, GE engine deal - Inquirer.net",
+     "source": "Inquirer.net",
+     "pub_utc": "2026-11-16T05:07Z",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSjhoMkhFSGJxTnJBbnZsaER5dzhwbno5cUg5SXdSeG0zSTlaQUtwSFlCZ25IVnFVbjZPSmJwMms0Y3VWUk5BWFcwMUR5UVh4OHlSdEVsWHFHVDJYczEzTUwzYkx3NTV3c0o2Y3lEaE45b1BRQnJZWkhabnlkSjV5NnhmZjF1YjBza1Uyb9IBkgFBVV95cUxPX2xwSXdmM1BpeUJtMkZrUTBjd291amZla3FFMWlZV3hPTHRvTTByTzlOcnRXNlpCMjM1RFNocjhDcENiLVUxeTl4YlNPVHB5MTdSUzJOVlpQZXVCTi1FLWdzNXdHNEw3ZHBDNEQ0ZkJQNkVrSnY1aEF6VlR5WXkxWlYtWmhzNks5QmFYWWVZRGg5QQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "SpaceX",
+   "sym": "SPCX",
+   "country": "美國",
+   "industry": "工業航太國防",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Prediction market odds for Tesla-SpaceX merger by April 2027 top 60% - CNBC",
+     "source": "CNBC",
+     "pub_utc": "2026-11-16T15:48Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxObnp3dHFnTmYtS3p4SXA0T1B4TzhnVmtuclBhcl9BeEM1VVNyYllTblFVWUE2WUxoVUFGUFZyZ2tNZGdxbEJ0LUJkMmNUX1BMekp5aDlmRFlKNEFsRElGU2hRVXZMZFdQRE5fM2h2eUEzUGdvYVVIUTNmeVZTaVBsNDlmdW5jbVhRNVVMRmozSnltOUxyTE1xRkFXbHlTU3VKTnprVlpmdi1qR1lGSGhhZdIBtgFBVV95cUxQak1HZ3VpdXd0RVg2czhCeGZkdHVLSEVJMzdETUg2RXZFMWdjQllnaTVBcnZsN1BMYjNhRDE1Z09MSmNWOHBQZU9TUWs1NDJQT0ZBdFkxbzFURmtXVFFlWG1BNVJuZU9xRmNIaVkxZUJrNnduSnBkSW9jLWxiN3l1XzIweldrNVpmVzlnbW11cnFNMmkzVnVoT3RwVTVKZmJOeG82UnJ4V2x2RFhXZVJZemJTUDRRQQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "Anduril",
+   "sym": null,
+   "country": "美國",
+   "industry": "工業航太國防",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Anduril Industries Reportedly Eyeing IPO Within 2 Years - Orange County Business Journal",
+     "source": "Orange County Business Journal",
+     "pub_utc": "2026-11-16T21:36Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWGhEYVZ6T1FubHVZSHo1Q3Q2WHZNVl9xMTVaVkFCZHZ6S0RrN25rdDhIUW9RZUUzdUlwMU5MdVN5ZF8ta2Y1aDZCRHRzZWtyQ2V1QU5GS1p0dDF6WlEtelY4TU5xQXlZN19rYXV0eXpjeEpYeW1HR3VJbTZhTXViNHdTSnE0OTJkbGdNU3ItZi0?oc=5"
+    },
+    {
+     "title": "Air Force Awards Anduril Prototype Contract for Counter-Air Missile Launcher - GovCon Wire",
+     "source": "GovCon Wire",
+     "pub_utc": "2026-11-16T16:57Z",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUkQ3VzRqa3VLTXl1S3kwcVE1V3NFVDBWWHUyc0dTcUY4akNCcnk2UGlTLVZobDNCX3dPVmtGV0owTDdVbldRSmgwdW95NW1UZUxqR3JZNXgxSEVuRFJUMmM3VDFqOHR5RFEtVW15ZXdseTFwS0lBejdnbEdTeG80Yk5mMUJwdnAtNHRnUUtjeXJDQ01helI4?oc=5"
+    },
+    {
+     "title": "Anduril eyes IPO within 2 years as it challenges defense giants (PPA:NYSEARCA) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-12T20:40Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPeC15V2hXM19jQ1V5bHpTclZ2MTg4cXJIZEw1b295RXgzSWNGYWtDaG5fMHUzbGFjODVmTS1pN3k5bFFPOC16ekgzd2NaVmZQR3E0cDVXN1RhZHJyTDVzazdGMl9VVzdxeE0zeFI5dU5UWkFtNXZnS3lzTVVhcmk3SVFyVkJoSHFFbmtZcm1FYzRkMTJvMVlldmUyNVotb0NPMTFZ?oc=5"
+    },
+    {
+     "title": "Anduril eyes IPO within 2 years as it challenges defense giants - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-12T20:40Z",
+     "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeVpTSXhONGRFRHI2TzNDWS05UU5VTlZFd1NGRDFSNFFReDJpc3I2TEh5bzJLcjRxRWV6eHpUVWJiUXJzTjlocnFhTTZ3MGxreWhnSnR6MEI1WERaUjN4eXhNNHBJMGxJaW9pOHRkYnhRT1dDc3BlaWR4QnpERWVrR2haUTVOOF9MTnlUTlBESXRsbFhFRWdFUVZtbVl6eGNqZ0oyT0Y2ODdSOTNOTG9vdkhDWnpURmwzbWJjeWRVYURqc0RyUFB5bFFuOXNzWTZBa0JHR2laR2w1NG0yYVE?oc=5"
+    },
+    {
+     "title": "Anduril-area site with mixed-use development potential lists for $13.9M - The Business Journals",
+     "source": "The Business Journals",
+     "pub_utc": "2026-11-10T19:20Z",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWlBPVGFLZVZ6MFV5M09Mc0dfZUtwcGZBVUxiOHRBdGpzV0tsdjZIOGFzd1VHSmRydER4OHBjZVRiVWxsQjBnbURDOExjLTdodk9pcjhoWk1QN0dQZE5RUGFmV1B1aGpDenkwbTI5SEZnbkQ5ZHNmVlprbmRKWW5PUUhwM2oxLUtTVUV5VkM1Y2tTVTRBcmhnV3V3MW0tdzlaLVE?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "三菱重工",
+   "sym": "7011.T",
+   "country": "日本",
+   "industry": "工業航太國防",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Q2 2027 Mitsubishi Heavy Industries, Ltd. Earnings Presentation Transcript - GuruFocus",
+     "source": "GuruFocus",
+     "pub_utc": "2026-11-16T15:50Z",
+     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAzMXRNdHJfcWpJLXQ1UzZ6dDFMMEdxWVF3ZDlpdVpjdGdaNFVpeXA2bXZiWU9xSHVBaU5XU1ZoZzIyWTYxNzVmZExSME13S2dycGkxOW1ydWFDajhMUVdiT21CNkFSaWVv?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "日立",
+   "sym": "6501.T",
+   "country": "日本",
+   "industry": "工業航太國防",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "ESB Networks picks Hitachi Energy for Ireland grid upgrades - IT Brief UK",
+     "source": "IT Brief UK",
+     "pub_utc": "2026-11-16T13:07Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTnJqb3RPajhuTjJIR281Z25PTHAwRF9WUTg4Wms5OXRBdG82NU1HbTJUdGp6eUUxMzYyZlYtYWE0RlcxaXJxNjFPcGFBZUVneUFqQUFwM3h4UzJXV2NzVzUydVFNUEZfWTNYRVRVNVA5YjN2anBTWnFmeVo1M0hEUWlxQmprcGg2aXVjeklYUVE?oc=5"
+    },
+    {
+     "title": "Hitachi Construction Machinery is Breaking New Ground With Record Revenue - marketscreener.com",
+     "source": "marketscreener.com",
+     "pub_utc": "2026-11-16T10:03Z",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNRUVRLVpXcm9KRHdhSjg5bVFfbS02X1JMRHBITTdjRWNwdUVUeERTNXhqTmhIVkFEd2E1RmM2amgxV2R5X0VQWjNoc0dhVjRIRjM2RERlREFMOGhldXhWNXUtZ2NnU0Q4RG5BNko1Z21iamdmT0UzRWZabXlCTm5hTzd2RkhHQ0hGVGZubDNZYVZ6djhJTlIySjVUQXNld0xzd1hkaWdNSktMam4yTVVTSHllMC1DM2FIU2JSelVPZm1WRGlt?oc=5"
+    },
+    {
+     "title": "Hitachi Energy: Strong execution, power sector tailwinds fuel growth outlook - Moneycontrol.com",
+     "source": "Moneycontrol.com",
+     "pub_utc": "2026-11-16T07:23Z",
+     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNRWtBdldpVmVRN3ZpZFFHTk9qZ0pfRDZ3VGZsUEVkcUNEYzYwd1BwUVBiY0JXMmFQQ3g0emVweW5qazg3Qm5yd1c2SW16RnNNS0pKSmwtR0QzcnUzeXV4TElxNVZiSHJ3Q0t4a0JRWXZ1T3EtaWh1ZmREN0VuV3dKWXBLVjJFNndSQnc0Qk1iZVhoT2JUVWhGeGx0QmV0MV9KYi1sdkozdEpGR1E2OHlVQjB3MDc4VmE0Z2FRQTR4YVVzX1gteWJvU0oweHBKVFNQNVAyWm1pQdIB3AFBVV95cUxPVzhibG5xLUN1UVpJNUVRWF93N0V3c2QzdzFlRHVwVWNyQmptLU1Lc2YwN1ZxcGJYQWpvVkxsS2dIOG1MT2txWVgtZDVUa3pZY0pOZVktQy1KMEZCaU9rNF9LbGVBUkZ1NEprRHdjRHlnQk9TcW5lVHJrcU1pTHFOX3M4T0MweWJscUtiOUZvQXlnTDVidkxySjlaM3dSZlZLTTB1a3hJS2Z1WXVjSzJhSzFmcDQ2alJvMnVXcC00ZHZpODBCSUNTY2tUa2dIN2R2MFBPTU9kNnE4bk5o?oc=5"
+    },
+    {
+     "title": "Hitachi Energy India reports Rs 3.19 billion net profit in the second quarter of 2026-27 - Powerline Magazine",
+     "source": "Powerline Magazine",
+     "pub_utc": "2026-11-16T04:37Z",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPU0hOSm9vMWNUeUptUW1GenZaelpWS2NLWGtXNVlGTmU5QWFkZ0hQQWdqRnd0anlqTHVMd1pYei13QW0xWktTMGpLLVlHSUMwa1UzdndRV0dQTnk4M09NSk1Sa0JFaldOTnRsT0x3dmdnazMtSWdGd3JDelgxNXBUY3BwVExtbDNrUzJGUkszWC1pUTllZ3hiY2ZhdXJodUFBSGxEVWxpeEZrUUp6NU5keEN2U3JwTzJhX3BOVVZRMzBzeVJD?oc=5"
+    },
+    {
+     "title": "Raghavan Sundararajan Appointed as Chief Delivery Officer at Hitachi Digital - Veloxx media",
+     "source": "Veloxx media",
+     "pub_utc": "2026-11-16T04:34Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNaWZvMkQzbE1pVkkxbExyNUJHQllfbXVVTTZZYXAtd3VTbTRxQlRVS2hfcFhlS21WaGtlbm1NM3NOaXhzZUh1SUlWWVVZbXdpN3dKQWR1Uk5SeG44NGlJbVFHWGVETkFZX1JCQlBubGZzVzRpVmVCeVZsckFnLVQ2U2ZJMjd4cF9FZ04xaEVFNXlmQVZXWXp3VFJ3ZkVmcVBWWm9N?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "沃爾瑪",
+   "sym": "WMT",
+   "country": "美國",
+   "industry": "消費品與零售",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Walmart 90% off holiday deal drops $200 touchscreen bluetooth earbuds to just $21 - Cleveland.com",
+     "source": "Cleveland.com",
+     "pub_utc": "2026-11-16T20:39Z",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNR3dnc1F1RFhaMEx4QVViaENwNDFxWW8yVmExT3ZIVjhseHUya2JWekYxem85aEZ4TnExSUdoQ0dzQ1JlNXBHaHJ0N2x0TGhNT2FOcFFBSGEzV3lFdU9oZDRjMlBSR240amtxeEJJaUVOR0RXdWE1cWlWVWhlRkZnczNQNVpVMkxMSkJXeXJFejdkT2Fqc1psX3VoeUtzWmJJQWpGY1pqWHY1T3BJcGNHeWhxeWdXdUs4V1Ixajh6VlZVbzlJ?oc=5"
+    },
+    {
+     "title": "Walmart’s Low-Price Retail Strategy Faces a Profit Test This Earnings - PYMNTS.com",
+     "source": "PYMNTS.com",
+     "pub_utc": "2026-11-16T20:32Z",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOTFVMeEctZHE0UTZWaWhkQURGbVNQZjNBbVhRQm9Sd2g0OC02SzM1WXVKS29HZHFLeExVWXZkRUpOUXJ3UnZIMGdIQ2RHcDBYRzgwc0VHc1N1cjJoUWxqaEZyUld2R0tFY2o4VzFlWS1CWjVicmYwWlNtcEVRSUNiYmxJX1JkaW1VU0dVNEkyTXk3cGRZN1ZMX0hQOVdfY2stUlIyemRIdmk3a1hIVGc?oc=5"
+    },
+    {
+     "title": "Walmart appoints Caterpillar CEO Joe Creed to Board of Directors - KNWA FOX24",
+     "source": "KNWA FOX24",
+     "pub_utc": "2026-11-16T20:16Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNREFfYy12WGhCYmVxb25FeVpGRnI2RnhVWW9nMjE1UWE1R2trb2JIcTZvZlhqdmpZZnFpNkg2aHpGaHdUblg3dDQwOVRuUEhVYTU5bkhMOTBUNm5RRkR2WmZLeUJDTE9taE5wU1paMVBtSlZkNTNBSUxSWFVyZFVLVlVUYjVBbjhBVlZBckNZSVZiWXluMjRGVnJUSkRyWTdzZ0FSUlF2QkZoUGxoY3RGTdIBtgFBVV95cUxNU2g0VmJwZUV6QW9IdHFwbnpzYXFKQ2IxemQ5RGJjNS1mbGpBS3pHbzgzWXdIRkJUaG9ZdGNKZWRJU083VjQyaGdwR01sYk94Nl9xaUx1TVQwbFZiVl8wbVY0MGxuRmp2LThlY1paQkd1REZDaEZVNXZSeHhwdnlPTXlncXRMSjdiX3lrcmxhQkxET1ZwU3oyT1lOY2lLVFU4S3lwanFKV09GNjFnSU9tdzE1NzdDUQ?oc=5"
+    },
+    {
+     "title": "Walmart adds Caterpillar CEO to its board - Talk Business & Politics",
+     "source": "Talk Business &amp; Politics",
+     "pub_utc": "2026-11-16T19:22Z",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOek5KQzJIZDhVLVpXdmRtTzQ1R1lSeTRVU19id0REZlkxbTRPWF9JNWlXbmxUQXVJUkY1ZGE5LW40b015R29xRzZiLTZLZGNoUFpGSDNfZEVUekRBZ1pOZVJERnlPa0thcExfWjg4VFNiUkREbkdPcnhkTFRTbW1SLQ?oc=5"
+    },
+    {
+     "title": "Is There A Risk Hiding In Walmart Stock’s Latest Quarter? - Trefis",
+     "source": "Trefis",
+     "pub_utc": "2026-11-16T19:10Z",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQWktWYi1wczUxZXhyc2dXMXBwcXZ1VE9OcGlMVUhFX0x0aVRxdmt2VjdKZ2ZaMHNJemNhZ0c5ajZrM2pKRnEzNm9yTDljTDV1SWNXNzlwVDU1Ui1rOHJudFpYaXFuclV5VUlqVzVtUFBRQ0pwTFBYQU5SRWhMNUFkeXN1REpLRkwyT3QxZW1iSTdUcWhLNzkwWHluVktnVHFBNmw5cjFESmpCLWY2OWQwYkVjeU10QQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "統一",
+   "sym": "1216.TW",
+   "country": "台灣",
+   "industry": "消費品與零售",
+   "generic": false,
+   "big_move": null,
+   "filings": [
+    {
+     "code": "1216",
+     "date": "1151116",
+     "time": "153132",
+     "title": "本公司受邀參加台新證券舉辦之線上法說會",
+     "clause": "第12款",
+     "source": "TWSE 重大訊息"
+    },
+    {
+     "code": "1216",
+     "date": "1151116",
+     "time": "170152",
+     "title": "本公司受邀參加台新證券舉辦之投資人說明會",
+     "clause": "第12款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": []
+  },
+  {
+   "company": "摩根大通",
+   "sym": "JPM",
+   "country": "美國",
+   "industry": "金融",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "JPMorgan updates AR platform to help free up working capital - CFO Dive",
+     "source": "CFO Dive",
+     "pub_utc": "2026-11-16T21:53Z",
+     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZHR4YzZIRURIWWdBbGFlY0h2cDNLSlV6Tkg4RDV4SFBkaGJyUGpneDYyT2VjWlNmQjAyS1FpZlBUS2ExenFWbTZORF8zN3JVM3dDZlN0ME15UE5TM1J3UVhwNFRWZXNOT2RlWW4wMHltT2JaRUt2NmJEX0lOdVVBY014UjJHVGdIUThSNGZCVGJRSDI0dEhxNHVB?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "國泰金",
+   "sym": "2882.TW",
+   "country": "台灣",
+   "industry": "金融",
+   "generic": false,
+   "big_move": null,
+   "filings": [
+    {
+     "code": "2882",
+     "date": "1151116",
+     "time": "163002",
+     "title": "公告本公司暨主要子公司115年10月自結合併稅後損益",
+     "clause": "第51款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": []
+  },
+  {
+   "company": "富邦金",
+   "sym": "2881.TW",
+   "country": "台灣",
+   "industry": "金融",
+   "generic": false,
+   "big_move": {
+    "pct": -5.88,
+    "date": "2026-11-16"
+   },
+   "filings": [
+    {
+     "code": "2881",
+     "date": "1151116",
+     "time": "160036",
+     "title": "公告本公司暨主要子公司115年10月合併自結損益",
+     "clause": "第51款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": [
+    {
+     "title": "2881 富邦金- 台股亂流！一文看13家金控10月獲利前10月賺進6679億元- 股市爆料同學會 - CMoney",
+     "source": "CMoney",
+     "pub_utc": "2026-11-16T19:02Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9SOFJmZXU4eTFzaDlvS2pSU3lDWlhmNkFVS2IwaVNRVlZtSzNXOWpuRXdIejE2cEZNZ3hyNmNZWlh5c0FKR2NyNUwxMjNKQ2g3ZXIwdmxySjM?oc=5"
+    },
+    {
+     "title": "金控前十月賺6,679億元年增31% 富邦金累計EPS 8.75元稱霸 - UDN",
+     "source": "UDN",
+     "pub_utc": "2026-11-16T18:51Z",
+     "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9NOEUwNkk1eW5zRjJxUjRLS0ZYU2p2M0pkRUNHVVlVYU5yVVFScDBTVlV4SGI5MV9wbXZrRDh0UGtvRDNVaHIzYllHWjNEU1I20gFWQVVfeXFMTklYQ1d3SGU1akhVbExTVFhzYlduZUlaLUxVcmUyenpiV1J5ZTdjVWNnZFE2UnlMYWNTSG1XTGVrVm5oOHE3cW9MNS1QV3VyUFh2NExzS0E?oc=5"
+    },
+    {
+     "title": "富邦金「調整後EPS」10月跳增0.96元、累計達18.52元 股利配8元剩下兩哩路 - Yahoo新聞",
+     "source": "Yahoo新聞",
+     "pub_utc": "2026-11-16T15:15Z",
+     "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQRUlYdExTZ2hhQldGaDl4MnpqWFg5aDN4Q0ZPdXFlemNYOExRckRDMFdBT2RFSGZ4WTFBb25xMmR4UTB4RUhTUlEtSm1veXhPSUpJc29SczhDYVdLeU94UkZyZW12bTFqSGhSVHlmT0Flc3BIeEN5WGl3THVaUWdiWGJFejRhbGpqYmpYSVNaZ0pybGdrUGlsaGFwSGVJdzNELW9mOHdCN3ZDSFU5d0F3NHhDY3lnQ05OaFdiS3BVbmR5REFXNXYzMXJMbDBZUmxaUFQxRDJyT3JCeWYtNlVBczFsRnNXZHJBZExidEczRGNHQXpwdzJMM3hnWXlacVRRSXc?oc=5"
+    },
+    {
+     "title": "富邦金「調整後EPS」10月跳增0.96元、累計達18.52元 股利配8元剩下兩哩路 | 陳怡慈 | 新聞 - 風傳媒",
+     "source": "風傳媒",
+     "pub_utc": "2026-11-16T13:15Z",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9jT1c5aU1tQlBKdTBBYzVoZGRfNHo0b1dxekNpbm5ia3BfckxWZzNkQXZ2QW5sUzJkNEh6bkNLNEZfZm1Ta2Y1QmhORDVFdw?oc=5"
+    },
+    {
+     "title": "10月股市震盪考驗壽險！富邦金仍穩坐金控獲利王 國泰金搶下單月獲利冠軍 - 知新聞",
+     "source": "知新聞",
+     "pub_utc": "2026-11-16T10:20Z",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5XUE1wSHJEVmlBUmt2ZlViVlVJU3RLdEdpN1FNQVZQdE02dDJ6Nm1fVkp4aXphY1dtNWVNRkpubi1wTGtEQjdsZ1RzZ1VWR01KdldrSjgwdjJmbFpzOTVwSTg0aUI5Y0IwNUIzQmg3dw?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "凱基金",
+   "sym": "2883.TW",
+   "country": "台灣",
+   "industry": "金融",
+   "generic": false,
+   "big_move": null,
+   "filings": [
+    {
+     "code": "2883",
+     "date": "1151116",
+     "time": "173412",
+     "title": "公告本公司董事會通過115年第3季合併財務報告",
+     "clause": "第31款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": [
+    {
+     "title": "點亮全台最高24公尺聖誕樹 凱基金：「ONE KGI」展現第一的雄心 共融與獲利並行不悖 - 鏡週刊Mirror Media",
+     "source": "鏡週刊Mirror Media",
+     "pub_utc": "2026-11-16T11:22Z",
+     "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1GNkN1NFM2dlM0cVBjVnpMYy1aSEtwZU1JWTJsbXIzTWYzMTdyak1KZmRkVlgyblBNSU5Wd0c0LVlqRVdsOTlUQ2ZDNmxvemZ6SHJWUVNYS1dDaUI1dVNQUVY1Y3VZZ9IBa0FVX3lxTE1XMll3X2dUdDFlMDZDdGpyUENBa3pBQkVXMU9xd2RkUDRIOTl0anZSZnpFaUlTa1lyeUhoSzgzNVBMb1JTcndKWWNUZ3ZHeC1Bb2U5UG5McjRVSUViVVVYT0tYcTlWVS1jbU5n?oc=5"
+    },
+    {
+     "title": "2883 凱基金 - 凱基金估值蠻低的 不怕喔 - 股市爆料同學會 - CMoney",
+     "source": "CMoney",
+     "pub_utc": "2026-11-16T03:53Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE13cEJmX1lQdFdUaGZhXzV4YldVTVd3RWhweExPWDg5cmRrSXhvTnlZb3pqUTlyYklfdlVjNmZ2VFl2dEd5S0hlV1N4ZFlUR0xNWlpuUmdnT04?oc=5"
+    },
+    {
+     "title": "盈餘：凱基金(2883)自結前10月母公司稅後淨利394.11億元，EPS 2.29元 - 富聯網",
+     "source": "富聯網",
+     "pub_utc": "2026-11-15T23:09Z",
+     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNdVhYNU1qNkFfQkFCckg1OXFWS0cwTy1uNDdJdkZGU1Y5Y05vYURxX2hEaEo5djlaOGhmVVo3OFdGYVhNTFA1U3ZYMWZTVEtpM2lMNmo2WEhpUFRwTFFneWF0OElpc0l1YjVqR3dzWUJnVVBWZXBBNGRWczlTUmhhNG11U2JPNXJ0?oc=5"
+    },
+    {
+     "title": "2883 凱基金- 凱基金115年10月營收54.45億、年減77.49% - 股市爆料同學會 - CMoney",
+     "source": "CMoney",
+     "pub_utc": "2026-11-15T07:50Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5CNWQ2M0k4TEFldk5qZW5uX3UwaG1QNWJkcjNXMlhiZ1BQMXFZUTFESVFMY3EtLVFBalgxdnF0V05XT1A2RHNSRFlVSE5hVXhEV2s3VDdMdzQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "台新新光金",
+   "sym": "2887.TW",
+   "country": "台灣",
+   "industry": "金融",
+   "generic": false,
+   "big_move": {
+    "pct": -5.16,
+    "date": "2026-11-16"
+   },
+   "filings": [],
+   "items": []
+  },
+  {
+   "company": "中信金",
+   "sym": "2891.TW",
+   "country": "台灣",
+   "industry": "金融",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "中信金、國泰金 獲利動能穩健 - 中時新聞網",
+     "source": "中時新聞網",
+     "pub_utc": "2026-11-16T20:10Z",
+     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4taC1tOHZRai04UXc0Z0JVeEJfelQwTEMzbWlvX3I5SEVpQlQzSGVQUlEybjlmMmNmMXVfcFhMVUFveGRuREsxejI5bnQ2cFllRmd0TEVVRXFmOXdzRkpJUmw2a21WeXlnUmY4?oc=5"
+    },
+    {
+     "title": "中信金、國泰金獲利動能穩健- 日報 - 工商時報",
+     "source": "工商時報",
+     "pub_utc": "2026-11-16T19:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBXQllkTkdUYVVqUGhMdEtBRWtudENNQ0lnTUZTZVJKc2ttTlVWOEQxQlZzZm43Y1RDY0ZMbnkwTlc1Y3RjcXVaSFBfSEFFS3d1WnJVUUF5UkY2aG1WTUpN?oc=5"
+    },
+    {
+     "title": "2887 台新新光金- 台新新光金獲利是中信金的八成，股價卻僅是中信金的一半，股價太... - 股市爆料同學會 - CMoney",
+     "source": "CMoney",
+     "pub_utc": "2026-11-16T01:10Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5WVHlrQU13UTQ2NnFjajd2UHZmRXp1emJ2bUMyTTRtOTU5b2RzWG5VLWF2LVlvR2hsN2tIWEc3bGlWajBZczQ1R25VOHZWelNBVXp6cWE1dmU?oc=5"
+    },
+    {
+     "title": "《上週上市成交量排名6-6》中信金控(240917) - 富聯網",
+     "source": "富聯網",
+     "pub_utc": "2026-11-15T23:43Z",
+     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNaThhNmdsdzVmX1hFbEVSWWtzNE5QM3RWVW9hOEpsUTMwdDlxVVZKb1VNZDNZVDhNeHV6bzhQeWhWS25xWGpXU3VSdWJhQ0tFRV93LUhPUUU1TjRZc0QzMncxN0ROT2lMMTM2V09EQTJpcHdneEdGeXZURS1aaFM0R1NVYmY2bjdX?oc=5"
+    },
+    {
+     "title": "《上市公司最具養空條件個股1-1》中信金、佳 大、永豐金 - 富聯網",
+     "source": "富聯網",
+     "pub_utc": "2026-11-15T23:39Z",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQUXRDQkw0dmEtTjVFc2NZWWxLVG0tMUQyLV9qN1VWeklUV1VndXV6aWJIMzQ1UlJZdjB2WHNIWUhVQWQ2N3IxdnJCZzhmS0diN1luSjQxRU5iMHN2VUhuSTlQRDVkMlBweXlxMnV5ZDlfNkFpM0JINEpMRU9OejViVlpwU1gydGNlOEtUMkdud19tQQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "三菱日聯金融",
+   "sym": "8306.T",
+   "country": "日本",
+   "industry": "金融",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "[Zenhoren FY2026 Q2 Earnings Call] Mitsubishi UFJ Card Plan Surges to 33% of Guarantee Applications; Operating Profit Jumps 41% to Record High - finance.biggo.com",
+     "source": "finance.biggo.com",
+     "pub_utc": "2026-11-16T20:44Z",
+     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE16clBLQ0M1YW54dGxOLXlxUW1JTW1pQjkzS0dHWHVYNjh2Ujk0cWFCTm9jM0tQRFlITUpweVNvTWxyaUhxV1JsLWNVUkRRVk5rN3hvbGpSY3pVY2ZTLWhGWQ?oc=5"
+    },
+    {
+     "title": "Mitsubishi UFJ Financial Group Raises Substantial Holding in Genesis Minerals to 6.10% - Kalkine",
+     "source": "Kalkine",
+     "pub_utc": "2026-11-16T02:37Z",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPSHozMW5mWnZQaUJYX3g2MFJPNGt5VGVpN3pxMGFMdmJLSlZEVkNTSUtDLWF4YzItRmxpMXNhV3ZDM1k2SkFOWnpEdGZ2VDlVMW1QVE5PUl9DOUZFUUNGT3hackhYQU5ia2dUamg4TWExU3JaTU1LdHItSmNib1pqbWhMZ2NjYzhNM196VjNGdEZMczdrUDFrMXZUbnFKV0I4LWh1NEJWRS1YMU5IdUNuX2s2X3FfVWJQanlPeFdqRGlZb1dY?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "三星生物製劑",
+   "sym": "207940.KS",
+   "country": "韓國",
+   "industry": "醫療",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Samsung Biologics' $2 Billion Rights Offering Oversubscribed - marketscreener.com",
+     "source": "marketscreener.com",
+     "pub_utc": "2026-11-16T06:42Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMjlKOWpZV2kzUDY0UXZCSDV2eGFGNVBqbVA4TjgtUGFHRE1XSEVtZGR5V2lFWENKTzVUdG9UVXIzSW5CeTE5UUtXTlI5M0hIcUlGX2ZWT0gwTmZxTW1mVzBNMWtmQlNRc0JWY3h6c1ZJNXIyMm5FUW5nMGgzWkIwYnVDM28yYWQ1V19hekVZZS1UMUVHRW5lUW9rV19GWXd4Q1Y2N2JZZkhHSko1NjAxYg?oc=5"
+    },
+    {
+     "title": "Samsung Biologics Rights Offering Oversubscribed at 526% - marketscreener.com",
+     "source": "marketscreener.com",
+     "pub_utc": "2026-11-16T03:23Z",
+     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOHd2OGdGd2tLQVF1MlA1MWZQZEsxc3djOGN0LTB1S3p3dHdFVFE5azNteXVuMWpjQ011X0RENWFlbGRYVHprWnBYTTd2dHNVdkF6Y3plZTVBM1pnOF9lc3VleU1iVVRRQURtclBnaVRoOXEzd0NpN0MwTl96cjhNTkVlNVZ3LV9RMURDdWozd3poOHpvdWg1OUo3RUEweDdBRzdJcUZSMFBTSmVT?oc=5"
+    },
+    {
+     "title": "Samsung Biologics raises 2.7 trillion won, drawing record 11.4 trillion won in subscriptions - 머니투데이",
+     "source": "머니투데이",
+     "pub_utc": "2026-11-15T23:29Z",
+     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBGYzBBdmw4eDlRUmFvNmhtd1dYaGNvSzBNWGwtNkpiWHJYZnlsTHA4TDlZTHVKXzM1Vmk4bEs2NU1zRDY3SnprWWExREF0RHJtZm5HeEo2TXpicHdaOV9SeGZMMUJXSVE3NnhYZ3RR?oc=5"
+    },
+    {
+     "title": "Samsung Biologics raises 2.7 trillion won as record deposits flood rights issue - Chosunbiz",
+     "source": "Chosunbiz",
+     "pub_utc": "2026-11-15T23:28Z",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbWlxcDJLWFZyYmRMUEVuZVFFNXZHa0VXYnJSeEx5N1p4QnRLMVRtVC1fNlZfZmY4ZTd3UWhRNE9fRklCejl3di1LZW5UeUMteHBNUEd1NFRGYjhLZTNnOHBNckhENE44bmxfRFNPZHBzOW9jWURFYVlhWEpNUk9aZUNraDdwMFNVYkFwNnBNaHFBQ2l00gGUAUFVX3lxTE9taXFwMktYVnJiZExQRW5lUUU1dkdrRVdiclJ4THk3WnhCdEsxVG1ULV82Vl9mZjhlN3dRaFE0T19GSUJ6OXd2LUtlblR5Qy14cE1QR3U0VEZiOEtlM2c4cE1ySEQ0TjhubF9EU09kcHM5b2NZREVhWWFYSk1ST1plQ2toN3AwU1ViQXA2cE1ocUFDaXQ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "埃克森美孚",
+   "sym": "XOM",
+   "country": "美國",
+   "industry": "能源",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "ExxonMobil launches $3B debt buyback across four bond series - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-16T14:25Z",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNREw4d2l3SG1YOEkzZ09vTHJrdmR1ZW5xN0hQNHYzT2NyZ3ZENFc2MXlhV1FTeXR4NnNvOXF0QkNpQkZiOHRoTUEzSzd3b0RlUjVqdmJfaldValhaS3NrQjZBMUsxNVpKVkJ4U3J0QVlnUDlmbFpUZWFabkR2TTZlTUdsLXFYbW9TQjNzUHF5ME5BYVdHamY3OWdfdUY5UQ?oc=5"
+    },
+    {
+     "title": "Exxon Mobil Earnings Call Highlights Growth and Resilience - TipRanks",
+     "source": "TipRanks",
+     "pub_utc": "2026-11-15T01:09Z",
+     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQemFweXBhWTcyZ0k1MGRfTTJEYmRmSzlrQWFnNmg3Rk9MamhsOTRobm9PejM4dUVpRV81M3JmaTBpc2NMV1lMVDRJWDNGeHYwcFdZSExIQklkUzZzdlhhTEVKcVhqOEpMQTI2ak8xT1RIZ08zU2hNUjNoWWt5c1g3Z3VYdkh6dTZDVl9wbWt6cDBhZUFmR2IzRjN2T0tMNTRpYmtiZlpWdnh3SDJ2SUVZ?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "通用：IPO prices shares",
+   "sym": null,
+   "country": null,
+   "industry": null,
+   "generic": true,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Stocks fall ahead of Nvidia earnings and Anthropic IPO; oil drops - Euronext Markets: Real-time Stock Market Data | live",
+     "source": "Euronext Markets: Real-time Stock Market Data | live",
+     "pub_utc": "2026-11-16T19:10Z",
+     "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPaGpsMG1TRTNPVGJhRVJ2ajVPMnBOTzUzV0hvb080MU0wcVc2QWhXdjM4eHRSTDk4Y0RkV0dZN08tX20xR01nV2FEUHpUQllZSkFLTFN1S0VLNXpORnFFd2ZHVHhjR1RIQW5fWHlVNTBTQmpSTzd4OVdaTi1pYmpsV0xqUG1hX0g2S0FDYUQxYVRnMW9lQW16TzZRSlBQNGFscGpWUGFqMkU?oc=5"
+    },
+    {
+     "title": "Anthropic Prices Its IPO Wednesday. Here’s What Investors Need To Know - Investopedia",
+     "source": "Investopedia",
+     "pub_utc": "2026-11-16T18:51Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNS2Yyd1R5SkNxSldhdjFxZUU2a21FM3c4eVdFTl96Z3loeHk5cjBYYlNuVzhNdXRNaU1OREVUZHRoWUY0Z1l2UDNQV3dtX1JEU2dBOTZDNUxvaHRPTWxUYzFyNHpjeC1acVJJSjM0d3BYOVp2SE9rMGdqVkVyaHhybXVmMnhhQmZkQUZDa1FRWmVOeERib0dFMDMtTENpaV84Zk1mQmVHT2ZJaTA?oc=5"
+    },
+    {
+     "title": "Anthropic IPO guide: Everything you need to know - CNBC",
+     "source": "CNBC",
+     "pub_utc": "2026-11-16T14:22Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBLU0lVTlg1SkFpbXFSd2FtWk9CUndzSjNqV0U3TUNMazRUV0hySTJNQTl1WlB5czJXZHF0a3BGZnVzTW1vN1d2U1Zuem9sdjBvRHJDOHIyTXhYQ3hTOWlrdjI2ZmE5LXZyNTFsa3VPNW9lUTlKT1E?oc=5"
+    },
+    {
+     "title": "XRP Price Struggles Below $1: Anthropic IPO and Nvidia Earnings Could Trigger Another 33% Drop - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T14:22Z",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPemFndmNYT09rN1ZhMjVScUh2NGZxc3R0a0xnbndvWXF5aWZXZjdwOGRqenVkd2E1NHZyS3FNdUM4UkY1cV8yNG9uMXNLMDdKZmxaMnBQM3NhUnFTbzBTcWhOZERkWXh6MGc5SzBPbmpfd0RiZTdteXF0dThkNHRUdUxpYV95WUhIQTk2bUd0WVFNWkxEZU1z?oc=5"
+    },
+    {
+     "title": "Anthropic’s IPO Math Comes Into Focus - Direxion",
+     "source": "Direxion",
+     "pub_utc": "2026-11-16T13:43Z",
+     "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1ST1RJZjNzVS1MOFM3VHFHbXg4bGVxek1kQ3BtaHZkUkFScDk0SXhOMTFMZF9HVVAteE1LUjBKVUgtbFlMaGRVRm1FM0JfUHdGUVZWV1N1ZU9MU2xWY1g0S1BDUXhNTVdHa29PRVNMRGtacm1IcjU0SA?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "通用：files for IPO",
+   "sym": null,
+   "country": null,
+   "industry": null,
+   "generic": true,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "Meganet Technologies Global files draft papers for ₹740-crore IPO - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-16T17:20Z",
+     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUi1CdmhLcW52aS04WjZJMlRjTGt0REJ6U1FNdDBKRVJpOF9DQVd4bVJsbVFtc0NicUhCZjdlQmhHbVJnZFVLODBaaEx0a3A3MzFlYmFpSXZRNnl0SVdwUExvV1kxd1JqaWdoRndxRFZkWi1lZ2FIejh4U25rSzZLWHlLdlJNaENtNWRJSzIwQ3BqYTMtUXNjWnA0dHpnNWtuWE1rVTZOdkl5RU1fQnJHaVQ2QmozU1FpX01Sbmh3?oc=5"
+    },
+    {
+     "title": "Meganet Technologies Global files for IPO in India - Traders Union",
+     "source": "Traders Union",
+     "pub_utc": "2026-11-16T15:54Z",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSjdZSVk0MkFKNllvT3kxWUptS1Mxc2RGM2N0aXEtOUl6MHY1dkEzTGpfQUZyOHdZWk1CZzc1REtkamJnQ2lIcVAyMHd4eVdDOU1ZSmJscjE4cmFBM2dnNlc4OU9NRktjN0Fvdm9pTS1NeHl2bWtKVWN2QldmaWpqcUVuZEs0UUxTaTVMMQ?oc=5"
+    },
+    {
+     "title": "Everything you need to know ahead of Anthropic's IPO - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T12:40Z",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUkN1VHFrREJneU9DdUV5UVBuT29PM1hOdXN5aU5udTZqc21yV1VMS0VySEJqa1NrLWlhcTdYdVM1Nmo3MDdJWWtEc2JRWDVrVXBKX2tJS0t4TTg0eG4zLVJqWFBNNUlCd1hDR3YxeHlvUmFqdks1cHFQUGk5U2RaX2JuYnl5REFlN0pRX25DdU9SX2s?oc=5"
+    },
+    {
+     "title": "Nasdaq 100 Forecast: NDX rebounds as Anthropic files for IPO - FOREX.com",
+     "source": "FOREX.com",
+     "pub_utc": "2026-11-16T10:44Z",
+     "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZkpjaGFLQllZZVBHYllRVmVtcE52T2JCc2Q5N0NKa0tOWkxzdHlJMjNVOTg3SVRWMXJFX3VKSDdESWd1X2VRRUFyTHRyOEpubURqdHJiLV9QS1FNeDJBbGpXeGNQMVB1Nnk5Uk5QTGY4WnJpa3g3UjJrblVuYlA0c01uUFVpRk8tM3V4azZ5Z0ZtSnd2S0hCeXJ2TmtQUkI5MHVMbFU3dDdrdw?oc=5"
+    },
+    {
+     "title": "Anthropic's record IPO faces some big questions - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-16T01:32Z",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPYXc4RnJvSkdnTzNUZnpmZ2FhWVhzcXRkNWdPWE5oNkdGZlZuU0J0T2RWY3lYazcyMEROaXgtWXczMjBPWVA5QUQyOHNVSFJuMnRUd0Y4Q1Jta2xoRHVCZC1rM1hnbUcyemRyOVBCNkF2MVp5VlNFT1l0NlplN0pIbzNFNHF0VkkzRGRzTDlmeVpqX0F5eGVmb0NxUQ?oc=5"
+    }
+   ]
+  }
+ ],
+ "watch_quotes": {
+  "quotes": [
+   {
+    "name": "輝達",
+    "sym": "NVDA",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 156.14,
+    "pct": -4.12,
+    "source": "daily"
+   },
+   {
+    "name": "超微",
+    "sym": "AMD",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 504.28,
+    "pct": -5.58,
+    "source": "daily"
+   },
+   {
+    "name": "博通",
+    "sym": "AVGO",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 333.4,
+    "pct": -3.92,
+    "source": "daily"
+   },
+   {
+    "name": "英特爾",
+    "sym": "INTC",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 55.47,
+    "pct": -7.02,
+    "source": "daily"
+   },
+   {
+    "name": "美光",
+    "sym": "MU",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 719.02,
+    "pct": -7.62,
+    "source": "daily"
+   },
+   {
+    "name": "Cerebras",
+    "sym": "CBRS",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 100.99,
+    "pct": -7.11,
+    "source": "daily"
+   },
+   {
+    "name": "安謀",
+    "sym": "ARM",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 175.05,
+    "pct": -8.12,
+    "source": "daily"
+   },
+   {
+    "name": "Marvell",
+    "sym": "MRVL",
+    "country": "美國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 145.36,
+    "pct": -7.27,
+    "source": "daily"
+   },
+   {
+    "name": "台積電",
+    "sym": "2330.TW",
+    "country": "台灣",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 2215.0,
+    "pct": -5.74,
+    "source": "daily"
+   },
+   {
+    "name": "聯發科",
+    "sym": "2454.TW",
+    "country": "台灣",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 3795.0,
+    "pct": -7.89,
+    "source": "daily"
+   },
+   {
+    "name": "日月光投控",
+    "sym": "3711.TW",
+    "country": "台灣",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 550.0,
+    "pct": -8.03,
+    "source": "daily"
+   },
+   {
+    "name": "鎧俠",
+    "sym": "285A.T",
+    "country": "日本",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 8392.0,
+    "pct": -7.69,
+    "source": "daily"
+   },
+   {
+    "name": "三星電子",
+    "sym": "005930.KS",
+    "country": "韓國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 196800.0,
+    "pct": -4.47,
+    "source": "daily"
+   },
+   {
+    "name": "SK海力士",
+    "sym": "000660.KS",
+    "country": "韓國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 1120000.0,
+    "pct": -7.89,
+    "source": "daily"
+   },
+   {
+    "name": "中芯國際",
+    "sym": "688981.SS",
+    "country": "中國",
+    "industry": "半導體",
+    "date": "2026-11-16",
+    "close": 106.44,
+    "pct": -3.67,
+    "source": "daily"
+   },
+   {
+    "name": "艾司摩爾",
+    "sym": "ASML",
+    "country": "美國",
+    "industry": "半導體設備",
+    "date": "2026-11-16",
+    "close": 1406.79,
+    "pct": -5.91,
+    "source": "daily"
+   },
+   {
+    "name": "應用材料",
+    "sym": "AMAT",
+    "country": "美國",
+    "industry": "半導體設備",
+    "date": "2026-11-16",
+    "close": 350.25,
+    "pct": -5.47,
+    "source": "daily"
+   },
+   {
+    "name": "東京威力科創",
+    "sym": "8035.T",
+    "country": "日本",
+    "industry": "半導體設備",
+    "date": "2026-11-16",
+    "close": 8794.0,
+    "pct": -7.05,
+    "source": "daily"
+   },
+   {
+    "name": "愛德萬測試",
+    "sym": "6857.T",
+    "country": "日本",
+    "industry": "半導體設備",
+    "date": "2026-11-16",
+    "close": 27205.0,
+    "pct": -11.12,
+    "source": "daily"
+   },
+   {
+    "name": "微軟",
+    "sym": "MSFT",
+    "country": "美國",
+    "industry": "軟體與雲端",
+    "date": "2026-11-16",
+    "close": 517.99,
+    "pct": -1.12,
+    "source": "daily"
+   },
+   {
+    "name": "亞馬遜",
+    "sym": "AMZN",
+    "country": "美國",
+    "industry": "軟體與雲端",
+    "date": "2026-11-16",
+    "close": 257.75,
+    "pct": -3.34,
+    "source": "daily"
+   },
+   {
+    "name": "甲骨文",
+    "sym": "ORCL",
+    "country": "美國",
+    "industry": "軟體與雲端",
+    "date": "2026-11-16",
+    "close": 119.09,
+    "pct": -4.99,
+    "source": "daily"
+   },
+   {
+    "name": "CoreWeave",
+    "sym": "CRWV",
+    "country": "美國",
+    "industry": "軟體與雲端",
+    "date": "2026-11-16",
+    "close": 49.88,
+    "pct": -6.12,
+    "source": "daily"
+   },
+   {
+    "name": "Palantir",
+    "sym": "PLTR",
+    "country": "美國",
+    "industry": "軟體與雲端",
+    "date": "2026-11-16",
+    "close": 160.39,
+    "pct": -4.52,
+    "source": "daily"
+   },
+   {
+    "name": "百度",
+    "sym": "BIDU",
+    "country": "中國",
+    "industry": "AI模型",
+    "date": "2026-11-16",
+    "close": 73.94,
+    "pct": -5.37,
+    "source": "daily"
+   },
+   {
+    "name": "美超微",
+    "sym": "SMCI",
+    "country": "美國",
+    "industry": "硬體與AI伺服器",
+    "date": "2026-11-16",
+    "close": 25.02,
+    "pct": -6.87,
+    "source": "daily"
+   },
+   {
+    "name": "康寧",
+    "sym": "GLW",
+    "country": "美國",
+    "industry": "硬體與AI伺服器",
+    "date": "2026-11-16",
+    "close": 106.17,
+    "pct": -6.93,
+    "source": "daily"
+   },
+   {
+    "name": "鴻海",
+    "sym": "2317.TW",
+    "country": "台灣",
+    "industry": "硬體與AI伺服器",
+    "date": "2026-11-16",
+    "close": 218.5,
+    "pct": -9.34,
+    "source": "daily"
+   },
+   {
+    "name": "廣達",
+    "sym": "2382.TW",
+    "country": "台灣",
+    "industry": "硬體與AI伺服器",
+    "date": "2026-11-16",
+    "close": 264.5,
+    "pct": -4.34,
+    "source": "daily"
+   },
+   {
+    "name": "緯穎",
+    "sym": "6669.TW",
+    "country": "台灣",
+    "industry": "硬體與AI伺服器",
+    "date": "2026-11-16",
+    "close": 1515.0,
+    "pct": -7.34,
+    "source": "daily"
+   },
+   {
+    "name": "台達電",
+    "sym": "2308.TW",
+    "country": "台灣",
+    "industry": "硬體與AI伺服器",
+    "date": "2026-11-16",
+    "close": 1120.0,
+    "pct": -9.68,
+    "source": "daily"
+   },
+   {
+    "name": "工業富聯",
+    "sym": "601138.SS",
+    "country": "中國",
+    "industry": "硬體與AI伺服器",
+    "date": "2026-11-16",
+    "close": 36.22,
+    "pct": -9.68,
+    "source": "daily"
+   },
+   {
+    "name": "Alphabet",
+    "sym": "GOOGL",
+    "country": "美國",
+    "industry": "通訊與網路平台",
+    "date": "2026-11-16",
+    "close": 283.72,
+    "pct": -4.07,
+    "source": "daily"
+   },
+   {
+    "name": "Meta",
+    "sym": "META",
+    "country": "美國",
+    "industry": "通訊與網路平台",
+    "date": "2026-11-16",
+    "close": 626.41,
+    "pct": -2.38,
+    "source": "daily"
+   },
+   {
+    "name": "中華電信",
+    "sym": "2412.TW",
+    "country": "台灣",
+    "industry": "通訊與網路平台",
+    "date": "2026-11-16",
+    "close": 163.5,
+    "pct": -0.91,
+    "source": "daily"
+   },
+   {
+    "name": "軟銀集團",
+    "sym": "9984.T",
+    "country": "日本",
+    "industry": "通訊與網路平台",
+    "date": "2026-11-16",
+    "close": 3416.0,
+    "pct": -3.69,
+    "source": "daily"
+   },
+   {
+    "name": "Naver",
+    "sym": "035420.KS",
+    "country": "韓國",
+    "industry": "通訊與網路平台",
+    "date": "2026-11-16",
+    "close": 172900.0,
+    "pct": 0.23,
+    "source": "daily"
+   },
+   {
+    "name": "蘋果",
+    "sym": "AAPL",
+    "country": "美國",
+    "industry": "消費電子",
+    "date": "2026-11-16",
+    "close": 352.78,
+    "pct": -0.98,
+    "source": "daily"
+   },
+   {
+    "name": "索尼",
+    "sym": "6758.T",
+    "country": "日本",
+    "industry": "消費電子",
+    "date": "2026-11-16",
+    "close": 4320.0,
+    "pct": -0.76,
+    "source": "daily"
+   },
+   {
+    "name": "特斯拉",
+    "sym": "TSLA",
+    "country": "美國",
+    "industry": "汽車與電池",
+    "date": "2026-11-16",
+    "close": 379.74,
+    "pct": -2.69,
+    "source": "daily"
+   },
+   {
+    "name": "豐田汽車",
+    "sym": "7203.T",
+    "country": "日本",
+    "industry": "汽車與電池",
+    "date": "2026-11-16",
+    "close": 3428.0,
+    "pct": 0.29,
+    "source": "daily"
+   },
+   {
+    "name": "現代汽車",
+    "sym": "005380.KS",
+    "country": "韓國",
+    "industry": "汽車與電池",
+    "date": "2026-11-16",
+    "close": 265500.0,
+    "pct": -1.48,
+    "source": "daily"
+   },
+   {
+    "name": "LG新能源",
+    "sym": "373220.KS",
+    "country": "韓國",
+    "industry": "汽車與電池",
+    "date": "2026-11-16",
+    "close": 318500.0,
+    "pct": -1.85,
+    "source": "daily"
+   },
+   {
+    "name": "比亞迪",
+    "sym": "002594.SZ",
+    "country": "中國",
+    "industry": "汽車與電池",
+    "date": "2026-11-16",
+    "close": 80.49,
+    "pct": 0.63,
+    "source": "daily"
+   },
+   {
+    "name": "寧德時代",
+    "sym": "300750.SZ",
+    "country": "中國",
+    "industry": "汽車與電池",
+    "date": "2026-11-16",
+    "close": 240.5,
+    "pct": 1.18,
+    "source": "daily"
+   },
+   {
+    "name": "開拓重工",
+    "sym": "CAT",
+    "country": "美國",
+    "industry": "工業航太國防",
+    "date": "2026-11-16",
+    "close": 570.49,
+    "pct": -4.95,
+    "source": "daily"
+   },
+   {
+    "name": "GE航太",
+    "sym": "GE",
+    "country": "美國",
+    "industry": "工業航太國防",
+    "date": "2026-11-16",
+    "close": 325.18,
+    "pct": -2.0,
+    "source": "daily"
+   },
+   {
+    "name": "SpaceX",
+    "sym": "SPCX",
+    "country": "美國",
+    "industry": "工業航太國防",
+    "date": "2026-11-16",
+    "close": 137.36,
+    "pct": -1.26,
+    "source": "daily"
+   },
+   {
+    "name": "三菱重工",
+    "sym": "7011.T",
+    "country": "日本",
+    "industry": "工業航太國防",
+    "date": "2026-11-16",
+    "close": 2900.0,
+    "pct": -0.7,
+    "source": "daily"
+   },
+   {
+    "name": "日立",
+    "sym": "6501.T",
+    "country": "日本",
+    "industry": "工業航太國防",
+    "date": "2026-11-16",
+    "close": 4896.0,
+    "pct": -1.33,
+    "source": "daily"
+   },
+   {
+    "name": "韓華航太",
+    "sym": "012450.KS",
+    "country": "韓國",
+    "industry": "工業航太國防",
+    "date": "2026-11-16",
+    "close": 649000.0,
+    "pct": 1.25,
+    "source": "daily"
+   },
+   {
+    "name": "沃爾瑪",
+    "sym": "WMT",
+    "country": "美國",
+    "industry": "消費品與零售",
+    "date": "2026-11-16",
+    "close": 128.41,
+    "pct": 0.25,
+    "source": "daily"
+   },
+   {
+    "name": "統一",
+    "sym": "1216.TW",
+    "country": "台灣",
+    "industry": "消費品與零售",
+    "date": "2026-11-16",
+    "close": 78.5,
+    "pct": 0.26,
+    "source": "daily"
+   },
+   {
+    "name": "迅銷",
+    "sym": "9983.T",
+    "country": "日本",
+    "industry": "消費品與零售",
+    "date": "2026-11-16",
+    "close": 83740.0,
+    "pct": 1.97,
+    "source": "daily"
+   },
+   {
+    "name": "貴州茅台",
+    "sym": "600519.SS",
+    "country": "中國",
+    "industry": "消費品與零售",
+    "date": "2026-11-16",
+    "close": 1453.9,
+    "pct": 1.3,
+    "source": "daily"
+   },
+   {
+    "name": "高盛",
+    "sym": "GS",
+    "country": "美國",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 891.54,
+    "pct": -2.73,
+    "source": "daily"
+   },
+   {
+    "name": "摩根大通",
+    "sym": "JPM",
+    "country": "美國",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 338.21,
+    "pct": -2.31,
+    "source": "daily"
+   },
+   {
+    "name": "國泰金",
+    "sym": "2882.TW",
+    "country": "台灣",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 110.0,
+    "pct": -3.93,
+    "source": "daily"
+   },
+   {
+    "name": "富邦金",
+    "sym": "2881.TW",
+    "country": "台灣",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 152.0,
+    "pct": -5.88,
+    "source": "daily"
+   },
+   {
+    "name": "凱基金",
+    "sym": "2883.TW",
+    "country": "台灣",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 34.55,
+    "pct": -4.82,
+    "source": "daily"
+   },
+   {
+    "name": "台新新光金",
+    "sym": "2887.TW",
+    "country": "台灣",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 38.6,
+    "pct": -5.16,
+    "source": "daily"
+   },
+   {
+    "name": "中信金",
+    "sym": "2891.TW",
+    "country": "台灣",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 76.8,
+    "pct": -2.41,
+    "source": "daily"
+   },
+   {
+    "name": "三菱日聯金融",
+    "sym": "8306.T",
+    "country": "日本",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 3415.0,
+    "pct": -1.73,
+    "source": "daily"
+   },
+   {
+    "name": "KB金融",
+    "sym": "105560.KS",
+    "country": "韓國",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 161600.0,
+    "pct": 1.64,
+    "source": "daily"
+   },
+   {
+    "name": "工商銀行",
+    "sym": "601398.SS",
+    "country": "中國",
+    "industry": "金融",
+    "date": "2026-11-16",
+    "close": 9.05,
+    "pct": 2.26,
+    "source": "daily"
+   },
+   {
+    "name": "禮來",
+    "sym": "LLY",
+    "country": "美國",
+    "industry": "醫療",
+    "date": "2026-11-16",
+    "close": 1431.67,
+    "pct": -0.82,
+    "source": "daily"
+   },
+   {
+    "name": "第一三共",
+    "sym": "4568.T",
+    "country": "日本",
+    "industry": "醫療",
+    "date": "2026-11-16",
+    "close": 2870.0,
+    "pct": 0.61,
+    "source": "daily"
+   },
+   {
+    "name": "三星生物製劑",
+    "sym": "207940.KS",
+    "country": "韓國",
+    "industry": "醫療",
+    "date": "2026-11-16",
+    "close": 1423000.0,
+    "pct": 0.85,
+    "source": "daily"
+   },
+   {
+    "name": "恆瑞醫藥",
+    "sym": "600276.SS",
+    "country": "中國",
+    "industry": "醫療",
+    "date": "2026-11-16",
+    "close": 48.02,
+    "pct": -0.1,
+    "source": "daily"
+   },
+   {
+    "name": "埃克森美孚",
+    "sym": "XOM",
+    "country": "美國",
+    "industry": "能源",
+    "date": "2026-11-16",
+    "close": 166.87,
+    "pct": -2.18,
+    "source": "daily"
+   },
+   {
+    "name": "台塑化",
+    "sym": "6505.TW",
+    "country": "台灣",
+    "industry": "能源",
+    "date": "2026-11-16",
+    "close": 89.6,
+    "pct": -3.14,
+    "source": "daily"
+   },
+   {
+    "name": "中國石油",
+    "sym": "601857.SS",
+    "country": "中國",
+    "industry": "能源",
+    "date": "2026-11-16",
+    "close": 12.47,
+    "pct": 0.65,
+    "source": "daily"
+   }
+  ],
+  "no_quote": [],
+  "big_move_pct": 5.0
+ },
+ "fixed_events": [
+  {
+   "date": "2026-11-12",
+   "time": "清晨",
+   "cat": "總經與市場",
+   "title": "MSCI季度調整結果公布",
+   "note": "美東 11/11 盤後公布；12/01 生效"
+  },
+  {
+   "date": "2026-11-18",
+   "time": "13:30",
+   "cat": "總經與市場",
+   "title": "台指期月結算",
+   "note": ""
+  },
+  {
+   "date": "2026-11-20",
+   "time": "美股收盤",
+   "cat": "總經與市場",
+   "title": "美股月選擇權到期",
+   "note": "收盤前後成交量與波動放大"
+  },
+  {
+   "date": "2026-11-30",
+   "time": "收盤",
+   "cat": "總經與市場",
+   "title": "MSCI季度調整生效（今日收盤換股）",
+   "note": "被動資金於收盤集中交易"
+  }
+ ]
+}
