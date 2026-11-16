@@ -268,7 +268,7 @@ def chips_block():
     if d != idx_date and inst["date"][5:].replace("-", "/") != idx_date:
         return ""
     mx = max(1.0, *(abs(inst[k] or 0) for k in ("foreign", "trust", "dealer", "total")))
-    C1, C2, C3, C4 = 130, 190, 100, W - 130 - 380 - 100
+    C1, C2, C3, C4 = 130, 190, 100, W - 130 - 380 - 100 - 1  # 中軸線 1px（collapse）
     bars = []
     for n, k, st in (("外資及陸資", "foreign", ch.get("foreign_streak")), ("投信", "trust", ch.get("trust_streak")), ("自營商", "dealer", None), ("三大法人合計", "total", None)):
         v = inst.get(k) or 0
@@ -294,10 +294,27 @@ def chips_block():
 
 
 def us_macro():
+    """美國總經數據：與「匯率、商品與利率」同一版型（淺灰表頭＋深藍底線、列底線、色塊標漲跌）；11/16 起"""
     um = D.get("us_macro")
     if not um or not um.get("rows"): return ""
-    rows = [[brk(n), f"<b>{esc(a)}</b>", esc(e), esc(p), esc(df), esc(rd)] for n, a, e, p, df, rd in um["rows"]]
-    return h2(f"美國總經數據（{um['date']} 發布）") + table(["指標", "實際", "預期", "前值", "與預期差", "解讀"], ["24%", "10%", "10%", "10%", "14%", "32%"], rows, left=(5,))
+    C = (140, 80, 115, 130, W - 465)
+    th = lambda t, w, a: (f'<th width="{w}" align="{a}" style="{F_JH};font-size:9pt;font-weight:normal;color:#6B7280;text-align:{a};'
+                          f'padding:4px 8px;border-bottom:2px solid #243B53">{t}</th>')
+    o = [f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed"><tr>'
+         + th("指標", C[0], "left") + th("實際", C[1], "right") + th("預期／前值", C[2], "right") + th("與預期差", C[3], "center") + th("解讀", C[4], "left") + "</tr>"]
+    bd = "border-bottom:1px solid #E5E7EB;vertical-align:top"
+    for n, a, e, p, df, rd in um["rows"]:
+        sg = 1 if re.match(r"^\s*\+", str(df)) else (-1 if re.match(r"^\s*[−-]", str(df)) else 0)
+        bg, fg = heat_color(sg * 0.35 if sg else None, 1) if sg else ("#E5E7EB", "#1F2937")
+        badge = (f'<span style="background-color:{bg};color:{fg};{F_AP};font-size:10pt;font-weight:bold;padding:2px 6px;white-space:nowrap">'
+                 f'<font color="{fg}">&nbsp;{esc(df)}&nbsp;</font></span>')
+        o.append(f'<tr><td width="{C[0]}" valign="top" style="{F_JH};font-size:10.5pt;font-weight:bold;padding:9px 8px;{bd}">{brk(n)}</td>'
+                 f'<td width="{C[1]}" valign="top" align="right" style="{F_AP};font-size:10.5pt;font-weight:bold;text-align:right;padding:9px 8px;{bd}">{esc(a)}</td>'
+                 f'<td width="{C[2]}" valign="top" align="right" style="{F_AP};font-size:9.5pt;text-align:right;padding:9px 8px;line-height:1.55;{bd}">'
+                 f'<span style="color:#6B7280">預期</span> {esc(e)}<br><span style="color:#6B7280">前值</span> {esc(p)}</td>'
+                 f'<td width="{C[3]}" valign="top" align="center" style="text-align:center;padding:9px 4px;{bd}">{badge}</td>'
+                 f'<td width="{C[4]}" valign="top" align="left" style="{F_JH};font-size:10.5pt;line-height:1.6;color:#000;padding:8px 8px;{bd}">{esc(rd)}</td></tr>')
+    return h2(f"美國總經數據（{um['date']} 發布）") + "".join(o) + "</table>" + gap(12)
 
 
 # ---------- 未來關注事件：日曆（以天為欄；週五＝今天＋週六到下週五，其餘＝本週一到週五）----------
@@ -350,7 +367,10 @@ def _calendar():
     fixed = {d: (16 if fri and d == today else 6) for d in days if (fri and d == today) or d.weekday() >= 5}
     flex = round((100 - sum(fixed.values())) / (len(days) - len(fixed)), 2)
     head, body = [], []
-    for d in days:
+    TW = W - 1  # border-collapse 外框各佔半格，表格寬 W-1 使實際寬度＝W
+    cw = [round(TW * fixed.get(d, flex) / 100) for d in days]
+    cw[-1] = TW - sum(cw[:-1])
+    for d, cwd in zip(days, cw):
         w = fixed.get(d, flex)
         is_today, past, wknd = d == today, d < today, d.weekday() >= 5
         bg = "#164A73" if is_today else ("#E5E7EB" if past or wknd else "#243B53")
@@ -359,7 +379,7 @@ def _calendar():
                + chip_td("今天", "#FACC15", "#111827", bold=True, size="8.5pt") + '</tr></table>') if is_today else ""
         h = d.isoformat()
         hl = f'<div style="{F_JH};font-size:8pt;margin-top:3px">{esc(hol[h])}</div>' if h in hol else ""
-        head.append(f'<th width="{round(W * w / 100)}" style="width:{round(W * w / 100)}px;background-color:{bg};color:{fg};border:1px solid #D9D9D9;padding:7px 3px;text-align:center;vertical-align:middle">'
+        head.append(f'<th width="{cwd}" style="width:{cwd}px;background-color:{bg};color:{fg};border:1px solid #D9D9D9;padding:7px 3px;text-align:center;vertical-align:middle">'
                     f'<div style="{F_JH};font-size:10pt;font-weight:bold">{"週" if not wknd else ""}{WD[d.weekday()]}</div>'
                     f'<div style="{F_AP};font-size:{9 if wknd else 10}pt">{d:%m/%d}</div>{tag}{hl}</th>')
         evs = cal_events(d)
@@ -371,7 +391,7 @@ def _calendar():
                      f'<font color="{c}"><span style="color:{c};font-size:11pt">■</span></font>&nbsp;{t}</td>' for t, c in CAT.items())
     return (h2("未來關注事件") +
             f'<p style="{F_JH};font-size:9.5pt;color:#4B5563;margin:-4px 0 8px">{esc(sub)}</p>'
-            f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed">'
+            f'<table role="presentation" width="{W - 1}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W - 1}px;table-layout:fixed">'
             f'<tr>{"".join(head)}</tr><tr>{"".join(body)}</tr></table>'
             f'<table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:6px 0 4px"><tr>{legend}</tr></table>')
 
@@ -418,7 +438,7 @@ def compact(h):
     h = re.sub(r"<t[dh][^>]*>", dedupe_bg, h)
     h = h.replace("overflow-wrap:break-word;", "").replace(' role="presentation"', "")
     h = h.replace(' cellspacing="0" cellpadding="0" border="0"', ' cellspacing="0" cellpadding="0"').replace(' style=""', "")
-    h = h.replace('<head><meta charset="UTF-8"></head><body style="', f'<head><meta charset="UTF-8"><style>body,table,td,th,p,div,span,h1,h2,a,b{{{BODY_FONT}}}</style></head><body style="{BODY_FONT};')
+    h = h.replace('<head><meta charset="UTF-8"></head><body style="', f'<head><meta charset="UTF-8"><style>table,td,th{{box-sizing:border-box}}body,table,td,th,p,div,span,h1,h2,a,b{{{BODY_FONT}}}</style></head><body style="{BODY_FONT};')
     h = re.sub(r">\s+<", "><", h)
     # 區塊結尾換行：排程用 Read 讀檔照抄時，單行過長會被截斷
     return re.sub(r"(</(?:tr|p|table|h1|h2|div)>)", "\\1\n", h)
