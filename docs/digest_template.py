@@ -343,13 +343,17 @@ def cal_events(d):
 
 def ev_card(e, past):
     c = CAT.get(e["cat"], "#6B7280")
+    # 11/23：事件來自 Notion 資料庫；有 url 時標題可點（已發生＝結果連結，未發生＝找到的來源），estimated＝預估日期
+    tc = "#6B7280" if past else "#111827"
+    ttl = (f'<a href="{esc(e["url"])}" style="color:{tc};text-decoration:underline">{esc(e["title"])}</a>' if e.get("url") else esc(e["title"]))
+    est = (f'<span style="{F_JH};font-size:8pt;font-weight:bold;color:#B45309">&nbsp;｜預估</span>' if e.get("estimated") else "")
     res = (f'<div style="{F_JH};font-size:9pt;color:#065F46;font-weight:bold;margin-top:3px">已公布：{esc(e["result"])}</div>'
            if e.get("result") else "")
     return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 0 6px">'
             f'<tr><td style="border-left:4px solid {c};background-color:#FFFFFF;padding:6px 6px 6px 7px">'
             f'<div style="{F_AP};font-size:9.5pt;font-weight:bold;color:{c}">{esc(e["time"])}'
-            f'<span style="{F_JH};font-size:8.5pt;font-weight:normal;color:#6B7280">&nbsp;｜{esc(CAT_SHORT.get(e["cat"], e["cat"]))}</span></div>'
-            f'<div style="{F_JH};font-size:10pt;font-weight:bold;color:{"#6B7280" if past else "#111827"};line-height:1.35;margin-top:2px">{esc(e["title"])}</div>'
+            f'<span style="{F_JH};font-size:8.5pt;font-weight:normal;color:#6B7280">&nbsp;｜{esc(CAT_SHORT.get(e["cat"], e["cat"]))}</span>{est}</div>'
+            f'<div style="{F_JH};font-size:10pt;font-weight:bold;color:{tc};line-height:1.35;margin-top:2px">{ttl}</div>'
             + (f'<div style="{F_JH};font-size:9pt;color:#374151;line-height:1.45;margin-top:3px">{esc(e["note"])}</div>' if e.get("note") else "") +
             f'{res}</td></tr></table>')
 
@@ -412,7 +416,7 @@ def calendar_text():
         L.append(f"{d:%m/%d}（{WD[d.weekday()]}）{tag}{h}")
         for e in cal_events(d):
             r = f"｜已公布：{e['result']}" if e.get("result") else ""
-            L.append(f"  {e['time']}｜{e['cat']}｜{e['title']}" + (f"｜{e['note']}" if e.get("note") else "") + r)
+            L.append(f"  {e['time']}｜{e['cat']}｜{e['title']}" + ("（預估）" if e.get("estimated") else "") + (f"｜{e['note']}" if e.get("note") else "") + r + (f"｜{e['url']}" if e.get("url") else ""))
     return L
 
 
@@ -664,6 +668,7 @@ def checks(h):
             if nt and (len(nt) > 20 or not re.search(r"\d", nt)): E.append(f"事件說明只放數據（≤20字、須含數字；沒有數據就留空）：{e.get('title')}｜{nt}")
             if len(e.get("result") or "") > 24: E.append(f"事件已公布結果只放數據（≤24字）：{e.get('title')}｜{e.get('result')}")
             if e.get("time") not in TWORD and not re.match(r"^\d{2}:\d{2}$", str(e.get("time"))): E.append(f"事件時間格式：{e.get('time')}")
+            if e.get("url") and not str(e["url"]).startswith("http"): E.append(f"事件連結須為完整網址：{e.get('title')}")
         for d in win:
             n = sum(1 for e in evs if e.get("date") == d)
             if n > 4: E.append(f"{d} 事件卡超過4張（{n}）")
@@ -672,6 +677,8 @@ def checks(h):
         for e in evs:
             past = e.get("date") < today.isoformat() or (e.get("date") == today.isoformat() and TWORD.get(e.get("time"), str(e.get("time"))) <= "07:45")
             if past and not e.get("result"): E.append(f"已發生事件須附 result：{e.get('title')}")
+            if past and not str(e.get("url") or "").startswith("http"): E.append(f"已發生事件須附結果連結 url（總經→官方發布頁、政策→官方新聞稿、財報法說→公司新聞稿、其他→新聞）：{e.get('title')}")
+            if e.get("estimated") and past: E.append(f"已發生事件不得再標預估：{e.get('title')}")
             if past and e.get("cat") in ("公司事件", "總經與市場", "政策公布") and e.get("result") and not any(str(e.get("title"))[:6] in x for x in fu_events):
                 E.append(f"已發生事件須在 followups 登記並於新聞／摘要分析：{e.get('title')}")
         # A 層：追蹤公司財報日落在日曆範圍內者必須上日曆（美股盤後公布，台北日期可能 +1 天）
