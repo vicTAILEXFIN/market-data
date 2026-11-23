@@ -68,7 +68,10 @@ brk = lambda s: esc(s).replace("（", "<br>（", 1) if "（" in s[1:] else esc(s
 sgn = lambda v: "+" if v > 0 else ("−" if v < 0 else "")
 pts = lambda v: f"{sgn(v)}{abs(v):,.2f}點"
 pct = lambda v: f"{sgn(v)}{abs(v):.2f}%"
-lbl = lambda d: f"({d}市場收盤)"
+lbl = lambda d: f"({d})" if "早盤" in str(d) else f"({d}市場收盤)"  # 11/23：週一早盤即時價標「(11/23 早盤)」
+# 11/23：主要指數表顯示名稱（熱力格維持 SHORT）
+IDX_DISP = {"道瓊工業指數": "道瓊工業", "標準普爾500指數": "S&P 500", "那斯達克綜合指數": "NASDAQ", "費城半導體指數": "費半",
+            "日經225指數": "日經225", "韓國綜合股價指數": "韓國綜合", "台灣加權指數": "台灣加權"}
 MACRO = ["美元兌新台幣", "布蘭特原油", "黃金（COMEX近月期貨）", "美元指數"]
 SRC = re.compile(r"[（(][^）)]*(路透|中央社|鉅亨|經濟日報|株探|CNBC|Reuters|Yahoo|investingLive|Kitco|AP|口徑|來源)[^）)]*[）)]")
 STK = re.compile(r"[一-鿿A-Za-z]+（[+−]\d+\.\d{2}%）")
@@ -209,7 +212,7 @@ def fedwatch():
                       f'<font color="{c}"><span style="color:{c};font-size:11pt">■</span></font>&nbsp;{n}&nbsp;&nbsp;&nbsp;&nbsp;</td>'
                       for n, (c, _) in (("降息", FW_COL["cut"]), ("維持不變", FW_COL["hold"]), ("升息1碼", FW_COL["hike1"]), ("升息2碼以上", FW_COL["hike2"]))) + "</tr></table>")
     return (h2("FedWatch 利率預期") +
-            f'<p style="{F_JH};font-size:11pt;margin:0 0 6px">{esc(fw["meeting"])} FOMC 會議｜目前利率區間 {esc(fw["range"])}｜CME {esc(fw["asof"])} 更新（依前一日期貨結算）</p>'
+            f'<p style="{F_JH};font-size:11pt;margin:0 0 6px">{esc(fw["meeting"])} FOMC 會議｜目前利率區間 {esc(fw["range"])}｜CME {esc(fw["asof"])} 更新（{esc(fw.get("basis") or "依前一日期貨結算")}）</p>'
             f'<table role="presentation" width="{W}" cellspacing="0" cellpadding="0" border="0" style="width:{W}px;border-collapse:collapse">{"".join(rows)}</table>'
             f'{legend}'
             f'<p style="{F_JH};font-size:11pt;line-height:1.6;margin:4px 0 12px">{esc(fw["note"])}</p>')
@@ -457,7 +460,7 @@ def build():
     P.append(h2("重大新聞", "16px 0 8px"))
     for i, e in enumerate(D["news"], 1):
         P.append(news_card(i, e))
-    rows = [(brk(n), f"{c:,.2f}", d, pct(pc), pts(ch), None, pc, 6, esc(r)) for n, c, ch, pc, r, d in D["index_rows"]]
+    rows = [(esc(IDX_DISP.get(n, n)), f"{c:,.2f}", d, pct(pc), pts(ch), None, pc, 6, esc(r)) for n, c, ch, pc, r, d in D["index_rows"]]
     lv, bp, note, r, d = D["ust"]
     rows.append(("美國10年期<br>公債殖利率", esc(lv), d, esc(bp), None, f"({esc(note)})", bp_value(bp) if lv != "未取得" else None, 15, esc(r)))
     P.append(h2("主要指數"))
@@ -472,6 +475,8 @@ def build():
         else:
             rows.append((brk(n), esc(lv), d, esc(ch), None, None, None, 1, esc(r)))
     P.append(market_table("項目", rows))
+    if any("早盤" in str(m[6]) for m in D["macro_rows"]):  # 11/23：週一早盤即時價註記
+        P.append(f'<p style="{F_JH};font-size:9.5pt;color:#6B7280;line-height:1.5;margin:4px 0 0">註：標「早盤」者為週一台北早上即時價，漲跌與上週五結算比較；新台幣台北匯市 09:00 開盤，仍為上週五收盤。</p>')
     P.append(us_macro())
     P.append(calendar())
     P.append(h2("壽險業新聞"))
@@ -496,7 +501,7 @@ def build_text():
         L += [f"［{e['tag']}］{e['date']}{imp}", f"{i}. {e['title']}", e["url"]] + [f"• {b}" for b in e["bullets"]] + [""]
     L += ["主要指數"]
     for n, c, ch, pc, r, d in D["index_rows"]:
-        L.append(f"{n}｜{c:,.2f}{lbl(d)}｜{pts(ch)}（{pct(pc)}）｜{r}")
+        L.append(f"{IDX_DISP.get(n, n)}｜{c:,.2f}{lbl(d)}｜{pts(ch)}（{pct(pc)}）｜{r}")
     lv, bp, note, r, d = D["ust"]
     L += [f"美國10年期公債殖利率｜{lv}{lbl(d)}｜{bp}（{note}）｜{r}"]
     cb = chips_block()
