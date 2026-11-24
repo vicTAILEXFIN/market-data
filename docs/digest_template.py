@@ -553,6 +553,32 @@ def impact_value(name):
     return None
 
 
+# 11/24：與 GitHub 行情檔交叉核對（排程環境可讀 raw.githubusercontent；讀不到就略過）
+LATEST_URL = "https://raw.githubusercontent.com/vicTAILEXFIN/market-data/main/data/latest.json"
+
+
+def load_latest():
+    import os, urllib.request
+    if os.environ.get("NO_LATEST"):
+        return None
+    try:
+        with urllib.request.urlopen(LATEST_URL, timeout=15) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except Exception:  # noqa
+        return None
+
+
+OFFICIAL_SUFFIX = (".gov", ".gov.tw", ".gov.uk", ".go.jp", ".go.kr", ".gov.cn", ".europa.eu", ".int")
+OFFICIAL_HOSTS = ("twse.com.tw", "tpex.org.tw", "taifex.com.tw", "msci.com", "boj.or.jp", "bankofengland.co.uk",
+                  "cmegroup.com", "ismworld.org", "umich.edu", "conference-board.org")
+
+
+def is_official(url):
+    from urllib.parse import urlparse
+    host = (urlparse(str(url)).hostname or "").lower()
+    return bool(host) and (host.endswith(OFFICIAL_SUFFIX) or any(host == x or host.endswith("." + x) for x in OFFICIAL_HOSTS))
+
+
 def checks(h):
     E = []
     N = D["news"]
@@ -679,6 +705,8 @@ def checks(h):
             if past and not e.get("result"): E.append(f"已發生事件須附 result：{e.get('title')}")
             if past and not str(e.get("url") or "").startswith("http"): E.append(f"已發生事件須附結果連結 url（總經→官方發布頁、政策→官方新聞稿、財報法說→公司新聞稿、其他→新聞）：{e.get('title')}")
             if e.get("estimated") and past: E.append(f"已發生事件不得再標預估：{e.get('title')}")
+            if past and e.get("url") and e.get("cat") in ("總經與市場", "政策公布") and not is_official(e["url"]):
+                E.append(f"{e.get('cat')}事件的結果連結須為官方網站（.gov／.gov.tw、TreasuryDirect、BLS、BEA、金管會、行政院、交易所等），不得用新聞網站：{e.get('title')}｜{e.get('url')}")
             if past and e.get("cat") in ("公司事件", "總經與市場", "政策公布") and e.get("result") and not any(str(e.get("title"))[:6] in x for x in fu_events):
                 E.append(f"已發生事件須在 followups 登記並於新聞／摘要分析：{e.get('title')}")
         # A 層：追蹤公司財報日落在日曆範圍內者必須上日曆（美股盤後公布，台北日期可能 +1 天）
@@ -745,6 +773,23 @@ def checks(h):
     if -1 in pos or pos != sorted(pos): E.append("區塊順序須為：今日重點摘要→" + "→".join(order))
     if h.find("今日重點摘要") > pos[0]: E.append("今日重點摘要須在最上方")
     if D.get("chips") and not chips_block(): E.append("籌碼面資料日期與台股指數日期不符，區塊已略過（請確認 inst／chips 日期）")
+    # 11/24：美債殖利率須與 GitHub 財政部官方值一致（11/24 排程把 2年期 0bp 誤判為缺值，熱力格顯示「未取得」）
+    L = load_latest()
+    uc = (L or {}).get("ust_curve") or {}
+    if (L and L.get("taipei_date") == D.get("today") and uc.get("source") == "treasury"
+            and str(uc.get("date", ""))[5:].replace("-", "/") == str((D.get("ust") or [""] * 5)[4])):
+        cv = D.get("curve") or {}
+        for k, nm in (("y2", "2年期"), ("y30", "30年期")):
+            g, x = uc.get(k), cv.get(k)
+            if g and (not x or abs(float(x[0]) - g["yield"]) > 0.005 or int(x[1]) != int(g["bp"])):
+                E.append(f"美債{nm}須採用 GitHub ust_curve 財政部官方值 [{g['yield']}, {g['bp']}]（0bp 也是有效值，不得改用市場報價或填 null）：目前 {x}")
+        g10 = uc.get("y10")
+        try:
+            lv, bp = float(str(D["ust"][0]).rstrip("%")), bp_value(D["ust"][1])
+            if g10 and (abs(lv - g10["yield"]) > 0.005 or int(bp) != int(g10["bp"])):
+                E.append(f"美債10年期須採用 GitHub 財政部官方值 {g10['yield']}%、{g10['bp']}bp（與 2年、30年同源，不得混用市場報價）：目前 {D['ust'][0]} {D['ust'][1]}")
+        except Exception:  # noqa
+            pass
     return E
 
 
