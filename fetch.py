@@ -58,7 +58,7 @@ def treasury_curve(today):
     parsed.sort(reverse=True)
     (d1, y2, y10, y30), (_d0, p2, p10, p30) = parsed[0], parsed[1]
     q = lambda y, p: {"yield": round(y, 2), "bp": int(round((y - p) * 100))}
-    return {"date": d1.isoformat(), "source": "treasury", "y2": q(y2, p2), "y10": q(y10, p10), "y30": q(y30, p30)}
+    return {"date": d1.isoformat(), "prev_date": _d0.isoformat(), "source": "treasury", "y2": q(y2, p2), "y10": q(y10, p10), "y30": q(y30, p30)}
 
 
 # ---------- 下載 ----------
@@ -1044,9 +1044,6 @@ def main():
         out["ust_curve"] = treasury_curve(today)
         c10 = out["ust_curve"]["y10"]
         out["ust10y"] = {"date": out["ust_curve"]["date"], "yield": c10["yield"], "bp": c10["bp"], "source": "treasury"}
-        flat = [n for k, n in (("y2", "2年期"), ("y10", "10年期"), ("y30", "30年期")) if out["ust_curve"][k]["bp"] == 0]
-        if flat:
-            out["notes"].append(f"美債{'、'.join(flat)} {out['ust_curve']['date']} 財政部官方殖利率與前一交易日相同（0bp 為有效值，非缺值，直接採用）")
     except Exception as e:  # noqa
         errors.append(f"美債殖利率曲線（財政部）取不到，10年期改用 ^TNX：{e}")
         if out["ust10y"]:

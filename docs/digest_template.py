@@ -573,6 +573,17 @@ OFFICIAL_HOSTS = ("twse.com.tw", "tpex.org.tw", "taifex.com.tw", "msci.com", "bo
                   "cmegroup.com", "ismworld.org", "umich.edu", "conference-board.org")
 
 
+NEWS_HOSTS = ("cnyes.com", "udn.com", "ctee.com.tw", "cna.com.tw", "storm.mg", "ltn.com.tw", "chinatimes.com", "ettoday.net",
+              "setn.com", "businesstoday.com.tw", "moneydj.com", "technews.tw", "reuters.com", "cnbc.com", "bloomberg.com",
+              "wsj.com", "ft.com", "yahoo.com", "marketwatch.com", "apnews.com", "nikkei.com", "investing.com", "barrons.com")
+
+
+def is_news(url):
+    from urllib.parse import urlparse
+    host = (urlparse(str(url)).hostname or "").lower()
+    return any(host == x or host.endswith("." + x) for x in NEWS_HOSTS)
+
+
 def is_official(url):
     from urllib.parse import urlparse
     host = (urlparse(str(url)).hostname or "").lower()
@@ -707,6 +718,8 @@ def checks(h):
             if e.get("estimated") and past: E.append(f"已發生事件不得再標預估：{e.get('title')}")
             if past and e.get("url") and e.get("cat") in ("總經與市場", "政策公布") and not is_official(e["url"]):
                 E.append(f"{e.get('cat')}事件的結果連結須為官方網站（.gov／.gov.tw、TreasuryDirect、BLS、BEA、金管會、行政院、交易所等），不得用新聞網站：{e.get('title')}｜{e.get('url')}")
+            if past and e.get("url") and e.get("cat") == "公司事件" and is_news(e["url"]):
+                E.append(f"公司事件的結果連結須為公司新聞稿、IR 頁或公開資訊觀測站／交易所公告，不得用新聞網站：{e.get('title')}｜{e.get('url')}")
             if past and e.get("cat") in ("公司事件", "總經與市場", "政策公布") and e.get("result") and not any(str(e.get("title"))[:6] in x for x in fu_events):
                 E.append(f"已發生事件須在 followups 登記並於新聞／摘要分析：{e.get('title')}")
         # A 層：追蹤公司財報日落在日曆範圍內者必須上日曆（美股盤後公布，台北日期可能 +1 天）
