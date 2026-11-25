@@ -993,7 +993,28 @@ def corp_watch(today, back=7, ahead=14):
         if items or fl or move:
             watch.append({"company": c["name"], "sym": c.get("sym"), "country": c.get("country"), "industry": c.get("industry"),
                           "generic": bool(c.get("generic")), "big_move": move, "filings": fl, "items": items})
-    return ({"window": [lo.isoformat(), hi.isoformat()], "events": events}, watch,
+    # 11/25：台股不採用 Yahoo「財報日」（台新新光金 11/27 法說會被 Yahoo 寫成 11/25；台股季報法定期限已過，
+    # 11 月下旬多為法說會）。改由證交所重大訊息「召開…法人說明會」解析日期，type＝法說會。
+    events = [e for e in events if not e["sym"].endswith((".TW", ".TWO"))]
+    roc = re.compile(r"(\d{3})\s*[年/.]\s*(\d{1,2})\s*[月/.]\s*(\d{1,2})")
+    for name, L in filings.items():
+        for a in L:
+            t = a.get("title", "")
+            if "法人說明會" not in t and "法說會" not in t:
+                continue
+            m = roc.search(t)
+            if not m:
+                continue
+            try:
+                d = dt.date(int(m.group(1)) + 1911, int(m.group(2)), int(m.group(3)))
+            except ValueError:
+                continue
+            sym = next((c["sym"] for c in listed if c["name"] == name), None)
+            events.append({"sym": sym, "name": name, "type": "法說會", "date_local": d.isoformat(), "estimated": False,
+                           "source": "twse_announcement", "title": t, "announced": a.get("date")})
+    events.sort(key=lambda e: e["date_local"])
+    return ({"window": [lo.isoformat(), hi.isoformat()], "events": events,
+             "note": "台股法說會日期來自證交所重大訊息（只在公告當天出現，排程須當天寫入資料庫）；台股不採用 Yahoo 財報日"}, watch,
             {"quotes": quotes, "no_quote": no_quote, "big_move_pct": big})
 
 

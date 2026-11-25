@@ -347,6 +347,10 @@ def ev_card(e, past):
     tc = "#6B7280" if past else "#111827"
     ttl = (f'<a href="{esc(e["url"])}" style="color:{tc};text-decoration:underline">{esc(e["title"])}</a>' if e.get("url") else esc(e["title"]))
     est = (f'<span style="{F_JH};font-size:8pt;font-weight:bold;color:#B45309">&nbsp;｜預估</span>' if e.get("estimated") else "")
+    if e.get("link_pending"):
+        est += f'<span style="{F_JH};font-size:8pt;color:#6B7280">&nbsp;｜暫連新聞</span>'
+    elif e.get("no_official"):
+        est += f'<span style="{F_JH};font-size:8pt;color:#6B7280">&nbsp;｜無官方稿</span>'
     res = (f'<div style="{F_JH};font-size:9pt;color:#065F46;font-weight:bold;margin-top:3px">已公布：{esc(e["result"])}</div>'
            if e.get("result") else "")
     return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 0 6px">'
@@ -716,12 +720,25 @@ def checks(h):
             if past and not e.get("result"): E.append(f"已發生事件須附 result：{e.get('title')}")
             if past and not str(e.get("url") or "").startswith("http"): E.append(f"已發生事件須附結果連結 url（總經→官方發布頁、政策→官方新聞稿、財報法說→公司新聞稿、其他→新聞）：{e.get('title')}")
             if e.get("estimated") and past: E.append(f"已發生事件不得再標預估：{e.get('title')}")
-            if past and e.get("url") and e.get("cat") in ("總經與市場", "政策公布") and not is_official(e["url"]):
+            pend = bool(e.get("link_pending")) and (dt.date.fromisoformat(D["today"]) - dt.date.fromisoformat(e["date"])).days <= 3
+            if e.get("link_pending") and not pend:
+                E.append(f"暫用新聞連結只能用到事件後 3 天，之後須換成官方連結（或確認官方未發布並改填 no_official）：{e.get('title')}")
+            if past and e.get("url") and e.get("cat") in ("總經與市場", "政策公布") and not is_official(e["url"]) and not pend and not e.get("no_official"):
                 E.append(f"{e.get('cat')}事件的結果連結須為官方網站（.gov／.gov.tw、TreasuryDirect、BLS、BEA、金管會、行政院、交易所等），不得用新聞網站：{e.get('title')}｜{e.get('url')}")
             if past and e.get("url") and e.get("cat") == "公司事件" and is_news(e["url"]):
                 E.append(f"公司事件的結果連結須為公司新聞稿、IR 頁或公開資訊觀測站／交易所公告，不得用新聞網站：{e.get('title')}｜{e.get('url')}")
             if past and e.get("cat") in ("公司事件", "總經與市場", "政策公布") and e.get("result") and not any(str(e.get("title"))[:6] in x for x in fu_events):
                 E.append(f"已發生事件須在 followups 登記並於新聞／摘要分析：{e.get('title')}")
+        # 11/25：資料庫中日曆範圍內的「待發生／已發生」事件都要上日曆或寫 calendar_skip（11/25 的信為了通過連結檢查把 11/23 事件整天刪掉）
+        rows = D.get("db_rows")
+        if rows is None:
+            E.append("缺少 db_rows（日曆範圍內資料庫事件清單：title、date、status）")
+        else:
+            titles = {str(x.get("title")) for x in evs}
+            skipn = {str(x.get("name")) for x in (D.get("calendar_skip") or []) if isinstance(x, dict) and x.get("reason")}
+            for r in rows:
+                if r.get("status") in ("待發生", "已發生") and str(r.get("title")) not in titles | skipn:
+                    E.append(f"資料庫事件未上日曆也未寫 calendar_skip 理由（不得為了通過檢查刪除事件）：{r.get('date')} {r.get('title')}")
         # A 層：追蹤公司財報日落在日曆範圍內者必須上日曆（美股盤後公布，台北日期可能 +1 天）
         skips = {str(x.get("name")) for x in (D.get("calendar_skip") or []) if isinstance(x, dict) and x.get("reason")}
         for ce in ((D.get("corp_events") or {}).get("events") or []):
