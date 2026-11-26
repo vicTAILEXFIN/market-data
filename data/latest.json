@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-11-25T22:15:43Z",
- "taipei_date": "2026-11-26",
+ "generated_at_utc": "2026-11-26T22:15:45Z",
+ "taipei_date": "2026-11-27",
  "indices": {
   "^DJI": {
    "name": "道瓊工業指數",
@@ -40,33 +40,33 @@
   },
   "^N225": {
    "name": "日經225指數",
-   "date": "2026-11-25",
-   "close": 57011.62,
-   "prev_date": "2026-11-24",
-   "prev_close": 58644.63,
-   "chg": -1633.01,
-   "pct": -2.78,
+   "date": "2026-11-26",
+   "close": 57499.16,
+   "prev_date": "2026-11-25",
+   "prev_close": 57011.62,
+   "chg": 487.54,
+   "pct": 0.86,
    "source": "meta_fill"
   },
   "^KS11": {
    "name": "韓國綜合股價指數",
-   "date": "2026-11-25",
-   "close": 4697.51,
-   "prev_date": "2026-11-24",
-   "prev_close": 5006.03,
-   "chg": -308.52,
-   "pct": -6.16,
+   "date": "2026-11-26",
+   "close": 4711.21,
+   "prev_date": "2026-11-25",
+   "prev_close": 4697.51,
+   "chg": 13.7,
+   "pct": 0.29,
    "source": "meta_fill"
   },
   "^TWII": {
    "name": "台灣加權指數",
-   "date": "2026-11-25",
-   "close": 38195.43,
-   "prev_close": 40122.35,
-   "chg": -1926.92,
-   "pct": -4.8,
+   "date": "2026-11-26",
+   "close": 39151.81,
+   "prev_close": 38195.43,
+   "chg": 956.38,
+   "pct": 2.5,
    "source": "twse_mi_index",
-   "prev_date": "2026-11-24"
+   "prev_date": "2026-11-25"
   }
  },
  "ust10y": {
@@ -77,12 +77,12 @@
  },
  "sse": {
   "name": "上證綜合",
-  "date": "2026-11-25",
-  "close": 3476.47,
-  "prev_date": "2026-11-24",
-  "prev_close": 3548.37,
-  "chg": -71.9,
-  "pct": -2.03,
+  "date": "2026-11-26",
+  "close": 3476.88,
+  "prev_date": "2026-11-25",
+  "prev_close": 3476.47,
+  "chg": 0.41,
+  "pct": 0.01,
   "source": "meta_fill"
  },
  "ust_curve": {
@@ -169,80 +169,80 @@
    "pct": -1.96
   },
   "2330.TW": {
-   "date": "2026-11-25",
-   "close": 2150.0,
-   "pct": -3.59
+   "date": "2026-11-26",
+   "close": 2145.0,
+   "pct": -0.23
   },
   "2317.TW": {
-   "date": "2026-11-25",
-   "close": 206.5,
-   "pct": -8.83
+   "date": "2026-11-26",
+   "close": 216.5,
+   "pct": 4.84
   },
   "2454.TW": {
-   "date": "2026-11-25",
-   "close": 3645.0,
-   "pct": -10.0
+   "date": "2026-11-26",
+   "close": 3705.0,
+   "pct": 1.65
   },
   "2308.TW": {
-   "date": "2026-11-25",
-   "close": 1055.0,
-   "pct": -2.76
+   "date": "2026-11-26",
+   "close": 1120.0,
+   "pct": 6.16
   },
   "005930.KS": {
-   "date": "2026-11-25",
-   "close": 170700.0,
-   "pct": -9.87
+   "date": "2026-11-26",
+   "close": 171300.0,
+   "pct": 0.35
   },
   "000660.KS": {
-   "date": "2026-11-25",
-   "close": 1030000.0,
-   "pct": -11.05
+   "date": "2026-11-26",
+   "close": 1053000.0,
+   "pct": 2.23
   },
   "373220.KS": {
-   "date": "2026-11-25",
-   "close": 308500.0,
-   "pct": -1.91
+   "date": "2026-11-26",
+   "close": 302000.0,
+   "pct": -2.11
   },
   "9983.T": {
-   "date": "2026-11-25",
-   "close": 86170.0,
-   "pct": 2.53
+   "date": "2026-11-26",
+   "close": 85500.0,
+   "pct": -0.78
   },
   "8035.T": {
-   "date": "2026-11-25",
-   "close": 7825.0,
-   "pct": -12.53
+   "date": "2026-11-26",
+   "close": 7871.0,
+   "pct": 0.59
   },
   "6857.T": {
-   "date": "2026-11-25",
-   "close": 23745.0,
-   "pct": -12.94
+   "date": "2026-11-26",
+   "close": 24830.0,
+   "pct": 4.57
   },
   "9984.T": {
-   "date": "2026-11-25",
-   "close": 2696.5,
-   "pct": -14.83
+   "date": "2026-11-26",
+   "close": 2894.0,
+   "pct": 7.32
   }
  },
  "macro": {
   "TWD=X": {
    "name": "美元兌新台幣",
-   "date": "2026-11-25",
-   "close": 33.178,
-   "prev_date": "2026-11-24",
-   "prev_close": 32.896,
-   "chg": 0.282,
-   "pct": 0.86,
+   "date": "2026-11-26",
+   "close": 32.973,
+   "prev_date": "2026-11-25",
+   "prev_close": 33.178,
+   "chg": -0.205,
+   "pct": -0.62,
    "method": "30m參考K棒"
   },
   "JPY=X": {
    "name": "美元兌日圓",
-   "date": "2026-11-25",
-   "close": 159.15,
-   "prev_date": "2026-11-24",
-   "prev_close": 159.24,
-   "chg": -0.09,
-   "pct": -0.06,
+   "date": "2026-11-26",
+   "close": 159.27,
+   "prev_date": "2026-11-25",
+   "prev_close": 159.15,
+   "chg": 0.12,
+   "pct": 0.08,
    "method": "30m參考K棒"
   },
   "BZ=F": {
@@ -279,35 +279,35 @@
  "fedwatch": {
   "meeting": "12/09",
   "range": "3.75%–4.00%",
-  "asof": "11/25",
+  "asof": "11/26",
   "rows": [
    [
     "最新",
     0.0,
-    4.2,
-    95.8,
+    0.0,
+    100.0,
     0.0
    ],
    [
     "1天前",
     0.0,
-    0.0,
-    97.1,
-    2.9
+    2.8,
+    97.2,
+    0.0
    ],
    [
     "1週前",
     0.0,
     0.0,
-    92.9,
-    7.1
+    91.5,
+    8.5
    ],
    [
     "1個月前",
     0.0,
-    21.5,
-    70.9,
-    7.6
+    16.1,
+    74.1,
+    9.8
    ]
   ],
   "source": "computed_from_ZQ",
@@ -521,7 +521,7 @@
    "prev": 3.6692,
    "prev_display": "3.7%",
    "chg_vs_prev": "+0.2個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "核心PCE物價月增率",
@@ -540,7 +540,7 @@
    "prev": 0.3249,
    "prev_display": "0.3%",
    "chg_vs_prev": "0.0個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "核心PCE物價年增率",
@@ -559,7 +559,7 @@
    "prev": 3.1424,
    "prev_display": "3.1%",
    "chg_vs_prev": "+0.1個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "零售銷售月增率",
@@ -597,7 +597,7 @@
    "prev": 2.2,
    "prev_display": "2.2%",
    "chg_vs_prev": "+2.1個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "初領失業金人數",
@@ -616,7 +616,7 @@
    "prev": 202000.0,
    "prev_display": "20.2萬",
    "chg_vs_prev": "−1.3萬",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "JOLTS職缺數",
@@ -673,7 +673,7 @@
    "prev": 1191.0,
    "prev_display": "119.1萬",
    "chg_vs_prev": "+11.8萬",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "耐久財訂單月增率",
@@ -692,7 +692,7 @@
    "prev": 1.9921,
    "prev_display": "2.0%",
    "chg_vs_prev": "−1.8個百分點",
-   "released_prev_us_day": true
+   "released_prev_us_day": false
   },
   {
    "name": "非農生產力年增率",
@@ -761,19 +761,19 @@
  ],
  "errors": [],
  "notes": [
-  "日經225指數 2026-11-25：日K缺最新一天，以交易所正式收盤補上",
-  "韓國綜合股價指數 2026-11-25：日K缺最新一天，以交易所正式收盤補上",
-  "台灣加權指數 2026-11-25：日K缺最新一天，以交易所正式收盤補上",
-  "上證綜合 2026-11-25：日K缺最新一天，以交易所正式收盤補上"
+  "日經225指數 2026-11-26：日K缺最新一天，以交易所正式收盤補上",
+  "韓國綜合股價指數 2026-11-26：日K缺最新一天，以交易所正式收盤補上",
+  "台灣加權指數 2026-11-26：日K缺最新一天，以交易所正式收盤補上",
+  "上證綜合 2026-11-26：日K缺最新一天，以交易所正式收盤補上"
  ],
  "twd_official": {
   "name": "美元兌新台幣",
-  "date": "2026-11-25",
-  "close": 33.126,
-  "prev_date": "2026-11-24",
-  "prev_close": 32.939,
-  "chg": 0.187,
-  "pct": 0.57,
+  "date": "2026-11-26",
+  "close": 32.947,
+  "prev_date": "2026-11-25",
+  "prev_close": 33.126,
+  "chg": -0.179,
+  "pct": -0.54,
   "source": "cbc_taipeiforex_close"
  },
  "ust_auctions": {
@@ -832,115 +832,115 @@
   ]
  },
  "tw_institutional": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "unit": "億元",
-  "foreign": -1236.55,
-  "trust": 550.35,
-  "dealer": -128.33,
-  "total": -814.53
+  "foreign": -491.81,
+  "trust": 212.13,
+  "dealer": 128.65,
+  "total": -151.03
  },
  "taifex_foreign_tx": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "contract": "臺股期貨",
-  "foreign_net_oi": -105709,
+  "foreign_net_oi": -106275,
   "header": "多空未平倉口數淨額",
-  "prev_date": "2026-11-24",
-  "prev_net_oi": -103182
+  "prev_date": "2026-11-25",
+  "prev_net_oi": -105709
  },
  "tw_chips": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "unit": "億元",
-  "foreign_streak": -8,
-  "trust_streak": 2,
+  "foreign_streak": -9,
+  "trust_streak": 3,
   "foreign_sell_top": [
    {
     "sym": "2330",
     "name": "台積電",
-    "lots": -26972,
-    "amt": -579.89
-   },
-   {
-    "sym": "2454",
-    "name": "聯發科",
-    "lots": -3753,
-    "amt": -136.79
+    "lots": -18134,
+    "amt": -388.98
    },
    {
     "sym": "2383",
     "name": "台光電",
-    "lots": -2362,
-    "amt": -79.24
+    "lots": -2289,
+    "amt": -83.79
+   },
+   {
+    "sym": "2308",
+    "name": "台達電",
+    "lots": -4413,
+    "amt": -49.43
    }
   ],
   "foreign_buy_top": [
    {
     "sym": "2603",
     "name": "長榮",
-    "lots": 11465,
-    "amt": 28.95
+    "lots": 13007,
+    "amt": 33.04
    },
    {
     "sym": "2327",
     "name": "國巨*",
-    "lots": 5270,
-    "amt": 16.29
+    "lots": 8777,
+    "amt": 29.8
    },
    {
-    "sym": "1802",
-    "name": "台玻",
-    "lots": 24776,
-    "amt": 14.84
+    "sym": "2317",
+    "name": "鴻海",
+    "lots": 12691,
+    "amt": 27.48
    }
   ],
   "trust_buy_top": [
    {
-    "sym": "2330",
-    "name": "台積電",
-    "lots": 4791,
-    "amt": 103.02
-   },
-   {
-    "sym": "3665",
-    "name": "貿聯-KY",
-    "lots": 3702,
-    "amt": 60.34
+    "sym": "2412",
+    "name": "中華電",
+    "lots": 20673,
+    "amt": 34.42
    },
    {
     "sym": "2383",
     "name": "台光電",
-    "lots": 1778,
-    "amt": 59.65
+    "lots": 784,
+    "amt": 28.69
+   },
+   {
+    "sym": "2368",
+    "name": "金像電",
+    "lots": 2822,
+    "amt": 28.08
    }
   ],
   "trust_sell_top": [
    {
     "sym": "2603",
     "name": "長榮",
-    "lots": -10921,
-    "amt": -27.58
+    "lots": -13284,
+    "amt": -33.74
    },
    {
     "sym": "2882",
     "name": "國泰金",
-    "lots": -13310,
-    "amt": -13.38
+    "lots": -19517,
+    "amt": -20.4
    },
    {
-    "sym": "8046",
-    "name": "南電",
-    "lots": -1700,
-    "amt": -11.31
+    "sym": "3443",
+    "name": "創意",
+    "lots": -330,
+    "amt": -17.78
    }
   ],
   "tsmc": {
-   "foreign_lots": -26972,
-   "foreign_amt": -579.89,
-   "trust_lots": 4791,
-   "foreign_streak": -10
+   "foreign_lots": -18134,
+   "foreign_amt": -388.98,
+   "trust_lots": 1176,
+   "foreign_streak": -11
   },
-  "tx_foreign_net_oi": -105709,
-  "tx_prev_net_oi": -103182,
-  "tx_chg": -2527
+  "tx_foreign_net_oi": -106275,
+  "tx_prev_net_oi": -105709,
+  "tx_chg": -566
  },
  "preopen": {
   "TSM": {
@@ -954,20 +954,20 @@
   },
   "NKD=F": {
    "name": "日經期貨（CME）",
-   "date": "2026-11-25",
-   "close": 57230.0,
-   "prev_date": "2026-11-24",
-   "prev_close": 57410.0,
-   "chg": -180.0,
-   "pct": -0.31
+   "date": "2026-11-26",
+   "close": 57665.0,
+   "prev_date": "2026-11-25",
+   "prev_close": 57350.0,
+   "chg": 315.0,
+   "pct": 0.55
   },
   "TXF_NIGHT": {
    "name": "台指期夜盤",
    "contract": "202612",
-   "trade_date": "2026-11-26",
-   "last": 38397.0,
-   "chg": 274.0,
-   "pct": 0.72,
+   "trade_date": "2026-11-27",
+   "last": 39492.0,
+   "chg": 0,
+   "pct": 0,
    "volume": null,
    "note": "最後成交價，較前一日一般交易時段結算價"
   }
@@ -1047,155 +1047,145 @@
    ]
   },
   "^TWII": {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "method": "cap_weighted_issued_shares",
-   "n": 1095,
-   "index_chg": -1926.92,
-   "implied_chg": -1924.93,
+   "n": 1097,
+   "index_chg": 956.38,
+   "implied_chg": 957.39,
    "top_up": [
     {
-     "sym": "2059",
-     "name": "川湖",
-     "pct": 4.92,
-     "pts": 8.86,
-     "weight": 0.45
+     "sym": "2308",
+     "name": "台達電",
+     "pct": 6.16,
+     "pts": 51.48,
+     "weight": 2.19
     },
     {
-     "sym": "2368",
-     "name": "金像電",
-     "pct": 5.23,
-     "pts": 7.28,
-     "weight": 0.35
+     "sym": "2317",
+     "name": "鴻海",
+     "pct": 4.84,
+     "pts": 42.92,
+     "weight": 2.32
     },
     {
-     "sym": "3653",
-     "name": "健策",
-     "pct": 2.96,
-     "pts": 5.39,
-     "weight": 0.45
+     "sym": "1303",
+     "name": "南亞",
+     "pct": 7.73,
+     "pts": 42.32,
+     "weight": 1.43
     },
     {
-     "sym": "3665",
-     "name": "貿聯-KY",
-     "pct": 3.82,
-     "pts": 3.65,
-     "weight": 0.24
+     "sym": "2383",
+     "name": "台光電",
+     "pct": 9.09,
+     "pts": 33.32,
+     "weight": 0.96
     },
     {
-     "sym": "2615",
-     "name": "萬海",
-     "pct": 3.5,
-     "pts": 2.91,
-     "weight": 0.21
+     "sym": "3711",
+     "name": "日月光投控",
+     "pct": 4.71,
+     "pts": 31.47,
+     "weight": 1.75
     }
    ],
    "top_down": [
     {
      "sym": "2330",
      "name": "台積電",
-     "pct": -3.59,
-     "pts": -632.58,
-     "weight": 43.95
+     "pct": -0.23,
+     "pts": -39.53,
+     "weight": 44.51
     },
     {
-     "sym": "2454",
-     "name": "聯發科",
-     "pct": -10.0,
-     "pts": -198.19,
-     "weight": 4.94
+     "sym": "2886",
+     "name": "兆豐金",
+     "pct": -2.92,
+     "pts": -6.56,
+     "weight": 0.59
     },
     {
-     "sym": "2317",
-     "name": "鴻海",
-     "pct": -8.83,
-     "pts": -85.84,
-     "weight": 2.42
+     "sym": "2890",
+     "name": "永豐金",
+     "pct": -2.2,
+     "pts": -3.61,
+     "weight": 0.43
     },
     {
-     "sym": "3711",
-     "name": "日月光投控",
-     "pct": -7.92,
-     "pts": -57.48,
-     "weight": 1.81
+     "sym": "2892",
+     "name": "第一金",
+     "pct": -0.81,
+     "pts": -1.32,
+     "weight": 0.42
     },
     {
-     "sym": "1303",
-     "name": "南亞",
-     "pct": -9.04,
-     "pts": -54.41,
-     "weight": 1.5
+     "sym": "5876",
+     "name": "上海商銀",
+     "pct": -1.29,
+     "pts": -0.97,
+     "weight": 0.2
     }
    ],
    "top_weights": [
     {
      "sym": "2330",
      "name": "台積電",
-     "weight": 43.95
+     "weight": 44.51
     },
     {
      "sym": "2454",
      "name": "聯發科",
-     "weight": 4.94
+     "weight": 4.67
     },
     {
      "sym": "2317",
      "name": "鴻海",
-     "weight": 2.42
+     "weight": 2.32
     },
     {
      "sym": "2308",
      "name": "台達電",
-     "weight": 2.14
+     "weight": 2.19
     },
     {
      "sym": "3711",
      "name": "日月光投控",
-     "weight": 1.81
+     "weight": 1.75
     },
     {
      "sym": "2881",
      "name": "富邦金",
-     "weight": 1.53
+     "weight": 1.48
     },
     {
      "sym": "1303",
      "name": "南亞",
-     "weight": 1.5
+     "weight": 1.43
     },
     {
      "sym": "2882",
      "name": "國泰金",
-     "weight": 1.16
+     "weight": 1.18
     },
     {
      "sym": "2891",
      "name": "中信金",
-     "weight": 1.05
+     "weight": 1.04
     },
     {
      "sym": "2412",
      "name": "中華電",
-     "weight": 0.97
+     "weight": 1.01
     }
    ]
   }
  },
  "corp_events": {
   "window": [
-   "2026-11-19",
-   "2026-12-10"
+   "2026-11-20",
+   "2026-12-11"
   ],
   "events": [
-   {
-    "sym": "2891.TW",
-    "name": "中信金",
-    "type": "法說會",
-    "date_local": "2026-11-30",
-    "estimated": false,
-    "source": "twse_announcement",
-    "title": "公告本公司將於115年11月30日召開115年度第三季法人說明會",
-    "announced": "1151125"
-   },
    {
     "sym": "MRVL",
     "name": "Marvell",
@@ -1203,16 +1193,6 @@
     "date_local": "2026-12-01",
     "estimated": false,
     "source": "yahoo_calendar"
-   },
-   {
-    "sym": "2883.TW",
-    "name": "凱基金",
-    "type": "法說會",
-    "date_local": "2026-12-03",
-    "estimated": false,
-    "source": "twse_announcement",
-    "title": "本公司公告訂於115年12月3日召開115年第3季法人說明會",
-    "announced": "1151125"
    },
    {
     "sym": "AVGO",
@@ -1236,22 +1216,34 @@
    "filings": [],
    "items": [
     {
-     "title": "S&P Global warns Nvidia’s credit rating could be downgraded over governance risks - Business Insider",
-     "source": "Business Insider",
-     "pub_utc": "2026-11-25T20:53Z",
-     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdG5FX1hUSEdYa0toMWVMb29pN2RoeE5naGJESnE1Q1pzcU15M1FkX3NKOVVwa01ESm9ZM2hKa21xZHBzUkxLLWVvNEJ6VF9VNFRTYTBvT1k2T2V5QldBdVF0N2gtQWlGT0FzM3ZwT2dJeUk3WFl0dkJHa3ZOckRSempHLW9zRUVDTEdJNUJaYVVXbFFlMWFLNkV1UXJZUQ?oc=5"
+     "title": "Nvidia CEO's comeback fuels debate over misogyny and impunity for the rich and powerful - PBS",
+     "source": "PBS",
+     "pub_utc": "2026-11-26T19:33Z",
+     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPczJXQXdpU1J5eDIxR1BmcjBHY0x4Z1hGeEowT1B3NnprRm0zSndubl9CanBVTHpKMzdDcmFac2FEc2tWNExZMTQtcXdUU2JGT2czRVdOeGhfUjVKbkhrQ0NocXEwQVNfVHNFMU5LaGdJbVIybldJc0MzbFg4SElvVTZaeVVEQUZLWlpaMldPWkFTXzNTUkxISUs2TVdJa05ua3M1VWlnVjl1dk03U3RiMTFuZEpiRlR5R29OY2RoYw?oc=5"
     },
     {
-     "title": "Jensen Huang Breaks Silence, Signals Willingness to Return as Nvidia CEO - WSJ",
-     "source": "WSJ",
-     "pub_utc": "2026-11-25T15:00Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5QczVTbUQzdjZ0WHN0QjYwRXJidGl2YmJzeFVVOGhEV0FoZHp3QkJ1dng1REtUS21Qa2lYSGdUejlhbGtfNzlQT1V6Zm45NDltc2hKeEowZ3NtcHdsaUNvN2ttTTJXWUgzNkF3SGZUUjdFX1FiRHc?oc=5"
+     "title": "Editorial: Nvidia needs more than a strong CEO. It needs a board with backbone. - The Mercury News",
+     "source": "The Mercury News",
+     "pub_utc": "2026-11-26T18:29Z",
+     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWUM1RnFBYkZpb2tvNXhGMUNOWDFkYUN5RlFvQkZBYWg1ME9nWEhRN2lHb2ZkMVJHNEdaSzdxRVk4dXlpYVpQSDFvZkgzejlRRkJLUUt5TWhjQThjM0hMTmZla0Q1TktBcmc0a1RvMEhKWUZmSXBodU1TWWRDWXE2UWVTTkdZR3IzdU1DaFNSUUlxWURIY0RSRkQxWldMMV9VbllnREI2UTNFZ2prOUJ4dTZCeFpEWUJjOXN2MFREOWZYQUk?oc=5"
     },
     {
-     "title": "Inside Trump's effort to reinstate Jensen Huang as Nvidia's CEO - CBS News",
-     "source": "CBS News",
-     "pub_utc": "2026-11-25T14:19Z",
-     "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4tTWlzV2QtbGYtSlA0QmRDSnZLXzE5TXJqTFI4SXRJZF9hOVhmUERadW8taGZjdFllTDNYRnJIbExsMG1lWTJvYkFwTWN3bGJab19YaVlKcG11dHVBOFBqVFB3V0tIcHRVb0hPMFU1V1B6V1EzU0cyVW9B?oc=5"
+     "title": "Nvidia CEO Jensen Huang reportedly had fourth affair, at minimum - Mashable",
+     "source": "Mashable",
+     "pub_utc": "2026-11-26T09:59Z",
+     "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ER2NhemVFUW1NQktrU1hPNXY3VlBIUHhlNm1zYkV3WllWNWd3WUZWcG9LandyMTVzR2FoRGxMd3BzNlRDZjNRYjhibVl0dl96OTZzSV9FM0M5bmRpZE11eVBBNHphR013M1NjRVl3ZGVoOGY5WXBPRGZB?oc=5"
+    },
+    {
+     "title": "Hegseth, Pentagon officials floated using wartime law to reappoint Nvidia CEO - The Washington Post",
+     "source": "The Washington Post",
+     "pub_utc": "2026-11-26T06:32Z",
+     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQcDJ0UmNqUTc2UWNoaVh0STB6ZHRZTnV6WGVPX2Q0VDhmRWU4Wk5hV2lZMTZOZUV4ZEwzOVBnVmVtbnB0eXlpekIyMVF5cG91WmVxLTNIeWx1MzhLN3czOHFLbFRuVTdYRUIwdk4zMTlfcEtLb2J3Y1lQM0l1OTREU2p5UzBxaXI5aExoOGlyUVctZlJZcllacVRzTU9zVXlNaVVMNThZRE85NWdlaEo2WUJKd3FtTVBRZ00xU0l0V2tMLTRiLUE?oc=5"
+    },
+    {
+     "title": "‘Your booth is waiting’: Denny’s welcomes Jensen Huang back as Nvidia CEO - CNBC",
+     "source": "CNBC",
+     "pub_utc": "2026-11-26T02:15Z",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5XLUdDX1cxTnFzZl95T2dMX0lKR2VPY0xNZkpQby1qbGR6M0xWYkJNc2pCNGhNZWNvZWQzM2lSazRPcDh2bk1hdnE4QjdTRFhaZUVQVElNQzdNb3NEaEJrdjJyY3ZGeXNPcUx0dVNQcETSAXZBVV95cUxObktpNGV4RWJzSEZJV2thdzUwTTZVaFB4NER2VTJrQlRoQXl4MS1OcU5wdzBtdDJmYVpSYm9zU2R5SS1rTjIxQ3Y1eVJGSU1tMlhPY25OWHVkSi0yVGt6b3lNNjRMSFlZb2tJSUdHSVJtTC01VXJ3?oc=5"
     }
    ]
   },
@@ -1265,28 +1257,28 @@
    "filings": [],
    "items": [
     {
-     "title": "Outgoing Nutanix CEO downplays Broadcom's VMware updates - SDxCentral",
-     "source": "SDxCentral",
-     "pub_utc": "2026-11-25T20:47Z",
-     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVkg1YXNjUkJ0R05IRUgzS3hkZHpkQnpLVFpvZzNEVWpKV2VDRFF6NlpkajVPY0VlZk54Wm9TVU9rRlJUaFJMcUpCbEFaU2VRQ0QwVTItWUI0Rl9wUjhPVFY0dzQyV2RsdHlMNDhNMXBqU0tERHhqb011cTk1cGx1U0ZZQ1dpeVlxQm1EQk9VUnRUdw?oc=5"
+     "title": "Broadcom (AVGO) Following Google AI Chip Order Concerns Is The Valuation Narrative Too Bullish - Simply Wall St",
+     "source": "Simply Wall St",
+     "pub_utc": "2026-11-26T17:10Z",
+     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPTndsZ2lNaUVVaHBvNXJtdGhlLTJ6MkItRFQtUzN3VXgwcHI0OHh0TVMxaHhQSW1TdmttV1pWdzBneFRoei1Ib2hUWHQ1UlBPY09Xb01YRjlBVXVLcnFHNlllMGZwLUtCQU8zdl85RmFPRWk4aHRuVXRFZ1EzOUtHTmZEY04ySUptS01JWXVZVjBYc3JucThOWDYwSUlCckNuQU10VWVWOWJ1ekpxOXJ6VmtaZlZUVW11Y0RXLU4wYkVUX18tNVRURXlkVWdQekV6N3Nj0gHTAUFVX3lxTE9Od2xnaU1pRVVocG81cm10aGUtMnoyQi1EVC1TM3dVeDBwcjQ4eHRNUzFoeFBJbVN2a21XWlZ3MGd4VGh6LUhvaFRYdDVSUE9jT1dvTVhGOUFVdUtycUc2WWUwZnAtS0JBTzN2XzlGYU9FaThodG5VdEVnUTM5S0dOZkRjTjJJSm1LTUlZdVlWMFhzcm5xOE5YNjBJSUJyQ25BTXRVZVY5YnV6SnE5cnpWa1pmVlRVbXVjRFctTjBiRVRfXy01VFRFeWRVZ1B6RXo3c2M?oc=5"
+    },
+    {
+     "title": "Broadcom stock weekly forecast: Selling pressure builds amid cutbacks in Google AI chip orders - Traders Union",
+     "source": "Traders Union",
+     "pub_utc": "2026-11-26T15:06Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPLXp4aGw0ZzFlWTBSNTdkS2Y2eDJQd3dFdFhWUExLZTJIcjVBRDJqYUI0UzdoWGh5bG5OaEFpejN0U1dBY3QtWm5NV3pVMUhmRFo0SVVyZUlTYUljdG5TVFJLRWpBeDFWalhsclZ5QklvVlYwc09BdWEyempOX2c0X2JyQlpDblN4UHlPM3Fyd2k?oc=5"
     },
     {
      "title": "Does Broadcom's Debt Load Pose a Risk to the Stock's Outlook for FY27? - The Globe and Mail",
      "source": "The Globe and Mail",
-     "pub_utc": "2026-11-25T15:33Z",
-     "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOcXhUVTVmRXduNlJEYllWUTB0aXhiWnZwZ2ZIVXNPMktXSjJvbUFpRlRWQ0FwelFHRzMxcFJBWW9abGNEX3kxR3NuYlZRX0hFdVNzVmkzbUZDYlVwVXFRSTAtY2xzdjI3VHU0WjZYMHlqdU01bUtMRkVUcjhsMXhhc1djdE0yX0wwbzdROEdFSXVKelhjeXRKbjZGMVZWLXlYZ2IzUXl5eU5vY19Yc0d2ZWF4cVJBY05abDloS0J3U0pOdW50UnRWeDJnX2pnRHRuS3RfQmREQVgxb2FBc0ZOY0JyX0tUZw?oc=5"
+     "pub_utc": "2026-11-26T03:11Z",
+     "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQVFI0MmkzRVBzbUNiNVlmaHJMVGlMV0lMT2ZyNkgwR29sV01aekRkcElORTgwNm4zUU1aZV9kSnVkR0hma1hnWDJVdXJtMTJaaEtxUFRSR2FZZmRxSDl3TXFNbnFPR2dZUEJLeVZTdkJqalg5WmF5V2JJTFJwakRhQlhQSUhnbUl2bVhsVXdrRFI2djZkSHVUbEhHZUtIVkVianQ4ajRULUtLMms0LUhQeDd1djRsS05vQTAwUVB3b2dSMlcxUVBnMG5KMEd1dEthRmI3dzdkMm9IakNvb1M5S0o4NkxJcnFNSEdR?oc=5"
     },
     {
-     "title": "Does Broadcom's Debt Load Pose a Risk to the Stock's Outlook for FY27? - Yahoo Finance Singapore",
-     "source": "Yahoo Finance Singapore",
-     "pub_utc": "2026-11-25T12:56Z",
-     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUzZwUFdlVFhIQ0dtc1V5aG5NWGF3OV9sTEt4SkZDWHhEVExYdllWOEMwTTRQWTBkaE00enU4UGdYd3diNm9rTVBXZlUxRWUwandWei02TlQ4YUwyVmN4RndUSGlsb1lSQ1VKQ3RYU1hOMnQtbUZZWVpMZEJTM0hSUlhkSnM?oc=5"
-    },
-    {
-     "title": "Broadcom puts $1 billion into Anthropic's IPO as $161.2 billion lease commitment comes into view - Crypto Briefing",
-     "source": "Crypto Briefing",
-     "pub_utc": "2026-11-25T11:07Z",
-     "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBTaGs2SkdDUlFLMjg5dk5WVmJlbFQ3Y09uX1N6OTNGX2IyZmlsdmRXVUpEZ084SFF3Y2pxSS1vdFQ3cEhBenNUb20wNkJXNnpyM1hmNmljMjFEYlNydXN2SndoaUJtOEo3TFpRaEUtU0wzR096Nkhr?oc=5"
+     "title": "Outgoing Nutanix CEO downplays Broadcom's VMware updates - SDxCentral",
+     "source": "SDxCentral",
+     "pub_utc": "2026-11-25T20:47Z",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVkg1YXNjUkJ0R05IRUgzS3hkZHpkQnpLVFpvZzNEVWpKV2VDRFF6NlpkajVPY0VlZk54Wm9TVU9rRlJUaFJMcUpCbEFaU2VRQ0QwVTItWUI0Rl9wUjhPVFY0dzQyV2RsdHlMNDhNMXBqU0tERHhqb011cTk1cGx1U0ZZQ1dpeVlxQm1EQk9VUnRUdw?oc=5"
     },
     {
      "title": "Broadcom Bought $1 Billion Worth of Anthropic’s IPO, and It Has Tens of Billions More Riding on Its Success. - The Motley Fool",
@@ -1306,34 +1298,28 @@
    "filings": [],
    "items": [
     {
-     "title": "Chinese intel may have surveilled Alice Huang amid affair with Nvidia CEO, U.S. agencies tell Congress - CBS News",
-     "source": "CBS News",
-     "pub_utc": "2026-11-25T21:17Z",
-     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZHo3bTZyVUtiZEd3N3p6d1YzM1F4eXhPcWxhNHZRSjVtdlk4SWlIdS14S3czTU1LWEZQNEkyelNITmJRVGpSdDNvTjZfSUtVZElnOWdmZTFfeHNpVzNFbzRPZGtmYVg5VlpCTnZpd2FFNkVZZG9kQm9nR0ltc250NE91TXVjeXBLanh5OS13Rm82VVZYa0hpRElYbnpqQ0li?oc=5"
+     "title": "How Trump Used Chip Funding to Secure a U.S. Stake in Intel - WinBuzzer",
+     "source": "WinBuzzer",
+     "pub_utc": "2026-11-26T14:41Z",
+     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOV0lyNmZaeUJaSlAtdHhxX3BzMzNSNUwtbGhkXzZ5WHkyUGVlbWlzSGI0RFI3am82VDFBdnBHY3ZfbXk5NGR4SFVvYzJ3RWNvY0QzQ2wxZ3BjTEoyY1p0MW9vOEpBRDlQMjZBck9FclAwLWd6MTc0S3puRkVKMnM0cVBEaVE1TTdqRWIwUmpSd3lOdkd2enhsNnpFbDcyYmc?oc=5"
     },
     {
-     "title": "Intel Shareholder Lawsuit: 9.9% Stake at $5.81 a Share - shattered.io",
-     "source": "shattered.io",
-     "pub_utc": "2026-11-25T17:21Z",
-     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUFRZNlFpaUk3Nk0tSk9qUnRQOVhVb3MtS2N5bnpraUxZNTZ4RzhwQkNCZTZ4TTFPWXZoUldrazEwekoyOUUzSF9UbzJVRk9wbFhtYmlZdlFlelM0YVRvdEk0OEphc3JyVEpXdHI4MVlfa3VHZ0x2TVBaOUwzNzdNZkJka2NTZ3JlU3JfUjc0VWxMemtlT1VWVFI0R0Y2Uzg?oc=5"
+     "title": "Trump administration pressured Intel into accepting gov’t stake in company, lawsuit documents allege - Data Center Dynamics",
+     "source": "Data Center Dynamics",
+     "pub_utc": "2026-11-26T12:24Z",
+     "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOaWZDdVlLVWVibldYZE83RzhDUmRfREJqVjBwSDN5ZjYzekdRY1hrOTV3cG44U2tQbzNaRW1jdnRWMXFrOVpzeVU2NDdMaUM2YXdsNmJuamVjbURTMkNtUjlXY1JxZUMxNjZqV2huRnhBZGQ5ZWpFXzl0U1Rjank2WklFeEF1ZEpkenVaY3NvajhFbTRCUXJDOE9RX2NybTR5N0wyTkQwT2dFeGhHSzlDMFpaTGtuQ1dNUEFSUVZMWlg5b2NpeFBSS2F6Y0FGTDltNnhjMGttRnRMdw?oc=5"
     },
     {
-     "title": "Lawsuit reveals Trump’s alleged strong-arming of Intel — troubled chipmaker allegedly forced to give White House 10% stake for release of CHIPS Act funds - Tom's Hardware",
-     "source": "Tom's Hardware",
-     "pub_utc": "2026-11-25T16:39Z",
-     "link": "https://news.google.com/rss/articles/CBMisAJBVV95cUxOUzhzdWI3T2pGSDJDVE9WUGNNcGRDaVU0SnI5LUR1XzBxNnIxUjJILXBQX1A3VHNSSVh3bXpCU2FiZko4cHNmdl9rUWtPdmZQRTJBNE5PZTZCa2dBVkREQWhpR3hYWDQydGItekI4UVpfWTlaRUNzNjc0TXFZa01ZMlFnbXJMSndsY2RmUXRMRzRIVkU4SUdidl9lSVdvbW51bmJHemR0Y0tqS25NanMtWUVXNTRKM0VPdE5pM3BWcmdxR3gzRF83WkVWNW10QlJvWlh4dFRobjFmblU1YjRVN29sbERKMU9wT3BvTU9QTkt3UmZvZ1hrdWJlVWRPeEJETjFDdU1GNElQRUg2clhEMjlSSHFIQ1JwRWZpLUZhY1ZHN1pkZS1kd3pYa3dTNTZJ?oc=5"
+     "title": "Black Friday deal on GeForce RTX 5070 Ti and Intel Core Ultra 9 275HX laptop cuts price to just $1,999.99 - PC Guide",
+     "source": "PC Guide",
+     "pub_utc": "2026-11-26T03:02Z",
+     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOb1MwNDhTaUhYTHpKTzRlTHpQWkFIbHEyRXczU0l5TDBWWHdZRHVHNDVrejlmOWtXb1JjNzh2Rl84LUNmSkQxR1RnM2Z3cUR1SlZVcVNNWFBxXzUybVRsOXE0d0MtcloxdXpITjAteG1VTE56U0hDVzVPOHRvX05GR0tjZG5OZUNTM09Hal9iZ0NGaVlFdk85VWtVbC11YkVneFJFVU9CcDNNTnVocE1lVHBTM1MyRElEQkdCdXp5VFMybDd4T2djWnh3RmR3c28?oc=5"
     },
     {
-     "title": "Trump Just Floated Taking a Stake in Nvidia. An Intel-Style Deal Could Be Worth $380 Billion - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-25T16:25Z",
-     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQTEFKSU9QeTJqZXJpSXhDWktLUTRnNHZmLVlwc3lHXzBBd0ZnS2JDVk5scHlGV3dzNGNLcWticlZFRnRBNnpSeTV1cmpDdlV5Yi1pMHFoZFM4UmlkUHBPTlpSQkc0QWdEdUdTRk0zRUFOZUhCV1RhZHpsajBoWU0xek11YnNIcFgzRXhyelZqQ3pGRGItb0gxT0xmWm8tVmhwc1JCbWxsTldna2RiY05vcHpmV0w0UTYxWHVBZ3pvakhjenFxWHlzZlptd24xdjQ?oc=5"
-    },
-    {
-     "title": "Intel, company behind $28 billion Ohio plant, is sued by shareholders - NBC4 WCMH-TV",
-     "source": "NBC4 WCMH-TV",
-     "pub_utc": "2026-11-25T13:00Z",
-     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVGllVms1VkVTYVgyaXpsandxMmdnZ21yWk5veTJJRmRkT0JOZjdtTFNRQWVNanRCQ2tUXzllN1F4VVBNZnlsbGpmSUdmWFp0ZDZ4SWhOd3ZkRHF6elJ2ZTBrNklnNnkzOVZDVmxKbW4yQkZZUTRCU2N5SExIdHM0akxNQWtUSjZlTDROZDNPMmxpSlBEYTEtU0o2Nk93amx3WjBJS0RB0gGrAUFVX3lxTE1GVjBuTV9McEwyVmpFNFIzZ3pxNWtwNVg3UGpYeWZGMUNEWkNDSjJVZ2xvUDZic196SzVSdkFua21qc1Mta1p5dHlQRlVDYXdYUGtlTG9TcDJ2dWl6U015UnlWbnhoMkpNWGo4blVWSHN5R1hWUElMMWZmNGdLUjM4TExDdUNEVG1ndDMzZlFZT01ZUVVEWTVSUVlKUnRHb1lKdmYxbnQ5Q3ZvOA?oc=5"
+     "title": "Insanely powerful RTX 5090 laptop with Intel Core Ultra 9 290HX Plus CPU gets $629 discount in Black Friday deal - PC Guide",
+     "source": "PC Guide",
+     "pub_utc": "2026-11-26T02:54Z",
+     "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaldOVnZkOHNJQTEydkNTS09LUVhiUkxtRGhfQWFGN29KOVZxc3R6ZHNXbm5VWGM5ZjJld1BBbzRFYXNZcndHNkJFV1BpMlhTdlI2QThkRGpZQTJ5ZzVIcDVxSmNxRDF2TFRybkdGVk9rMS1meUJ5MVhtSVF4NkNyNnZGVWswTEh1M3RhaDc5RWp0TkxkUHJCblR0eGZmWmloNUFnR0hHOTNyWTMySlVGczIweFM2cDh0SEk1eE55WTE2RXdaU3c3cktSR0ZMTEtDLWFwRjRlRFhGZw?oc=5"
     }
    ]
   },
@@ -1347,16 +1333,16 @@
    "filings": [],
    "items": [
     {
-     "title": "Micron, Sandisk lead technology stocks with attractive valuations after Q3 earnings (VGT:NYSEARCA) - Seeking Alpha",
-     "source": "Seeking Alpha",
-     "pub_utc": "2026-11-25T19:37Z",
-     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOWTQ1VllIaFloTVJvMm5kVmQ0aHVhbEItaVZGOHNwYk1LMjV5T0VUMEdRRzVqbkN6UHRtcGRPblJibVpMdG9XTjd0ZUxqdU5fd3ZhNE1BeW5zUnRZeUtlcHVyRmlSUzduLW5IaEk1aGU2YmZtVGwzZzdZXzJvcENMVG9xMWE3b05BcmEzV2szN2d3RnprakNodmxQQU5ieUFSczFYS2RMVFgtZDByVFptaU4wTUY4empvV3N2aQ?oc=5"
+     "title": "Jim Cramer Says Micron Stock Is “Comically Cheap” at About 3 Times Earnings - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T13:53Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTkNkQWRRRS1zTGJ3VDFkOUNkTmpqTTJ5aE5UZi1iY2lsTm9VX1pEZ1Z6T2tsd1pvN2w0Z05XV1dlckxaWHRVM01mblBqZEZxNlk5bU1fbjdCb3Brc0E2aFlROGp6QldQTWdnQXM3UEJxT1RVc2xMOVd0TFZoSGVSZGZKYTJmYjdDMVJEWU9KanRLNGRnbTVjaw?oc=5"
     },
     {
-     "title": "Micron Stock Plunges After Downgrade, Steep PT Cut - Schaeffer's Investment Research",
-     "source": "Schaeffer's Investment Research",
-     "pub_utc": "2026-11-25T15:37Z",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRFg3TlBzRzdxLXZPRDc0VXgzMmFMaU03RlRJZWp3N0h5Vmc1YlU5Y1Q5X0xYa1hBX1pGLXNlem1HVEZEZEFxVU9Oc3hXNXhFZXBVYkY3d2tReHdSUjVDQV9Tbk13RGloMzBrWlBYaU03a1J4Q3ZLWEE1Tm5QRWhCekxSREZXSkg0aW9aOG4xSTlxRE9MNFJ2YjVDaXdONHhCLWJ3VVVHRWc3YUlD?oc=5"
+     "title": "Jim Cramer Says Micron Stock Is \"Comically Cheap\" at About 3 Times Earnings - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-26T13:53Z",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQN3p6Qi1xSnJBN2ozd3BlZ2VXT3BpRjl3SnNQaW9lbnlYX0xlVm9yUUhEZUxtcnFIUTlMeUpvc0NWd2E3RWhPUVpzZGlWSzIzLXlfaGt0QXQ0eW1leXdIamMyQ2l3NjVqZWh6U2FIZkd4MjNYYmRXWEhoMl9VenRkTlBIX0U5TFlrdkZpTGNHQzRHN3ozRGMxdldVTi0zaWdmRlpMbjBrR2ZyY0VHcWFEVTNncG9WcXl1?oc=5"
     },
     {
      "title": "Micron Stock Falls as UBS Cuts Price Target, BNP Paribas Downgrade Weighs - Benzinga",
@@ -1369,12 +1355,6 @@
      "source": "MarketWatch",
      "pub_utc": "2026-11-25T15:01Z",
      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQRnpwTTlhRF9HOHJIRUpwMDlGV1RfaklpS2JpN294dndhLUFaQXZZN1dIZG81dXhoa21rNEU5VHFiaEg3QlI3WjhWVlRFaFNxZXNfX0E2T1hSSW14OG40S2RYaXEyWWpKUlpkR045WThlbEQyRWRVa0ZhSi1YRjN6cHNUTnRtd0EtOFplYlVYdVdLZ1piYlVwc1JHWVYzc3Bvbzh2Ni1zU1VVVDlQRUhWRFItUFU1M0xhaXNJcA?oc=5"
-    },
-    {
-     "title": "Micron Falls 7% as a Weaker DRAM Outlook and New Tariffs Hit Memory Stocks; SanDisk Drops 7%: Are Micron and Memory Stocks Now a Value Play? - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-25T14:13Z",
-     "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPMHo3cGJWUUhPeEoxeTRsSTRvWldWNF9yUG9tbTlpR0Q4QW80S1g2cnJyUHMtZm1pM3h6QUxtLV9JMktCYXRicFltVUxfWFRXNWJxOGh0b283S1FlSkNBOWV0eDJpQUdxZWRfX0hXeHIwR3JROWt2N3ZFaUdJcGRDQ2QwLVBuMGlvVzVlWGtjUlJmRnA4b1JhTUNRMGRZRG16a01EUG9ZV0ROWkF0MFpoYldLWEZMeTl6TlJSMDVfZjV3dG9ndGFsb1Z0eEV0dm9QWFN6bVRiS2hlbzVhYndvbk5SeVluWnIySGxIeFdocDFqTDNYLWFRdXZXX1RXZmNONUFDSFljOFFnVW8?oc=5"
     }
    ]
   },
@@ -1388,34 +1368,34 @@
    "filings": [],
    "items": [
     {
-     "title": "Over 1,000 employees became millionaires after AI firm Cerebras' IPO, CEO says | Hindustan Times - Hindustan Times",
-     "source": "Hindustan Times",
-     "pub_utc": "2026-11-25T11:56Z",
-     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSmlpbnpKMFd6dDRoa05UUzZ1c1VtZGpjTDJVQ1Boek9ieGNycXprS25CRG55ZEZHV1BtVWxxejNtTmZISzhwM1ZDRUt6RFZmWUIzT0JHVTJaUFRQMXVydUY5LUZxbmEyNzBzN2FLaW1PRld3T0VNcVc0Znh2QXJ4c2JDS3UyRVEzQW9ZTnhGWHRxVHJxZFlnWmJNZjh3V1EzcF9yYUtDd0Y0UWp4YUdEcFZ5aUpXbDJUY0VZbW94UFVqSmJNblRHYVlBNWNndUlwQXR4elVmUdIB3AFBVV95cUxPcW55REtJOVdDSEVRT0JlVkVSUUFWVXF4UklpV3RBaTZISlRGYlN5cUc2RTdrQy0xNWtrYWVXWmNjZkh1dzZoSS1YU0ZwOFJLTnVJaE1PbElJSTNYTDJSVkxCcjREWDZCR0dDb3J2WThJSTJTS0dyRGdhUkpiWHN3bGhjTU5mRGZPVVJ5MnpmOXVmVWJneXVHVi00YkVPeUtsaExMeDlpOG4xN3BvXzB5VENlbElOV1FYdGZYNU1BVDhfSGRmQnZ0bnNsTXV5WktVRzBrZmJZN1FaN2xS?oc=5"
+     "title": "Cerebras raises 2026 outlook, sees revenue tripling in 2027 as $26bn backlog builds - investingLive",
+     "source": "investingLive",
+     "pub_utc": "2026-11-26T21:44Z",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUFdRSWdkSDRzVkxIc2lqMm8ycjVRNmdJM2JTcTh0ejRuQUhremFaSEJSOHhWeXVMR1d5NUVFVUJ3VjJYLVUzOHlxNWtZbDZtZ1FWcnBYSTN2dVRTYVcxX1dBcTVoRHoxc2pxRk56RWVIVF9kNG55bTloZFJxME1JU3NvUzlSZC0xYkdOSUtnTFNjV2JqTDNqeVdocGtNNW54Vk1wREJFdUFiQ0E3MUVKX1VlZDVuUQ?oc=5"
     },
     {
-     "title": "Over 1,000 Employees Become Millionaires After AI Company Cerebras' IPO, CEO Shares 3 Money Lessons - NDTV",
-     "source": "NDTV",
-     "pub_utc": "2026-11-25T10:21Z",
-     "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNTkRaQ1hkREFvV0dscmNJVGpIY0hfaEk1U0VGSXBrV1RCVDNJd2RPTmkzUDdfamxfQXhSQkVLR2tkcVZCWlVKODVLWlZzTlNQYW44OFVXQzNnRXQ2Qlo5MU5BS2Q5RnNEMlEzNC1nZExKb0dQYW5mZXRIRWFvYktaSjhHVHpiWXREbGpLTzNJUXVyZHpQMGNUZEpkUmxEQVJuMzR5RXpvdjFJMi1fZVd4RThuT19GVm5hUy16MUZYWW9sZXlnUzYzTnhudExFaG1D0gHYAUFVX3lxTE02NXI1QTBjeEx3NzNjWmtPZmdKeWlXQU1aMDgzaWRiU2p4dUM5eHRjblkyQTlxRWJRTjBrb29MSjdJQ0dzcktRQXM3cUZ3dkZWUnZnenkwUDJIRlRTQzFtZGRyQkdsMVZSSkRGNTc5dG5UYjlYbVhleTBna3ZSaTBUbTFqUkx6QWppdzJCcTluci0yVUhHa1ZFMnV4NTJ0cDRqOVpVUlJ2dEdUVmlqbmZyZjg2NWV3MkFka1RPbHpxa1lHN0lPTm1BWkd4M0JrS0JYNEwwTTFkSQ?oc=5"
+     "title": "Microsoft's Cloud Inference Deal with Cerebras Reshapes AI Strategy - Intellectia AI",
+     "source": "Intellectia AI",
+     "pub_utc": "2026-11-26T17:23Z",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOckRmb3diMkxqYVhjMkxOd1hQQ2Z5RkhqS3NENFNqYUtRbkFDc3BJRTBOVUU0RTdnQ3Z1dllINjVqTGs0X2YzY01EMHFmTGloZDhsaERzLWV0X0dHR0hCUTdHMWFoQ3h3eUc2bGUwTlBOUWw4bkRza2RwRFpHS0FNUTZtY2RGS2l3X2ljMjZuaTdqcElvako2clRESWtVc2xSbUE?oc=5"
     },
     {
-     "title": "Chip stocks tumble as Nvidia CEO drama unfolds; Cerebras and Arm show strong growth despite market slump. - Pluang",
-     "source": "Pluang",
-     "pub_utc": "2026-11-25T10:17Z",
-     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOR2VZRWZKYU52RnZ1N2RKcnk4Qk0tbldNb3NiUzRiWXJhN2NCRlNNVHpkN3p5VmxHellWTmlDT0JocUEwNnVLNEhpZVNlRjZNdTljbzhyQ0RIT0NwR3RFbVFxeWpDWlZIVVNPLXRNTzVoZW1kT2daSTYtVTBwRExBMDZ3TnNGUFAyV0w4cEV4MXpiNzJLWXloQ284OA?oc=5"
+     "title": "Microsoft signs cloud inference deal with Cerebras, adding a fourth AI compute path - Crypto Briefing",
+     "source": "Crypto Briefing",
+     "pub_utc": "2026-11-26T15:50Z",
+     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5CZmN6cVdGdERmV0FycmJ3ZTZsSkRhNkEzaWR3Zk5halpoOEJXQkE1Um5XMzRKakw0OVlnR1hzN210RGJkMlhnUFBDbnlSdTNRbW93OVFiREhHazN3RnRLNHR4dl92NEsxajZESnIxTG1YQk9rX3NINWdrcVo?oc=5"
     },
     {
-     "title": "Cerebras Systems (CBRS) Could Be 85% Undervalued Following Loss Heavy Earnings - Simply Wall St",
-     "source": "Simply Wall St",
-     "pub_utc": "2026-11-24T23:17Z",
-     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORW50WU5ZUW1XZm1fUTh3MkhmVkg0bE8xUzYzZUxvMjM5OEpYWmQwajZOSWxwYW9PRGtxYTdMMFdZQWZSdTc0OHg1RkdxMmM0bk12MDJXblNWRWt2VVdOV0RxNFFFcldfM2lGcld3R3Jyb1BJZkM3RlFfRnJfZkFRd2h0dERXRDQ2OEhTN2VnM3pRWTFqUjlBVk5aRldmOXhCSHFNc2FkT2ExY1RVMW1iTjF4X1Z2WFRiQjd3aEZmSFIwVm1tRWdkaE5VU1RaUVZvWGw1QXhsTWHSAd4BQVVfeXFMUEsyalhnUEZkZGdlZGRoMFNiLVpfNHJjNElza09meXhVNjRZWHh0M3R3dWZaRTdoMmNhMjBtRThONmw1bXN6cDFHV3pRV1JGc0tpSGdvSFFZeWU1MmZubG02cG5IaTc1TmxaRC03dVN5VXZXSklLNHdfbXlSQ3ZhMjd6TF9rOC1kRFhsQnJ1S2RYOWRyMkFGUHQyVi1DR0ZQbmhmVFI5a1lUR3BnVjlEN3FFQzFBTXJ5VWVoWFB2bkJaazl0dUhvZ0l4Q2syQjItRXVqaG9JS2tWQ0hIR0FR?oc=5"
+     "title": "3 Things to Watch After Microsoft’s Cerebras Deal - The Motley Fool",
+     "source": "The Motley Fool",
+     "pub_utc": "2026-11-26T15:44Z",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUjFYbEYzY2ZqLUt1NVg3TFJCT095dUgtZFpLZFJYVEVOM2I1T3cyT2RWaS1RbHl5RTZNczI4UnZLc0RqSDBKbW5MM0FPd1FTY3V4dm5UN19mdWNpMXJrcUw3TFhONW1La1NyX1R2dDIwQm5IVmpHX0ROek85bnFZdFl4aVRzNW5HSXdOM25jU2I2LV9OR2cw?oc=5"
     },
     {
-     "title": "Cerebras’ IPO Sold $5.55B at $185; It Now Trades 47% Lower - FourWeekMBA",
-     "source": "FourWeekMBA",
-     "pub_utc": "2026-11-24T18:46Z",
-     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVkVCclJmWmlqd2d4TFRRUjBQekFZcE1VQ0pZQVp2aEZIM1NsR0plV056ZEVXUXhlOGhlcHd5Tm5WWUtTeFZ6cnVfOWcteF84X2doTkplbTdSdkwyRzZLd3lQeHlJTl9vWmhvZTJzRU1EVnE5d19ZNUJJckU2TU9lcDR0SS0yNmct?oc=5"
+     "title": "Cerebras: Wrong Thesis Priced Out, Real Moat Still There (Rating Upgrade) (NASDAQ:CBRS) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-26T10:26Z",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaDJWNV96VnhWU3lrWXBTNGhfRjhJUjY0Y1FETFVoQV91c29HYjdVaVp2ajJUbFdYWHNFVzBOU2ozdVpGV293dXFXZHI0dFkzeE9teXFVbnM4VWhzRVd3eG5WMW8zMUhsUXJtelpBdVJxNnFsT05CNHFCN2hWb05EdThNN0ZvZE11VXM0RGRNUHk5bTdBd2RScG00TQ?oc=5"
     }
    ]
   },
@@ -1429,34 +1409,34 @@
    "filings": [],
    "items": [
     {
-     "title": "Arm shares drops almost 11% after CEO contract extension and ongoing bearish technical signals - Traders Union",
+     "title": "Did Arm CEO Rene Haas Dodge a Bullet With Jensen Huang’s Reinstatement at Nvidia? - 24/7 Wall St.",
+     "source": "24/7 Wall St.",
+     "pub_utc": "2026-11-26T16:49Z",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNampVbHFsTXEwc0tpdlVxZERWcFlzd1RGUU92Tnh2ZFpFenJLbjJyYS1DUTRTWC1mR2o5TDlYUmZ1RW9ucFh2Q1M4YllFNkg1TFhTQnVMZ1M1cWd6Umo2NTh0WXk4X29SUjNHTV91T3MyY0JoSnlWdnlFMTMydGNDUjllbHlhenhMNTdOdFl0M1dOb0ZMX1JXSk9JS0xxV1FMakNlOVd5anJnNkIyYUR3bi1uLUl4NV9CbE43RU0zSGM?oc=5"
+    },
+    {
+     "title": "Arm Drops 20% in a Week as AI Chips Slide. CEO Rene Haas Has “Never Been More Confident” - TIKR.com",
+     "source": "TIKR.com",
+     "pub_utc": "2026-11-26T15:45Z",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdEoxUXJhZ1l1U0lncE9NeFQtSDBhNEhmV2Jsd0VITW02TjBKWXFpV0g1U0JjOWs1THZIVy13c3dwM2xPZUFfZV9SQVZtQlZLc3JfUGFEZ0RHTTRidGZzUjN1alE3MG53UTlNWGVOek5VREtDSi1NUHFwc1E5ZDZnY05Rc0pFVzNyLVplRlZTajJrTVpiNFRya1BaMGRvNmJDeDZaSHd1TEI2ZGo2eHZVOUFuUUFzT2xRNmhfTXkxOXk?oc=5"
+    },
+    {
+     "title": "Arm Holdings posts robust revenue growth: Can ARM sustain its resilience in a volatile market? - Traders Union",
      "source": "Traders Union",
-     "pub_utc": "2026-11-25T14:59Z",
-     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPM3F6VjNRUndZWUdMbnh6S1dPTjdmWkpwT0R3RUVPSkdaeXlEelVJcHUwcUN5VVAtRUJLWmdUbmR5eVJINjJTaUdDb2I0QzF2N1Z0dFpCazEyb3dXZno5c19abzJiYVJQMjZubmd6Q2w0WGxjQnJpYXpZXzJLU2FLRlFWNHRLME4xS0EwY3lQZDZ6cWM?oc=5"
+     "pub_utc": "2026-11-26T08:21Z",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxORzh4UGpld2FmZFZQTXQ2YndNQXJFZUFmYmRoZmxxdVNMZnpUWVVabTBWZG9pS19qaVJPQmFPdmtxZFFMZlJvcmM0Z25nOEpVZE5FNDlyOHNxOU9kUWQ2elNMMFpvQTF0OUlmOEsyakwxTmNUdVdFN2JRU0F0cWtIOGwwTzJXMF9xaXZZcw?oc=5"
     },
     {
      "title": "ARM Holdings near-term technical outlook: bearish setup with key levels to watch - Investing.com",
      "source": "Investing.com",
-     "pub_utc": "2026-11-25T12:37Z",
+     "pub_utc": "2026-11-26T00:33Z",
      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNcGdQRGd5X3RKdVAtRUdld3d4LXUyQkhMX1o1VDNsV2luN0ZERjhrVmlPRjlxUHA3RGQtVTNyM2d5S3dpVWR3SmtSVHFRd1pNb2MzdXBFM29FTW1UdXJ3dVk3N3pRODlSR2VIY2dCeHJXR0Q4dXNjMmxjNmM5Si1sSDA1aF9vbGFFd2FPNGFIanlOZGZ5QWkxZW9LalNIYWFpblMwM3J5REk3Sjc1bHFrQTZiN3FHRjVmdWpfUGVvRldXZXFTcFc1LVJLOGxMdUtwa3lqQUg0QQ?oc=5"
     },
     {
-     "title": "CFO Jason Child share sale weighs on Arm Holdings stock amid downward price move - Traders Union",
+     "title": "Arm shares drops almost 11% after CEO contract extension and ongoing bearish technical signals - Traders Union",
      "source": "Traders Union",
-     "pub_utc": "2026-11-25T08:52Z",
-     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPenZld1ctODNVZWZZWFkyb1JOcDB5eEtMRXp0dXBvRS16dTA1aVB0UThrVWswQ0lZcVVCWmhvd1dsSUV0b1lUSnkzLXJudVMwNkFUdWNaV2QtMjl1ZWR0bzNaN052eGZfLW96QjdHa0gtVXlFZDRaUkk4Uk5TcDBVa1ZuUEpSWndpVW5xbTJn?oc=5"
-    },
-    {
-     "title": "Arm CEO Rene Haas Extends Contract Through 2033, Following Nvidia’s Move Speculation - Tekedia",
-     "source": "Tekedia",
-     "pub_utc": "2026-11-24T14:37Z",
-     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVFluVnJVclpFWDlOaklLZmdYMW1mSkhobjc4eFg0WlJmYWkxMnMzVEM1QzNOdzM2S1Y0VUsxNDFaejdEVGYxR0tZNkViOTNVUEd1NTNrUjJRcEh2bVRYQV8tQWFtWEFhOFpzNEtaS3htTlZaZVBldko1eVJudkphbEdkUWkxWExRS0E2RW01RVVXU1JKbEJ4M01BS3Nod0RmS1N3M2s0bjBYdzA?oc=5"
-    },
-    {
-     "title": "Arm Holdings CFO Jason Child sells $1.97M in shares - Investing.com",
-     "source": "Investing.com",
-     "pub_utc": "2026-11-24T08:27Z",
-     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZDA2QnpKSDBkZy1jaTVqMWFBMWlwTS1zQVJ2ZzI0a1oxTnVWQTJmMGc2VjR6S3NpYkFNelhiVUVtNWNWY1pDTndYQS1ubklYYzdmZGRZa0l0YjJSb2pPYTUzVTRlWWpGS0UydnlqUXZDVTlGS3lWY3VwdU53RDlmcjJjdk1HTHQ3cXUxYmdmTm8tTzJfamZWMHEzSkpvSXVqSl9lTTJmTFRRekxLNVQ2YllFc08?oc=5"
+     "pub_utc": "2026-11-25T14:59Z",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPM3F6VjNRUndZWUdMbnh6S1dPTjdmWkpwT0R3RUVPSkdaeXlEelVJcHUwcUN5VVAtRUJLWmdUbmR5eVJINjJTaUdDb2I0QzF2N1Z0dFpCazEyb3dXZno5c19abzJiYVJQMjZubmd6Q2w0WGxjQnJpYXpZXzJLU2FLRlFWNHRLME4xS0EwY3lQZDZ6cWM?oc=5"
     }
    ]
   },
@@ -1470,22 +1450,34 @@
    "filings": [],
    "items": [
     {
-     "title": "Generate A Return From Marvell Stock, Set For A Large Post-Earnings Swing - Investor's Business Daily",
-     "source": "Investor's Business Daily",
-     "pub_utc": "2026-11-24T17:29Z",
-     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTXZKNHJ3eFVqbzZQVXRtZkpUNkhoTU1qNUJucE85QjUyZEV6U2ZOVFEzUlI2dFduTHJLV2F5Z0d2OWJab3lWdFA3RU9CY1ZhZlFyMUlGMmEyeU1SQWZhRW42Zks2azZERERLbjFPLVpmU2RpcEV3LWVqeXpnUWNLYjVfcGhvb2Z3Uzl0ZDUxTDBqbUJkNjUwbGJYVXFmamlmYkJVeE9tT3JOUnVkQVRv?oc=5"
+     "title": "Marvell Options Price In 16% Earnings-Day Stock Swing - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-26T17:43Z",
+     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNU0hXeVNaWEdPbEMzc1hDUEVPclRueHFxVUN2TnBJbUVUenBuYzM4eUpJTm1ZX1VIZ2tRMjI3a25tZXZtM2lWMWZ2ZV85dUhvc25NYXoyeUdya3A5U1AzUEVUNDFUekVmbk9hajlxa0VzVzdRd2gwNlk5MzlBR2ZIN19xTl9RMzN5eWVOUzl0UHBWVm1VWnRqMnN2NGZOLUhaZTRSbnYxSmpyVHdPZHl4aFdR?oc=5"
     },
     {
-     "title": "Marvell Drops 6% as Oppenheimer Cuts Target to $325 Ahead of Earnings; Arm Slides 6%, Applied Materials Falls 5% - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-24T15:02Z",
-     "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPLU1nYzBWSEE3c0ZKRjVLX25Na3FmUmlXWG9Gakc1VWxqUWxwcUtIdDB1VVNnY0IwbVNFYTZiRzdEamNQeDRWVER3TVZpR1NYNVBUOTNGa3dpaXhha1Utd3JyNFQyZnNRYWZubXVZMWIyb2R0bDc1QWU4Q0VmcFljM3FXN21td2FWYTRTeFVNaldSaTlDYU5mWEZYa05QeDl4dDlRZDVGc01HRVJJaXJmRldGd0p4UWJudzZlQldvejR4SGtOaE1HZ05tVzdHSkZRUW1OTFVSenljT3A4eUFoSTBiZUY?oc=5"
+     "title": "Marvell's Most Important Earnings Call Has Nothing To Do With Earnings (Preview) (NASDAQ:MRVL) - Seeking Alpha",
+     "source": "Seeking Alpha",
+     "pub_utc": "2026-11-26T15:11Z",
+     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQd3c3VWF1UVNRaVdXNFFEUF9EV2U0NWxFZ0pobDhGWHlTRnNxVkFfOGdOOWZOVUt0YnR3RTlZSFU2NWt1dkNfZE9OWFc2TnF6T19TczBGRFJjX2E4RDROXzViRl9Da1Y0S0NaNDViRzQzNEJKNzJ1cVc0WTFvNm9DQ0RxeHB2TkhDendwbHR5SW5zVjFydWFqc2lPZ0liSHNvM21Ma3ZnQTJNUllHb1pZ?oc=5"
     },
     {
-     "title": "Marvell to Acquire Lumentum in $115 Billion AI Optical Connectivity Deal - The Fast Mode",
-     "source": "The Fast Mode",
-     "pub_utc": "2026-11-24T01:52Z",
-     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOY0Zzczk5djViYUVEUm5KQVhGYTN6cDM2TS0waXlLdXVmeDBZYXlXa01UdGJUdEROdERSelNQekVtbHZyckRPb0R6OTVXazFhSkxmOWktUHJHalFNenJPNUMyWEIzekw3bmlpemxqdlZnQTF6bWQ4LXgtYUZVQm9zV1FJbktzVEF0bWJaVHk5cGlmVTVRR3k4N0YzQ2tkSy1CZEJSV2ttUVIyTHBtQnpzVE11MDdWNGViX0M3djZQdW1ZX0JQ?oc=5"
+     "title": "Marvell Shares Face Earnings Test After 43% Drop in Past Month - www.tokenpost.com",
+     "source": "www.tokenpost.com",
+     "pub_utc": "2026-11-26T14:38Z",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBBQkxXUHVNbWtVNWREX3prTGJRYkFQWEplMTRNaU5kd0VSNVZBNk5YQ0hESFc5X1Zha0NVRDM4VS1qSkxaUllNd29KT0U1Q180MEdHMGRueHRpQQ?oc=5"
+    },
+    {
+     "title": "Marvell (MRVL) Stock: What to Expect From Earnings Tuesday - Blockonomi",
+     "source": "Blockonomi",
+     "pub_utc": "2026-11-26T14:33Z",
+     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNWlczTVVOcHI4WV9VUFBmNDFnMVlhOVJxU2tzZk9jbldydl9fVXQ3Yl8ySEt4OHJTRUN6NkU0aDA1NGlvZEN1RWZmMzdqc2xxd1NkLWJrb3l0bVBxWVItX09oRDNqNU5tNmZJLWFyVTZ3a0JKbE8xR21oZ1V2VTc3anF0UnUyUQ?oc=5"
+    },
+    {
+     "title": "Marvell Technology Q3 Earnings: Here’s What Wall Street Expects from MRVL Stock - TipRanks",
+     "source": "TipRanks",
+     "pub_utc": "2026-11-26T14:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPV1ppajVtaFNPbVVyT3h3RW5oWFR1S0dqZE1pMEtBZFlpQ0hLbE9kMXRxVFctaFcxUTRWRUR6WkRDUFY1R3Z5VDc5SG5rNmhvM0R1U2hrTTlJUlBQZThDZi1GT0pBRTdwZktSNlgtWTlkVXpYa2YtX0EyM0U5eTRIeUNzRGtNR21IMmxoVHExVm1qcXluR2IxUFZFQkFXdWZvcUhZbGtJY1E5b0E?oc=5"
     }
    ]
   },
@@ -1499,43 +1491,25 @@
    "filings": [
     {
      "code": "2330",
-     "date": "1151125",
-     "time": "160509",
-     "title": "公告本公司調整民國115年第二季每股現金股利金額",
-     "clause": "第14款",
+     "date": "1151126",
+     "time": "155156",
+     "title": "本公司限制員工權利新股收回註銷完成實收資本額變更登記事宜",
+     "clause": "第36款",
      "source": "TWSE 重大訊息"
     }
    ],
    "items": [
     {
-     "title": "【川普12/4將出席台積電亞利桑那擴廠典禮 黃仁勳是否同框各界關注】 （#大表哥） - Facebook",
-     "source": "Facebook",
-     "pub_utc": "2026-11-25T20:20Z",
-     "link": "https://news.google.com/rss/articles/CBMi1gNBVV95cUxQVlN4OHBscnBhOWMzeWtnQnd3S0VxclhFZTc5Qi1YRV9OOWR5cXNGbG9vcC1vU1dZYlZqYXZvbEZpN29OcE5LSk1oMThtSlczdmo0Sy1zQzk0b3FNUHRCUmRRZDJzaE9VaWJGdGZaa194c2trSkRydXlhNFB3NWwxeTVzR2VaZl9XSjZUaTd5ZXR0V2FUbi1OTHFsZk85MXk2bDNSQVFpcE5ZYjAybnhTMExrbWhldENOTFlkUy1USUFhRVJKN3JGQ2lRZmRPOU1xLVRGOFo4VEZ4TWdKdEZXb1N0Z3Q1MUFkeWJtbnFXV2JOUHNTM2NUWXlGd2hubzhDbmpnYWR5bncxbHptSFEzYzdxak90YmlYQnRMWWFhTmJzdVZ3NnhEM1RZNGw4MVNPYmhUUkNZZzNnRVFYTkhUUjlhM0JOS3hxRDk2aDI1OXMwb0w2alpWZDhLRmk4UmR2QU90dHFJUkdFOHlWMW84bW5xVl9laU0xTmhrT2dnTXFsTWg4SkE1MVdZOG9PV3BGS3NKOFo0VGZnVWMyMnpLQmJCRWRZblNnM3o1X2wwalVsTjBTOVZuRmV3RVoyMFB4MURubERWY0xMT1dmWDJfekZtbXpnZw?oc=5"
-    },
-    {
-     "title": "台積電美國擴廠典禮 川普要來 凸顯 AI 鏈關鍵戰略地位 | 產業熱點 | 產業 - 經濟日報",
-     "source": "經濟日報",
-     "pub_utc": "2026-11-25T19:33Z",
-     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKR1NSOElXUV9yeld4cGxqbGMyUU9oQmY2TWdROU9HeGhnWnQ0ZHpmSGZINEc2M2RrUmo1cDhLcGVreHRaOXU2WWFIdVFoQjkwajE1amFobnVTZw?oc=5"
-    },
-    {
-     "title": "【台積電調高季配息！抱730張可多領1元現金股利】 （#大表哥） - Facebook",
-     "source": "Facebook",
-     "pub_utc": "2026-11-25T18:36Z",
-     "link": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxPelBrRG9ibUxsY1I3RWpGSVNoNEk2Y3hzSXhfOEJiSklwcDVwdkJRcWNXaGJGOENocVJieUlqWF9ZeFhZSG85UktGVU54Ym1sWWF2UFdqNl84eEZtZ1RKU1MxTmZZYlR0RFE0YXRnMjkyVEQycnhxaU1UTjBpS0ZRWkhVbE1ld0o4dEItVXRpUnlXMDQ5WXBTZTBnRDBIc09ERHpPTU1CVWRndS1EclF6ckpnb1l2MUZiRmkwVXoyOWZ2UVZ4RndwYmpuaEtZRFJWWlp0QzhZQW9lV0xHSTE1Y2psaFFnTFVEWEhkVXBweGRCZ2xMRV9BeTdkaXRYNlpVY0JXcDNsak1WZ2RNU2pPSXBoem5CQ1EyVFpyQllVYXFNV20zSWlBdkphNU84ZWRjUWE1NjNTZWxtYTlqQkJBQ0Y0REVxUC1uMUM4Z2lMcGk2bjJqb1MxUk9hQ0tjamhYUzVGelUxal9DMTA?oc=5"
-    },
-    {
-     "title": "2330 台積電 - 301條款調查結果🇹🇼 台灣：15% - 股市爆料同學會 - CMoney",
+     "title": "2330 台積電 - 市場一次比一次狠，我一次比一次清醒。能活下來才有資格談獲利。 - 股市爆料同學會 - CMoney",
      "source": "CMoney",
-     "pub_utc": "2026-11-25T18:07Z",
-     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9KOXhEQXhLOWdqbkEwemdXM0t3WXNYVlNNMDZVaXJJa1FudWFUX0M5R1BPMk5jMkp2MDJSbFZuX09kMW8zOXJSNFZtV1J1UG44SE11Wjl0Z1A?oc=5"
+     "pub_utc": "2026-11-26T20:52Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB5WkgybmRSc005bXU5TnhFUWpBT0plQlpkSk93aXBCcC1MUGF4LTFnMjVLal9TVTctZFhycW9CaHlYd0FFcVcyMEhZRVQ2MVpXdzRfZzJHUGY?oc=5"
     },
     {
-     "title": "搭台積電2奈米順風車！「這大廠」明年EPS上看22.8元 目標價曝光 - Yahoo新聞",
-     "source": "Yahoo新聞",
-     "pub_utc": "2026-11-25T17:05Z",
-     "link": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxPUlJoRnM2aXJpV0VZaVMycUljM0xpVkRkQWVIZzFOWWdCS2dWNUx4dGRCMURYajMxaFFyd1NPNm1Cdi1IZUNkelNKNkdBaUhZVHluZm9rVnlWaFZYNGctY25FaFpZVFpqaU50ekVCWGNELWNjYk1CaHFxRDAyMlVOUzdBWjF6cl80ZEJkUEU4NzVFa0FnUEVLejNoYjVpaXJpR0piOE1JYzJMVEV2WF9HeDUzNUgzRnlOaDQ2R1lQZG5lRFRuOWFNNWN5MlU5SmxnVkRKV2RpV1R5cnVtOFpQWmRidWdvZWJCOFdxRFlydGZxMF9tcFIwbzRNakgzQjBTTHB4ZmIxVV9IaXZGWkJENEt2SzBYaG5jbUF4QnZCYVNNdk1DMzhwX0xPb1lTc0hDelVyZ3FnQ2NiTGRzbjBiTTJyLWhpc1JnZ0EzcUJsZUZwUDVjcmZBREhhZmd5S2hXdXRiWmxtZUxzUQ?oc=5"
+     "title": "【即時新聞】台積電獲法人點名AI核心，投顧預估明年台股獲利成長30%！ - CMoney投資網誌",
+     "source": "CMoney投資網誌",
+     "pub_utc": "2026-11-26T15:52Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVk5TUjJiLUlqWTRBY3FVdFNkaHdXSnZ2M2tnSzN1Ty1RajFTbVBmcW5GMFQzT21pU2tZcGhlVnVwc3hfczJkOEdQek4wRWNtcTR6Wk1jYVBWLUtuM2lOdXZIM2NPNE5DNWNoZGVEVXNoX1hBN2ZtWE5TTWtoM0cwNzFfXzBfMS1PWjNzamtYM00?oc=5"
     }
    ]
   },
@@ -1545,12 +1519,21 @@
    "country": "台灣",
    "industry": "半導體",
    "generic": false,
-   "big_move": {
-    "pct": -10.0,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
+    {
+     "title": "AI ASIC 動能強勁，花旗維持聯發科買進評等目標價 6,800 元 - TechNews 科技新報",
+     "source": "TechNews 科技新報",
+     "pub_utc": "2026-11-26T02:32Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQ0l2dG9QNW9keGJybG1OclYtVDdUUURYRTFxUm5oMG9oOGtBQUJNT19xNjJlbUs4NWFQWlkyMjc4NWh1dThfTVNUTm8xU0pQMkxqbmkxTkM4eDNkeUp3c29xZ3YyT0hHZmtaTTlmOFNDZnF2Wm4yak5MbTRELUFRMVhHZzE3dmNrYWRVNDJhRU1wSHRUZU5oUjBTdF9CRHhreC1WRXFrcDhmTnM?oc=5"
+    },
+    {
+     "title": "《半導體》聯發科AI ASIC業務爆發外資估2027年放量、2028雙箭齊發- 上市櫃 - 旺得富理財網",
+     "source": "旺得富理財網",
+     "pub_utc": "2026-11-26T02:17Z",
+     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBaU1J6QVBieFNaa3p3NXE0NTdyUHV6RDA5MmxEb0puZzZ2U3FUeDg5Ylg3ZTVOME82dHBDNTdnZXNpb1hUVEc2M0poMzk1Z3ZkSVl3UFlocGhGY1JoN2hpOFg3WjVpUE9IQnc?oc=5"
+    },
     {
      "title": "杜金龍昨賣漲停台積電！曝老婆「解定存買聯發科」還獲利 - ETtoday財經雲",
      "source": "ETtoday財經雲",
@@ -1577,10 +1560,7 @@
    "country": "台灣",
    "industry": "半導體",
    "generic": false,
-   "big_move": {
-    "pct": -7.92,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
     {
@@ -1604,40 +1584,16 @@
    "industry": "半導體",
    "generic": false,
    "big_move": {
-    "pct": -14.18,
-    "date": "2026-11-25"
+    "pct": 12.57,
+    "date": "2026-11-26"
    },
    "filings": [],
    "items": [
-    {
-     "title": "Kioxia (285A JP): JPY2.2trn Dividend Starts the Buyback Clock; Support to 3Q, Then NAND Prices - Smartkarma",
-     "source": "Smartkarma",
-     "pub_utc": "2026-11-25T20:21Z",
-     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQ3hkRnRzYU1TMGtTRzRETEU2eGtBWHdXeXBGNEhlYjhkMGRCbzZpclVXMVFMZkUwUWF4MVdMR0lCdldwcE9SQm91UGJlV1B6aWVsN2o3Wm1KWV9ydC1IdUJfUnliMkJFU1Q2TTRHZFkyT1A3Z0wwSDdFekNCUHZoS2haRVpyZ2dyMDdGT3R0ZEVvZmxFbnNVWld0N1ZIb05RSE01RkRwUmZSQzJmU1JNNXNRVlFHV2M2Z0dPYVd2Yjh0QU0?oc=5"
-    },
     {
      "title": "How a Bain-led deal made SK Hynix Kioxia's top shareholder - Nikkei Asia",
      "source": "Nikkei Asia",
      "pub_utc": "2026-11-25T19:09Z",
      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWk1rSm1nb0R5LWZfRGVSYUlWZ1RpSDdBVEpqT1pFWmNjdThnbHVsTjUyNm1uNXF3dGljdHJ5LUxFT3M3QTZwN0FHdGhEWXZ2SzgyLS1meG03M1JkLUJ5WWxwTFVaMk56MDlJZUtlYWVmaDA2cnRUQXhIMnF5eUUxRnFScVBxTUZ4c2pLdlZBVTJsdnFQV000QUhSLTR2MFhXeGFTaWtqLS1QYUVUWWJ0Yg?oc=5"
-    },
-    {
-     "title": "Kioxia HD to receive ¥2.2trn dividend from subsidiary By Investing.com - Investing.com Australia",
-     "source": "Investing.com Australia",
-     "pub_utc": "2026-11-25T11:42Z",
-     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSVV4RGtIMHcxdDVuRUNJajY0bnZWTWNnV0hTUTFvUUo1c2NkWjAyYU93dGhRa3ZpdlR6dkRCaXRpVW1YNjJIRzhCbFlxY29TUHJfV3liR0JIQjFkVHdkSDF0bFkyNktuN185VGkwaW1oRzBVdm56cFNwM2tGbDE4Q2ZseW5YRVN6Z1JuYVZUZFp2Q25jVlJING5teEl4MFdKclBycEZNZ1Nsc3V0NzFrR29B?oc=5"
-    },
-    {
-     "title": "Kioxia HD to receive ¥2.2trn dividend from subsidiary By Investing.com - Investing.com South Africa",
-     "source": "Investing.com South Africa",
-     "pub_utc": "2026-11-25T11:32Z",
-     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRzdPYlVsM0RMSWlrZWo5VEFRR243MnRIaVF3YmZzUUswOF9MWFhnQ3lGZ3N0Z2JUdGkwSF9FTTlYcERibmpfSXc4ZTN6cXZsU0w5LVllVGN3aXM3XzVhNURNT3J4UDRwZ2lBOEZrZ1cwNGQwR3lKUzJ5ZVduSGktNU9hRGFGYW5iTkpQX2tTOUl0bHZxcGhIZloxNnAwQ2NrZ0lCb25vQlJJNUY2MXZXeENn?oc=5"
-    },
-    {
-     "title": "Kioxia HD to receive ¥2.2trn dividend from subsidiary - Investing.com",
-     "source": "Investing.com",
-     "pub_utc": "2026-11-25T10:45Z",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNWXR0bTd2Z2ZkUXBfSUt1TGFmakRCaDBabWJnX0JGZmFoc0NxelNodTZ4MUYzZUZuSmRibV9KUXh2U3JNTjBrLTBMY1lLVF9oVVctNEh0SzlQYnFQOXU0WTdGaXZPSHBzSEp0TmxtQ0tlMUdVaEhZYXlKZmVhNmJhaHQ3QVIyc0JLcFoyVkdScnBTV0hCZTNlM2JETFhqVDlmX1pjaHBIeW5YbjRq?oc=5"
     }
    ]
   },
@@ -1647,23 +1603,14 @@
    "country": "韓國",
    "industry": "半導體",
    "generic": false,
-   "big_move": {
-    "pct": -9.87,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
     {
-     "title": "Samsung, SK Hynix Lead 560-Trillion Won Surge in Retained Earnings - 조선일보",
-     "source": "조선일보",
-     "pub_utc": "2026-11-25T06:16Z",
-     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMXpVc0pYd0hGMExpN3Z1SFl1VHlRUG0zR0FrWTR4dm54UFpVbXpQV3JQdGNaWGp2Yk96OVRSVkVDQklpNHNHcDdNWVhfSGNmQWxOc3FIUUxmTEFIeS1tU2lNcFl0a1ZWXzZmMmJGWmJTLWk0d3BzaUx1ZWRGb0EwRGh0R1JZSmxp?oc=5"
-    },
-    {
-     "title": "Samsung Electronics Promotions Hit Nine-Year Low Despite Record Earnings - THE ELEC, Korea Electronics Industry Media",
-     "source": "THE ELEC, Korea Electronics Industry Media",
-     "pub_utc": "2026-11-25T00:10Z",
-     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9vTHhtOTVuNFJWZVBoOGR3VmwyZUtldGNqUV8td05sOFNZWE4tYmQxZHBsMUVyV3A5d1NSM1pQQjhLQzBqUFhWQlVhRS1Sbjd2NGIycHo5UHBIV09wYkh2TVluaXAzdlU?oc=5"
+     "title": "South Korea's Samsung Electronics Special Dividend Lifts KODEX 200 Covered Call Active's November Distribution Yield to 2.24% - BigGo Finance",
+     "source": "BigGo Finance",
+     "pub_utc": "2026-11-26T01:56Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBqajRtU21QSV9WcEFMajNUZW51SnA2TnprbGdSZDNFVVl5TF8xV1g1NlRxaE9TM1pZcEljandPN2dVaVFscGZOTFFES1Q3UG8xcEk3aks3NGx2ZXJZaXlHRFF4LUttenRYanc2SmV1UG9FdDBSZHc?oc=5"
     }
    ]
   },
@@ -1673,35 +1620,20 @@
    "country": "韓國",
    "industry": "半導體",
    "generic": false,
-   "big_move": {
-    "pct": -11.05,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
     {
-     "title": "Investor Alert: Robbins LLP Informs Investors of the SK Hynix Inc. Class Action Lawsuit - Business Wire",
-     "source": "Business Wire",
-     "pub_utc": "2026-11-25T21:31Z",
-     "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOZHZhT2RaS1JtWEI2RGxxcWpGQUZFWFRoLVJkUVdEdDJIWmY3dldyazZ2R3dLNFVsYUVqTFJjd2hLQi1pMDdqY1BiTXhWOGx4ZzlTUFpPZU5EMkp0cUZDNWZBd0xzTUtZUlN0REV5SEV6emRESGtsdmRDakF2TnFlUWgySUhUSjVmbVFabGpxcGE5NFJvWml1N3N3Y0hJVHlrU2hfNXVySm1jdnJGRnF0dXJIaEFIeGlfbTBWbkxmSFFOOFNUMUN3UmxKWHdDd01oVV9fWnFha0wxNWc?oc=5"
+     "title": "Investor Alert: Robbins LLP Informs Investors of the SK Hynix Inc. Class Action Lawsuit - Black Hills Pioneer",
+     "source": "Black Hills Pioneer",
+     "pub_utc": "2026-11-26T10:00Z",
+     "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPU2IwSkR5bVF2amRaeDZOSEU0SG5zODcwTDAtSl9DWEQ0Qk9kV0xkMkFuQ2g5MkktWlVXbkZLc0FjR3oyVTZwOEl5dHZ0aFJWNlJfTGpWci14a2lQYVFuSTBBN0prZ05WTEFvNHdsQUtDczB4MDhhMWh4dTB2RmROZy1ReDVpeVJwQlpUOWJCTDUtUDJLRTNqMTBDN3F6V1ZCWHpydkQtSTZDbHFNSGtFN2Rya051X2czRGdpeHZ6aFl3bmJBN3p0YlZhbkVIQ2x1TzMzdnhlVm83TU05NXVBX3AzYjZIbmtLNERvZlM1X3M3X2tsVXQ2Q09xV3J2dWZiWTM2ZE9B?oc=5"
     },
     {
      "title": "SK hynix (KOSE:A000660) AI Memory Narrative Puts Valuation Back In Focus - Yahoo Finance",
      "source": "Yahoo Finance",
      "pub_utc": "2026-11-25T21:14Z",
      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQTdYeVJiSjNDLUZqeXFHYjdIRFk2ZTdTY25KcjFlQm9DSzZUWFoxei16SkgzbWY4STBXTDl3Mk9nN19lTEtjWXFOMWtndWQ3RTF0dDJwM19PU0FOdW5qNnM2VXhRRGZnSEhrXzdBdlFONHMzY3ZXOFV1TDNuNmItVE94czU4NGlaVHJubEFUZXZrMW8?oc=5"
-    },
-    {
-     "title": "How a Bain-led deal made SK Hynix Kioxia's top shareholder - Nikkei Asia",
-     "source": "Nikkei Asia",
-     "pub_utc": "2026-11-25T19:09Z",
-     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWk1rSm1nb0R5LWZfRGVSYUlWZ1RpSDdBVEpqT1pFWmNjdThnbHVsTjUyNm1uNXF3dGljdHJ5LUxFT3M3QTZwN0FHdGhEWXZ2SzgyLS1meG03M1JkLUJ5WWxwTFVaMk56MDlJZUtlYWVmaDA2cnRUQXhIMnF5eUUxRnFScVBxTUZ4c2pLdlZBVTJsdnFQV000QUhSLTR2MFhXeGFTaWtqLS1QYUVUWWJ0Yg?oc=5"
-    },
-    {
-     "title": "Samsung, SK Hynix Lead 560-Trillion Won Surge in Retained Earnings - 조선일보",
-     "source": "조선일보",
-     "pub_utc": "2026-11-25T06:16Z",
-     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMXpVc0pYd0hGMExpN3Z1SFl1VHlRUG0zR0FrWTR4dm54UFpVbXpQV3JQdGNaWGp2Yk96OVRSVkVDQklpNHNHcDdNWVhfSGNmQWxOc3FIUUxmTEFIeS1tU2lNcFl0a1ZWXzZmMmJGWmJTLWk0d3BzaUx1ZWRGb0EwRGh0R1JZSmxp?oc=5"
     }
    ]
   },
@@ -1715,34 +1647,22 @@
    "filings": [],
    "items": [
     {
-     "title": "ASML CEO Fouquet says cutting China off entirely would backfire - MLQ.ai",
-     "source": "MLQ.ai",
-     "pub_utc": "2026-11-25T18:53Z",
-     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNY19TVm00cWMyaDBxUEEtU2xCbW5kZ0FjZ3lLTjNwa3FmU3ZnTkJtd2ZfN0ZVbTFSdl9KYV9MdExRajRpNXdmcFhuWWkzaHE3X0Frd0tQOFc3YnMwUkhZRzNyTWpLMm5BbUNmNFBFV19BaGpRQVlEU09qWkNrV1ByV1VScHdvajQ4OHF4NA?oc=5"
+     "title": "CEO of Europe's biggest tech company ASML, warns US against cutting off chip supplies to China: You don't completely frustrate a country and invite that country to... - The Times of India",
+     "source": "The Times of India",
+     "pub_utc": "2026-11-26T12:54Z",
+     "link": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxNZHh3MVNGMV9NNVk3dEZKNlYwdzdndVVnSHRZdFkya1JDNzlGTTM3aGZnc21oQUpHRDdhdGdocnZ1ZGlnNEJpQ3FMRjlwaW5GdGFNRjN5cGNETkxUdEpacTlJakQ1a21DdGVSSG5pRlh3M21GaElwZkhjMWVLdmp4Z0FRMHI0M2ozd29VWklwTUpkcnp0UXpsQ1hTZmItV3FoMmJiLXl5MHFQY2s3U1VVYzJOSFh1cmk5dzdWT2JKVVVRUjhDSTFmOXo3WnhVVFJOZGRLczZKc2Z2UXpzajU2ajdGMFpjUTJBTEdfQXJyM1hKVXlpdXZxdFZOTUxxeXR2SUJ5Y2I5OXdITWFXVGNIdWpuR3lXMlJwSGtzZXBTQm9uNy0yMUItU29JSWlnU3hLalRXY3lIR29mVG5xRmVDdWhRV0QyWEdMOTY0eFB2c1BjdmNBUWdWQklQWFk5eVN0?oc=5"
+    },
+    {
+     "title": "ASML CEO Warns Total Chip Export Ban Will Backfire And Push China To Triple Down On Domestic Rivals, “Don’t Completely Frustrate A Country” - Wccftech",
+     "source": "Wccftech",
+     "pub_utc": "2026-11-26T08:46Z",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcXpmNmkzVmgxekkxUVZWRjhkOERVYmVLTE44RktvSDN4RU8tOFhHRXgyYXNuUDM4WTFHeE1DN1hldnp3SlVTQXpSOEtXcGNHb3AzVUh1c0J6bWJFVkJsMGZvWGxYNWZVRkhGeXA2M3U0RmNPaEg3b3J6czY4UnJHU2VsbUJmdy15ZFZMeHhsLTRZYTQ4QlZrcjAzN3BKa2Rz0gGmAUFVX3lxTFBSY2dKX1ZjTWUxWkRMNTYzSy1xNnJrLWRCSlBvX2FJMzAxY3FxWHVFRVFsMVhXUzJWY1JHY2lhY0w0RDVxOUpGRU9EbXpCTm45RjhpSHJFZzk4QzFIaXRCU3NWNkd6MThSZm1OSjhvNDN5bzRxSzhQUUF1TDlyRlFXcjIyVTlPYjhxUGZuSUNpSklFWXVOZlhna196ZTM0dXZzSnZnQkE?oc=5"
     },
     {
      "title": "ASML’s CEO makes the case for selling chips to China - Semafor",
      "source": "Semafor",
      "pub_utc": "2026-11-25T17:48Z",
      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQnJUSHowRUQ3OXJSaEl1eXl6YVJyOXFsbTI4cXNJdktsb1VhNUhMQ1dQeEFyV090YnlIRXpDTE5XVTMxNFYzN0taeHp3RXlKNmRVeXdnZll4RGJsRXg3Tm9BaGxtbktVdzlFMWVzQV9VUXpqSDVaNFgwcmphdHN1QUlhQWNJTWpDejh0UlBiVnZvYms?oc=5"
-    },
-    {
-     "title": "ASML shares drop on U.S. chip export control bill fears - StreetInsider",
-     "source": "StreetInsider",
-     "pub_utc": "2026-11-25T15:17Z",
-     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZ3VlaTRISGZBaC1fZkV0Z3Azc016dFNfV0x3ODJ5Nlpwd0p2R3dWSzduakZlX0dOa056Z2ZPdzFLdDlyd09zMi1rZGhqRTd2V0xZeDUzSnlGdWV5UFVJLTFyWHY2bnJOUGdfNzUwcm5fcHZPYW5McFpPcmRvVmE0OFdieXdXLXJCSFVSY2J2THJZQXlDX0dseXIwSVB2YnBWb3Nnb2VqNDNGY1ZKdHc?oc=5"
-    },
-    {
-     "title": "Key facts: ASML Beats Q3 Forecasts, Raises 2026 Guidance; Dutch Lawmakers Oppose MATCH Act - TradingView",
-     "source": "TradingView",
-     "pub_utc": "2026-11-25T08:00Z",
-     "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTWhkbmxodTNjM29YR01DcVFaOUF3cWptc3RLOEdTWll4Q2VTcTc2aDVjeFpkbFRtQUkwZl9pZllyN1JzWGxvLWRTaC1raEZKNURzZkZhUXpDdHNyTER4c2ZWNjFYeENxaTFoTDhUdTYtNmUwNHFYX2w4cllaUmo4LTByX2l5NGVMZExvRV92VFp6bU5VWmNVNl9ONUxNelE0cTRBQ2JQTE91QnJDRjNqX000QUgxZUl6VVdYMXQwTlVndHV6bUR6Q28wWUFNbDFXNWRsUnJrdTNiN3BCajNOR1h1UQ?oc=5"
-    },
-    {
-     "title": "ASML Stock’s Sell-Off Looks Excessive Against Its Growth Outlook - The Globe and Mail",
-     "source": "The Globe and Mail",
-     "pub_utc": "2026-11-24T13:26Z",
-     "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPRThEdGhWN1RwRkF5NTEyQVEzMlJLX2hKWDB1RGkxQW51NmhrVlByX3ZJeFFDY3NZRWs2NDRrOURxeDg3bDFXT2dzTmsxYUNGYkpQVXhBcEp4dVQxcThnd1h1aXY5dENZZFphSkV3cW92TVpxVWRLa3ZiT0pXam5NR1Q2OWd0Uk9ySFhuTVFRSVJNZTdNckdOQ1ROQTRWMURpeU5sZmw2UEZEeTN0SmlOeEstOVpSYl9mUkZCT2NuYnVNYmFEMElxa1dzM2ZHZ1F0SnlGaFg5d09RTFB3cVNESlhB?oc=5"
     }
    ]
   },
@@ -1756,22 +1676,22 @@
    "filings": [],
    "items": [
     {
+     "title": "“Another Record Year”: Applied Materials CEO Bets on 2027 as Chip Stocks Slide - TIKR.com",
+     "source": "TIKR.com",
+     "pub_utc": "2026-11-26T15:32Z",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUEZJNVpBNXZGWUsybmVhU2ZyUjVLZHF1eUpKVDRjd19vdGpzMUVtMUR0RU92MmNKS2t2SS1IMVJ1WEVJTTVkaGRhR0FhOEhvMm02Q2FFeENjaHg1RXV1MTdfRm5sVjZtN1Q4ZVZRNmlUNVo4bGcyTEt4eE1Nck9vTWp5dVBPOGNGbkV0VGZ4dE5QazV6V09paTA1YWg5UUJ5bXNudA?oc=5"
+    },
+    {
+     "title": "Applied Materials Shares Decline as Market Analysts Adjust Valuation Targets : 기업주식정보 : JKN - 재경일보",
+     "source": "재경일보",
+     "pub_utc": "2026-11-25T15:12Z",
+     "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE52WE9NYWMyQ2JMelQwRldRRlFlYUIzYlNxSzROQkZSWkt6eFh0N0p3N2NxQV9BczhUQlRuWTNhOUpZTnoxVEhHZTBWbTdjODBsQ1p2a2NYeE9qT0ZRSDBRQ2pR?oc=5"
+    },
+    {
      "title": "Applied Materials (AMAT) Stock Price Prediction: Selloff tests support after results beat estimates - Blockchain News",
      "source": "Blockchain News",
      "pub_utc": "2026-11-25T08:27Z",
      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOLVlaM2pydUFBY3p4VGluWXVybGNDckZ5a0FWU2xFZDJWamJSWklQSTBQVXp5bFFEVXJqZUdXN1RpajZUY3N0TW1fVlNINURaWmtHeHdnYXhkWVpyV0FzOEI5Mk1hSXhJQWRETkJhazB3NVVIdzh6RVZLNGlBMHNmM3NQbGU5UlRNNDdVMXA1Q2dTdjZ2REJQWWMyT1dTS0ZhRVE?oc=5"
-    },
-    {
-     "title": "Marvell Drops 6% as Oppenheimer Cuts Target to $325 Ahead of Earnings; Arm Slides 6%, Applied Materials Falls 5% - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-24T15:02Z",
-     "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPLU1nYzBWSEE3c0ZKRjVLX25Na3FmUmlXWG9Gakc1VWxqUWxwcUtIdDB1VVNnY0IwbVNFYTZiRzdEamNQeDRWVER3TVZpR1NYNVBUOTNGa3dpaXhha1Utd3JyNFQyZnNRYWZubXVZMWIyb2R0bDc1QWU4Q0VmcFljM3FXN21td2FWYTRTeFVNaldSaTlDYU5mWEZYa05QeDl4dDlRZDVGc01HRVJJaXJmRldGd0p4UWJudzZlQldvejR4SGtOaE1HZ05tVzdHSkZRUW1OTFVSenljT3A4eUFoSTBiZUY?oc=5"
-    },
-    {
-     "title": "Applied Materials (AMAT) Stock Price Prediction: Rebound faces overhead resistance after earnings beat - Blockchain News",
-     "source": "Blockchain News",
-     "pub_utc": "2026-11-24T08:19Z",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRFN0LUo0akNaaDhRNVJkRTlwVzF0WTM1NVJDU1NqUDZ6Z1pUMmV4UHFBWnE3bTVSVzcwVjF6cEdhRHFXQ3AwOGZvWWJMa2FsaHJNRDZleXNvTHRHdndpR0xBYXZyeXNrbE1LX3BlZnhJdUxaamd2cEN4MXEycHZyQkg3TkNzSUVicFVEdHhERjgxX0lTQ25nby1DZ2M1TENyMVZkLXp2bFRHbVl0?oc=5"
     }
    ]
   },
@@ -1781,10 +1701,7 @@
    "country": "日本",
    "industry": "半導體設備",
    "generic": false,
-   "big_move": {
-    "pct": -12.53,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
     {
@@ -1792,18 +1709,6 @@
      "source": "TradingView",
      "pub_utc": "2026-11-25T17:38Z",
      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNM0xPZHNWLTI5UElQeW1XQjJSWE9ROHl1eVlGX0FOMjRjMkdEeXo1NWlzdFppNVhSb3MwWm1PU09IR2JCVUlRVEljczJNaVFCT3BQeks1cGdZT2gyTU5wRTJ3dFlPeW42c0FtWVMwbTdrdjJVdjVYT0tnbFlBbzd0TGhGbXhEWjlGTVpDNjB1YkRqaW9JcDNVVGdZUEV2S1ZDLThpWWhCdnZHSV9UZ20tb0NDWE9HTlpVLWhDbUEwd29tSVhDRk40?oc=5"
-    },
-    {
-     "title": "Tokyo stocks surge as Nvidia CEO's return sparks buying - 毎日新聞",
-     "source": "毎日新聞",
-     "pub_utc": "2026-11-24T09:31Z",
-     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5rYTRUZUM2NG9DbUNpcXRwSUJEaDcweXFDZjdiWHBsSDI1TXpyMm5ULUg4aFJmSGFEckVoVS1RMW9VdmZVR09SNHFabVJOdjVYNF9DYnA0Nm84TWk1SHd6aHdJcHhQMWRWQ18zS08yMlEzUGM?oc=5"
-    },
-    {
-     "title": "Tokyo Stocks Rebound Sharply on AI-Led Buying; Nvidia CEO's Return Lifts Sentiment, Focus on Whether Nikkei Holds 58,000 Level - BigGo Finance",
-     "source": "BigGo Finance",
-     "pub_utc": "2026-11-23T23:55Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9UcTF0dF9DZF9vT3hXNWtLejVDb0U1NmZ6U1p2b1lndmZuWEhoLXl1d01menpuQVAwdFoyd2E5Sk84ZFdZaGFic1JTaXRab2JyX0EzSS1UWlZXV19lb1VWMXpOcVI2Qk5RcXgySTlsRFZHYlQ0Znc?oc=5"
     }
    ]
   },
@@ -1813,12 +1718,21 @@
    "country": "日本",
    "industry": "半導體設備",
    "generic": false,
-   "big_move": {
-    "pct": -12.94,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
+    {
+     "title": "How Higher Guidance At Advantest (TSE:6857) Has Changed Its Investment Story - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T18:16Z",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQclNidmZzZHVCSm51MzM4N3ExUkU2LUtMLXFLdUFHYUM4MTRPSjRZQ3lGRnlIWHNiVTZRSFRlNlk5eUJvdmhsQVBKazVsYl9Jc0R3OVBEeHMzQVRKUlcyTTJpQlJsMGFna0lZSDNwSVRmcTJwM2NJNUdzZHlKbDliaFhadG4zMnNEZ25WYmtObV9COGo4T09RTlIxSzBQbWFV?oc=5"
+    },
+    {
+     "title": "Advantest (TSE:6857) Lifts Guidance, Is The Pullback A Valuation Opportunity? - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T17:09Z",
+     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQYWNibC1MSzVFVDk0aWNDZW1sNXRPY0NWZ213akxUVXJWd0lNS2ZaS0NjX2tSN3YzZkV1eTZSZUk3dUVHNUFIdzdDQ3o5Q2lQcHYwZzFLQVppMUhVUHdyMGdOQU1OTkZuSmp6Y0JObWFBMVBfbkdBczV1ZTROYnd4ajJlWmk2TUp5VlpXN3hBWE90M3ozNmRnVlJodFNBS2c?oc=5"
+    },
     {
      "title": "Advantest Stocks Crash 12.94% in Tokyo Despite Raised Profit Forecast - TradingView",
      "source": "TradingView",
@@ -1837,28 +1751,22 @@
    "filings": [],
    "items": [
     {
-     "title": "Microsoft CEO explains reason behind the 60,000 buyouts (it's AI, of course) - Mashable",
-     "source": "Mashable",
-     "pub_utc": "2026-11-25T20:38Z",
-     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE55bm5OOEMxNTNvbGlLeWsxZ2o5d0IyUHI4N210ZElSRnRkV211d2VUaXNOdmpyWURPZW0xNHZUcXNMc3dpWXFCdlRWTHVjWWw2WWlmY2llLXRvV0xLaFRtNnB1bWZaMWZMeTZ4czRR?oc=5"
+     "title": "Microsoft 365 has taken some hits lately, but this Black Friday deal is hard to ignore - Windows Central",
+     "source": "Windows Central",
+     "pub_utc": "2026-11-26T16:56Z",
+     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOQTBNcFNSQTNCeFRYWERPVDI1U1dwREdRM0FHN2I4cTdKNWFSZmV3ZHJqbjg5aVBlYmY2MVdNMG9PN1pBNlhLcTlRRTRwdWxNX3hCMEU0bkF0LTRnNTF2Z3Z1NmhKTXZ6Qm1QeTlTQkRZbU1WOVVianI2bWdOb3hCOVZwNUp4OG1SQVJ5VlpTZVpoUS16c0JaQlVDYU5XLUtOR2x3WDJRdGVfVUxONGQxbEk5UzhteFdWWkxJU2Y4RGJZbjlCMFVvTEZJeGt2ZXY1SUVNa1JVVQ?oc=5"
     },
     {
-     "title": "Prediction: IREN’s Microsoft Deal Could Be Just the Beginning of Its Next Growth Phase - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-25T16:33Z",
-     "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOUXRNa2xrUEFMN3l0d1kwY2FNWXZSUFJsTEczVVQzN1hrY2d5VmRaN1NGMXhFSlZackhDbVRPQzZlUDRwcC12Wm9PdFpMU0xSeTVKdXM4eU1PWTJXcW5zWUZ5cWYySE5PSDUwV0R0V1ZhaTBEdXk1Q05takJxdTZieUFxbnRKbHIwcExnVTRrbldURXk1M0RBTEI0Q1JrUkx0MS1nR2phVE1TcHNVN1NoVXlCdE03YUh1TDBqc0Q0M3piYmRvRjYzRVBFeVBabVJaa0pEVXd0SHJCMGVKMEJmYzBZRQ?oc=5"
+     "title": "3 Things to Watch After Microsoft’s Cerebras Deal - The Motley Fool",
+     "source": "The Motley Fool",
+     "pub_utc": "2026-11-26T15:44Z",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUjFYbEYzY2ZqLUt1NVg3TFJCT095dUgtZFpLZFJYVEVOM2I1T3cyT2RWaS1RbHl5RTZNczI4UnZLc0RqSDBKbW5MM0FPd1FTY3V4dm5UN19mdWNpMXJrcUw3TFhONW1La1NyX1R2dDIwQm5IVmpHX0ROek85bnFZdFl4aVRzNW5HSXdOM25jU2I2LV9OR2cw?oc=5"
     },
     {
-     "title": "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage - TweakTown",
-     "source": "TweakTown",
-     "pub_utc": "2026-11-25T15:06Z",
-     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbk13bHhYZGlPTVcxdWN0NlV6Y1M5SUh6QU1VYTVYN2tMNl9sMWRaQjNpbm5nZDllVEo5OUFEZEFkQUEwNmRWMnlINXNiX2NGX05sTHpkVUttSG9pdUJIRTlpNnpXcllEVFRsX012cVJqNjBLMXlpalVlWU9pcHY4LTNjZ3dEQnpYMEp0MlFlNUZlUVdxczMyMS1TckVxQ3FuOEd6cXEwdjU5elRVbXhDZjhPYVNNMzNQbWNvMzhB?oc=5"
-    },
-    {
-     "title": "Microsoft declares “Code Red” after huge Outlook outage - The Verge",
-     "source": "The Verge",
-     "pub_utc": "2026-11-25T11:12Z",
-     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBuZ3V4djdZdnFvWXFyZGVFNEYxTTBybmRvMVB2VlRQV3NjWGJaUm9jamtUSHpCYXhiN0VXMFdyOHdycmdWZGQ4ak1abUtBOWc1QUZzMU5IWVptcmY4U1NEM1NFcGdYUUlrLXFFdWN0OHRadWNORDc2cnZpQQ?oc=5"
+     "title": "Versatile touchscreen Microsoft Surface laptop gets over a third off in Amazon Black Friday deal - PC Guide",
+     "source": "PC Guide",
+     "pub_utc": "2026-11-26T14:57Z",
+     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQT2V1R1lBR21KTFFnUW5kV1dNOEYxNVJMMXpPV0tJd295TnRRb0ZKd1E2SWluOUxvblpqMlRqMUU3cUlVQ0Zsc3haVnVEY0NRYkRJRjRmTEw3ek5mNnBScFVlRlRQYUNINEFRNkV0dnozYUVZdV9Yd1Y2TmlLd2ljMno2ZTFQSS02SEVwLXNBeHc0d3gxdjRTdkkyY1ZNVTdSNndncHRBeG95UGRvOWpPOERYLXRlSks0eVY0NEdRY25zcTNiVWc?oc=5"
     }
    ]
   },
@@ -1872,22 +1780,10 @@
    "filings": [],
    "items": [
     {
-     "title": "Giant 85-inch 144Hz 4K TV gets new low price in Black Friday Amazon deal - PC Guide",
-     "source": "PC Guide",
-     "pub_utc": "2026-11-25T19:18Z",
-     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUVFOaTNla3JsT281eG92WXNMWkpXNWhnUGtRaHI2WUtlZUdBdnUyLUZZclAtYkpHTVVzeWFmSEFDU29aSTZIX19TdHJJVzY1UXQ2RWJYWEs0VjQ5MXNoaVRaRlB3dDhvVDdud0FtZzdkTVMySGdxaFMza1NWRkhXZklEM2ZZT1MxNHJCTkFmUkhZVWdXZ0Vsam5kRVVKakdrN1NXcUl3?oc=5"
-    },
-    {
-     "title": "Amazon’s CEO, CFO and AWS Chief All Just Sold Amazon Stock - Yahoo Finance",
-     "source": "Yahoo Finance",
-     "pub_utc": "2026-11-25T14:13Z",
-     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOaVBkX1FzdkpWVUpZU2FNb29mdjJMZFRyQk1tQmdlODN5MmhLblVpWE9ZXzVnRmR2ZDBDTHhVV3BIZ2RBcFhjR0pMVGtmR3JCbGV6TDROZ2p4UTN0SVVmdDFLWml0VDJlanNXb2htdC1tdFRqU0FEWG1tbzhNcU5UMVVBbDVsNGxqUWREUUJSNzhmamc?oc=5"
-    },
-    {
-     "title": "Amazon’s CEO, CFO and AWS Chief All Just Sold Amazon Stock - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-25T14:13Z",
-     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZWJNbFNCT21wb3lOdTB0bFhOb0twTjR1ckFOeTZ4UHBiQl9raHZrNkIwbFFNOFlwY0xtcXBFQjNuRUJNM1RPZUJjQ0VNYW43S21zdUU5dEI3Unp3R2cwUzNRaXZPS2pmMXZHamFPdUtNN1FaTmhtYlRUV2FYYjVHb1dDRk95OWEtZGVOX2RoZG9mQkFfUWhqdlUwSmVSbTJpWFE?oc=5"
+     "title": "Lowest Price Alert: Save Over 60% With This Awesome Amazon Fire TV Stick Black Friday Deal - PCMag",
+     "source": "PCMag",
+     "pub_utc": "2026-11-26T17:40Z",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNDg5RnpFbXdnQ1JWN3FiLWZvTldsdndJSTRISWdvV3dERUZac2tIQWlZVEdKal9EZ2pJRVV1SFBWeTUtbXBqVFo4WGRkRnpsaTRHeEw3UE1lSGZQVjk4cEd4WGQtUVNCYVpXal9BSzctdTFuUnhhS0prWUJxTnUwaU1IdmlLYkVJelBleV9TUHlTY3Jk?oc=5"
     }
    ]
   },
@@ -1904,10 +1800,16 @@
    "filings": [],
    "items": [
     {
-     "title": "Oracle Spends $28.5 Billion A Quarter Building. Who Covers The Wait? - Trefis",
-     "source": "Trefis",
-     "pub_utc": "2026-11-25T07:34Z",
-     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPaDFBR0Fsa1JaRXFwLTRiYVpaejJ4ZDR4VV9kWDZBR044MUMwU2FUM0w0c1ZTQ2VWN1dFbm9uUnNES01GbUVXTFc0SVg2eVc1N3oyc3JzSVc2dzRUZVh3VjhSNF9KTGZoMnBaNmFiNVFFUW53UEp2ajBTTjVQX3JnTk5nMnhwMGxIOTJsd0xaZ2lUcndnS2h2dkV6bmYxcVBqVUVTWFMyU2ZqbXhyWktwV1owZWQ1Rzl3WFk1U0FTMkVjNEU4?oc=5"
+     "title": "Cournot raises $5M to build an AI oracle that shows its work - Crypto Briefing",
+     "source": "Crypto Briefing",
+     "pub_utc": "2026-11-26T14:34Z",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9PdXBaLXVaWENwaDdLYmpxNGw1amt1TjRzS0FRTEpNQS0yNTNMSGlVaXlGRG5xb2h2dU1XMnRUaXg2NF9SYktCXzFFMkVPdnFlLWhmVHRldi1pXzF3MlY4ZU9jU2ZSYlN3VUE5ZkU3UQ?oc=5"
+    },
+    {
+     "title": "Cournot Raises $5M to Build AI-Native Oracle for Verifiable Intelligence - Decrypt",
+     "source": "Decrypt",
+     "pub_utc": "2026-11-26T14:26Z",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQ3A1ZVhPbzgxOW51QkY5U3UtLXNHV3dSQ1RaMUVBckhwQmtqbnNYWllwSi1EZ1RxbF8xOEptaHYwVGZUcEhWc2tLVmwtSEdPd2RUZ2JuTzNuaW1ISTAyUXl6cTlKTExhbFVNa1hOTmxkNDdZMC16ZUtILWs0YkdmOFhTb3NMVWhEUlUzV0ozbWpNTC10d1NMUGFPc3RTUQ?oc=5"
     }
    ]
   },
@@ -1921,28 +1823,22 @@
    "filings": [],
    "items": [
     {
+     "title": "CRWX ETF Price Forecast — CRWX ($3.45) $4.59 Upside Target on CoreWeave $4.5B Loan - TradingNEWS",
+     "source": "TradingNEWS",
+     "pub_utc": "2026-11-26T21:37Z",
+     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNREVvcV8zQlJFbXgyblUteFg3b3lwb0ZyQ3c1YVRPY1BpWWsySFRiOE1iZjVGZjktUFA2NEVIN2FpYlVPQTBBZmx3UkxRVG9BZjA5d0txMS02ZmVUZVoxeGUycUlnQlZuUGJIc1FVejlpRmZMZmVCRVVBbnFUZmozYjNoNE13YUt1eXNaMmNURUZxLVpfcFNlci1jV1RFZWlEMzFOVWpnN3lsSWJYZnZFSl9sRnRKekk?oc=5"
+    },
+    {
+     "title": "Own CoreWeave? A Quarter Of Revenue Pays Interest - Trefis",
+     "source": "Trefis",
+     "pub_utc": "2026-11-26T13:01Z",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNaUNqZ01rRmgwbm50bzN3TGtFTDQwM3UwNXlwZHY3NWxJeHBfY0tkSXR6dEEtTy1MMWx6MUl0a28zaHI1a2RYWHVHNDZZQlpCQUcyMTZsWXBCWklOSkV3S0puY2pkdzE4bmFVcVVCcHNrbnUzcUIxVWJsMkhvU0l6RWw3YzF4Tl9EWjQxeXB2LUUwNEMweXEtaWEzZFZ4UWpXeGoyalN1bWlsampmVXc?oc=5"
+    },
+    {
      "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal - Yahoo Finance",
      "source": "Yahoo Finance",
      "pub_utc": "2026-11-25T21:02Z",
      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQcTJVdVhsSU95T3RqUkhQeVBzV0FRUXJTYUJlNjJGSkxRWGljQlp0YTd6R2tjYUlOMjVETVNyU1VueGF0d3BPa0JidXUzZWk2WXVNZ01PVjBkR1IyRHFfM3B0LXN3RF9zbzlVMFJpYzRXVDM0Q0lMYngxbTVKeDg3ZVlPR2MtNHZERWNCTUVuV3pReERCc0VUeXRLMGJJMFNrZ1E?oc=5"
-    },
-    {
-     "title": "Anthropic's Sharp Reversal: Up 4%, ANT Stock Reclaims $83 IPO Price After Early 8% Drop; CoreWeave Slides 2%, IREN Holds Steady - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-25T20:05Z",
-     "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOb2NNX1AxUUFkQTNfQzJkNFRBdl80NHBsZGJxcEg2eFVyaU1QZWI1Nlo0MVQyS0lxVE9UY0dQam5wTjU2b1RuSktTR1Jtck9DdkZnUEh5NW42OEZDd0t4dlNWUVJlaklFemFpOTFOclNibEQzcWpXaDJXaFJFSThLcGl5ZUV3cVZ4amFQM2x5bVItMEdoaVBOaXdZcmVabzV5RnJXUENLXzJ3bXgyS0E3TWEtdHlRTkQ2TlhYX1hEbmc1bHRIOEhCOENWX1JxRHhwSXhROHRJSXFDWUFYSVhPQllpZWlHcjNSTUZkZHZVa1g0MzRw?oc=5"
-    },
-    {
-     "title": "SpaceX Slashes GPU Pricing? Plus, IREN’s Selloff and CoreWeave’s Distressed Bonds - Yahoo Finance",
-     "source": "Yahoo Finance",
-     "pub_utc": "2026-11-25T19:57Z",
-     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNTHZ3Z2hVSGFWTDBOQ3FCdFpvZDcxWUQyVlRPY3BNX0NJaHNlUnhVQVlXMlBXd013SEtfdU5hbGFJU2g3enB2c09IWk9adkNqYkVHajJWUmlrdWRydS1RY0czTVBTd18yY1d3N0xYZUxOdUd5VFA3YUtZSkY4US1nbGRveVk?oc=5"
-    },
-    {
-     "title": "CoreWeave taps Meta chip deal to back $4.5B loan sale: report - TradingView",
-     "source": "TradingView",
-     "pub_utc": "2026-11-25T19:01Z",
-     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRHZ0MU1SM2gxUXg1MFJrZnJxMV8wOWQ3akR5dnFiUEh6aGFLVWtqeVpGNE5XMTNSZkZSYnhSemdLMmxHcXFOQ1N6VnY4bWJ0anNBN1B2OTg0bDluV1JVMVBfMTBPSzlkLS1BeDNwUkRfMjBhc3dEZWljOW9rNnM2b1BOQk1yX2MwTGVvX0tBV3BsNjRZVXY1clRJTmhLY0JkYXpjTEtSME9DUmhoWDlycW5DV0ZoSGVzT2FiZFAzUQ?oc=5"
     }
    ]
   },
@@ -1956,22 +1852,16 @@
    "filings": [],
    "items": [
     {
+     "title": "Polish army, Palantir to sign AI deal on November 27 - Breakingthenews.net",
+     "source": "Breakingthenews.net",
+     "pub_utc": "2026-11-26T14:23Z",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOb00wcjhMUUFDcUJXcUgwRThTOHlodTc5SUU4LW9GNHVkM2NFWmJlcW9mbFBqY29pYnJER2JXblNDcW43UkxjVDBBeHh4SnhHbjVxUDlYQ1dxeEV0V3BxWFlEXzJ6d1duOEU4UlFYbTROUDVLbGZZMW9BVTBTbElBdkhRRmFyRTZmWVZ3c1NSSXJxRnFqWlhWLWphQUY?oc=5"
+    },
+    {
      "title": "Palantir rises as US tariff fears and insider selling drive AI sector pullback - Traders Union",
      "source": "Traders Union",
      "pub_utc": "2026-11-25T21:28Z",
      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOLXhlaG9pLWRIQmJGQXgwaUJhQWotQUFxY05TOFlOdDBIT2F5ME5LTUFUTnFKejQzdVhCM0hIZXI3bkVqVWZwV1lfbGljUGM1aTJ5WDRxdm9rVWppTVRXdG5FYVFuQWpkTXpSbVEtT1JocllsX1dKV3BnRk8yQkVYeDhmWQ?oc=5"
-    },
-    {
-     "title": "Palantir stock drops amid insider sales and tariff fears - StreetInsider",
-     "source": "StreetInsider",
-     "pub_utc": "2026-11-25T15:29Z",
-     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPaG81amFhTmJMekpFbGdHN3gyc3lHTTBMSWhXdUlRZzVuMGRFNjJIQlFSd3F2RWFIWUlXbXZFbDJpajU2UTRDX0lIWU5HaC1ka2xVem1fdC04eVIxdWdOUV80TkhFY05aTi1WQTNySjBXbTVvTzlDanp3SWl5WEJTLW02T2o3UkUzbjQwY2FqYjlBYnNEbWw0LVJyWjlMbTNlb1haQmpia3lXVGNQQ0Fz?oc=5"
-    },
-    {
-     "title": "Palantir’s CEO Alex Karp Sold $75 Million. Co-Founder Peter Thiel Bought $122 Million - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-25T13:53Z",
-     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdlJQczctX1U2WUY4ZlJEd29ldUt0V2J4cVRObTkxY2ZOWnQ2UW52YjRRWWYyTzhiOS1HQ1pZX1NJV1o0NGR0RjFsNXZFQ2pFLUxBUUxBZV9XQjZMRW1LYTBoQVViTmdBcDg1WGlmSDVHbE8wYnF3QVN2cnFPWlFqb3hxWVZGYjhtRm1lVXRZMEh4RUdnenVyUjRMdzlKeXRMTnQ3UEtFb3NtXzJlZEEtY0VfMFU3alBtSVZzXzF0VG94VHM?oc=5"
     },
     {
      "title": "Palantir’s CEO Alex Karp Sold $75 Million. Co-Founder Peter Thiel Bought $122 Million - Yahoo Finance",
@@ -2003,6 +1893,18 @@
      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVFRTd3NNX2NILVlmU25nVDc2a3pVYTRtZnRJWlZENHJoUlQ1QzVQejV3VHRKbm1yVW50OWh5OTgyREozYnMtTG1GUXlZc1VCVTVxV1I0Zl94bnV3N0ltVkY1d0lzd2p2M1Q5NGJLeVh5Z3htUlZpQXBfNlViWjVBS2xLMEkwWmRjTkNWWjFTRjhYeUJjT01LNmNwX1FRMi01NlAxRXdDZWxIZGZiSGtsd0dfLU1jYWhCMlRFTmFjMA?oc=5"
     },
     {
+     "title": "Databricks is exploring a new funding round at about a $225 billion valuation - Quartz",
+     "source": "Quartz",
+     "pub_utc": "2026-11-23T13:39Z",
+     "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5hUEJCOFFpRlBlcmthY3dmYTY0ZkJ4Q2JncDdZZjFabG5yT0RIMll5TS02eWUtYUE2YnZLUHRSNnR6bkxidkVmSGNiMjg0RHVOZ0pYREhsQTRpdEpvU2VwLUw2VjY2UURlRjBvdzMzNnhzRmVjeGY4?oc=5"
+    },
+    {
+     "title": "Databricks eyes $225B valuation in new funding talks, 18% above its August round: Report - Tech Funding News",
+     "source": "Tech Funding News",
+     "pub_utc": "2026-11-23T11:39Z",
+     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbVFteE5sNG5iMmNfQkhuMG0tamc0dmk5b1VhVmRRN1AtS0VhVDBvNl9LZnByRktsWXBGcWxiaWV2cUpCNHk4WXE0N0lUTVB5bmxCbzRJa01JVVJyS0Vqd250YVZlSGtETTZ0TkZQMVhoMFRfb280eFFwTm55ZG9CdGI4OUpkR0VwTk91OVVITXViQ3hJdTdXYTRVSGc2d2tOMGNib1ViakRsMGplWGg2QUh4bw?oc=5"
+    },
+    {
      "title": "Databricks Wants a $225 Billion Valuation Even as AI Stocks Slide - 24/7 Wall St.",
      "source": "24/7 Wall St.",
      "pub_utc": "2026-11-21T14:32Z",
@@ -2013,18 +1915,6 @@
      "source": "Dealroom",
      "pub_utc": "2026-11-21T05:32Z",
      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSjBNblBZM0t6Q3kzel8yWUQ0cTAxZFRtbFVKWUZTSW1QUGJWanBNVzVlWTNFN0NMcDQxWkJERmY4TU1fSEozSGRFQUhhVW0yTlpyQ1dLZXd0VVFpTFlCbWF1eXBQekVjdEJaVF9pNG1HcDBLZksyVGQ3S0luc0pqLWprc3RTQUhFWUpvb2FDNklZSVBtMTNMVkFqTVdKUkxwcGpoYWxoRUg3UjI2MjVQem1R?oc=5"
-    },
-    {
-     "title": "Databricks in early talks to raise funds at $225 billion valuation, WSJ reports - Reuters",
-     "source": "Reuters",
-     "pub_utc": "2026-11-20T23:41Z",
-     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPRS1RakZnNDMzSzNQMW5Yb3BfckxrRE5DQnlYWFRpVkRKUGc2SmtEU241dGtTYjIzY3ZvUktrOWVHbkFxanJ2M21sc2dxaFFTdDljaTZtaV9yWUN4LThySTQtdmpBUEZfQjF3a29WVjJGRnRjdXdGa1R0Y2kyclZRNkhLMEtnVnppczRZOGRfdi04emFPWTNtVXdpYmRvUXFkdzVYUUhIYjZrWXNzVllsNE1JNzdxd0U2ZEhGSnVwMzBfQQ?oc=5"
-    },
-    {
-     "title": "Exclusive | Databricks In Early Talks To Raise Funds At $225 Billion Valuation - WSJ",
-     "source": "WSJ",
-     "pub_utc": "2026-11-20T22:50Z",
-     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVlI3WDRaRWc2bGliV0g4WXhMSEx5UVdSQmNiVDJFUkt6UjZIQkVQckduc0pLRkEwWmtRY21XRUZFY3NETDRZM2NiQ05KV2FLeVBRdFhaY0dLdENCdXN2RzRIU2Jvd2dJZUJTQmlFR1JLNHljWUxoNzR1OE1aVkp6QmF1Y1Rzbk5vVm1aSVdMblFiS2NrYkFjNExBeU1GWk1KS1p3WQ?oc=5"
     }
    ]
   },
@@ -2038,34 +1928,34 @@
    "filings": [],
    "items": [
     {
-     "title": "Anthropic’s Post-IPO Struggles Contrast With SpaceX’s Early Days - Bloomberg",
-     "source": "Bloomberg",
-     "pub_utc": "2026-11-25T20:44Z",
-     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNnA5YTMwSWRSUnZxYzBTbDFmd1FXejBuclc1ODdIOERNaGdTZG1iSWVUUm1kMGV6VG02YUp0RG9RRGJUOGhtWW5lOWk5N2ptSUVQMmp2ZXRPdVVLOXdQUjhaRWpfWEp3NXIyZHJDSmx1WnJZWXR2LXBEY1ctQnBjVVczc2ttMEhxSUxNazJGT09yQ3BiS0Q0Y0llRENGeERqQ29VWE1FZFdJQ2hxZFpvTzI1b1Vmdw?oc=5"
+     "title": "Anthropic Stocks Rise but Close Below $83 IPO Price for a Second Day - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-26T19:05Z",
+     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbThLVXlsbWk1SUhzWEkzc1plaHNDSnVjU1l5SkREQ3NlVTlHN1dtTmtZS2lVajBvQ3gxV3hoeWY5UVJWMUs0TzVWWUVhdkF0clhJOFVodkFyWUNyOUk5VktKSDJTdkUtYS1TNjJmaG5oQnlWOGh3Z3JXaWx5OG44S2xTT0RNckY5ZWVwcVhZWlVubUd1ajB3NGFEY19VUTNEa0lZT2FwOEM3U19XbzEwLXpFdGZyTlJyVTB5ZXZvQUh6b2tuT2c?oc=5"
     },
     {
-     "title": "Anthropic Broke Its $83 IPO Price. Most Giants Recovered - Trefis",
-     "source": "Trefis",
-     "pub_utc": "2026-11-25T20:15Z",
-     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORDdvNkFOUHZCWlhzZlhCNExXSnpPV3hwaXNHZTdDOFQ4YUxqa1VDRmFDSHV2UndjU2RSOHpmN1hhM25jTEtnR2FOYlpqSk1JVTN1UnF3ekdVMzgweUw1T2I1SjdxLWdBWTVZQUhLYnVOemRNWUFKa3BYZ3N0LUtDNkdnMmtfWkM3cy1Td1o3NVVCV1lfVk8wLTNmNmxXekFQbHhWSkFTTlQzdjJmQU1xRHE2R3Y?oc=5"
+     "title": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T17:00Z",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcF95VDVfWEJCUU9RTm0tQzA4Rmt2TVpFYVVBQmd1QS1MNVh0Q3Z2aEtmV09tU0RpU0daRlBzQzFiczhHbWdMdkxxSkdNalYzcjlEb292bWlnUV9vNDliSzNZaFYydjJPU3NieVotLUs2ZHJ6RTg2UUZSeVVWdVBkOVVoWFRBMC1YYklhMGJsMA?oc=5"
+    },
+    {
+     "title": "Anthropic Is Down 7% Since Its IPO. History Says a $5,000 Investment Could Be Worth This Much in a Year. - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T15:33Z",
+     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSzkxTWwxR2lyOXFxc2pwTnJZN3BvajdwcGlIeUxBaVVRMzdCaU92NWM0OVJ5VU5FTS10LWdpUnJLckNOdzI2RUc3SXpzWlNFZHFmNThCZ3VBLVVfVjc3VUVVclQ3VkpzallPXzdnRXFvVWZMOS1jU3RKN2dfV1FSbHFrNU44eUZTc1IxRnpkZmhDRnRZRFE?oc=5"
+    },
+    {
+     "title": "Anthropic Is Down 7% Since Its IPO. History Says a $5,000 Investment Could Be Worth This Much in a Year. - The Motley Fool",
+     "source": "The Motley Fool",
+     "pub_utc": "2026-11-26T15:13Z",
+     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPMmpFZUNudkVlYUlreHZmQ2gzVnNMZXFIWlRyY3gtUmRma2MxN0RWZW5VOE1nUTNmYzNEbThON0QtTE10WHFERVJaS3ZOVUhzX2lTSGVlY3BadF9oQkVDbVFqZzM4OXkxSklGdWtGZktrbV8wcElfY3N0SkY0RU5Sbm1sYVdkSktIY1otajM3NnpaU21tOEctWGo1SGVQY2IzdC1CZGFQSHdZQjliYzA2QU5oNzdjZzY4Zjg0Z3piU3BCanBaNWlsb3laU3JoNmZDcVktX21fOEhSSVZnWkZn?oc=5"
     },
     {
      "title": "Anthropic CEO pushes back on Axios reporting on AI and free will - Axios",
      "source": "Axios",
-     "pub_utc": "2026-11-25T19:13Z",
+     "pub_utc": "2026-11-26T14:19Z",
      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTFlLeVdXV0Q3U2lsUlVFNmtzekFOd0xLQ092OExYRzlCckFRb0RZVTJuWXdQQVpFNG1Td1ZaZHIyYy1RbGY1WTJIUDlLYWx1R2c4aDRqUERmZkNweW16NUk4a0tTajZhSF9pSUtBVG43VkxVcG1Qc0d1azlhSlliSV9wZ1VOeVcz?oc=5"
-    },
-    {
-     "title": "Anthropic’s Stock Debut Could Hurt Tech Start-Ups - The New York Times",
-     "source": "The New York Times",
-     "pub_utc": "2026-11-25T19:00Z",
-     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPb0pyWndTN2d0MkpuNlBaQXFQS3g3Z0cwWHRVY281ck1FaTRGNnFLUTFRWC10b1NFRmZqSjVXX2NlRHRRY0FaVlVzcmlaUWdIQmgzQklyQjJxNElqM2xMS3ByV0JOaWh5WWRydnVsSllPTlQ0VVpfbjJhcmJWVlVYeU5raWEzc0Zq?oc=5"
-    },
-    {
-     "title": "Is the Anthropic IPO to Blame for Bitcoin's Recent Downturn? The Answer Might Surprise You. - The Motley Fool",
-     "source": "The Motley Fool",
-     "pub_utc": "2026-11-25T18:37Z",
-     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxORi12LWtZcFRLV1hqMmpEQzFseWpHMGhON3J2bG5IWlE5c0FVOEl0RFFWVkZXaXJJVG1KSUd6eWJ3LUtVeWliSzNta1E2V0l6QXN3b0ZKdlI1M1ROSEE4TnBseWV1NU1BS0tJYWJIaG56S2hvaFFicHpCaXlxNVltdlJyNW9KWThpN0xwNkVGcDBCUUNodVVBeG4wOWVyakVhLXlxS1ctaG1rVW9VUG85VHktX18tc1hDN0pSZG1VbUU3dnF3cmJ4T0EyTQ?oc=5"
     }
    ]
   },
@@ -2078,6 +1968,12 @@
    "big_move": null,
    "filings": [],
    "items": [
+    {
+     "title": "Prediction markets push OpenAI IPO expectations later into 2027 - CNBC",
+     "source": "CNBC",
+     "pub_utc": "2026-11-25T17:08Z",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOY1QtdE95dUdaZ2Y1R1hLV3FidmtBRmdPWnlUdEU0MVRDSFNjU0xZa20wczZMVU16eVBqOEhjbG1pMHJaN0ZvMUJ3WV9EQXJMYU1aaFZPYlZ2T21SemMzNm9XRl9RVElEVTNKNmRJXzktRUs2ZTNaN2lNcU5OcERrelhR0gGHAUFVX3lxTE9tbWZXOWQ5Z2ttSGpUcWx0Nm5mNlY3R3NPczRRVEpEYk1WMjBOM2MtNzV2SE54a3VHbUtlaHNkVzJ3eURRT20yOHRmdmVkRC1vekhqSFJMZkRuSlE5aExRQzEtYzRDSU0xTEtPWmlPMHV5Y2xMRlRQcGxpUXBVdm1RNE80WVZBWQ?oc=5"
+    },
     {
      "title": "OpenAI’s IPO Countdown Clock Is Ticking - WSJ",
      "source": "WSJ",
@@ -2114,10 +2010,10 @@
    "filings": [],
    "items": [
     {
-     "title": "Perplexity Pricing 2026: Plans, Limits, API Costs & Comet - Fello AI",
-     "source": "Fello AI",
-     "pub_utc": "2026-11-19T08:00Z",
-     "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rNzljbS1pV0NqMFJVMWVXUGlDdmNGMkdBdVZOcnFTNG5Zam13TVprSDNSS19VZjFDTmd6eVFpSDhadUZpdWhnWlZ4Y2dSS1hW?oc=5"
+     "title": "Amazon-Perplexity lawsuit: Court pauses discovery - NeoTeo",
+     "source": "NeoTeo",
+     "pub_utc": "2026-11-24T08:22Z",
+     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBva3YwTmZySmQtczEwLVAyZWNLVWcyZU1XMjM5Mm93RzhzNVBzWUU2Y3ZCeTlmS0cyRGFmdWFHa2ozbzJvcHNSN2Rma01NQWVwZmYxdFc4d2FLbDBJUXZuYmMtekh3UGR6SWFXc2I1TW5iZmduSThncERGT2hHVjQ?oc=5"
     }
    ]
   },
@@ -2131,6 +2027,18 @@
    "filings": [],
    "items": [
     {
+     "title": "Baidu Releases ERNIE 5.5 Flash Weights Under Apache 2.0, Bypassing Per-Query Fees - BigGo Finance",
+     "source": "BigGo Finance",
+     "pub_utc": "2026-11-26T06:05Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0xaDBVc3JYQmhqUDFHZ3RFQVNyX2VsbXJ2YkdFcFZRYzMteVlaUnRHNTJmRUlBVkxKT3ZGWDFSVjdJZ19LX0FSTHhpRDJUeHRRWXdIam5uUEVDcFl3UzhKdDlQUE1NSFU2SW12cXJ3dzhRYk9LWFE?oc=5"
+    },
+    {
+     "title": "Baidu Releases ERNIE 5.5 Flash Preview Under Apache - Wisevoter",
+     "source": "Wisevoter",
+     "pub_utc": "2026-11-26T02:49Z",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNeUZoS2JkN2dEd3NQQzdROVQ4aUxFTjE2d0JZSHRjUFR0Rmk4RDRvSjVZVjhhVENSQzlIVV9COFNEdTNaTzRqV0xVbW5LcUMtTVh3b3ZTcXZ0RFBBZGlmQ3ZMSnp4Vm1DOGwzbW5uZmhlUno0bTVBdlF4SG5xVFNzY2taMGE1Vktwel9N?oc=5"
+    },
+    {
      "title": "Baidu posts ERNIE 5.5 Flash Preview weights on Hugging Face under an Apache 2.0 licence - MLQ.ai",
      "source": "MLQ.ai",
      "pub_utc": "2026-11-25T08:25Z",
@@ -2141,18 +2049,6 @@
      "source": "TechNode",
      "pub_utc": "2026-11-25T05:09Z",
      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWTZYY045RUlfWW1CckFnNV9HTTNiS2ZLTFFsSmhia21lTnN4OG8tVmNWWUJsNU5DX2tDZkxPX2hsZDQ4MVk5bDNfakVvY0Z1SVNtMW0xbnQ3cm9SVGtwM044QWVYUHZaZDRJR09oZmFWSnF2YWl2VHBza0ViZXJFWW9wWmlNY3Q1XzZpRU1mUzRXUDFmOTJqTWx0eGd4Vkw3dUI0dHZ3?oc=5"
-    },
-    {
-     "title": "Baidu publishes ERNIE 5.5 Flash Preview weights under Apache 2.0 - Superpower Daily",
-     "source": "Superpower Daily",
-     "pub_utc": "2026-11-24T09:12Z",
-     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQYkR3c1czMHFKNFZrSVV4Q1hKd0daYzhKcng2VlZqcTlNR1lPS05wcF82NERFZkFkLXNtdGo5YXNGUjBPNlVxbTYxb0paOWN4MmQ3enp2Y2tHQUFXbUdJdk5NT3hhcnNtckFVNmw4cGNnR0hTakRnNTZvYmhoMDBxS0dXN0FNQkVRU1lNOUpiYlBoNWJYQlNlRElGTUxkNjA?oc=5"
-    },
-    {
-     "title": "Baidu Opens ERNIE 5.5 Flash Preview Under Apache 2.0 - The Defiant",
-     "source": "The Defiant",
-     "pub_utc": "2026-11-24T04:25Z",
-     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQl9qdEdhVzBaUFNVWWNMVmd4ZXhIenF0U1NKYjVNQ3BwdUlMYTcwSjNJeGpEZHo3Zm4tREN2b1RRSTZNaVdyMFJGREJyeUFKR3IzamR0SV9vZmdud0pDNm1hczhLdGx2MTdNaXhCMGp5ZU9vbE1nazF1YWtKMXpCNzV2VUdWVVVvdE1vWXcyMA?oc=5"
     }
    ]
   },
@@ -2166,22 +2062,16 @@
    "filings": [],
    "items": [
     {
-     "title": "Super Micro Is Down 23% in 2026 Despite a Record $19.9 Billion Quarter: Dead Money, or Due for a Bounce? - TIKR.com",
-     "source": "TIKR.com",
-     "pub_utc": "2026-11-25T13:38Z",
-     "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNM1FPb0dGVndsQnRsUU5Hbks4RXFMbVRhbjZGQ0t0bnlQT3luMlNjVC1xSlhXaDlOR2s3THVDYWM3ME40U2pKWDRhaXU3bFRfWm4zVk9RdEN0QmlMWXdRZmpYWUNLM2d6cllkM2R0cFRBemdXeXBtWTJTT3c2bzdQbjRnSTNTcWI4U0ZlNTNKSzdPV0lEckRmVFNFejhWd2ozcU9lYm1YWVFQQUhCQkdna1kySzBtTHlDcGVqWDNtSW5nNWpMcGpXOGU2Nm9KQWFlQzNaeWZPcXkweS1BMnJXS192Tm91NjlRVUpNQU82MWR4aFdVM0RLQS1B?oc=5"
+     "title": "How Did Super Micro Computer (NASDAQ:SMCI) Nearly Quadruple Revenue on AI Server Demand? - Kalkine Media",
+     "source": "Kalkine Media",
+     "pub_utc": "2026-11-26T13:53Z",
+     "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcjVLakVmSHRZTTN5Z3hGbjhhNVFVVlNaZ1JGMEhRZTFTS3FOOHo0T0N6NXJ6b0xXT29ZNENBcEtkMWVOSGRfRmJOdlZZTVJKTlU3NnA3TmhIQzRqMC1fREhuQjBLVmFnOHV6MlRONjVLcDV1NkJwMVNidHljeEtMdThad19wZElvbDhPM1BmT3ZhWW9nWS1uSUotRGlRdTdUb05sQU5wazd0cHIzc0ZzTEJheUkxQV9JSklMMmFucTB2dG5XREk4OXlR?oc=5"
     },
     {
-     "title": "Super Micro Falls 5% After Monday's Server-Pricing Surge; Hewlett Packard Enterprise Plunges 13% Despite Earnings Beat, Dell Drops 7% Ahead of Earnings - 24/7 Wall St.",
-     "source": "24/7 Wall St.",
-     "pub_utc": "2026-11-24T14:17Z",
-     "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQWGZicXM4V05QVUd3QWNubjFXTHBPTnJ0dUFlMzIxcVNwNjBzaWd3UFBodnFBTWtibU5yNk9mcXJsQl9nbXJGTDNQNU1ZRGljMmJWUE5ZNXp4b0lWV09IbU84YnhoWTBNM2hGWlBOMGlEYm5oRHdqWEM2MV9RR2RwWmJMYzRTam5QRkp0YTdlNzhBRHZaakpUakdBZmItQXh2alJ0Y0U5UjFmSHFKRjZGdTFlTWw5R0dWYnhzYmF4QVotNkRkSjFyUWU2RDVuaVR2NU5mWkZVSV9JMGtXdXNPR2k3VGlSMXlXQklHNkZmelFwRTc2bUE3bVZWUlpRcG51RnhVa0dVNEhkUGZ2b2dLX3pnS2JzRjIt?oc=5"
-    },
-    {
-     "title": "Super Micro Computer (SMCI) Raised Guidance And Server Prices, Is The Stock Still Undervalued? - Simply Wall St",
-     "source": "Simply Wall St",
-     "pub_utc": "2026-11-24T09:11Z",
-     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNazl3cGlqOVd3LWhGbVY0djNnWDhqZ1IzaHRKb1o4bXBLN0hZeE9DcTRIVGFfSDB1eWd6clhuYmNwZUZXWFV1cEQ4dWRiY2V2bjRTVDB5QnBPY2FVTzJRcHVMUy1QaGl4bGIyamJkUDJla1IzenFhT1h1Nmc5M2R3LTBmRV9DOVFTSGwxTHg5aGNlTllxcGxkT0h1NlE5cHgzMmVNOURHXzQzNkpZb2RNbWllNjZLN0VSZDZCUVBURXJfLTZLSzNld1lQb3NPcEnSAdQBQVVfeXFMT0lNSmozMUQxNWx1MGRIeXNzNWJxTUt1X2N4U3N2LVRENFJianF5alBzRUY3eUluNklPN3RzMndvaURiUXFCdWxiR201UlRQN2JTTE9lX09nR3BlZ3hZdDZxeHJESndILW5SX0FJeFo5c0VZSEs2NmRsNW1Ld3VvczNBeE53bWNxbkJCNHg3eFlXTHc1WTlhM2swOE1CNTlSWFBOUFd4SnM3bE5PQmhxdnVrSFhTZGxIamdMOUVzTXpqRUk3bXROTlN1WWtPQTVjY2VIX08?oc=5"
+     "title": "Nvidia’s Jay Puri had relationship with Super Micro executive amid China chip probe: Report - The Indian Express",
+     "source": "The Indian Express",
+     "pub_utc": "2026-11-26T13:46Z",
+     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWERvcGVXdTA0NEtRT0FLUDRfdzhOYWhXdGFSWEhZMHZzSFJobm41R2lVWG9kbUJaZkR4amoyeE9vdkdIYlU3Z1VFYmgwYUQxLUVMWDhEdlI5b2RNZDZRUEh4XzlBUEFIaUtYa2JXRWZ4Y29OUnVrV2lqUHNrbVN4eGpSbWhGWjNETGlia19JR2p5TkIxcWVTejhfNXZBNUNQLU5QQ2lFamZOdGNxR0ZMWUF3VdIBugFBVV95cUxPOWcwNWxnM18xNjllSlZtTTBPRlJpakJoc1F3ckZ3Y1BxUFFrLXdzVmRSSHRHNkh3ZzczRFl4eEtiQlYwNk1XUm5YaFJmeDJvbWhXWWdSQWxNT2lWeC1ZY1pmMktObzM5Ym5WZ0RwZ3JORXprNzJSU25wTE1UX2RPUjh3Rkt2ZXVXY1RlN2hjc1h6eWJGQnBXUm1JVXdLaEY1SU1XRTUxTWszMDhFelNSMXZ0NWF1cTJZd0E?oc=5"
     }
    ]
   },
@@ -2195,10 +2085,10 @@
    "filings": [],
    "items": [
     {
-     "title": "Owens Corning (NYSE:OC) Sees Heavy Trading as a Doors Impairment Shapes Third Quarter 2026 Results and the Fourth Quarter Outlook - kalkine.ca",
-     "source": "kalkine.ca",
-     "pub_utc": "2026-11-25T20:36Z",
-     "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZ2Y1WnlTX1BSR2RhZ0tsOUN0Y2hvaWJjN0NQMXRLUWRUTURLQ1AyckJNbVIwbEpORlNiNzY3UU9LbnhKLWFUY0xIVEtmanBlX1dpeTBfWWkxWVJNZTR3a1ZlYUdvdWVicTVfdEhPb2tTUUxvYXRBLTNxYWJ3TUxkdTlPZnhhWjI5ZGdqVVB0OVBTQWVBbmczcXp4MU5lWXl4b2Q3LWdILUVGTW1IcmZxSHZzaGRGbDg1dmhSMEp2b3Q4XzR5ck9YSmZWTUtGdGRrTnZXbjE4c1E2ekdRazVwdkp1RXd3NjRyYWgxWklqcTFlMzZp?oc=5"
+     "title": "Corning (GLW) Down 23.6% Since Last Earnings Report: Can It Rebound? - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T15:30Z",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQaTk4dFAxczJTX2NKdm9Ed3lTTFhkYm5jRmljTVU0eldaMzhUOFZEUERCc3V6blljWVJaR1RxclR2RXk3eDVIRjFGd0h0TTd0YUo2TkdnSlk5Ukw0SlRPM25UMlpLbkxlSGhxWW9uMXdjT05kNFZsZTN6MHFNM2gwdlJtZlBoWi1UMWkyQzNuSQ?oc=5"
     },
     {
      "title": "Corning Stocks Tumble 7.58% as AI Fiber Trade Unwinds - TradingView",
@@ -2214,50 +2104,14 @@
    "country": "台灣",
    "industry": "硬體與AI伺服器",
    "generic": false,
-   "big_move": {
-    "pct": -8.83,
-    "date": "2026-11-25"
-   },
-   "filings": [
-    {
-     "code": "2317",
-     "date": "1151125",
-     "time": "63944",
-     "title": "公告本公司第115年度海外第一次無擔保可轉換公司債\r\n完成定價",
-     "clause": "第51款",
-     "source": "TWSE 重大訊息"
-    }
-   ],
+   "big_move": null,
+   "filings": [],
    "items": [
     {
-     "title": "焦點股／戴爾AI伺服器訂單再創高！鴻海、廣達、仁寶等卻一度摔跌停| 產經 - 非凡新聞台",
-     "source": "非凡新聞台",
-     "pub_utc": "2026-11-25T17:57Z",
-     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpX3VBOEZtOW9VdlZ1RVlPaUpWcEJsZGQweTAzWGJIYjVFN18yTnE5M0xWV1RGYjRRcVlMVWFvMDdLMTZLWTZ6X2U4QkpSTmFuSDVJa2FBVGpUdTk3X0x0WA?oc=5"
-    },
-    {
-     "title": "鴻海面臨5億元利空，明年EPS共識25元，為什麼還看多？ - CMoney",
-     "source": "CMoney",
-     "pub_utc": "2026-11-25T14:02Z",
-     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBNdDN1dENncUlxbzB5eDhYSVNWeF9MTlB4Z0piRXl3UmNvLU1PclJTQlo3ZGR1dHNIM2V4WEhhbExyY2JsY3hQU3RIdE53eTc4YktkYWV4U1Y?oc=5"
-    },
-    {
-     "title": "2317 鴻海 - 鴻海藏著年營收拚2,000億的神祕公司！砸15億收購索尼事業搶攻車用商機- 股市爆料同學會 - CMoney",
-     "source": "CMoney",
-     "pub_utc": "2026-11-25T12:58Z",
-     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBjZVJ1OThkdEdEemF5cFZPRTJuVkg1RFJ1ZlFheENGVmNxQVRFQ3Utenh1TmNBV19FVnRpaGtwWC1MX1Rqd1dtMVlCdmlRTmpxOWV6SU1iMUI?oc=5"
-    },
-    {
-     "title": "鴻海藏著年營收拚2,000億的神祕公司！砸15億收購索尼事業 搶攻車用商機 - 經濟日報",
-     "source": "經濟日報",
-     "pub_utc": "2026-11-25T12:37Z",
-     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5SZEc3OTh5alNIcWRwRGpObjdERUhFOXZwZmNDU3pka1VLb1pwenJZdFdzeGdDZmVacTlySUZJZmZSYlMtaTRfTmduVEgzSTB5R2ZieXQ0MFdkd9IBX0FVX3lxTE5rQUJSRXBQVVF6ZjNyTXpzNWh3MTJ2MExCVm15M0Z0aWt2czJIQlF2Rl9MbWRMeUhFZjA0WjVsMVBKQU5PUFdQRHh6YXdZRXNOcFFlOEZEOERaSkVJUHRr?oc=5"
-    },
-    {
-     "title": "5億訴訟開打！鴻海印度廠傳欠款爭議！集團反控：對方品質未達標 - 三立新聞",
-     "source": "三立新聞",
-     "pub_utc": "2026-11-25T10:08Z",
-     "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBNYm1qeVFIVTh6VXJJX2gzMnBNRmplVS1rbC16NU1sQ3lLUExiOGFXRzZFZGZQVmVWRzZFTnM2ejZLXy01cDV4Qm1tMA?oc=5"
+     "title": "戴爾三度上修財測！鴻海、緯創、仁寶股價齊漲法人最愛這一檔- 證券 - 工商時報",
+     "source": "工商時報",
+     "pub_utc": "2026-11-26T02:42Z",
+     "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9iRUtiSU5PdGZ6a1FpZ19EY0FjVE9zWWw3RUNOMzRZeW1oajZGNUJkaHgtbTJxUW1FbnZMTnVDUjVsd1ZQZ3FvcHdwZEQ3cHoxbFpHcWQyWkEzWm5YckVN?oc=5"
     }
    ]
   },
@@ -2268,37 +2122,40 @@
    "industry": "硬體與AI伺服器",
    "generic": false,
    "big_move": {
-    "pct": -7.61,
-    "date": "2026-11-25"
+    "pct": 7.66,
+    "date": "2026-11-26"
    },
-   "filings": [
-    {
-     "code": "2382",
-     "date": "1151125",
-     "time": "135737",
-     "title": "代子公司QMN公告取得機器設備",
-     "clause": "第20款",
-     "source": "TWSE 重大訊息"
-    }
-   ],
+   "filings": [],
    "items": [
+    {
+     "title": "Vera Rubin出貨 廣達獲利挑戰30元新高 外資喊買 - 台灣好新聞",
+     "source": "台灣好新聞",
+     "pub_utc": "2026-11-26T03:31Z",
+     "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOTHh3ODI5dWR2MkFBc2ZzUUpaLTVsZ3ZVNnNBNFhYSUtUSENPaGl6a05ZSDRkQjVMYjRPSjd2eW5nTS1KSENvWWsxT0N1UlJvc2x4Y056ckg0QnBlRFRZc0ZIanQxS1RUYlpQT0U3MHFXeHd6eElmR3hIWWR4cmJRUUdYSVhmNXVNb01vYmdRN0FmZkx1eUFJQjFSWnJaeHg4Zkg1X2c5LXBBc1Y2VVlEMmdPdzhTeUVuOWxNWkZkelM0dmlreERIUkFuczVaZi1PMm9uUmJnSDdKcDlKRnFYcHRiUENwdGZka0NWaFJrOGhBV0h2cmVxaFllVWk3ZzZnYWo3TUppVEhpM19qME9yVmNCZEJ0NU0?oc=5"
+    },
+    {
+     "title": "廣達、緯創跌深能撿便宜？戴爾AI訂單飆破4兆元5家投顧揭估值：這檔本益比不到5倍 - 上市櫃 - 旺得富理財網",
+     "source": "旺得富理財網",
+     "pub_utc": "2026-11-25T22:47Z",
+     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5hR21adndSMDFoRy1JWFFzWDBYTkNJTUZtSEt1NTMwT2xoZUlvazUxRTZUQ3V2RV9ZMlpjT1hTT1I0TGpKa3FybkNlNjdCVnRqbTNndTZiTnlfbnlnTTJHOXVXNjNsWDJqOWc?oc=5"
+    },
     {
      "title": "焦點股／戴爾AI伺服器訂單再創高！鴻海、廣達、仁寶等卻一度摔跌停| 產經 - 非凡新聞台",
      "source": "非凡新聞台",
-     "pub_utc": "2026-11-25T17:57Z",
+     "pub_utc": "2026-11-25T09:28Z",
      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpX3VBOEZtOW9VdlZ1RVlPaUpWcEJsZGQweTAzWGJIYjVFN18yTnE5M0xWV1RGYjRRcVlMVWFvMDdLMTZLWTZ6X2U4QkpSTmFuSDVJa2FBVGpUdTk3X0x0WA?oc=5"
+    },
+    {
+     "title": "中國信託綜合證券剛剛發布了一份廣達(2382)的券商報告，目標價為375.00，多空評等為看多 - CMoney",
+     "source": "CMoney",
+     "pub_utc": "2026-11-25T00:52Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5rd1lYUk4xeHg4SUNlSkVaSktkU0gtX1V2SEFkWWdCbXNSYnFGd0hoemh0TDdBajZ6Wk83Sm02Umw5LWxSTTIyUzcyVWVnZWZ0Y0I0Z0tUM3o?oc=5"
     },
     {
      "title": "黃仁勳回歸掀漲停潮！廣達再搭AI潮入榜「這檔金融」明年配息估上看1.8元獲八大官股狂掃近4億奪冠 - Yahoo股市",
      "source": "Yahoo股市",
      "pub_utc": "2026-11-25T00:43Z",
      "link": "https://news.google.com/rss/articles/CBMiuwRBVV95cUxNckxoN2llTlRUYndmUzJsVnN5VmF6enYtUUIxRnQtYXoyRFQzRXUxUm5qWjZZMC1hRVdlWDdKMjFOVlR1Smo0VWJ2T1BnZE53MGRRZEJnSEZ4dEo0OTU4Z1Q5WjcxekZJa2NRajZ1WnVaTUl0T3BfNDlGM01VS1lYVUdtLVRmR2ZGZDBuajRBdEFxaWZEUnpLUDJxb0Fhd0RURzlUS3NTZktUVzhya05TcGZVYlZkVHh6aVVSMGR3emFGVUNaVXVJd1pLM1FrWmlqZkxadGdtcWVIYzhwNS1CS05sS0xLR0lZUkNvTFhSM1VSZnJYbTBtZUl0em1vUVRZR3lzV3N4VWdSVkEzU1F6WklnS3JLYkU3SUhrdzJTN2R2WHlmdXhhLXBQS3RlNEJLbExldDVRa25DNHBRdG1rSUlBa3BESGRrSVJ6bERGOFZvTU40aXhsLXUtZjFidWxIMFNUQm5BU25Mc1I0Zk1xLUw5S01EUnFrOVRRdnBQMnZBMlA5SFdfMENSQm5WbXJ6dEFYTlZJYW13eGRFYjU2cG9uaEQ5UGNZbDdqR3hHMUFyR1Aza2N6T3RuZk1mU2hVbkdJa1RJUHVMRVBuTjNVTHp1aVhOR0NqRTBJTEVETU9MUVdJVWZEYWVxeTBmNXRHRmk1M1ZvLXh5NG03RXBkZWVuSGt0QWdHUUdVc0VwS0tELWZfRnc5cEQyVl9uaUk4UWdyZXhHM1ROYW0tWFQ0VUVCRVlpT1hGWEtj?oc=5"
-    },
-    {
-     "title": "【即時新聞】廣達受惠黃仁勳回任輝達執行長，股價強勢攻上漲停282.5元 - CMoney投資網誌",
-     "source": "CMoney投資網誌",
-     "pub_utc": "2026-11-24T14:51Z",
-     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQWZ4MWMwOXpEOEc4WGJTWlZNUXhGQkdpRVhjUjBQZG9TeDdCdnFNWk1XckxpcVpYN1M1TnI4TDZNdFJDaDlSWDRKeFZpdDhVN0RXbkVRTnZkdngtOGlPSHFwc1RqakViWFY1cm9ncWhsN0FYVzNDOXdrR1lvbWQ4NFhhRHFfcmFXRXNZY21CMmU?oc=5"
     }
    ]
   },
@@ -2309,19 +2166,10 @@
    "industry": "硬體與AI伺服器",
    "generic": false,
    "big_move": {
-    "pct": -5.3,
-    "date": "2026-11-25"
+    "pct": 9.79,
+    "date": "2026-11-26"
    },
-   "filings": [
-    {
-     "code": "6669",
-     "date": "1151125",
-     "time": "163243",
-     "title": "代&#12070;公司Wiwynn International Corporation公告向非關係人取得供營業使用設備",
-     "clause": "第20款",
-     "source": "TWSE 重大訊息"
-    }
-   ],
+   "filings": [],
    "items": []
   },
   {
@@ -2330,26 +2178,41 @@
    "country": "台灣",
    "industry": "硬體與AI伺服器",
    "generic": false,
-   "big_move": null,
+   "big_move": {
+    "pct": 6.16,
+    "date": "2026-11-26"
+   },
    "filings": [],
    "items": [
     {
-     "title": "台達電董事長鄭平申讓近半持股，逾301億元股票將轉入新設「廣曜籌備處」 - 鏈新聞 ABMedia",
-     "source": "鏈新聞 ABMedia",
-     "pub_utc": "2026-11-25T09:25Z",
-     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE12Q0RGYWJibGt5eWcxcWlTeXdvWEpyWGRHZVdqdmtZdFZLMU1yclNQOFl4VjhJQXNDUlpEYjZaSlFNWE9zcE5WWU9WdXRTS2hXcllHelBLVERwNzZaZkE?oc=5"
+     "title": "【即時新聞】散熱商機熱炒帶動台達電盤中一度漲逾5%，董座看好第四季營收成長！ - CMoney投資網誌",
+     "source": "CMoney投資網誌",
+     "pub_utc": "2026-11-26T06:51Z",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQOFhTZGpMZ29VaUxaU05zcmgwX09aY0paNWdOQ3hwLWwxcGVnZ0RXUDNOZi1lZmd0T3AzUEVrc2dRU25nSW5fTWlncTNlSEI5bEUxbi02MnhCSTE3d0FuSXFfaE0wZk8yR2t4VWo1bTBlM1d2VjZicE1QTkRCYzNOTmk2U3JiTlBXWUhad2xpOXE?oc=5"
     },
     {
-     "title": "電腦及週邊設備產業鏈／台達電10月營收746.66億元創新高！前三季EPS達26.64元 - 科技島",
-     "source": "科技島",
-     "pub_utc": "2026-11-25T08:57Z",
-     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5hd1Y5SlhNVzF5OEthNnFGMUstbHdtOU91WVVVdjNoOTRhVUdzYi1fY0NKZFZucmdoM3NYdk1yM0xVRlhUVjhGd3ZXaDZIMEU2YXUzVkwtSGlQOGJSOWpUOUtiTTZ0QWlTVEE?oc=5"
+     "title": "【即時新聞】散熱商機熱炒帶動台達電盤中一度漲逾5%，董座看好第四季營收成長！ - CMoney",
+     "source": "CMoney",
+     "pub_utc": "2026-11-26T06:51Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB1UUtRdV9MQ1djNVpyNWJIMTlXVTFpSW9IY095eUt1cUpJX3ctR3pOemFEd2haWFRQY0x2OFBLRnBQSE9GbXZYY3NRaUg5R1YzNUJ4S0NHd0g?oc=5"
     },
     {
-     "title": "台達電再陷千元保衛戰！法人估後年EPS破百元光寶科、順達…7檔AI電源受惠股出列- 上市櫃 - 旺得富理財網",
+     "title": "國巨、欣興、台達電洗盤完畢準備噴出？「最狂分析師點名6檔AI超跌股」最新目標價、法人進出籌碼全揭露- 上市櫃 - 旺得富理財網",
      "source": "旺得富理財網",
-     "pub_utc": "2026-11-25T03:43Z",
-     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5vaEkxamlMVDdqWnNhR1Fjdk5aSGRwYllsSmd2TUZaUi1JWU9yRTlOX19fNkdQMHNmeDZlQ3NkdENFd1pSVDlCbDY2ZE1Jd3J0UXpya1NjSXVETXI2SWwzU3R0SU9UWU9lVkE?oc=5"
+     "pub_utc": "2026-11-26T06:16Z",
+     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1KN0tnMGFPdGNPUGZiNzBtVHI2dE94c2wxWjRYemtEZFhjVm5CS1kybEdOUUhWR1A0ZWh2cGdRaXJRMjlXeW1GdUN6bDMzRjV1a0ZsUFVncm1ZWTR3N3dUWEhJZUZjRnlmcGc?oc=5"
+    },
+    {
+     "title": "神拉2464點！台指期夜盤上演暴V秀台股穩了？瑤池金母出手日月光、台達電、金像電...00981A最新抄底名單1次看- 上市櫃 - 旺得富理財網",
+     "source": "旺得富理財網",
+     "pub_utc": "2026-11-26T03:17Z",
+     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9oZDFfQjVHXzRaM184S213ZTR6U2VFQUktUGhwcmIwVVJQdFpfcnhGS0E1WDlIM2NhUVZTVmdCLVhVdzk0NFFKY3lWaXVvN1M3NUxHYmRlTWtMRTNUeGMxZ0dZMGVjRFJwamc?oc=5"
+    },
+    {
+     "title": "台達電跌破千元法人卻喊2200元！2028年EPS狂賺100元、順達獲利估暴增89％ 7檔AI電源股出列 - FTNN 新聞網",
+     "source": "FTNN 新聞網",
+     "pub_utc": "2026-11-25T23:50Z",
+     "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5WVDI1VFhqemE2WHVTaGJMakdNSzZ2blZneHBFU2swc3NuWFQ5YVNHWi1yQkdGNGZJZjV0bUlnNHJxNVU3MzQwN3JjWQ?oc=5"
     }
    ]
   },
@@ -2367,24 +2230,6 @@
      "source": "marketscreener.com",
      "pub_utc": "2026-11-25T00:28Z",
      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNb29ycTVFczcyelRaVm9wQ29zNS1ua3pMM1U0bGpMd3ludlFrS013ODBhckRGaFF4U0tHY2ctQjg3NWFudk55QkVjZjNHOGwzNndZdTJpeWJRdVhyNDdGcmNMQXZjaVFWVl9rQkJlZnFxd0xwZWtGcmhVbHhqOVZCU1VwZnNyNlhBeVZiWE9YbDFZRnRYM1Vvb202WGFYNmZxZzQ3MnVHeU1HanlIMFA5Tmc5T2ZvTExDZkk3Mg?oc=5"
-    },
-    {
-     "title": "China A-Share Dividend Week: 63 Companies Pay Out Over 15 Billion Yuan; Foxconn Industrial Internet Proposes 13.285 Billion Yuan Plan - BigGo Finance",
-     "source": "BigGo Finance",
-     "pub_utc": "2026-11-24T15:35Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Mc01NYzR1N0NJaGdOUHduaGNiUTh4ZFJ0SjFwQnVLUTlkdW5YV2h5Wmpxb1RwTFRPYWliSDY3ZUZrcWJhRXFwUkZJZGpQMnZkYUgwckFfQW9EZ3B0Z3IyZThVWlhLekU3YlBPUTExWHNWNU93ckE?oc=5"
-    },
-    {
-     "title": "Hon Hai stock: Foxconn subsidiary approves quarterly dividend - ad-hoc-news.de",
-     "source": "ad-hoc-news.de",
-     "pub_utc": "2026-11-24T14:14Z",
-     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNSEFDdmhwd20tNDdvSER0S1MteE9TX3NabjFBV0lMSzRTbjRLYzlXcXlabHpIN1JEQ1VkN0oxd0ptN2VqNy02RlppcDV3WEhFT1JRTUpicUdYYTZXYzRUOUlRUkl2Yl9yTWNRUnRuRmlmdHdSX3gxUVEwSmk2SW5QQWczbWs4U0tvRjVsX1lnaERTRklBREpXYVBSYVNtdmZJOHFvZmpHcXNvbWpyQ0p2T1dSdVNkT3Y2aDdQRnVvSVI?oc=5"
-    },
-    {
-     "title": "Foxconn Industrial Internet Declares CNY 13.285 Billion Dividend for First Three Quarters, CNY 0.67 Per Share, 32.9% Payout Ratio - BigGo Finance",
-     "source": "BigGo Finance",
-     "pub_utc": "2026-11-24T11:55Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9vUElRekYydW9qU0JzbW9UTXQzV0MxSF9ZTXIwcUJ2azgxLUF6XzB0S3pPOXdSNWEtZzJQX280b1pMOXZseG9RYTdvNjJuejVNUTBRSVhfQmZsVF9qSUYwajB4WUZPVGh1bmlaQzlUbGxRYVptZEE?oc=5"
     }
    ]
   },
@@ -2398,16 +2243,16 @@
    "filings": [],
    "items": [
     {
+     "title": "Alphabet Inc Class A (GOOGL) Stock Analysis & Forecast - TradingKey",
+     "source": "TradingKey",
+     "pub_utc": "2026-11-26T04:51Z",
+     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBIbWpfWjFuT1NPbjJwSUxycC1PbERoRjhRejdSTDBNYmctdHdIc3lxVGRDZHNNWDdOMTlGbF9GNllWTE5KMkZhbHU2Z2lndzM3bzhXMHVoX1ByM0JtZTJobDhtSXpnMnM?oc=5"
+    },
+    {
      "title": "Alphabet stock plunges as Google walks away from a big Australian news deal - TradingView",
      "source": "TradingView",
      "pub_utc": "2026-11-25T17:14Z",
      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRHppYVF4UlRjVERuWnA5WUNMVTNTUVJNNWY5Q2RzZmZUNGJXNFZ3SW5XdkJ4cXZORFdxbEZ2R1dSN3BrVGhtcENqUC12bm9fNGlueE50S3BiNDNDdHZId1FmQjZ1Rkx0MnFiMVpZYndnQmsybEQ4Rnk2RlZiay0tdmdJd3JKVi1aVmpkQ2V4M2VrcW4xbGpHUDNPWkhEcmxlVW04OGRwUTRRaUNxclNMUjFiVEhnQ1lnZ1JhNnZ6clVIbWV0clZ3U1hzNDJDWFVC?oc=5"
-    },
-    {
-     "title": "Google Earnings Date: When Does Alphabet Report Earnings? Time, Results History and Stock Reaction - MEXC",
-     "source": "MEXC",
-     "pub_utc": "2026-11-25T15:10Z",
-     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOLUZoYnJ1TTZocVdGbFNPZFY3M3VSNU56S2t1NmVMUC1PdWNobHhDY1NRYTZjSGVlU1RLZTQxTEV0TkdYVDY5bmoxNmg2Mm9jUG9VRUIyZjA5MmtfM2NvSmM1RHQweDhwM3BWREgzRU5sM3h5OWxDdXJvT0x3SDZ6ODVmVnRzSWZ6aEoyOWtn?oc=5"
     },
     {
      "title": "Key facts: Alphabet capex $51.4B; Cloud revenue up 103%; Malaysia $15B - TradingView",
@@ -2427,34 +2272,34 @@
    "filings": [],
    "items": [
     {
-     "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal - TradingView",
+     "title": "George Soros and 64 Other Big Funds Bought Meta Last Quarter. David Tepper and 33 Others Sold. Who’s Right? - TIKR.com",
+     "source": "TIKR.com",
+     "pub_utc": "2026-11-26T18:19Z",
+     "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQMWJYOE9uVTVDWEVDb3RfQTFLd25oZnZCRW4wOWNXMG4wLXZsbU9JMkhfZm40cnNncS1iY2h2bDhmR3EyQm9ZbGVKVGgzUlNNZVk5NXVQQjkwM25ZTmdCTWRFR2dURFRkQ0luMmJSUjZ4SjNQZzZZSXNjQ05laVM0ZkljS2xDSmJxeGJlajBDU1Q0SnZuR2VqLUdJQlpDSXZaTUtEYVF2RmdPLWJ2RkxIbWpoRGZxOWVQdThFVVQzNDZzNjFPUnNsZnBfanNJTjRKN2dRczRSUTZyUG5sZlRuVkQwckdkLWZvZWlyZGNkNFFhcXBfZzhhRVpBcGxUbzg?oc=5"
+    },
+    {
+     "title": "Meta Faces India Lawsuit Over 5.4 Million Content Restrictions - TradingView",
      "source": "TradingView",
-     "pub_utc": "2026-11-25T21:02Z",
-     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbTVZd3RKTHBTTjY2cEdveHVHY1AwUFBybDJOZnI0emNNbGNiOXZZUjRUUHZWd3hYZDF6ZFUyWEdpMXFtczlXUzNlLVFzbER1czFwSS0zOVR3RG9QdU1tckZWVHJmT1FLTmF1dWdtejBUT0V5Y0V4X25kZ3cxb3ZCLVY2R2lNZ3dNVHlmTzJJTW03WEZwLUt6RXBvUzk0VGRGYVZ3LXpLV3YwWDh5RzU3Wld1MTM0QmNoUjQ4VXBkbTlXaEpkMFhhYlotMVFRRExJVHc?oc=5"
+     "pub_utc": "2026-11-26T18:02Z",
+     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTlliUG5MZXFGYVMyZ0pPbVFRYy1uOWFxRDVqV254VV9UbG9fSzB1eHFrS0dTV1ZiTkdHeHBZcUZ5SkNMUzdta05DaHJIaEtXYzMzUk9GbC1ReXVsR1V6OC1DX01acDhJeGpwaTF3Wl9PRnRhMVhwM0k4RDF1X0VXcUpiMHBqQjVKaWJwU1hGRTFjcDFuYXFTRXJ4U1F5Q05FVDN5ZU8wX0ticWpHWjNzSkk4ekVaMjd0UTVzVjBHMA?oc=5"
+    },
+    {
+     "title": "Meta Platforms shares weekly forecast: Consolidation holds as legal actions and AI funding uncertainties persist - Traders Union",
+     "source": "Traders Union",
+     "pub_utc": "2026-11-26T14:02Z",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQa0gxUXhqUjJ2bkhKMl9RbWRLQXdXa2pDY0xqdjBWVW5uNFhnWjhGZkoxLUtpcEJoVThqbURld09aS1dxNkFkc0NyekNiQmp1YzJkTXNlWHo0RWVSZlVOdmlmZFhYQzlveWxsT3I4ZHJWakFsYmZNNEZSaFNuQmVqdExWbnJFZmNsRTJRaWNCMXJvUQ?oc=5"
+    },
+    {
+     "title": "Price to earnings forward of Meta Platforms Inc Units Thailand Depositery Receipts Repr 0.01 Sh – SET:META01 - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-26T03:42Z",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdENVVlM4bzZWdDlfTDFfa3FmcWQzM1dVTkNDdjBYYVZoOHpqa1d6SXJfTU9Yc2xmMHR5SVg3WDl6WU9Rc3oxczdvYmIwWWxRM1FlQ3VHSnVFZ1dHNS1GYjVrWGJJZm9TYklvcVdONTUwUjlWU3l0T015eUQ2MFZkYUk3bUYwZ0w2aWhyOVk0eF9WRjkzbkF0Z2gtLWhiWm10?oc=5"
     },
     {
      "title": "Meta Says Muse “Raises Conversions for Advertisers.” It Already Places 51% of AI Agent Orders - Yahoo Finance",
      "source": "Yahoo Finance",
      "pub_utc": "2026-11-25T19:20Z",
      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVkpCOFRMbmZiUk9ZVUtmbXpuSnR4OGZ2aDBlRzdfSGc0WlB2UE52TTQyYl9mdTZyZnFjYUdVRGpqaS1rSE4yVUxERHZURVVkdTFQTHpub3Z2bGN1Nmg5d3kwbDZ6b0QzVDd6alJVR2dLYklIaGRxRGxRYV8zcENnaVctRzZqaUZfS0RGbjAtQmZYSUl1MjJSMXJZTXhsZm9fcUxv?oc=5"
-    },
-    {
-     "title": "Meta’s AI shopping push could lift Instagram ad revenue, Jefferies says - Proactive financial news",
-     "source": "Proactive financial news",
-     "pub_utc": "2026-11-25T19:09Z",
-     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMGFrNzF5ZFRKZl91M1NJLTFJZWhWLWl3aWlmYmx2NWhpbkE5NjBOTGZ1dEZ5ajZVemlXU1h1SFZ4WWUySnk1SUpKdDFrU0k2UGhvOXMtZG5yMDYwUTVrWWZCekw1S3FKeXJXcDVINEJGXzhOWWlOOXNRQkVMdnVoWmp6R0h2ZzMxeHJQal83YnJFc1FsdGN4RHlWV0llWVd0eTU3WFlQeUl0VWE1WGZQcHJMVXRseGNkcENHQ3c5aHF0M2Z1WnZud3gtTm15RXk2YTAxVFJKZ08?oc=5"
-    },
-    {
-     "title": "Stony Brook prof: $17B Meta deal won’t curb teen app use - Long Island Business News",
-     "source": "Long Island Business News",
-     "pub_utc": "2026-11-25T16:10Z",
-     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNTVJtcHJ3a1hDeTU2UUtsaWJOUFhHOHBhdHEyQXQwaDRPTnhWb0lsZk1HY1pZQlktRnpaQy1lSl9LN3RNUmN4cG9rb2U3azB4S3Q2OEpmOTZ2Sm5sWEJxSE9yb0RIWld6ZEhQZ2pOYzVkVndhZjJDeFhTaS1MOGYzRFJVWmREb2hsQVE?oc=5"
-    },
-    {
-     "title": "Meta Platforms stock falls amid support pressure and ongoing recapitalization lawsuit - Traders Union",
-     "source": "Traders Union",
-     "pub_utc": "2026-11-25T14:23Z",
-     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQTUVJejJ3UkFON2U3SzZsb1lxSFNEMS03MkN5NlRvQ3Y1TnVOeG0ySk1fMFR4ektxeDBGLVNvLXVWY1RROU10VVV4eUV4VzNUR01IVkxXYV83Y1RreW5aZU5JbkxUb3ZrelBCMmdTUXJpRFh1MkdBbVF3blVUWTdvMzlyOGFDOVRWaXZ6b0hORzNaeE96?oc=5"
     }
    ]
   },
@@ -2465,40 +2310,16 @@
    "industry": "通訊與網路平台",
    "generic": false,
    "big_move": {
-    "pct": -14.83,
-    "date": "2026-11-25"
+    "pct": 7.32,
+    "date": "2026-11-26"
    },
    "filings": [],
    "items": [
-    {
-     "title": "SoftBank's AI Funding Tab Comes Under Scrutiny as Shares Slide and Default Insurance Costs Jump - ad-hoc-news.de",
-     "source": "ad-hoc-news.de",
-     "pub_utc": "2026-11-25T18:03Z",
-     "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOd0VDbGVkWHdNdmNtYVpNQ01rcUNzekpmb3FvVE5XV0h1TXhYRHQ4dTdHUksxU3k4MmRNU1J6TjJSTHVYVUFycklIRXFTVzdwNDlWU190d2tURC1zQjNhbG8zblJLaHNWa1ZXeGpfMVNBZmVIOGhUUDItSzViaExkZTJtWW1sX3owelBUbld5QUw1YUFuOFl2NGplS3J1YTNUY1VWMDhUT3ZhOHhNZWpTTGRDNHB5bHFyX3RFa0wtWlE2VjhrN0FvTHNhV19VWWFaWEMxaGVHSHJteUk2Z0VMMTBFQUdnS0dtV1RRSWZCMGtzU3BHWEpad19mcw?oc=5"
-    },
-    {
-     "title": "SoftBank's OpenAI Bet Faces a Two-Front Test: Beijing's Veto and a Bruised AI Debut - ad-hoc-news.de",
-     "source": "ad-hoc-news.de",
-     "pub_utc": "2026-11-25T14:21Z",
-     "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNX2R6SzhsaWYwekE4dG5uWnQwc1hrdUhtTENQczdhYWl1bFZRRnpKU1BzajI3UzB3WVpNVms2aGlpdnJFbi1LR09hbEpxTXl2ZnlTdDg1RHUxeGd5eWduSlkzdXNSdmlCQjkteUxoVEFqM1RwaU96ZHBUVnJPVUtnNkZ4VUlNV1R6RUdBRUtycGN0bDFiNFcwcm81U3U1eERKWmFRb0tOcDNmaXo1OE1jeUJKd1R3UGdEdXFsM2JFM2oxVnNyY3RWcExqNThxYWZPVDZ1LWVXTUM0eFpuWDJ4MTFNdndzWkdIeWc?oc=5"
-    },
     {
      "title": "SoftBank Falls 14.48% as Anthropic IPO Chills Asia Tech - shattered.io",
      "source": "shattered.io",
      "pub_utc": "2026-11-25T13:21Z",
      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNai1NTEhua3BoVUhYUGtoT1dlLWp3VUxNWDZfTHVYOGlhX1d6TWhXbk11SGNndHVaRVpFVmJjNkE4dnNzRHlSMTRPWThsQlJER2xZNWo0Z3g0NTAtQWU5ZDdOTmFLUjRQeUExTGtDZGFWamZkV2NZd3J1MDItczVtNl9zZlVzQjBUMW5SdHBzanlLX3M1MmpFRlVTenphRk9vUzNyTzNuTDZYQjA?oc=5"
-    },
-    {
-     "title": "Q1 2027 SoftBank Group Corp Earnings Presentation Transcript - GuruFocus",
-     "source": "GuruFocus",
-     "pub_utc": "2026-11-24T19:31Z",
-     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1KQTFEWGU2Yzh6UHpfYmM3QVNyNmRPOHltY1ZZQnFvMUc1M1J2LUYxX3B2OV8wdlNPRlVOLXRrRlFIMlNYQk1oV002TDFLT1V6Sm00SkZYNHpvbmRKbVd1Y0Iwdi0tLUVVVVVB?oc=5"
-    },
-    {
-     "title": "How SoftBank Group Chairman and CEO Masayoshi Son Paid for a $30 Billion OpenAI Deal - Observer",
-     "source": "Observer",
-     "pub_utc": "2026-11-24T19:08Z",
-     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPc1ZSamdpXy1abTUtSWxuc05PS0RLck5qRnhiSmZwaHhmNkJweURpalI4MjJzcVdhWkZwa3YyUnF3U1hiWWdKTDluOFp4UlRrN1NPWW12SmNoOGxlclhVT01yOTdFTTF2SGJkSVlPQnEwbVMwTTFZN0k5V0FCZkVBVzBnTmktX3M?oc=5"
     }
    ]
   },
@@ -2512,28 +2333,16 @@
    "filings": [],
    "items": [
     {
+     "title": "Push to Raise Top-Up Limits for Naver Pay Points and Kakao Pay Money from 2 Million to 5 Million Won - 파이낸셜뉴스",
+     "source": "파이낸셜뉴스",
+     "pub_utc": "2026-11-26T07:44Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBkdWo5M2M4LTg4X0xQM05lbnFuLWhjdEJ1WmdvVnExQWtCS1F1OUJnVzBTRW9DaGR6Rl9GY2RGV25wS2VZa2d5TDZObUlUa1JHcU85dGdSbDY?oc=5"
+    },
+    {
      "title": "South Korea's 20% Crypto Exchange Cap Clouds Naver-Dunamu Merger - THE ELEC, Korea Electronics Industry Media",
      "source": "THE ELEC, Korea Electronics Industry Media",
      "pub_utc": "2026-11-25T01:05Z",
      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB1NXJRQTlKN0piNzRVYVBSOVIwc0FmNFlscHJudWFJZUduX2R1WjFoQ1Y1QUVmeVBYbDU5N2sxMXJ2X3g2NEZtMkM3dGhYcU5mcFlnVHIzeHoxRmNDYmNzd3ZLN2lwMkk?oc=5"
-    },
-    {
-     "title": "South Korea's Naver and Kakao Hit Record Revenue but Shares Fall Back to 7-Year Lows as AI Shakes Up the Platform Playbook - BigGo Finance",
-     "source": "BigGo Finance",
-     "pub_utc": "2026-11-24T21:55Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBQZjRSWm41OVAxZ053QjdxSmlTcjNyMFVlOHNQTk52RXI4NWF3U3d1ODJTN3pzdzRKak5jdW5nM1BlQ3NOU2RpcDh5UFpWaTBxdEhMQUlwWUdFc3l0VWVUbXhJdUFQbFpsNGpYYm9ueWZmM3FGR3c?oc=5"
-    },
-    {
-     "title": "South Korea ownership cap could reshape control rights in Naver's Dunamu deal - Traders Union",
-     "source": "Traders Union",
-     "pub_utc": "2026-11-24T16:41Z",
-     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbHNJQ0syVnhSNHI5bmZ0ajJuelRrRU1rMVp0U3ZqTE9DZUYxcFJNR3FsYVhoUHAtWF9YanBYYkFCM2FFZ2l0aTdtTTQtQUdhT3oweUtuQkNNaGdhNFBBQkpCcEs2S1dod2VOUV9sOHlPX0tmblpHcVcyVXl0SVhqMkZxT3hVdklqcHJDVzMtTWx1ZDAyd0s3Rw?oc=5"
-    },
-    {
-     "title": "Dunamu-Naver Merger Structure May Shift Under 20% Cap on Major Exchange Shareholders - bloomingbit",
-     "source": "bloomingbit",
-     "pub_utc": "2026-11-24T11:13Z",
-     "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBWeUJYVkpER05fRGdzQkd4QkZUSDlWcU4xOUFFb0gwc0dmekZzN1Vub3A1MmxGV1M0NS0wWWNYdUdqU3BPRjgxM1RheGVlOVl2ajQ4RA?oc=5"
     }
    ]
   },
@@ -2547,34 +2356,34 @@
    "filings": [],
    "items": [
     {
-     "title": "How Much Is ByteDance Actually Worth: 2024 Valuation Breakdown & Market Insights - eu.36kr.com",
-     "source": "eu.36kr.com",
+     "title": "Who Owns TikTok? Oracle, Silver Lake, MGX and ByteDance - Everything-PR",
+     "source": "Everything-PR",
+     "pub_utc": "2026-11-26T14:20Z",
+     "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5kWW5VSDlVU0RxZl90UTZzRnVySGJjRnY5dlFxRFZHT1E1d1RZNEN2N0w1bEluU2EtenIyT0ZxZUVDYlRBQUpBc1JnYjdsb0RidlZR?oc=5"
+    },
+    {
+     "title": "ByteDance Enters the Fray: Emerging Robotics Player Speeds Toward Its IPO - 36Kr",
+     "source": "36Kr",
+     "pub_utc": "2026-11-26T00:44Z",
+     "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9XekNzZTB3OXhIaXdGSUJVZlN3MUUzbGFZTC04UldOMWZzZ3dhZGhXWTNOSkxKdmdfLVc5SGZtS1J6WjFYZVhxQktjZGxDTHAtdUFv?oc=5"
+    },
+    {
+     "title": "How Much Is ByteDance Actually Worth: 2024 Valuation Breakdown & Market Insights - 36Kr",
+     "source": "36Kr",
      "pub_utc": "2026-11-25T11:03Z",
      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5xZkN2bHRWaC1BYjEtSTBGTGFldldVRFB5RUFKVFA4Q0pBUTdqUVdGTTRrY3dlN3hNYktNRTBxdG1ZOFpwN2RMbWsyZzJEdVVSSEVF?oc=5"
     },
     {
+     "title": "ByteDance's valuation tops $600 billion: What the sum-of-the-parts method says as profit plunges 70% - BigGo Finance",
+     "source": "BigGo Finance",
+     "pub_utc": "2026-11-25T10:25Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE55WERVVVdQNTRYNW5mMmNoeDZkekxyd2hnQW5qazQzbHd6V3VTRmI0NTVmeXV4OHBKbzR3TkxSUmpJZE5BcUZWNEU3bFltNFNLMUhJT2RHRGFBekZhV0VXLWUycklhUGlqai00WGxFb3YzMXpCNGc?oc=5"
+    },
+    {
      "title": "ByteDance and TikTok Lobbying 2026: Spend, Firms, Timeline - Everything-PR",
      "source": "Everything-PR",
-     "pub_utc": "2026-11-22T21:00Z",
+     "pub_utc": "2026-11-24T19:57Z",
      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4zVEtXOFpMVEJGQzRtX0otek5YU2h6c2FXVThwNFAxQVFLX1VkNFdjZ3dNQkRRdWJRcGI5Zm1ZYTRPY09oNmR4WWhBNHhPQ1ZsYnVIVThNbFdNY3h3VG10NQ?oc=5"
-    },
-    {
-     "title": "BYTEDANCE Upcoming IPO — All Pre-IPO Details - TradingView",
-     "source": "TradingView",
-     "pub_utc": "2026-11-21T08:23Z",
-     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA1c3NQb0toYVRjMWZFQ3FpdXVpMFhNN1NseXNYeklhbGk0ZklCSkdkYjljLW5QdTgyajRQd1F3eXJVMUcxcFYzNUVJSXY5aFJqU1VFdTdmMGtfTDV3M3JGWW5tcWU?oc=5"
-    },
-    {
-     "title": "Duan Yongping Says ByteDance Interest at $600 Billion Assumes Listing, Avoids Private Firms - TradingView",
-     "source": "TradingView",
-     "pub_utc": "2026-11-21T08:23Z",
-     "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOdnRBb29sMC1mTlBnbFBkYlUxdkdSVW82Tm1RMjl3UXhLeThSRFVBZ0IxRVhRaFphOTM0MlZfNlV2X1FGTEFNV2F4STM4NVBqMlZTMUtqYmZfb3dBT2J1bzVoempuUWxUN1FIWHFSWURScGVPeHZscmRTTl9xZHU2dTBFWDRWNFhqcmlPMzFmMWtVX0pjYkY5U1NVcmxVdnJMNVNzRkFtMkxodTgzMk1fSFh5aUc5RmdXZndOVFBGMmdPODFLSUY0UnNHWElyVjRBcHRuN1F4RDB5blNrd0VvaXlpUWdibU0?oc=5"
-    },
-    {
-     "title": "Nscale ByteDance AI Compute Deal Draws Scrutiny Under US Chip Export Controls - CASRAI",
-     "source": "CASRAI",
-     "pub_utc": "2026-11-20T18:12Z",
-     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNVBrMVRnTTVCeEp1OU9qcy11YV9aTXR4bVpsZzg0ZXdKWDRSZnU5bWZOVjJjOTRTeG9EM2c3dTNqc2dKYUNuUlpoRmIwYWRlTzdoT3Jwd1FpcHV4cHFER1VqRG83dWZfbTlvQlhpWmRjM19abXJEdlI4a2tKd29zcUt0ODBXWUktQUlIaS1R?oc=5"
     }
    ]
   },
@@ -2588,10 +2397,10 @@
    "filings": [],
    "items": [
     {
-     "title": "Apple iPhone forecast to lead smartphone shipments in 2026 and 2027 - MacDailyNews",
-     "source": "MacDailyNews",
-     "pub_utc": "2026-11-25T20:00Z",
-     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdVQyTWFKYUprOEprSml0TEFHbXl2ZXM5TXhoeU9IS0RYWm00VFY0TFlGbGk5cGRXUGFYUUIyNW80TEFzNlJfRGdmQmg3NmZCdk1CMTlaS3pwSFd4a29MdzRaVzZ2cUxvWmhvQXpZTTdhRFZBMWc3Skd5NGVpaUlvb3A0U3FRM25idTVqbnUxbnVoR1BTcTRUbG04azdPZDNlSnlGTW1fb9IBrAFBVV95cUxNYVF6TUV4T1BpMlExZEQxaXVtMm9hSlYxY0xOeFVHMFdBelJaa0lUUENtempqb2pNQUxScXFBa3NLMUpXdms1SzlWeGpGQ0FndHhqX0xyZlFPdS02c1JMeFNSZXVMaVJGeUhtR3A5SWFiT1ZqWjUzVnc4bk51SURuWUtNamtmRlltZWFYQkxmckQ5SlhvS0xEY3JGT0ZCaldxU2t1cHB6OUdTOEJw?oc=5"
+     "title": "Black Friday Apple iPhone 17 Pro Max deal gives fantastic 19% discount to the 512GB model - PC Guide",
+     "source": "PC Guide",
+     "pub_utc": "2026-11-26T19:35Z",
+     "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWUpWR29ybXoyTFJLRkYwRm00R1JXaXNHSDlOR0ZpTURWWXdqVGlQQUdXRmpwY0U5d2RGWTc1ZE1Za1JGTVB2Y3Z6X010NXAyMkxsR2R6NzU0VzVMal80cVNZdTZ1Wll4Zkh3Slg0MVllelVpMFRCQ1llcjdaYXBFS184RTVBQ0YtX2xZTXlfTXQxc2Z6TnB0TS1FVVJSdW9wVlRHSDRJSnJaYW1uNjVGeDNrT0VvM01UZzM4?oc=5"
     }
    ]
   },
@@ -2609,18 +2418,6 @@
      "source": "Stock Titan",
      "pub_utc": "2026-11-25T12:31Z",
      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYjRmdjdseXdEemxhUTMzLWcxWll4eXZZc1RKRnpYM1Z0T2pHYjEwX2RkMndtUzhmcFBuOU5oc0lWVjRkZHVsNmd0S1VVZi1SWDZsdzE4ZnY3UWdnRm1GaW9vZUZodVlHcUR1TWZ5M1Y3RHdUQmlDa1dpVldBSXFNVi15WVl1RE1RTm1CMDhaNV9mSE9lSzlDZV9wZk96eC1zZjItLWE4WVQ2YjZoOVVHaA?oc=5"
-    },
-    {
-     "title": "Zacks Industry Outlook Highlights Sony, Dolby Laboratories and Sonos - TradingView",
-     "source": "TradingView",
-     "pub_utc": "2026-11-24T14:43Z",
-     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVzFac3cxOUtrdTlPYUNnTm54dmNYM3NFb0tSLWF4QVNGUGV0ZU1ZZE8yQ3ZnVWZkT04xVGlrc3RZcTFLY0VnME9KaGVOVlU5bzJTOEI5dVN1QXE0aWpRVmxMTElrekR6YW1zNWRjd21oWFBsX09YY0NwOE8yYWRhTEhtbTEtcHp1NjZZRUhzV2tRaGprZ19uQS1RY0Z3ek0tZmNIa2JrVDRQOWwtdXdTbUV4NUo3T3ItcklmbjlPWG8?oc=5"
-    },
-    {
-     "title": "Sony Group stock: Foxconn agrees to acquire camera unit - ad-hoc-news.de",
-     "source": "ad-hoc-news.de",
-     "pub_utc": "2026-11-24T14:37Z",
-     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcVBLeV85RVdnT21TN2VWSTd2NGVWLTVub0tsYi1xRUNYT1hZZk5MM2syanhNWU9xam5ieFFOUHF2QkNRb2RlTWdfZjc5TEhWRGhkSE5HT2Y0WUo2Vi1NYmFfcmczVXBreGgtTndqSERSa1hGek1JRUdEc1VaVGt0VWxzaUd0VnI1VTN6dEp4Yk1YUEpuclhPVkN3ZFZvRDk5QlJhRmdSbzNZamlrOE5pWHUxZmxoVEp1?oc=5"
     }
    ]
   },
@@ -2634,28 +2431,34 @@
    "filings": [],
    "items": [
     {
-     "title": "Tesla Hit With Fired Tech’s ADA, Racial Discrimination Lawsuit - Bloomberg Law News",
-     "source": "Bloomberg Law News",
-     "pub_utc": "2026-11-25T19:45Z",
-     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOa2Y1c3ZLWnRZcVl6YTIzS2g1bS16UUQ4ckNDejdTZ2pxZ1A4TmduUjdyN1VERURNc2NJVENMLVpYR2Fzd3E5UVZBa2x1WUZuQU1lRnp2SGdpNW9xUUUtRnZQaGZQbEVxVThkb0Q0Y0tCV3FEeF9GQUVUdzJGVWlJNEFCMjd1QlpNMkplTjM1azh5bEFmYUs5d1NaSExZem1jd3MxU0Z5eVhBSmdvUHc?oc=5"
+     "title": "Polymarket Puts Odds of Tesla, SpaceX Merger Announcement by Jan. 31, 2027 at 55%, Up 31 Points in a Month - bloomingbit",
+     "source": "bloomingbit",
+     "pub_utc": "2026-11-26T19:42Z",
+     "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1MVTl5dkJqUzY5aXZBUnhGTy1ZMjhHTlhSMW1DUXotcEswUG1NdGlFbUxSWWlnZnhFOF9MMEU1WTlfRnpRamI4N2FDZ1Bhc2lSZ0xiRA?oc=5"
     },
     {
-     "title": "Elon Musk Just Took a Big Step Toward a $3.5 Trillion Tesla-SpaceX Merger - Inc.com",
-     "source": "Inc.com",
-     "pub_utc": "2026-11-25T17:31Z",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOGs3VTlZVE1rbExzQ0hFX05HaHRCS0xXNUNGLVdSbnNjeXFtNTdpWF9MczVWZU13RzRQLVhlOFRIczRZTHVzUlNqTkFNOVQtLVQ5NUVDN1NKb3hXV0ZkNkk4ei1jLVl3NXE5cUdPay11Si1udmVtS3MxNmozLW1rQ2k2aHZiRUFiczlQUEFyWmpram9tYXd5Z2cyMVpsdDg4eUxJ?oc=5"
+     "title": "Polymarket traders see 55% chance of Tesla, SpaceX merger by January 2027 - Crypto Briefing",
+     "source": "Crypto Briefing",
+     "pub_utc": "2026-11-26T19:26Z",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE13LWlPek5YYWk4VEpGTWNBVmhBQjNhbXVGMjl2NmF1T0NHbTZjYTdmVWd1cThKdi1nZWtScFFVeGU0b3ZmSkNyUEtjS1BKTnJtNHlmeXNyMVc5SlhUcHNya1hpaWpkWllJLWR1ejB0RGM?oc=5"
+    },
+    {
+     "title": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000 - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-26T17:46Z",
+     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOU2JzUElDUGJyN0MzOC0yV21iYzdfdFhQWmRIaGtWZjM0QkdRY3lzT1BlX1pjUGtZSGE0WFI4Nm9pSHZjM2J2Z2NiVFFsd2VuTEFnMDV1MVFwWVllcUcwYmRkTHVtVjI2Y3hzSEgxN1dJLTd2SUU1UXFlN2VYZWtLYnJLT0hUeWtJeWVQSlhRTUZicnZuQUtKSnBYNHNVRHVDdTZxalhYWS1TQ3Mwa0N3?oc=5"
+    },
+    {
+     "title": "XPeng Raises Stakes for Tesla Stock Investors' Big Growth Bet - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-26T16:32Z",
+     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZE1mYk8xa3ZuNmwtZFJSbjQ4YTBWdUo1dmZyNFNUTExiZnpVZXpUaVJNNlFCdkpOaUQxUGx4SGhKcE5zdHdJaFdxNmlrR1pKLVpuTEpSZGxvQi1Bd3RwbFNoMU1keC1JSF9aNC1BVllkclVUWS16Y2tlUlp0S3pSZEpFUlFieUpTRDh0Y2JRelJrT1RhVmpsVkNMY1NkcEhaLUg5aGNTZEdYdE9DWXVxLTBCNzMxRTNXTFVyeg?oc=5"
     },
     {
      "title": "Tesla and SpaceX stocks sink as merger concerns mount - Yahoo Finance",
      "source": "Yahoo Finance",
      "pub_utc": "2026-11-25T15:41Z",
      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPX21TU1QzV0o3SXVFSl83OWhvMVZzN2IxRFc1dzdBbGZDSEZYY2ZMTlBBaV9mVlF4dGVKTUU2eE4wN0xHajRtZ3EtNnA1RWNoWDlCZkE1NndHVTZlZzlHMEdObE5aYWxBRkNtajAwU25rbXVXZWY0OWRJb09iaG1xd0VvdnlkTm0ycjdmbWZVUUFRQUVBYW9wTXNiejAwdGtfNXE2dU1XN0MyS0l5WHVhQzlmZGYwZGc2?oc=5"
-    },
-    {
-     "title": "Tesla Raises Cybertruck Cyberbeast Price to $114,990 - BASENOR - Tesla Accessories",
-     "source": "BASENOR - Tesla Accessories",
-     "pub_utc": "2026-11-25T04:04Z",
-     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTGcyV2VpQkJ5NkR1QV9SMXNyM0dIQTRJdWRyX0YyV0otalN5c1NrMWZNZDU0aUpodWo4RVVPODJJNTlXYktDaEtQc3RaaW9ncXdIOW5ob0IwYjQ0dUg4OGRpSlI0eEdITTZoRDltZ0p0c1NkaDJhSVFEblhhR25FelIyNUFVUk1YR05aekdpbw?oc=5"
     }
    ]
   },
@@ -2669,16 +2472,16 @@
    "filings": [],
    "items": [
     {
-     "title": "2027 Toyota Tacoma Priced at $34,470 - Kelley Blue Book",
-     "source": "Kelley Blue Book",
-     "pub_utc": "2026-11-25T17:46Z",
-     "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFAtR0JRVUxnbVNRX19YMXc5RkRZQVJ2dm9vYkYydkZVb3JPMjNvLWlTT2xyb1RwMEFQQ0d2UzdYVU1hY0tfaTFSMHFiZkxfWlgxU296ME5QdnJYbE1NeU1TY2Q1ajBiWm91QmZHWWtfZG5JUQ?oc=5"
+     "title": "2027 Toyota Crown Signia SUV - Pricing, Photos & Specs - CarBuzz",
+     "source": "CarBuzz",
+     "pub_utc": "2026-11-26T15:26Z",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5lYWZldWhxZjZ6LXp2LUkxZEt3MzdLNFg1eEhVbHZ5WjNCZHZJMGRKQjFKT3Y4OHEtU1YyOS1MOFhnMW5vaEpQWkRSQUZnX0IzU2VabEF5VnlqeHRJTWFjN24tS3c?oc=5"
     },
     {
-     "title": "Toyota Highlander EREV expected to debut in China on November 27 - CarNewsChina.com",
-     "source": "CarNewsChina.com",
-     "pub_utc": "2026-11-25T17:31Z",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOckQ3Ny10TThQTEQ1a09HTjBRY2JZbzNPYjNLZGxKcUFRTFlMOTBVdVVxYUQyMTh6N3F0QzNSeFJ4TndtWjlIWHc5TjFXQ2U1N3FicFg1RU14b0VLRVBoa2IyRzhxdks5emFaTFMyMXltSWpOeUZleE91cVhSUWo4dXBfd2RCVVJSRm5QX2dYdkl0UnZzUEVUcEpwRFlxUW45R0pJ?oc=5"
+     "title": "The Jaguar F-Type R V8 Now Priced Below A Fresh Toyota GR Supra - Top Speed",
+     "source": "Top Speed",
+     "pub_utc": "2026-11-26T15:00Z",
+     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9OZzdpaXU4a2lsZmlTY2xTdDhqblVpcFJGSVFPeDdmV203dnNtb3I4NnhBTkZzSkhxM0QyM1F6eWxpQm95dWtyS29KOWJFSjhOWXRxT3dxTk1Md2VISXZqd214WWVHeWs4cWhBRGtvb010NHpCeVpTNjZiYjRtZw?oc=5"
     }
    ]
   },
@@ -2692,22 +2495,45 @@
    "filings": [],
    "items": [
     {
-     "title": "Hyundai Motor India, Tata Motors Passenger Vehicles to raise prices from December 1 - Reuters",
-     "source": "Reuters",
-     "pub_utc": "2026-11-24T10:19Z",
-     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOT1dNS0RJeDVvNU9rMUE0VEhSemhDZm5hUVQ2NkVUQzVnUXlMQmFCWjU4dDg1YWVwSkRrSTJxdm8tMWFVdkUtMllzeEF1dFhtSmxzX3dmZzRaTU9GSzZwbHkyQy1PeHJNdUlCMGNmcnp6dzBWaTFkTW01MXBCZHhMckdfZ05DZVBHbW1FanU1QWhLRDhXLTNQS3hpWFJQSmgtb2ZUUHdwV0RRcFNRX0hRazhuRF9naFBxZVdLUm1ZUQ?oc=5"
+     "title": "Hyundai Motor Retains Munoz Amid Earnings Slump - Businesskorea",
+     "source": "Businesskorea",
+     "pub_utc": "2026-11-26T06:40Z",
+     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5YSW14RG55ejZpMG9CenQ2UHZFZ0FNOFBoWTBBUkdlSjVnd1F2VjZqZWMzaXAwbnJUd3N5UzJmeW12LUNvclVYUUhOQV9JSTRfZU1xRDNmR3k4NGNIbkdmUEtJa0VrQXhnN2ltblA5YmdSQmc3?oc=5"
     },
     {
-     "title": "Hyundai CEO José Muñoz shares exclusive look at the automaker’s future - CBT News",
-     "source": "CBT News",
-     "pub_utc": "2026-11-24T10:03Z",
-     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE03WHBDU09BY2pUSDNPLWRmOFFydWlZWm5aOTM0RjBrcUFwaDhXQW9aQi1TQ3lQaW94S1pYa0hLQXh4NnBwQ2tvcXhpQzVXc2xXbTRHRzlnQzVvRWs?oc=5"
+     "title": "Hyundai Motor Group Keeps Car Chiefs, Replaces Parts Heads in Bid to Defend Earnings - finance.biggo.com",
+     "source": "finance.biggo.com",
+     "pub_utc": "2026-11-26T01:35Z",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1HSFRjcldJNkY2VDJycWN5Q3d2U1JVdWtiMU16bjdnYnpYSnBnRTNxblNOQm5ldGJzelpoUzhwMW9ublhrQWJrcHVmMi1NLUVDVDNQN3o0YmxnY0VDVUhtQTNCNnFrR2M2T09Lem9CaTdLVEFoTGc?oc=5"
     },
     {
-     "title": "Hyundai Motor India to raise prices by up to 8,000 rupees from December 1 - Reuters",
-     "source": "Reuters",
-     "pub_utc": "2026-11-24T07:32Z",
-     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSVd6b3hkc0EzRnVLV1hqN1Rrei1uelRwSlRoTW5TdkRpb3RXSGsxRl9mbXBlWmN1dldVal9QS2o5N3JwVzQzTGo0OERDTUs4NkFkTXBid2pPbUtUTmFyWlZyWmhEU0I1NzhnZHhhOUswb0hoejNNaFlWWmFaTF84MFFCSzgwa2VTUnNBaUhjZ0ZuSTU0cXRYSDdTalE3aThqaDcyVEduTmRKek11cmc?oc=5"
+     "title": "Hyundai Motor Group Announces 2026 Executive Leadership Appointments - hyundai.com",
+     "source": "hyundai.com",
+     "pub_utc": "2026-11-26T01:00Z",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5lQnV6TWlxVWI4aWlKZk9GTHR4NklEaWFDSFAxR0hkZHF4eFAzVGY1UW5qU05sUVk4ZEVOZmltekNqVU9sYjVFZTRPbGNwdVlzN29CUU5SV2tCVzZ0Wldiend3OE04T2d3ZGw2X1BKQWY?oc=5"
+    },
+    {
+     "title": "The Hyundai Ioniq 6 Is A Stunning Used EV Deal With 361 Miles Of Range - InsideEVs",
+     "source": "InsideEVs",
+     "pub_utc": "2026-11-25T09:53Z",
+     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5pQkUweTVad2tQMzF4emdpeS0wRGp2UDFZaFh3eEo4eU5DV1otbmhRN0RqWjBKbGhLaG45YXV2a0VrZGhYSkpUbWVOUU1WOWEzR0VJZVVzejV4NHpsc2tOVzNsb1p5ZzZGOHc?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "LG新能源",
+   "sym": "373220.KS",
+   "country": "韓國",
+   "industry": "汽車與電池",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "NICE downgrades LG Chem to AA amid prolonged petrochemical downturn - Chosunbiz",
+     "source": "Chosunbiz",
+     "pub_utc": "2026-11-26T07:51Z",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQU0E4QlYtdG5sd1ZGMmF4Y084SThOYzJQVnNKRGJuZm5qTFBEdFV5clpISmwya3dBR0lqaXo5NDZXeXFzUlBDdzJaRk4xYTFxMTU1cG55azR5QUtCblNqSkxlZnNyRlJzYnV0V3QtSmtBNThJMmtiTU9NbG9tZVpRbTlB0gGWAUFVX3lxTE53bXlKR2lzdl9tM2xrTDU1dkp3QVJGaEtXM09kZXVKaXc4YXpaZm12RHFjazdzcm00Y2c2X0JtbW5ISE9kRzExckFOZDJWZ1EwMkhrZ2M1QnY4V0dGcEp2c09HNlNtMjRadnQxRjZLSGlhWjRkaEk3Uk5nY3E4bjhxaGdmX3JpU2hFMWpiS3J4cG5MSmxGdw?oc=5"
     }
    ]
   },
@@ -2725,44 +2551,41 @@
      "source": "Yahoo Finance",
      "pub_utc": "2026-11-25T14:14Z",
      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZEhoWEZaZ0llUG1QQXhQWC1hOU5mb2xmTHJ1Nm0tYUVnMkgwS3pKTlg2MjlOd3o4U1B6Q0x3OWw3aWRUUFl5emViOVA4TEo4TW5Gem8zbGQzb2ZzWTViNFVpaHNTRkh1RGd4cmh6MVlzMi1BQWM5SklUY3c0czE4Z1hxQy1JWDc0YkZIRGFENDBQd1Zu?oc=5"
-    },
-    {
-     "title": "BYD's Third-Generation Tang EV Officially Launched, Priced from 187,900 Yuan - Gasgoo",
-     "source": "Gasgoo",
-     "pub_utc": "2026-11-25T11:26Z",
-     "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQXRsMmY3QlJ4ZlZoSEZ4ams2VTVpU3NQU2hDckhjcVJjNkNJbVREd1BWXzQ3OHowYUloS3IzVUVzbVpXQnlzdFpQQTJIRWl0dmV5NzMyZ2RqVDBSaTZEQnBRRnQ5RHMtRWR3dl8tUzY0SmkxVjVSUU9vOEgyajlqUHRpZzdxN1lKd010czRGZHdlZmdWWEJBOEpPRVNsZUVqMnR5cDk2VElqdUxwNm42UVlxSXZkRUJhaWZZZFVHazRNVVdJcWVWOUh0ckJ6Z1BJ?oc=5"
-    },
-    {
-     "title": "BYD to acquire former Smart factory in Hambach - electrive.com",
-     "source": "electrive.com",
-     "pub_utc": "2026-11-25T09:12Z",
-     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNR213cjBCbjAtNkZHX1VSdlpHR092SFk1bGRmeEZqckhMZGMxV1dyUWZXVWpYRVE3UTFEV1pQT0tfSVE1cVFSXzllazVaWktWZDNVRHF0MTNRaW9mc1dVci1rN0N6YmRhb1FNM1FEd1ptREwzQjdaR0h6NFJldjJaUzVvNkgxOTB0N0xqcQ?oc=5"
     }
    ]
   },
   {
-   "company": "寧德時代",
-   "sym": "300750.SZ",
-   "country": "中國",
-   "industry": "汽車與電池",
+   "company": "開拓重工",
+   "sym": "CAT",
+   "country": "美國",
+   "industry": "工業航太國防",
    "generic": false,
-   "big_move": {
-    "pct": -8.33,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
     {
-     "title": "Gasgoo Daily: Xiaomi Q3 Revenue Tops RMB 100 Billion as EV Business Grows; XPENG Opens NGP Rides in Europe; CATL Opens Battery Service Center in Türkiye - Gasgoo",
-     "source": "Gasgoo",
-     "pub_utc": "2026-11-24T14:12Z",
-     "link": "https://news.google.com/rss/articles/CBMizAJBVV95cUxNVnFyVEU0Q1BNV050ak1oRV9uMXRFR0pTUjZpR0s0MnFqQU1uQXl5QUdfR1lQdHdva3lTdHJfQlhjdzhDQWM5Z3JqU0Y4SGZBVDNrN1cyeng4MDZTeXNrYTkySmtIZTZFcV9IdG52RU5Gd1ZsbGRxemlfNk5EcFZObUlOSXZ6N0EwcUU0bGVpX0hnRGNXQzJhNjM3RlAzelI1c081b19sY056SXd1bmZaOW16aGFXZ2liZ1pjdlJMdmdQUkZKM1hTNDlWTmx5ZjB1dXl2UmZzaHI5c0lmdllmOEoxWVhSV09JTFpkYmd2UGFOXzNZMDNrdWpJNXlScTZkbXdNXzlnUmZqNUs5SUROZEpjUTh4MGsySXRsR2s1UEpjZ0dheHhSeDlKUmFSTXRjSFlIWmpIVnoyNTdUaXdjSEVXWE9DV3pNdi1VNQ?oc=5"
+     "title": "AI Infrastructure Boom Pushes Caterpillar (NYSE: CAT) Order Book To Record Levels, With Deliveries Stretching Into 2030 - Foreign Policy Journal",
+     "source": "Foreign Policy Journal",
+     "pub_utc": "2026-11-26T20:06Z",
+     "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNM0MtUkxYd2ZyRWMxeEVsaEVtWTkzNXd3NEJJV1dhZDZNNk00cU5MMXFWalljc3M3d3VYbi0ySEZLM01xck9yRTFYNXU3czI5SHh3TnUyb0lPMW13YW1HbVlJOG1rM3pudWlJZExiaUMtYXo3YlAxd1c2QmlDZHVhZmhoNEpRTUNIVWZ1aEdrMEFEWkFjMkRvWlZmRGRXeGU0V0lkNmhrQnlpbFRJZlBTazFyWlBFUjI5eXdtVS1VLUFGNHBhLXo2WEtrZHp6R2YteHk3elhGS1J1UWZvczNFVDVpb3FDNURSSnF0SlJvbEtHOE5PeHhn?oc=5"
     },
     {
-     "title": "POSCO Signs Lithium Supply Deal with CATL - www.bestmag.co.uk",
-     "source": "www.bestmag.co.uk",
-     "pub_utc": "2026-11-24T11:04Z",
-     "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8wU1FsWC1ZajNmc1BPc2tndUhlRUplMnpJTU5uNWpfd0VFd21Sd3RCVEpscW80MnltY3hObEtyRlNwLWlTMVJFY05Ya0JUWkFDOUszZ2REUjFyRVRZYVpZbnhNdS13RDRQdmxVUnV1Vm9jU05KZldv?oc=5"
+     "title": "Caterpillar's order backlog hits record $78B, d... - Pluang",
+     "source": "Pluang",
+     "pub_utc": "2026-11-26T19:14Z",
+     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0zaDZUZ01TVkZzdlF5b1RjN1N6NUxiOUJObHJsN1hydmwxT0sxckhGZGtxRVRWN05GYUFhLThyaHFDdmR4N0JsWGs1Z2FpV2hFeTFJQm4xWUk0Wmw5azJhS05tWEpDbmpvbk9FSERuRmExRWwyNjNJRkFia3A?oc=5"
+    },
+    {
+     "title": "Caterpillar stock weekly forecast: Neutral momentum readings keep range in play - Traders Union",
+     "source": "Traders Union",
+     "pub_utc": "2026-11-26T15:12Z",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPV0pqdkIxLWNYZmpFZWdsdVNFd1pISHYyUExFVXZlY0F5Wm9GeW1SSTBQMVREX213N2hmX2ZNU2Fxa19KcGtzTG9wTUJ6MFNMMUNUMS0ycUVjWEtHTVhUcHowN2xURU55cDBWZlRwc0tlVlVWazdvS2p2czhpamdXZDZYS0Q2OWJpYm5HclFNWXpQcHc?oc=5"
+    },
+    {
+     "title": "How Are Data Centers Powering Caterpillar (NYSE:CAT) to Its Highest Sales Quarter Ever? - Kalkine Media",
+     "source": "Kalkine Media",
+     "pub_utc": "2026-11-26T13:52Z",
+     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQb0lTanREMU02MGJrWVF3YmtvaXdRanpVYWFNT0tNVHJZWXBfTlFNYkgxajV0andIMlVxZFRVUXFiUWFnUU94eWZXUU5RTGFneE9qMks1MzJlZWxwZUJmR0JNcGVkUVN1ZVdqM0lzZHhCa2VISEtOZzR1OHA1eTBoMV9kdk1qTlA5Z2VoOEpTc2N1X1VSY1RGbjd4LWdhVVBjTEQ0UVdhejR3ZHplTjlQS21CMS1kQWNnX2xVZlREYlZjUF9qQUpucg?oc=5"
     }
    ]
   },
@@ -2776,6 +2599,12 @@
    "filings": [],
    "items": [
     {
+     "title": "GE Wins Deal From Malaysia Aviation Group to Supply GEnx Engines - The Globe and Mail",
+     "source": "The Globe and Mail",
+     "pub_utc": "2026-11-26T15:25Z",
+     "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPckJQVTVLdko2c2RGa1czdmZMaEdPWG9tS0ktZ2FIcFdadU1Id2R4NVlsSzBnNjlVNi1kY05MZW9QY0lVZ3dZR3drUlk2ZmhDS1dkeG9sN3IzN1NrbDRqWWJXMDdtSXE0M1ZtZmx0RDV6UHpqTC1SMFpYcl9DazR1QkxVdHVfQU9YMl9Dd2ZBX21Uc1MzSGN3N2RNSGVKQUpVdTVJVEg1N3ZWWHRTd003NEhPdlZfcmVVekhTNzEtQjBmeEMydnlKV1pIemlXeVBmWHFFTXg5UXRmdENqUGRsSg?oc=5"
+    },
+    {
      "title": "Wrapped GE Aerospace Tokenized Stock (xStock): Funding, Investors, Team and Key Events - CryptoRank",
      "source": "CryptoRank",
      "pub_utc": "2026-11-25T21:13Z",
@@ -2788,22 +2617,16 @@
      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNTXk3U0tnanNRdDNmYW9EVkhqNkp1bXFKbU5JaWRyV25XVFM3dDRGRTlaZFNlSVNkNl9CRW1jRTk2QWNlZGlTVFloc1ZkYW5zTGFOQW9lbnhaWlYzLWNiLXpybFBzek42S0lNRlZWVzJyLWFEei1YczEydThZSmlabzZ4b0JVQ3d0UlVUd1dHYzZSTWJiNkJCeDdzbGsyZWlpS1YxTUNPY21wV3RDVkd0Q2hmRFEwVFBHX3lkcWMyRTQzVEdPcW0zOXFjWWd1TnBqU0xTcWw0RQ?oc=5"
     },
     {
-     "title": "GE Aerospace wins engine deal for 16 Boeing 787s - Breakingthenews.net",
-     "source": "Breakingthenews.net",
-     "pub_utc": "2026-11-25T12:42Z",
-     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNdnJpbFhVRzBzaDgtZVhqY193SHlEV3YxNFhzb0dfZk40REcycUtrNUVMWjREeFU2OWpUSVNHZkxtU0wwZGZSWEVHeV9KazhveTlpQk42ZGpOWEFENkxZTy01YS05OXRva0N1YXJETWpKQ3ljS0NyTW5zNWdOcktqTlNadEVjMzlWX3FSRFVCN2pkMTdMeDNhaA?oc=5"
+     "title": "GE Aerospace Secures GEnx-1B Engine Deal for Malaysia Aviation G - GuruFocus",
+     "source": "GuruFocus",
+     "pub_utc": "2026-11-25T14:03Z",
+     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNYkFVSE5VTXphWV9nUDhuVk5EVExybDY5c2FNT1hsTHFzb2dfTEdBX0dxcGlORTFmUjhRMzFNdG1Nd3A4aE15aldCVmRNX2VmNHVXMF9RWTRHU0JRdFIwZUJ0TkxTOERFa1dxbzctTTVTdWlSd0Q4ZW9wSk8tNERMUWNtcDBkbUVqVkhFMWNkRkpGVmRlaDVCTjB4SXdGY1VKaGh0dTJab2tMajB4bHRiRDFfSUxQNlE?oc=5"
     },
     {
-     "title": "Darin DiTommaso Named Interim CEO of GE Aerospace Defense & Systems - ExecutiveBiz",
-     "source": "ExecutiveBiz",
-     "pub_utc": "2026-11-24T16:46Z",
-     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMXY1MDJKU3dQemlxUFA4SG1hV2V1eF8teTd0RHVIdVBhaWhiWHY5YWROWkdvaVV5QzNFdVd1WlAtQnJQSmhuemppM19hdS11WEhiVlZ3NzZORHF6Z0t0WGJ5RF9TMFlRa3MtSjNPWVd0LTlWQ1pVZkR0SHVYeTRTYXlMdzV4ZnRFY3VXU1FNTmk1cXhCdHpmb3lqbTczSjl5emc?oc=5"
-    },
-    {
-     "title": "GE Aerospace defense CEO to leave firm after four years - AeroTime",
-     "source": "AeroTime",
-     "pub_utc": "2026-11-24T09:25Z",
-     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQkNnNGo5YmhtZU1uOHN2WjJEMGFvazBsY3VMRWhQR1ZrQk1xVUlYTUcybl9ROVJDSklxQVpRelV2MkZscFFxOHNPNm4yZVRSb1FnYTF6UXVtY3BMejJqOEVSRjhvOFpkN0dCZUtVRmczeG1Qc3B6VmY1N0RzSUo1RWEySDNxTmsydnJXTF83TS1DMHM10gGaAUFVX3lxTE9ManQ0dkw0Y1k0cE15VkFVZk9VTVZadURQaUVjMzJRdEZ6WWM3Yi1PR1RIVFlFdms3ZzBJWDNDQTFkRmZvbEVmMjNNNlk1ZjNZNks0anlvWUpKVkJHWFVCWUVwNzNwSGF0Z3lzdkt1Z0MzcmZ2YjZiNjU5bTJHekNwTnMxbmRXYjVnTE1zT1JMeXlzNjljN1dTUGc?oc=5"
+     "title": "General Electric (GE) Lands First GEnx Engine Order From Malaysia Aviation Group - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-25T13:10Z",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSGF6c1EyYXFxNUZndVFUVGxKdm4zR041a2RvY05SMHpxSHBaSFVhNjlpNVBwanB0TEpQQk9HRXNJYVozbnRlVlkxOFB3dkRuUGxmbE1PdWRBT1VRZXR2VENpQUViQ1F5UElZR0p3a0ZxR3p3NVBWa1B0Y1BjNl9sWlFaSkVFSFF5V1hTSHpYVzJNVTZxa2hFV2w1WFA?oc=5"
     }
    ]
   },
@@ -2817,16 +2640,22 @@
    "filings": [],
    "items": [
     {
-     "title": "Anthropic’s Post-IPO Struggles Contrast With SpaceX’s Early Days - Bloomberg",
-     "source": "Bloomberg",
-     "pub_utc": "2026-11-25T20:44Z",
-     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNnA5YTMwSWRSUnZxYzBTbDFmd1FXejBuclc1ODdIOERNaGdTZG1iSWVUUm1kMGV6VG02YUp0RG9RRGJUOGhtWW5lOWk5N2ptSUVQMmp2ZXRPdVVLOXdQUjhaRWpfWEp3NXIyZHJDSmx1WnJZWXR2LXBEY1ctQnBjVVczc2ttMEhxSUxNazJGT09yQ3BiS0Q0Y0llRENGeERqQ29VWE1FZFdJQ2hxZFpvTzI1b1Vmdw?oc=5"
+     "title": "UL Lafayette finalizes deal for SpaceX to lease former Pecan Island School - WBRZ",
+     "source": "WBRZ",
+     "pub_utc": "2026-11-26T21:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPd3NITVRIVUdIemYwZDdGZWJuYkVpaDVsZXJ0VERwaUtneF9QQU5OdDV6WkQxZXVGcmx5Qk9uYjB5MXFwcW5PSWNVUWEwU2d2V0Y1S1Q4LWVIb0Q3UlVzaFIwcU85TWZrUmtMZlBNeFFtUUlhRDM0eDNXZ254NENvdzNDc1ZPa3RIRmdCWjJnQ3dVVlNyQ0xQZEdQc2taSUR2VDVN?oc=5"
     },
     {
-     "title": "Tesla and SpaceX stocks sink as merger concerns mount - Yahoo Finance",
+     "title": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs - Yahoo Finance",
      "source": "Yahoo Finance",
-     "pub_utc": "2026-11-25T15:41Z",
-     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPX21TU1QzV0o3SXVFSl83OWhvMVZzN2IxRFc1dzdBbGZDSEZYY2ZMTlBBaV9mVlF4dGVKTUU2eE4wN0xHajRtZ3EtNnA1RWNoWDlCZkE1NndHVTZlZzlHMEdObE5aYWxBRkNtajAwU25rbXVXZWY0OWRJb09iaG1xd0VvdnlkTm0ycjdmbWZVUUFRQUVBYW9wTXNiejAwdGtfNXE2dU1XN0MyS0l5WHVhQzlmZGYwZGc2?oc=5"
+     "pub_utc": "2026-11-26T17:00Z",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcF95VDVfWEJCUU9RTm0tQzA4Rmt2TVpFYVVBQmd1QS1MNVh0Q3Z2aEtmV09tU0RpU0daRlBzQzFiczhHbWdMdkxxSkdNalYzcjlEb292bWlnUV9vNDliSzNZaFYydjJPU3NieVotLUs2ZHJ6RTg2UUZSeVVWdVBkOVVoWFRBMC1YYklhMGJsMA?oc=5"
+    },
+    {
+     "title": "Suit alleges Louisiana land deal between SpaceX and ExxonMobil violates open meetings law - The Guardian",
+     "source": "The Guardian",
+     "pub_utc": "2026-11-26T12:02Z",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcm8tVTdfTzZTclNEZTBQSUNvVmF4R3pPcEltZE50NGV3VnloV0NWZ0dVb01xMXBjdlpFbGJGYTZCUE1RdjZQNjYweFlVUWw4YkxkR3JSWmlOaE1CX2ZTM185Q2p5ZHUxMVBsaWYybGZLTjlQUGRpQlJiVVdEVU5ObWtDMG5xM1VXV3ZpcDJadU9ZdWVaZ1Rrcg?oc=5"
     }
    ]
   },
@@ -2840,6 +2669,12 @@
    "filings": [],
    "items": [
     {
+     "title": "Raytheon Wins US Navy SLCM-N Nuclear Missile Deal With Anduril, Divergent, Williams - The SOFX Report",
+     "source": "The SOFX Report",
+     "pub_utc": "2026-11-26T03:53Z",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWDAxTURoZF9uQ0JYTng5eXNBTjVvV1VBSEhhbWk5bEhCTlhKcEtUS2d0UnRqQl9fcWRjZExGbmJMM3BaZThIc3dWb2oxdTNfWkMxTXZQRUxSb2Z6QnAwWTZvYmFzSlhIVjBxTDNFRC1lcjFBQ01kWms3ZkZHU21EWlVSemxBdmVBT01vNFdRVGpEaW9VVmNBZE1JTGJfUHVQd25KZjZ3?oc=5"
+    },
+    {
      "title": "‘It’s time to start running’: Anduril CEO Palmer Luckey says AI-powered cyberattacks are moving faster than outdated defenses - TechRadar",
      "source": "TechRadar",
      "pub_utc": "2026-11-24T00:25Z",
@@ -2850,55 +2685,23 @@
      "source": "Pluang",
      "pub_utc": "2026-11-23T07:00Z",
      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPLU9wVkx2bjlMTE5KU3lhTUtlUThuaUVPSXF0RER5SEJZNmthR2E4SDZoNk40Tmtkc0FmWXNyNzhJMU83Rm1EOGxQSFhmY1FpbTlTRjZzQzVIcThPbmhkUzh6LVRMYzFUczBPandjWFBQZ3p2ekoxVDYtTmZtbGM5UU96Q1Nkcy1uRzNoTkFYaHpLbUtlLUR6RG02QQ?oc=5"
-    },
-    {
-     "title": "Anduril IPO: Timeline, Valuation and Investment Options - SmartAsset.com",
-     "source": "SmartAsset.com",
-     "pub_utc": "2026-11-19T08:00Z",
-     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBXWFpOVDMwNTBpNjJSbDBiUUFXNS1GSWZvZVdORXFLcDZzaEJ4elhlbVg3RXdhTUhlcng0V1VzV19meTBycW5Xb0VYbFdkSUViWXhUMmtuMnl2cFJGRkE?oc=5"
     }
    ]
   },
   {
-   "company": "三菱重工",
-   "sym": "7011.T",
+   "company": "日立",
+   "sym": "6501.T",
    "country": "日本",
-   "industry": "工業航太國防",
-   "generic": false,
-   "big_move": {
-    "pct": -6.63,
-    "date": "2026-11-25"
-   },
-   "filings": [],
-   "items": [
-    {
-     "title": "Top court confirms order for Mitsubishi to compensate deceased victim of forced labor - Korea JoongAng Daily",
-     "source": "Korea JoongAng Daily",
-     "pub_utc": "2026-11-24T06:52Z",
-     "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUFMwVFhVcWpScS1kSnhPWTNhVVJsN0NZYWI4VUpxWXlWdXE2eFJ0Q3JISEJVS3hjRUpLZlpTYTZBdDJyaFpBbXZXM3FjZFJPLVp0LUNVRjRIUFRILUx5MlhobWdnSFlwVlRfN0hhbENJdTFueDloVnZNa2htUkJfWmlWVGVXQkJPMllxRFRkaW9kX0tRWm0xdWRMVkNVemxTblpoSl9fTHdaV2k0aDRuZHE0aUZxWkZZNEVYbW92clFkY192QjloTklRZkFBOEt1NWY3ZV9B?oc=5"
-    },
-    {
-     "title": "Top Court Upholds Order for Mitsubishi to Pay Forced Labor Victim - Seoul Economic Daily",
-     "source": "Seoul Economic Daily",
-     "pub_utc": "2026-11-24T03:00Z",
-     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOenIwa0d2dURBa2RLenptV1R6QXREWnZ2X1FOdnZpeDdvWF9seVQ0OUhENFJteDVhcHp1elpFeURMVHdCUFkyLWJFcDlfd0FxZ1JncmVnRHh5YmxrN1VTMmQ4X21CUGVzVEhKM2xvOXNpcDFZc1ZGR1lESmx3dVViS29SUVlZcWhVOXRadDFqNG9zZDZfOTRPOVVCZ093Wms?oc=5"
-    }
-   ]
-  },
-  {
-   "company": "韓華航太",
-   "sym": "012450.KS",
-   "country": "韓國",
    "industry": "工業航太國防",
    "generic": false,
    "big_move": null,
    "filings": [],
    "items": [
     {
-     "title": "South Korea's Hanwha Aerospace Scraps approximately $52 Million Investment in Lion Robotics After Valuation Disagreement - BigGo Finance",
-     "source": "BigGo Finance",
-     "pub_utc": "2026-11-24T07:05Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBOdnpla2tIUDNuVENZLWtLc0QzU2ZvQkRMLWlsdTVodGlOdFdUSXNPTmNlcFE4QlVuMTlBbW9GZkg0bDlEdFkwSjNmc3FnMDkzSVUzMUlWWUlSTV85MkZHNlNqY1ZPVFpCZE1SNkFNQmdsUVVwUmc?oc=5"
+     "title": "Raghavan Sundararajan Appointed Chief Delivery Officer for Verticals at Hitachi Digital - https://hrtoday.in/",
+     "source": "https://hrtoday.in/",
+     "pub_utc": "2026-11-25T23:33Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbWJaaHNLQTdpWGVPTGN3RkVsU3kyTEw5OHNhd0pBUkl5bUppMUZBYnBFNG1zQzAxblpUTFJ1ZjNYR3N0S3NvT0ljTlpZNHdITGU4a3dLTHVYbFByQU03a3BBdjZhVXRRWFZlZHVPTGdyN2tIamI0X2dpd3lBRVo3MFlSWVFtaDZDSFFMenFGaV9fb2duR2sydEc1dk05ZHl3Tk1CVVkwVDlUb0k?oc=5"
     }
    ]
   },
@@ -2912,16 +2715,10 @@
    "filings": [],
    "items": [
     {
-     "title": "Walmart-backed PhonePe restarts IPO process, eyes up to $15 billion valuation in market debut, source says - Reuters",
-     "source": "Reuters",
-     "pub_utc": "2026-11-25T18:35Z",
-     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbkVTQU5UZjA4Wnc3STdBc0xPZnhhdzE5VWxlbUJHTG5XWjFlRHRiZWFUcHdHeThRQTJZVkZqOXFMRWNJR0lQVnlLQkEtSllnQ1ZXVVl4ZmJhTkNxaGwwcGh6bHZIZjZDRmttX09iOU5nS3BKMDB6aWhybHNyc1BiVlRNQ1loSXBUSFB0Z1UwbXJtTW9WRW9wMVBJOU5PU3N0Ul9mT2dibTk4NXZnbVV5Ny1UZFZwdG5vc1BiZXVRemFXT0NFbmc?oc=5"
-    },
-    {
-     "title": "Walmart-owned Flipkart CEO Kalyan Krishnamurthy to step down - Reuters",
-     "source": "Reuters",
-     "pub_utc": "2026-11-25T14:49Z",
-     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPSFZPMzlEc053ZFF6WnE2d3lVSTEwbHAzS0dhV0k3RlRlSjNzdmktOWF2RXVscVluRktFNUR5Y3NBNWV4d0VXUUF1b0ZvOXBEeWxNZGd4WGtqUEI5SEFsTHBBU055QjlaamIzSU8yeW9rX0FCdkx1Qng2OUV6YmVDYWFrWHpJWE5LR1VRWDluVzdrNTFVMVJuXzBlYmVjUDY3UERyUHZPSQ?oc=5"
+     "title": "How to Play Walmart Stock a Week After Its Q3 Earnings Release - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T13:15Z",
+     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQbWNxbVVocW1mb3VQX3plTjlpcjlCelNYdFh2YldpeV9sM2h3eHJQZ3dXa2JtX3JaNjJCd0RSTWNlcmNobkhSMWgwbDVTb2xpMkFmWU56VnVCa0RDbkNhbXZQOUxpNmNjX0xLYlQ5UnFHS0NvMkUtZHdiR0tIOWRYaTdfWlp3NWZQUjFBeF92eEZyYmhHaWc?oc=5"
     }
    ]
   },
@@ -2935,34 +2732,39 @@
    "filings": [],
    "items": [
     {
-     "title": "Goldman Sachs Taps Secondaries Market For $1.5B Credit Deal - Benzinga",
-     "source": "Benzinga",
-     "pub_utc": "2026-11-25T17:23Z",
-     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLU9mWURjV3BJN2lrck95bE5fdEVmMFBzeGJxSi1ESUp6d2FBZi1IZXNKbWZLMzJHNzY0Zmo1cnh2ZlMwNnB6cy1WWXBHOFNkUnRjcnZISXpVTjM3UWdpeEZDamh2RTVpeWZ0c0JPbE4wOUVRcWZCc3R3RjRuLUZ0WU5UWFdacTFPVWpQanFQSUFWLVh0anFDbzJ0aFEzdmRTVTBUS19hNy1icXNsQTdhOTg0YWdESzBibXhvUlRBZw?oc=5"
+     "title": "Goldman Sachs Slashes Hong Kong Home Price Forecast on Rates, Equity Rout - Mingtiandi",
+     "source": "Mingtiandi",
+     "pub_utc": "2026-11-26T18:53Z",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPb0dTNWE0MkZSa1JhRTJJcFl4aDMxN3FrQUpoaDlfNFItTGRHU0NZTTlHemQyUFFSWV95OVUxQTJWdS1UVnhpQnJablNVRjh5TFkzSEJ4UVJOMzhQd0tLdzdaRFRhbngtTXAwdUxzU0t1U1ZCUVlBbHh6SGQyWnYwTy13MlFIblRCV0ZteFRsRXo4NTk0d1FyQkFqZ0xJQm5Xd2xKSV90YWpFVVk?oc=5"
     },
     {
-     "title": "Goldman Sachs maintains Dollar Tree at Neutral, raises price target to $149 from $131 - TradingView",
+     "title": "Goldman Sachs Raises Oil Price Forecasts to $105, Citing Middle East Escalation Risks - Vocal",
+     "source": "Vocal",
+     "pub_utc": "2026-11-26T12:20Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMU9HWW8zZ3ZOUU9oMmVaSDJiNzFqWVcyT3JwVEhaSmk5Y09TUjl4ckYyYURKZHhRZy1SYjRqX1RaN2FNNW1aem9XSkE2a0dJR01oeFVlNE1FWGdpSGZTR2N5WmdsaV9meFd5cnlhQmJ2RGJJYTJlZzdHRFM2QUFrWkhpYnYzY2JYcXh5RHBHTUpqamJBaFJFcHV6NDdPV1ZiN3N5WjJCNWpSdjJveWtPUA?oc=5"
+    }
+   ]
+  },
+  {
+   "company": "摩根大通",
+   "sym": "JPM",
+   "country": "美國",
+   "industry": "金融",
+   "generic": false,
+   "big_move": null,
+   "filings": [],
+   "items": [
+    {
+     "title": "SpaceX-Tesla merger talks advance as JPMorgan flags S&P 500 inclusion - internationalfinance.com",
+     "source": "internationalfinance.com",
+     "pub_utc": "2026-11-26T10:03Z",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQanRxMUZRYnMtdVF0aXVucV9nMXNYU3E5aFBRYzFFczN6X2ZIYUJLU0g3WVFWSWczZkNqcFBzbFFlSFBRakZmTnFBU0dhaEI3UlRQSTZiOXBUQWliRlBIbUtteEk4VE9qOFpxeUZLTTRLbVdDbk9KNW5qbld2RXl0dDZIWTduZXRmLU5wbHJ6WUY3N3ZsNmVURkxYOHhkZWt2NkZKN0VnbWtlRF9RYjlJdg?oc=5"
+    },
+    {
+     "title": "REG - JPMorgan Emerging MD - Dividend Declaration - TradingView",
      "source": "TradingView",
-     "pub_utc": "2026-11-25T15:28Z",
-     "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOR3VzQTE3LXA3a3MwcXNTUjBuUWVjYlc0TnBlUFI2VXFXUFk3SG9RZlFrNTNZUmJqa3VZaFBoTWRFRUFFMGQ2MDFfeWJxQmNFTFBkeGpWQkxVUFYyZXNFZHFaOHJxYjhFYXVLS2o4SHFLYWQ2Yi1wWXdPWFliMVU1cXJGODN3T25HakduNUV2bDNTM2tUTEdkMHdraXlZWUoweU9fVDNtZ0RxTHphTnNqZ1Z1T2hnakZ3SXYzVUp2UkFLYnljSVJyNXpnQmxLUXZCekpBMGhKSzJkS0VE?oc=5"
-    },
-    {
-     "title": "Goldman Sachs maintains Best Buy Co at Sell, raises price target to $89 from $71 - TradingView",
-     "source": "TradingView",
-     "pub_utc": "2026-11-25T15:26Z",
-     "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQd3g2QmxfMTZsYVhZRG9PWV9wQ3NZZnY1UnhRS2xRZ2hvX2NVWGhhay0xYWpyTmVNVGlDZTMtYnZUQmF3SUpHazJNT1Q0LXJhMWZSbjhpYjFvQ01PNWV1V0FmMWJXd21TOXdmVWlXSzZNRlkzTDF0RkZmYm5JQjdHWk40c0g4Vm5qZWRWVGp2SHBKX0toWk1BNWlmNE1oNW91OHRYTFdkMW9aUFByMExKMVpBdUVUc1hNTGlaSUU1WXF4aHVhS0NHcGlHMC1MV05BQzJvR3Rn?oc=5"
-    },
-    {
-     "title": "Bank of America : Chair and CEO Brian Moynihan to Participate in the Goldman Sachs Financial Services Conference on December 9 - www.marketscreener.com",
-     "source": "www.marketscreener.com",
-     "pub_utc": "2026-11-25T14:09Z",
-     "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPVEpwNW53Vnh6OW1ncmdZQ0dkRnd1anBCMGRmNVhOVWIwYy1SNlhObmFhSHA2YTMzNlpadjdFQWc5emVNNzFyLVQ5TU1kZXFDUC1xa0N5X21qdG1JamhIVG1nUkpoa0phb085cmtSUEhsS1lqUldiRXJNYVY3b3d6OV9URlNwX0RLOFFCd3laWGhPY1lJYzFMYlZvV3RON0pmZjA2MnRuYnN3NFhCTDRzY2JhOEJMaHc2VlBvVHBOYzk0MGQ1a3d5X3BzMjF6eWV4VDNvV0t1eU41UjNnZk8wYXRJZkkyUQ?oc=5"
-    },
-    {
-     "title": "European Stocks Are Forecast to Rise in 2027 Even as Earnings Growth Slows - Goldman Sachs",
-     "source": "Goldman Sachs",
-     "pub_utc": "2026-11-24T14:20Z",
-     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOa0Rhc3pWX2F4LTZfZnhxV3QwTkN5akY4VEw3LVZESXlQVUZhanRLZlBxV3FySHoyNWlaaGdOb2tiU012RklGbE50UVJVQVN0RnJ3aUN0LU10NnJ2NURiTm5UUkplcmR3ZHpyT2xOdE1NNEJ3enc1XzhQdEhPVFF6aWx4UWFueW9SVndRSjN2MTBRRWx2VExQb0RVUWR4SUZnXzJhS0NGclFsOFlnald5LXlRb1lpWXhGemhsZ2Fn?oc=5"
+     "pub_utc": "2026-11-26T07:00Z",
+     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUTE3OHViN0ZoSzAtdF9NS2Q3NHRIN0dQM3dYczFsbzZ1eWJaNi1zSDhobTFIaFZUd1pxczU0Q2pwLUpYOERiN0p5MGhsNHJiRHI1MEphSEVOakpUMDNTUHdackx6T2ItRERYckRJODMzMGdKOHF1YXFnU2ZmVGdNVmxuQ1E3dUpROGxHVG9HRU1MaE40NzNGMnltQmlWZHI0OWQ1UXYzWEE2a1hJeGVFb1ZwUk1xN19uVFZqbEpB?oc=5"
     }
    ]
   },
@@ -2973,36 +2775,13 @@
    "industry": "金融",
    "generic": false,
    "big_move": null,
-   "filings": [
-    {
-     "code": "2882",
-     "date": "1151125",
-     "time": "170046",
-     "title": "代子公司國泰人壽公告違反保險法相關規定，\r\n被核處罰鍰180萬元。",
-     "clause": "第26款",
-     "source": "TWSE 重大訊息"
-    },
-    {
-     "code": "2882",
-     "date": "1151125",
-     "time": "171230",
-     "title": "代子公司國泰世華商業銀行公告授信資產之轉讓",
-     "clause": "第20款",
-     "source": "TWSE 重大訊息"
-    }
-   ],
+   "filings": [],
    "items": [
     {
      "title": "2026創新論壇／國泰金控副總經理梁明喬：集中資源 解決痛點 - UDN",
      "source": "UDN",
      "pub_utc": "2026-11-25T19:22Z",
      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5hdGIwb2pxbXdINE9IRVFsMVREbll3bXZIRWdFQnhXSHNiby1BazNNQThqdUJ4U3k2X3NRcmhMWUZYaU9PNzZvRm4xOGgzSy03cEJDYjVxS1p5MVVfVkNvTy0wRzFJR0ZrbWwtcnBCYmhrNFd0ZFI5YU5n0gFWQVVfeXFMUFhURFJJYUNDbnZmQ3UyUVlrVXBUS255LWZQdk1WWDQzM3pSblpUcGRiWkZ6ZC1DX2VuaHZBZk9wYjh0V2x0VHJZYVQzTnEwUW1uMVZ0NUE?oc=5"
-    },
-    {
-     "title": "2882 國泰金- 國壽挨罰180萬！金管會揪3大缺失爆漏發癌症身故保險金- 股市爆料同學會 - CMoney",
-     "source": "CMoney",
-     "pub_utc": "2026-11-25T11:14Z",
-     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBGZUMwU2kzWHJNdUZWUFplOHc2Y2QxQlhJSkQ2ejUybXp5c2s1QVpDS3VHWUF5S1QxZmVaWmJYX1Ftam9kTi1Mb3NjUF9YN0pRNFJwc3NNbXE?oc=5"
     },
     {
      "title": "1表看》國泰金、中信金、元大金誰最香？法人揭6檔金融股明年獲利：2檔列投資首選- 上市櫃 - 旺得富理財網",
@@ -3018,17 +2797,30 @@
    "country": "台灣",
    "industry": "金融",
    "generic": false,
-   "big_move": {
-    "pct": -7.67,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [
     {
      "code": "2881",
-     "date": "1151125",
-     "time": "170418",
-     "title": "富邦金控代子公司富邦科技保代公告取得「富邦產物保險股份有限公司」使用權資產",
-     "clause": "第20款",
+     "date": "1151126",
+     "time": "171116",
+     "title": "公告本公司董事會決議通過115年第3季合併財務報告",
+     "clause": "第31款",
+     "source": "TWSE 重大訊息"
+    },
+    {
+     "code": "2881",
+     "date": "1151126",
+     "time": "173455",
+     "title": "富邦金控代子公司富邦科技保代公告董事、監察人派任情形",
+     "clause": "第6款",
+     "source": "TWSE 重大訊息"
+    },
+    {
+     "code": "2881",
+     "date": "1151126",
+     "time": "173942",
+     "title": "本公司董事會決議參與認購富邦證券現金增資私募普通股\r\n新台幣100億元案",
+     "clause": "第24款",
      "source": "TWSE 重大訊息"
     }
    ],
@@ -3038,6 +2830,12 @@
      "source": "今周刊",
      "pub_utc": "2026-11-25T09:39Z",
      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOLW1QRzY4cEtXWFJwbVQtX2VjdjJzUmFlc0d1RzNWR1AyZmZnZTVBdzdLZHk0VjhhNHY3TzJMc0FqTWswVjJlWHpLUF80Z2JJN0VHUVdYTTlYbTIwSjQ4Qnk5WlJ5TE96X21wSHR2bkg2ajI4Z2sxRmVUVWxTOVlMRQ?oc=5"
+    },
+    {
+     "title": "富邦金獲利／4月大賺388億元 前四月720億元創新高 - 經濟日報",
+     "source": "經濟日報",
+     "pub_utc": "2026-11-25T08:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBGNk5yOXhnRklmempXSlFuVTNTSVh4TTJ1S3pPWjRablNLNng0Z3d5TjREX0tXRUhoNkEyZUhhTmxyTTFpZ1JCQlZlZzAtMnZ5VlJKclRzRGlEaHZxTWdmNUI2M290dk5NMzZES1Fwam12a2pwZGlvY0xn0gFfQVVfeXFMUG5QeF80UVZUME9MSGFzU3MteG9kZExPY3ZnZGozNE1Dai1SaU9ESHQtVDU2Rk1iOWIxYUFwTldXM3dqai1lZ1NDZFJCR1VYSGFsWEFjZ2V1RjF1T3Y4MjA?oc=5"
     }
    ]
   },
@@ -3047,17 +2845,14 @@
    "country": "台灣",
    "industry": "金融",
    "generic": false,
-   "big_move": {
-    "pct": -6.82,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [
     {
      "code": "2883",
-     "date": "1151125",
-     "time": "141656",
-     "title": "本公司公告訂於115年12月3日召開115年第3季法人說明會",
-     "clause": "第12款",
+     "date": "1151126",
+     "time": "170033",
+     "title": "代子公司凱基證券公告取得凱基期貨股份有限公司\r\n115年度第1次有擔保次順位普通公司債",
+     "clause": "第20款",
      "source": "TWSE 重大訊息"
     }
    ],
@@ -3069,23 +2864,51 @@
    "country": "台灣",
    "industry": "金融",
    "generic": false,
-   "big_move": {
-    "pct": -6.34,
-    "date": "2026-11-25"
-   },
-   "filings": [],
-   "items": [
+   "big_move": null,
+   "filings": [
     {
-     "title": "台新新光金展現合併永續綜效 斬獲11項永續獎大獎 - UDN",
-     "source": "UDN",
-     "pub_utc": "2026-11-25T10:57Z",
-     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5fVGd6WlZVY005ZnhyZnVOaVRFRzhiNTFYbTBqbHB3WmtnNEthUlBXbld1ckdEN2k4ekc5UjM0ZzY1MmxoN0Q5V1R2R1I1Q25peFp3Z0t30gFWQVVfeXFMTl9UZ3paVlVjTTlmeHJmdU5pVEVHOGI1MVhtMGpscHdaa2c0S2FSUFduV3VyR0Q3aTh6RzlSMzRnNjUybGg3RDlXVHZHUjVDbml4WndnS3c?oc=5"
+     "code": "2887",
+     "date": "1151126",
+     "time": "171752",
+     "title": "公告本公司115年第三季合併財務報告經董事會決議通過",
+     "clause": "第31款",
+     "source": "TWSE 重大訊息"
     },
     {
-     "title": "台新新光金（2887）獲利股淨比殖利率估值－熱門話題｜股市爆料同學會 - CMoney",
+     "code": "2887",
+     "date": "1151126",
+     "time": "172016",
+     "title": "本公司代子公司台新銀行公告董事變動",
+     "clause": "第6款",
+     "source": "TWSE 重大訊息"
+    },
+    {
+     "code": "2887",
+     "date": "1151126",
+     "time": "172120",
+     "title": "本公司代子公司台新銀行公告審計委員會成員異動",
+     "clause": "第6款",
+     "source": "TWSE 重大訊息"
+    }
+   ],
+   "items": [
+    {
+     "title": "台新新光金（2887）第三季法說會前五大核心觀察指標與關鍵細 - CMoney",
      "source": "CMoney",
-     "pub_utc": "2026-11-24T02:45Z",
-     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1HbkxlNnVGRTB4T3lwM3pHczNSOG5yUVdnSW5RZm82b0oyOG9NaGVYcEtpdVlHU1lZVWpaTlA3OE5qWjRoZFk4WjFxb1lsZGxubHR1RWZybElZM0tOQXc?oc=5"
+     "pub_utc": "2026-11-26T04:55Z",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rZHZmc2FLUVZUVjNhTzBrOGp4TEFSSnBjbHlrMUwtQ3JnVkxOdGc0WTIxTEthNnd3dlR5YzhJZkNINmtYdk1SQUZPT2pHWlFpT08yU1RwT1A?oc=5"
+    },
+    {
+     "title": "討論牆 | 台新新光金H1獲利創高，銀行/壽險驅動營運 - LINE TODAY",
+     "source": "LINE TODAY",
+     "pub_utc": "2026-11-26T04:12Z",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBXX3V2Sm9xYjVhS2p2RE9Tem41Rkh4bzN3d1lrcTY3M3UtY01vQlp0cmpiQVFqcGRmaHp1QW9xWEdtQktyNVZsalBzVmt6akdzSHNjUTlHMlFxV2hhWkktcktXMUY?oc=5"
+    },
+    {
+     "title": "台新新光金展現合併永續綜效 斬獲11項永續獎大獎 | 金融脈動 | 金融 - 經濟日報",
+     "source": "經濟日報",
+     "pub_utc": "2026-11-25T10:58Z",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1kUnk0Z2VYS1MwWWs2U3VOYjN6VV9Fb1NPUWxOVmR2NnBJc2pFektXLWlYNFV2dW1DODlXNTVobFI4c2tjVlRGRnBqQ0M5ZFFjdkNJUGVCY0wwejVhWFZjbEphdlpmcHBfV3RJNVJzVTh3TTUwMkh2cGlubw?oc=5"
     }
    ]
   },
@@ -3095,33 +2918,14 @@
    "country": "台灣",
    "industry": "金融",
    "generic": false,
-   "big_move": {
-    "pct": -5.72,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [
     {
      "code": "2891",
-     "date": "1151125",
-     "time": "161856",
-     "title": "代子公司台灣人壽保險股份有限公司公告獲選為「臺北市\r\n信義區犁和段二小段暨三興段二小段土地都市更新事業公開\r\n徵求出資人招商案」最優申請人",
-     "clause": "第51款",
-     "source": "TWSE 重大訊息"
-    },
-    {
-     "code": "2891",
-     "date": "1151125",
-     "time": "164347",
-     "title": "公告本公司將於115年11月30日召開115年度第三季法人說明會",
-     "clause": "第12款",
-     "source": "TWSE 重大訊息"
-    },
-    {
-     "code": "2891",
-     "date": "1151125",
-     "time": "165617",
-     "title": "代子公司中國信託商業銀行公告授信資產之轉讓",
-     "clause": "第20款",
+     "date": "1151126",
+     "time": "163821",
+     "title": "代台灣人壽公告\r\n決議投資CTBC Private Elite Selection, L.P.",
+     "clause": "第24款",
      "source": "TWSE 重大訊息"
     }
    ],
@@ -3144,22 +2948,16 @@
    "filings": [],
    "items": [
     {
-     "title": "Mitsubishi UFJ Financial Group Raises Voting Power in Australian Finance Group to 7.21% - Kalkine",
-     "source": "Kalkine",
-     "pub_utc": "2026-11-24T07:03Z",
-     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPODkwOVRqbktiYUs0Z3RnSFpBWUZGMWFZMDh6X2RvMHhuS2k0bU1sbGt0NnFWVXhTR0xFMFFubWNKV3Utd2FoN3VyeS1razJBQU5pNXF1RktoZ3ZWTHlteTR0a3ViOEUtUHlpMDFiems2MnJDOEJrZ2tpRnVCQW1aekZVZXVLaXlDbWFVaWhvMU1ibWJjWXpwWGJTb0NDZGVtSmVFYzlwRWVVdTVTTTBkV0h0YWNmSVBvY1Qxazc5Z0J6RGxTb3c?oc=5"
+     "title": "Mitsubishi Estate Logistics REIT to Acquire Okazaki Logistics Facility for JPY 5.4 Billion - estie",
+     "source": "estie",
+     "pub_utc": "2026-11-26T01:27Z",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNd3FtdXBMbVFfSGVybWU0bXBkdF9rSHJMc0JhUHczX3F5eFc0STZSYVVzbkkySGhiZEdrdkxIeUZTMnVSQXVyWlI4NENaVG1qbjRUSXZ3T3pCY1hhMGtzRmhTYXdoS0EyMnJ6RVZKZUQteG5QeHgxZy1SU054SjNzcQ?oc=5"
     },
     {
-     "title": "Mitsubishi UFJ Financial Group Raises Voting Power in Genesis Minerals to 10.81% - Kalkine",
-     "source": "Kalkine",
-     "pub_utc": "2026-11-24T02:47Z",
-     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObDlZcllFRldOTElaTThUSXc4MUtYN0l2QmotYTg3aW1sTkhtWjFVOU5TZ3FSN3NNV2hkN3QtQ3h6MWNhR0l6WjBoOUt0alFwbWN6bXdqeXdzWXh2SFpoTjk3MEZ1R2tpa2RKTXhPQ2ZMWV8tS1V1a21zZFl4SU1ncGVJWFVVcEJYTURuV1o2cHpvcC1DT0FDcExxRWxkLXpSVHNlM2lsQ2hYdHg1VmdyMUFPd2hnVldCZVduVg?oc=5"
-    },
-    {
-     "title": "Mitsubishi UFJ Financial Group Acquires 5.22% Stake in PEXA Group, Becomes Substantial Shareholder - Kalkine Media",
-     "source": "Kalkine Media",
-     "pub_utc": "2026-11-24T02:19Z",
-     "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNY1ZXdWxGZk9qTm1BYWxLbmdtNHlGam9jNWNBal93RklRSzRqRXdLcFpDaTZxcVkwUWZsdm04UUZzS0YzWGY4dWVFclFxemNOYzh4a3ZsdVc3WG5wZFJfOXYyaklaZjhPakJpRjV6REYtVXMtM05VMUZ6RUlMbEROY2xKOFoxODFKU293aDR4eVFFc0t3S2p3VHA1bzVzakJOdEpuRUxQWHF2cEsxUEVsU01uMlRsdmhNQnhQTklUcHQ1Vzh1SV9qSEthM3djaVJEWkJIWnpSUmxLdw?oc=5"
+     "title": "Mitsubishi UFJ Financial Group appoints S Ramanathan as CCO for India - Elets BFSI",
+     "source": "Elets BFSI",
+     "pub_utc": "2026-11-25T06:55Z",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQZUF5RVppY3V3Y1NkYjVDSHFrdG9aNlRjbmNkRTJUQ0N2cmFXaGUyYnpQR1IzbmFzUWtwaXhIVUZoMDAzcmpqd2drZDhjX1BVVkRkSHNrc21CVmRIN2xMMUVtcERvQ0tqRjN6bDZ1UXFqSTQySzlKbnRLZWNWMnFjUVFkVjRUMHd3VnUwUW1wRWtqU014MWJQejBnelROVFY3?oc=5"
     }
    ]
   },
@@ -3173,10 +2971,16 @@
    "filings": [],
    "items": [
     {
-     "title": "Eli Lilly Latest Results: Revenue growth hits 38.6%, ROE at 86.1% - scanx.trade",
-     "source": "scanx.trade",
-     "pub_utc": "2026-11-25T15:30Z",
-     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPa3lJRXNIemZjUGdXbEdhV1dnWXlCNVE3TDRjWDFLaVhkZ2FURjhNcFN6QXU5a2paWWNDOTNfaC1kWk9yNGpRR2w3bGpYak51TS1TZlNUQ0txdkR1ZGNqVExveFJUdkRLdnFWcExKbi1Ed1p2SUNtbWhXdWJxMEpMV0YyUFh3SzU1OEhKbTFZazBEaHNibmphWnItZVVtU0FULThMZk1SaEduZlctSkNjbjcwVk9Vdw?oc=5"
+     "title": "Eli Lilly (LLY) Q1 2026 Earnings Call Transcript - Fortune",
+     "source": "Fortune",
+     "pub_utc": "2026-11-26T08:47Z",
+     "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1yaXhhZ2lIdWFXcjBNRlhEQ01KT1QyM3FObU1vbUlBaHdwZDZiVEJyVW5FMnQtVlQwNVdJa3AtOVJfSmx1d0tuaUhJeURybXM1YUtDQnNCYks2N2NVcU04ZWlZQXpmdw?oc=5"
+    },
+    {
+     "title": "Eli Lilly Balances Label Warning Pressure With Ratings Upgrade and a Burst of Deal Activity - ad-hoc-news.de",
+     "source": "ad-hoc-news.de",
+     "pub_utc": "2026-11-26T06:33Z",
+     "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPMmI1UDlBRlNDZGNWenRWMS02UlJKd1g1MERHdzNtS0VwODRUVFRiWmJ4VV9vdkxIYTFZOXZwTnpldFF5dzcwQXhwbjVDNWZxNlE5MjVmOWtxb0xUaGZXU1hDVW0zTllld2RYYi14Ym5ERnR0NXhPUmlFZEtNUUJ0QUFfTVRValIyQ25QRmVGVTYteVRJcHRfVlNSeVc5YUdfUUxNOThGNExQcTdjNjlRUGpPSjlyYlhleGdtYjVIM1NSdW1tSVJQUWlTZTg0SDV1cVMzNlgtSDFOdzJKZ3RiSzhLeC1jN0ZVbzRSQ1Y5OS1uWXB3TUE?oc=5"
     },
     {
      "title": "Eli Lilly stock weekly forecast: Maintains constructive structure amid oncology investment push - Traders Union",
@@ -3191,31 +2995,12 @@
      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOFoxRFlROG5VejJRVDRxOXlEdDBLd254RE9XZWxCX3JnWi1rWWlKa2c5YllaTEJ0RUpJaDBFTFVCSjlTdm9VUmxld0tqZU9uTFdvYnNWbllYYVF3TnRoblE0Z1ZOUnhUZnFKTndpeUNoMDhRc0F1NzZCNERQOXlmblFPLV9sWVRQRHZmOHRBckhodzlYbi1MRXNCZ2tCM3VNam9SbGpCNXMwY3pmUnl0NlItRmxIT3NI?oc=5"
     },
     {
-     "title": "Eli Lilly Acquires LoQus23 Therapeutics in $725 Million Huntington’s Disease Deal - ChemAnalyst",
-     "source": "ChemAnalyst",
-     "pub_utc": "2026-11-25T09:09Z",
-     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeVlGMDEydEt2bWZuSzdzSTUwZm51U3pEX2tFQlYyTHZYdHY2ZWpkYzlTU2tFOWdwd2U0Mk0wSG1HZFFGa3lGaFU3NGZ2TXhzckR2cHFEVDZKbkJlYjFrbjFiQ2gxQzZjUjlGR1hrSEh0cWRzOE9qUi1kanRmMVB5R2ZLMzZMSWRYWm45SVA2RmFrVmxsTGJZWGZScl9sN01RVWZ1SXJvdW5uZDg3NUFHZ1Yxb2haVjU5WGJpZ1dPNnhhdw?oc=5"
-    },
-    {
-     "title": "Revenue Performance Stands Out as Eli Lilly’s Third-Quarter Revenue Reaches a Stage Peak - NAI500",
-     "source": "NAI500",
-     "pub_utc": "2026-11-25T07:32Z",
-     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdU9DeV83cmY4TnBSM1hvOXdJVEREbENabXk3dWZCeV9WbEkxbUhkZ0JNLVB4RVMxS3Z6clYwakZyaDUyQ28tZmxENjhpTzhyVzVmRU5sb1paQUIxdUVUMFZMV29jRVhNUU0zcy1aX0lmUVpCcm55Q192blE4M2JNSjlFdXdMMXR0cW4tblIwckJsbGJmRG94bUx5WjdRUUpfYUdqWF9LU1pFRG93dkVxSHBJaWlHMVU5cnhUTA?oc=5"
+     "title": "Eli Lilly (LLY) Earns Moody’s Upgrade. Here Is What Analysts Are Watching Next - TipRanks",
+     "source": "TipRanks",
+     "pub_utc": "2026-11-25T13:10Z",
+     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNU3A2WkdrNml0RzRNMUVtUGtxSTRKenZDWXpCOHlhZUYtaldST21LTU5wdU1QaWJWaTJTaU9HWjJuSkFYM21sOXFxakFCNnhDQnNwM0lUVWh1U1lNMnNJSThZX3k2dnFhRkpCNkVyeUFacEVjTUVEU1l2UUNYTjdFZmFKMXRJcXUxVFFvUlJNaEJ6WFpPNVRiOEc3NW8xdTg2TEVSUFBub3dkeWJwa1JuTkN3?oc=5"
     }
    ]
-  },
-  {
-   "company": "第一三共",
-   "sym": "4568.T",
-   "country": "日本",
-   "industry": "醫療",
-   "generic": false,
-   "big_move": {
-    "pct": 5.79,
-    "date": "2026-11-25"
-   },
-   "filings": [],
-   "items": []
   },
   {
    "company": "三星生物製劑",
@@ -3223,10 +3008,7 @@
    "country": "韓國",
    "industry": "醫療",
    "generic": false,
-   "big_move": {
-    "pct": 5.66,
-    "date": "2026-11-25"
-   },
+   "big_move": null,
    "filings": [],
    "items": [
     {
@@ -3234,30 +3016,6 @@
      "source": "Seoul Economic Daily",
      "pub_utc": "2026-11-25T09:05Z",
      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOS2NYQTNKWGxTQ0R6bTJPb0F6WnpZbmxHaXowVWdvc1lHUXFtZy1QaG8wLVRYX2R0dnZxQ1lUZHJlaU50Tm9rYWNRLWtxek9MdkJ0Sy01VkZVaGViM1kzLVBGNGlEektiUURHb1l4Z2FFekg0YXV6UVdSZUdIeVg4bUphdUJibGRtbEJDOFFOS3FZdmlNTUhZQ19iVmNoY19L?oc=5"
-    },
-    {
-     "title": "South Korea's Samsung Biologics Announces 2027 Executive Appointments: Two Executive VPs, Five Managing Directors Promoted - BigGo Finance",
-     "source": "BigGo Finance",
-     "pub_utc": "2026-11-24T02:55Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBaQlNENlYzMlZQVFRLTHhYbW5ZMGhwdFg3UENvT2NhWGxMbmZMV3JQcnBQZlh3bG9CSmh4Z2dDMENLY3UwZk5YQUw2bHJoWjA3c2lHdEx1eElmSzNTNkZjRERnQnFzc3pBbkFXWVdGRUJCQzNyekE?oc=5"
-    },
-    {
-     "title": "Samsung Biologics Announces 2027 Executive Appointments; Promotes 2 to Vice President and 5 to Executive Director - 아시아경제",
-     "source": "아시아경제",
-     "pub_utc": "2026-11-24T02:11Z",
-     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1ua3FaQzlROFlZYU5IMVh2UTVlMVRZdTJlWGxTZU85ajF3UUVERi1QOEdCMXhjanNnczUydGd6bjZ3azBWcmpSRFNWTVE5ZFNYR2tWQ1djdktwWDNaNVVtSmRwcFM?oc=5"
-    },
-    {
-     "title": "Samsung Biologics Promotes Two to Vice President and Five to Managing Director in 2027 Executive Appointments - 파이낸셜뉴스",
-     "source": "파이낸셜뉴스",
-     "pub_utc": "2026-11-24T02:10Z",
-     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8yQlE1al9XekxsdzVHYkF5Si1VaV9uWnZ1YlRfQWxiaTlyN3lQUmd0VXVPaW9hTVVSS2o2NlhmckJsd3RzMjZFbHh1bGFZTnJwSnlfQUZKMFU?oc=5"
-    },
-    {
-     "title": "South Korea's Samsung Electronics Cuts Executive Promotions 19% Despite Record Results, With 70 Going to Semiconductors - BigGo Finance",
-     "source": "BigGo Finance",
-     "pub_utc": "2026-11-24T00:55Z",
-     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAzYUNzSEV3N3hjQk5yZmtKZUxvbnlCR1RHQUkySmpUZ0tPUk1Ld2NKWDBCMWMtd05NaDJkd3phczJZWU9mQWZMbDMzaXZLZktTVVNBaE1UdnZZUVVLdEhaZTloVUpPS0hQUkRwTzJGS213Nk1WV1E?oc=5"
     }
    ]
   },
@@ -3275,24 +3033,6 @@
      "source": "24/7 Wall St.",
      "pub_utc": "2026-11-25T13:17Z",
      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSGdBRWZHT3daNEdZVmVyUzVxaTl1bkgxZXpOeHd1VVd6d3lpM2ozN1lWa0RDVWdBMm5EZjFQZTBHeVp6Q1BsQnFmNHNLelRNbUZTZjBiMXA0WVdiVnQ4bUI3NHpVa0FPRUdZYjFiQVJLWVd3RWMxcjlWYjJJcFZmMjV0ZW1tQnNxM3B2cC13d29NWEs4b21UUVFpelpKdDZCdnM2SFNfS003VlZYemlZTnhfWlhVZmZoVU93?oc=5"
-    },
-    {
-     "title": "ExxonMobil Announces Results of Cash Tender Offers for Four Note Series - Pintu",
-     "source": "Pintu",
-     "pub_utc": "2026-11-24T20:34Z",
-     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSkNmZWpaQi01Z2VlSUZ4b2NFeHI4QmpranVfVVZybEVocjNuY3VxWTZJVkwtNDZQcVJSd25PZVpPOV8wWDkwS3A5Sm9nZWU3WE1yUkV5T3RsejNGV0UxRFF6OXFsbk1XbUo4N1ZBMzJSN3hfa3lyNjJtVnZ5d24zaWoxUEYyTEFtd0tOcTZPb3B3S0xOdXBsRkthMWttM1ZjSlhxSQ?oc=5"
-    },
-    {
-     "title": "ExxonMobil Announces First-Quarter 2026 Results - Energy News, Top Headlines, Commentaries, Features & Events - EnergyNow.com",
-     "source": "EnergyNow.com",
-     "pub_utc": "2026-11-24T11:53Z",
-     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPNF9yOFlLMmhOdnBBdFBXazM1djl6YkRMMHp6MnlybUc2M1NfNlY5Q3R6N0FiS0dUckRRYmhnbFlpNWwzWUtZWGRqR1RYZ3ZuM2E0Yl9nMW9FVmFySmduellaTVRBeGloellGWndkeDdUSkczSHFsZU9Tb3V5c3gwdzFmTnA?oc=5"
-    },
-    {
-     "title": "Your Exxon Dividend Needs Only About $59 Oil - Trefis",
-     "source": "Trefis",
-     "pub_utc": "2026-11-24T09:44Z",
-     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUVlnVE5lRFJqUVR4OEl2b1lOZ1ZOamtuRkdpb0Z6Si1GbmRxQWpZVWpXMkM1RjhJcS1RdmdYWEl6Vno4MkM4U3k4U2ZxWDhDUUVyS0dvSnBxekZvZnlneFBQaXlaWWlxeXhuWXR5TEFXVXowLUc2SmJRMzBYQ0JUaHpUY25hN1EzVWxLQTVyanJPZGJGODlwN2xYYXB4Z1pWYjlVX0h3?oc=5"
     }
    ]
   },
@@ -3302,14 +3042,17 @@
    "country": "台灣",
    "industry": "能源",
    "generic": false,
-   "big_move": null,
+   "big_move": {
+    "pct": 6.58,
+    "date": "2026-11-26"
+   },
    "filings": [],
    "items": [
     {
-     "title": "【即時新聞】最新台塑化營收暴增76%，配息上看6元吸引投信卡位還能追嗎？ - CMoney投資網誌",
-     "source": "CMoney投資網誌",
-     "pub_utc": "2026-11-24T02:56Z",
-     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOUkxRTGlsd0tKdllUcWhvekhmX0xaTTNUM2lEclEzbzhvUEFmbUlYZk1sd194aFRFbnNMV1FtR2hqNnQxdW1VUWpfTzRhckE5MndWQjZSX01VLV9BWVltWWZPdEVBS2UyZFBmajNBeXZUbzZnLWVkVGZOZmFuM0lETHhYX2hIakF4SlJVQXIwem8?oc=5"
+     "title": "亞洲汽油裂解價差翻負 台塑化煉油獲利還要看柴油 - 優分析 UAnalyze",
+     "source": "優分析 UAnalyze",
+     "pub_utc": "2026-11-26T12:22Z",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1GSl9JRXpsSGtKSnpYWmZlSC0tV1l0Q2FzcFlKYkdLNFZxWEtxeDlvSWdSRlVUdFY0T3gxZ181eFZ5VnZLUFhnY1VqRDVaTlpuckh5elVn?oc=5"
     }
    ]
   },
@@ -3327,12 +3070,6 @@
      "source": "Rebel News",
      "pub_utc": "2026-11-25T21:07Z",
      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPN2R2SjFudzd3OXJVLVA0RmRzd2xRN1luQTMtTFBwYzcwLTlxYkFXUUYzRC0tcDNiSWVScHJ3d3JXQW5uQlA3SlFHV3dqSXVmVWM0OXRDRERPYUdYVkJHeXMzbDBkWlhmSnlqSk9kWU5TMUxUZUpGTXpGdVczc2lFeGM3VFJGaHVMUHY0amdDV0RCOEo1N2ZuWkFSSGdaQ0NqMHlZaWQ0MGFLQmNOaG9IRlA4UE1IRTVpdkN1UzVTZjNHTXltWE5uUmVhZm82OEVMcURHMnl3?oc=5"
-    },
-    {
-     "title": "PetroChina investment committee member quits amid anti-corruption probe - TradeWinds News",
-     "source": "TradeWinds News",
-     "pub_utc": "2026-11-24T09:11Z",
-     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPS3BvWWkzNG13NEFLVHlES1VrUHFlUlA0Y2pnN2tSR1NwUWZKdkpGZTBvTmdMM3A4OXJrWEIyMEg4OEdTZE9PSW5JdENYVno2UFoxSzBNUzdXamdXelNyT3B4N1pFV1pXWWFCWVJfaE43X0RiR3cwNWV0UWJZZy1xRGhQYmdOV3FRUEdoT0duNmtNZGJlT1I5Zmdjc29uS20zWHVYeE1YdHpmZDFwZ2VfVWRiODktb29DdFE?oc=5"
     }
    ]
   },
@@ -3358,22 +3095,22 @@
      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOMkZ3R2JqVlJwZllwVm5BckhhSHZLNDlLVmVZNmpOVmxEVjVKYkk4T1lidzVyTWk2XzJ1LWREQlZRckVlUTMzUl9CVG02OGZXUHNWUmhfTzVlMFlTSWdhbnBYQkdhZ19IQTFmRXhpUTIwTFozTy1LSUpmeTVDM1M0c05DVnlYaUFGLWZuUHFKSjREM2pEYzN0UFY4SDhjLTFnLXJVOU1WVW50Qk80dllwdUZtSnc2Uk9ST1RscXJ4UDlXdDIwYXpzMUtrWjRTRlUtNE91WnE5UWVVUFZONndUbkhB?oc=5"
     },
     {
+     "title": "World in Brief: American stocks retreat; Anthropic slips below its IPO price - The Economist",
+     "source": "The Economist",
+     "pub_utc": "2026-11-25T10:10Z",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQa0x2MUVvMlV5eDJXRHhYR3Ftb3FGZWJOdV9sal9OcFFEdkF3UVlFQmtOMjBuWk5zZm9SVEo0RmVCX1I3RHVIbmlvOU9NbEVlV01Ed09aRUxVaVpHN3Y0aU9EM1Q4UzltV1dyR1pMc1Rlai00UXhLRzltZTFFWDRrbHM4MzI5V2QzS3l3Sk4xNnVabDl2Tllj?oc=5"
+    },
+    {
+     "title": "Wall Street calls Anthropic ‘a steal’ and ‘generational opportunity’ as stock slips below its IPO price - Fortune",
+     "source": "Fortune",
+     "pub_utc": "2026-11-25T08:00Z",
+     "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOektPLXJMckFNYmxjODRTeG1GZVpnaUt2WEExV001WGZiUWNFaHNUNENmem8xUWswWXF0OTljVEtZX1FIOW9WT2QwX3NyS0FsNXpOWXppWFdLbDVDVFlzUHNxV0NkRVFyLWdHXzN5MmE0eTJFU3hQaWRhcXBPd3Y2MUxMYXlibG5XZ3BVdlR6cFZQS25lSXRUd25GZmFxTzh3Q2ttbWMtVnE5dw?oc=5"
+    },
+    {
      "title": "Anthropic Stock Falls Below IPO Price as AI Risks Mount - Forbes",
      "source": "Forbes",
      "pub_utc": "2026-11-25T00:55Z",
      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQY2NtOGFpemVEOFppZkphR192bnYwa0FueUdERk1rbm14Z0hOamJLMDAwdEpIZm9TdUp3bUhIZ3M1czJhSGREZWZnb1ZKdzBlU1o3TFZ5WVM2bnVUaFRwRVNhNzhETGg4a25qZU04aDNFZ3dNRzdfbV9ERk1sTEFoTElsM1dkZFVUY1JZVWo1U2lDeU9tdVJCR3phZ21OLWJsRWE1dmwzby1UNl9yY203U0Q4LVc?oc=5"
-    },
-    {
-     "title": "Anthropic Shares Plunge Below IPO Price in Fourth Trading Day - Bloomberg",
-     "source": "Bloomberg",
-     "pub_utc": "2026-11-24T21:10Z",
-     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPT0hkbFdEeDFKTWo1UXlkenJzS3l0QWpGSDdIWGxpbTdiMkpzVkl0bFN0d2RUSGxJS3FxNFNjeEVOeE9qUlB6X1ZKNldQdFA5b2NUam1pZjQzXzFZSFZYQ21mUXJlSzVvOWs5dS1lc3A2NG5zeGQ1RXlQR0c4QkxOUVNQUzNyYzBMT1A5emhvX2VNc2thcUJoSjhqYzZjM0Y2ZmdQellESkczaXc?oc=5"
-    },
-    {
-     "title": "Anthropic shares tumble below $83 IPO price, on track to lose nearly $200 billion in value - Reuters",
-     "source": "Reuters",
-     "pub_utc": "2026-11-24T20:47Z",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMHBNOVY5RDc1NmxUUjNnZkNhLWROQkhUOFZpVmQ0SEI0UG9aSUpTTjhpV3EydTNkdW8xYm1KOWF6OXg2Z3BMaUJCWTE3WnFCM0hCZGNuQ3ZKUklsYUROVWQzdExOamNKVlJLRTgwYWpoYVdOUjlDY0pxTmxZajlvckJ4cHc0TG1hbW1ZUkszaDZ2M2Rvd3RqTWRFaVRENXVWT0pr?oc=5"
     }
    ]
   },
@@ -3387,6 +3124,24 @@
    "filings": [],
    "items": [
     {
+     "title": "Instacart Parent Maplebear Files for IPO - Wisevoter",
+     "source": "Wisevoter",
+     "pub_utc": "2026-11-26T16:43Z",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUU5mQUY3Z0N3eFhYcUpPUHJRQ3lNYU03aF9EMFlkY0tOZVhJUkw1V2lGczNVRHZ3ZGw4Z0c1TGZfUlpDTWdEY2l2X2RsWnRJUmJaLWhMUV92ZW1wd0o2VDBkYU5qbFUwYmpKV0pHVllWc3lBQW9VOUFUaExZRWZUdA?oc=5"
+    },
+    {
+     "title": "Indrotek, Robotics, UAV and Counter-UAS Solutions, Files for U.S. National Exchange IPO - TradingView",
+     "source": "TradingView",
+     "pub_utc": "2026-11-25T22:37Z",
+     "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPVE5KMWNaNjJUUEdCZW9LdEJXb0dTV1NobE1pbWgyRjZOamVyd3hPb3VjT19IbXNycXk2aUVTSHlPYnVGaEFlaW80M0o3OXVZUzFaVW5aU2NVVjBaREpkVHZmNnlnckVpQ0ZMOUFGbmZpdUZleHM1Sk8xUVh3UHMtZk1VOE0wZDEzYVBKaUlzRHFUMGFhSkZ6dUoxYmJmSTJtTXFpQ0daRUdsbDQxSXJSdkcxUTZNMzE3azVkZWZXY0h5YmZXZDVDdTh2WnluX2FWQmZ5dG81WDJQZVhURUE?oc=5"
+    },
+    {
+     "title": "CSTS IPO News - Hong Kong-based travel agency CSTS Enterprises files for a $46 million US IPO - Renaissance Capital",
+     "source": "Renaissance Capital",
+     "pub_utc": "2026-11-25T22:08Z",
+     "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUFJiMEkxRFdQX3BxemdnTnpFVzNlQVlWaktiRktiUFFaaTdsTS1zd0ZIZTM5S0Y2U3dqbWxIeVJJOUZjOVpQcGpqTUxmZmZHTE9RVUFzeGdWaElUMGtjejJ2R1VULVU2YkFNSFJRUVd5NWtlWHprRmpVdXdmMzJBUUVBRTJKRmhaaVhDNVFFMmdFemc5UlJjRVZ4c2d2RkZ0YVRzZ3d0QjR1dFlQX3N1WnJELXd4MG1ZS0w5VDdndTFSUWloNGN3UTZn?oc=5"
+    },
+    {
      "title": "CSTS Enterprises, Corporate Travel and Sports Hospitality, Files for NASDAQ IPO - TradingView",
      "source": "TradingView",
      "pub_utc": "2026-11-25T21:38Z",
@@ -3397,24 +3152,6 @@
      "source": "TradingView",
      "pub_utc": "2026-11-25T16:57Z",
      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOV2E2dEprMzhPZWV1MFlBTF9idXdRYnFVTmJyWFljSms5UUFKYUNuQXM3d3VSTkpGd2lRb2ppdVgxbm9ZaWI5V1BJQmt3LTVtNVpnaldqRzl5eDdwcXJwcllKY2M2Q1ZkRWlHazlxNER4aWQtZFViV3dJdTdjUHFiTmhUNnJZZ2VUWmZkVXN1cjVvMGxkWkh4czdjX3hLS0V5b3RVN0hBeTdpWFE2Y0xEN1g2MEprSFRSSWFVWXZURE9HQQ?oc=5"
-    },
-    {
-     "title": "Patriot Mobile files an amended registration for a Nasdaq IPO under the ticker PTRT - MLQ.ai",
-     "source": "MLQ.ai",
-     "pub_utc": "2026-11-25T14:37Z",
-     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZnhhZE9sWkhqc3FiLUlBaWloa0FkSk42QldUaE02eVpRc1Vvb3NkUHhIMzhYMnBrUjRlbFdwWUgxUkd0Z1pZTkhPM3Y1cTJVazBGd2FCSXBVam1CX0hHdUFkUGUtQTE4N1dLV0MtWmQyMldid3prZ3NmOFlQSmRzWlY5OFZ6YlhyejdrVmoydGdKMjRvLTRyY3dyOUV3VS1NMEREM1VEaw?oc=5"
-    },
-    {
-     "title": "Small US hearing aid company files for Nasdaq IPO - MedWatch",
-     "source": "MedWatch",
-     "pub_utc": "2026-11-25T09:16Z",
-     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBQN1BfZnVXZXk4aW9Ea21nZFU4b1BoTy1vcGl2cUNOYWxnZmRkdVZXSnhYRlFjNXFIV3lUVzhwV2F1WndzVUpUZWtyWUxqM0RsZnc?oc=5"
-    },
-    {
-     "title": "Nvidia-Backed Nscale Reportedly Eyes Private Route As AI Market Sell-Off Clouds $35B IPO Plans - Yahoo Finance",
-     "source": "Yahoo Finance",
-     "pub_utc": "2026-11-25T00:16Z",
-     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPOU1MVVhYcktVMnVtMDlBWXFvcHRTdWlsMWx4ZVVVTkVnU2tLdVpUUzJaLXpjcHZ0Mmd5N0pPb2d6OHVReEdiaWFRbU5aV0loZVdpS2xwdGNpSlFxTG4wM2ZQSGJGdGg4WkpOUVNQbXMxcTBWd1p3VlZtenUxQ2hZYjlvczVqTW1RM2p3WjFzZGpBUFNLMGlLbzg2YThadm13alE?oc=5"
     }
    ]
   },
@@ -3428,34 +3165,34 @@
    "filings": [],
    "items": [
     {
+     "title": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs - Yahoo Finance",
+     "source": "Yahoo Finance",
+     "pub_utc": "2026-11-26T17:00Z",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcF95VDVfWEJCUU9RTm0tQzA4Rmt2TVpFYVVBQmd1QS1MNVh0Q3Z2aEtmV09tU0RpU0daRlBzQzFiczhHbWdMdkxxSkdNalYzcjlEb292bWlnUV9vNDliSzNZaFYydjJPU3NieVotLUs2ZHJ6RTg2UUZSeVVWdVBkOVVoWFRBMC1YYklhMGJsMA?oc=5"
+    },
+    {
+     "title": "“The IAI IPO will be the largest ever held in Israel by a wide margin” - CTech",
+     "source": "CTech",
+     "pub_utc": "2026-11-26T09:19Z",
+     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE81SVhodFdmVUN6bDlndFFydkVfcUd6Xy1UQkVvelNlTUVuRVFxLVdZZTgybDV6bGJCVTdRb1dYN3k4OWhsaUN3dDZrUDRyNUlIbXkwNnk1S0ZuMmF5aGtIZkRSYlpxVU0?oc=5"
+    },
+    {
+     "title": "Anthropic Had the Biggest IPO Ever. Now It Just Looks Greedy - Inc.com",
+     "source": "Inc.com",
+     "pub_utc": "2026-11-26T03:20Z",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaTVIbmYtZHdRbGNrSzBFQ0FRbGNIcnR0dWRfaGdiOTVmWlFfQ0EteXdud3EtZHNVNFBYaXhGb1NZaDFjcFlGTF8wS1RJV00waVJZM3JLQlJqeDlockdVUlJQVVB3emR3VXdXOWhCWHBkOUxUcldaT3RlckJyLXJRRVJPUmJOMl94UWVIZDNfMEZVSHR3cXZLbW9XMC0wdXd0?oc=5"
+    },
+    {
      "title": "Anthropic Vs. SpaceX: Both Fell Below IPO Price, But Only One Sees Valuation Below $1 Trillion - Yahoo Finance",
      "source": "Yahoo Finance",
      "pub_utc": "2026-11-25T17:17Z",
      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPX0dRYmdPdTlubkpqZkxETmRmVXF2ZE8wQ1F5MlNVY0Z0cDI4dzFHUFpFQnZxZmpMV2dZbkxPVnlkc0xiSWtlbl9vVjhvOVhyR2dsN0RXRklFejgwN3JjY09pRkNENUxraDJsbzNpb1EyMTN6UXAxTnA4VHFoOFlobXVNVk1xTnAtbHVWQ1dwYzI5b0lscEp3MTl3?oc=5"
     },
     {
-     "title": "The Largest IPO in Stock Market History Is Here. What It Means for Your Portfolio - Yahoo Finance",
-     "source": "Yahoo Finance",
-     "pub_utc": "2026-11-25T17:03Z",
-     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRVQzM2J1Tnd0Q0dDek5kcmIzbmFMS3dqVWpCRjdIbXE3dUVhSk5pQ1djdnQ0NW9TQ2p3dS1KUmNVNTJHM1NaUEdUYjNVSk53dUdaWlNUekZ6bU52R3hOclVpNzhtZUVmOTZLUXYzR3hDR0h6SWNUbS1aUFpOUTdjWXZwQjI?oc=5"
-    },
-    {
-     "title": "Anthropic Had the Biggest IPO Ever. The Trade Is Already Unraveling. - WSJ",
-     "source": "WSJ",
-     "pub_utc": "2026-11-24T22:07Z",
-     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNHY3ODVIbFVMbGZSZ0tSd0p0YTZQTVRESWQxYW9UZ193WHc5N3JQNXJ6bVNEM3VWVEd5aFhlSURsaVJLMG9RZGFCQmdjbEFpc29tNTFvTkNxaTJJV29EQ3JFMUZXNmxZaF90TDM2VUJsNTRJdXotSmdRM09FS0wyMnk2dzBsRkppZHZRcFpKcThpeVVWX0lpemg1MkU4U1ZvQ2swazM1T0JEMS1nNmEw?oc=5"
-    },
-    {
-     "title": "Anthropic IPO Mania, Friday's Market Crash and the Year's Biggest Rally: Inside Retail's Wild Ride - Benzinga",
-     "source": "Benzinga",
-     "pub_utc": "2026-11-23T23:59Z",
-     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPc3YyOHZIV2p1OGJKa3RCNWFJcHVzZERFS2FpZmZvT3RMV0lnYmNTQ01hMFFzR05FZ1RoWnN6bkxuNFdNclF2YnlWY2Ywajc0MG9sRTczU0ljbkhBR3llajg2bE1Bb0NSQTJybzZfaFhuZnFXZXdXMFA3Zl85R3Q2OW1kUVpBdFA0dlllQWRTRXVhczBTRXZyNU9GZUNmTFZjc2VyQlFrQkd1N0xtQ2tsMy1adkZ5RzZEbURacHdhLUdrbng4NTN0MEZvOW9FekQzb1FGTFZfQ3RTQnI2VlFz?oc=5"
-    },
-    {
-     "title": "Opening Day: Anthropic debuts on Nasdaq following historic IPO - Yahoo Finance",
-     "source": "Yahoo Finance",
-     "pub_utc": "2026-11-23T23:15Z",
-     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdUQ5R3RiUHk2WTRfOXJtNHl0OFYyUjZlSVdEREZTRGtoZ3djdDhlY1ZXSmhrVVoyb1l3WGNjTnpJUFhKTVdFSXA2NWtBWGFBMFhXMWtwcmdSeHY4YnhsUS1wdEZTLUJhTGh0Qmx6UzA2UzFEclZWdE9iM2NHTWY3elp4Z3IwcU9POHFralZINHhjR2xyeXVNdGJuQjIyblhYZHc?oc=5"
+     "title": "The Largest IPO in Stock Market History Is Here. What It Means for Your Portfolio - The Motley Fool",
+     "source": "The Motley Fool",
+     "pub_utc": "2026-11-25T16:43Z",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNemxhM2VUQlNJNWZuQnJ5c0thYW5lU21nZFlYVzIwbzRHLU05bmlWc2U2M2NQV3J3SnNBeE1CRERqc2w3WF9QQVZpUndKdTZNNmhBVzNmSm0tclhTZjRldmI4NkRVSzZSdW54aFBEcWp2d3VhQXE2NDgzQ21IOUlLRHlPcF9TbU1jSHVpV3BqUXZMZmh5T1loSVJwc2NrckFvM21TZjhGWFVSMk04TXR5UC0zMF95RzI3ekMxeUtWTmc?oc=5"
     }
    ]
   }
@@ -3547,9 +3284,9 @@
     "sym": "2330.TW",
     "country": "台灣",
     "industry": "半導體",
-    "date": "2026-11-25",
-    "close": 2150.0,
-    "pct": -3.59,
+    "date": "2026-11-26",
+    "close": 2145.0,
+    "pct": -0.23,
     "source": "daily"
    },
    {
@@ -3557,9 +3294,9 @@
     "sym": "2454.TW",
     "country": "台灣",
     "industry": "半導體",
-    "date": "2026-11-25",
-    "close": 3645.0,
-    "pct": -10.0,
+    "date": "2026-11-26",
+    "close": 3705.0,
+    "pct": 1.65,
     "source": "daily"
    },
    {
@@ -3567,9 +3304,9 @@
     "sym": "3711.TW",
     "country": "台灣",
     "industry": "半導體",
-    "date": "2026-11-25",
-    "close": 488.0,
-    "pct": -7.92,
+    "date": "2026-11-26",
+    "close": 511.0,
+    "pct": 4.71,
     "source": "daily"
    },
    {
@@ -3577,9 +3314,9 @@
     "sym": "285A.T",
     "country": "日本",
     "industry": "半導體",
-    "date": "2026-11-25",
-    "close": 6895.0,
-    "pct": -14.18,
+    "date": "2026-11-26",
+    "close": 7762.0,
+    "pct": 12.57,
     "source": "daily"
    },
    {
@@ -3587,9 +3324,9 @@
     "sym": "005930.KS",
     "country": "韓國",
     "industry": "半導體",
-    "date": "2026-11-25",
-    "close": 170700.0,
-    "pct": -9.87,
+    "date": "2026-11-26",
+    "close": 171300.0,
+    "pct": 0.35,
     "source": "daily"
    },
    {
@@ -3597,9 +3334,9 @@
     "sym": "000660.KS",
     "country": "韓國",
     "industry": "半導體",
-    "date": "2026-11-25",
-    "close": 1030000.0,
-    "pct": -11.05,
+    "date": "2026-11-26",
+    "close": 1053000.0,
+    "pct": 2.23,
     "source": "daily"
    },
    {
@@ -3607,9 +3344,9 @@
     "sym": "688981.SS",
     "country": "中國",
     "industry": "半導體",
-    "date": "2026-11-25",
-    "close": 122.0,
-    "pct": -3.56,
+    "date": "2026-11-26",
+    "close": 116.5,
+    "pct": -4.51,
     "source": "daily"
    },
    {
@@ -3637,9 +3374,9 @@
     "sym": "8035.T",
     "country": "日本",
     "industry": "半導體設備",
-    "date": "2026-11-25",
-    "close": 7825.0,
-    "pct": -12.53,
+    "date": "2026-11-26",
+    "close": 7871.0,
+    "pct": 0.59,
     "source": "daily"
    },
    {
@@ -3647,9 +3384,9 @@
     "sym": "6857.T",
     "country": "日本",
     "industry": "半導體設備",
-    "date": "2026-11-25",
-    "close": 23745.0,
-    "pct": -12.94,
+    "date": "2026-11-26",
+    "close": 24830.0,
+    "pct": 4.57,
     "source": "daily"
    },
    {
@@ -3747,9 +3484,9 @@
     "sym": "2317.TW",
     "country": "台灣",
     "industry": "硬體與AI伺服器",
-    "date": "2026-11-25",
-    "close": 206.5,
-    "pct": -8.83,
+    "date": "2026-11-26",
+    "close": 216.5,
+    "pct": 4.84,
     "source": "daily"
    },
    {
@@ -3757,9 +3494,9 @@
     "sym": "2382.TW",
     "country": "台灣",
     "industry": "硬體與AI伺服器",
-    "date": "2026-11-25",
-    "close": 261.0,
-    "pct": -7.61,
+    "date": "2026-11-26",
+    "close": 281.0,
+    "pct": 7.66,
     "source": "daily"
    },
    {
@@ -3767,9 +3504,9 @@
     "sym": "6669.TW",
     "country": "台灣",
     "industry": "硬體與AI伺服器",
-    "date": "2026-11-25",
-    "close": 1430.0,
-    "pct": -5.3,
+    "date": "2026-11-26",
+    "close": 1570.0,
+    "pct": 9.79,
     "source": "daily"
    },
    {
@@ -3777,9 +3514,9 @@
     "sym": "2308.TW",
     "country": "台灣",
     "industry": "硬體與AI伺服器",
-    "date": "2026-11-25",
-    "close": 1055.0,
-    "pct": -2.76,
+    "date": "2026-11-26",
+    "close": 1120.0,
+    "pct": 6.16,
     "source": "daily"
    },
    {
@@ -3787,9 +3524,9 @@
     "sym": "601138.SS",
     "country": "中國",
     "industry": "硬體與AI伺服器",
-    "date": "2026-11-25",
-    "close": 39.61,
-    "pct": -3.3,
+    "date": "2026-11-26",
+    "close": 41.0,
+    "pct": 3.51,
     "source": "daily"
    },
    {
@@ -3817,9 +3554,9 @@
     "sym": "2412.TW",
     "country": "台灣",
     "industry": "通訊與網路平台",
-    "date": "2026-11-25",
-    "close": 163.5,
-    "pct": -0.61,
+    "date": "2026-11-26",
+    "close": 166.5,
+    "pct": 1.83,
     "source": "daily"
    },
    {
@@ -3827,9 +3564,9 @@
     "sym": "9984.T",
     "country": "日本",
     "industry": "通訊與網路平台",
-    "date": "2026-11-25",
-    "close": 2696.5,
-    "pct": -14.83,
+    "date": "2026-11-26",
+    "close": 2894.0,
+    "pct": 7.32,
     "source": "daily"
    },
    {
@@ -3837,9 +3574,9 @@
     "sym": "035420.KS",
     "country": "韓國",
     "industry": "通訊與網路平台",
-    "date": "2026-11-25",
-    "close": 159000.0,
-    "pct": 1.86,
+    "date": "2026-11-26",
+    "close": 160200.0,
+    "pct": 0.75,
     "source": "daily"
    },
    {
@@ -3857,9 +3594,9 @@
     "sym": "6758.T",
     "country": "日本",
     "industry": "消費電子",
-    "date": "2026-11-25",
-    "close": 4513.0,
-    "pct": 4.42,
+    "date": "2026-11-26",
+    "close": 4448.0,
+    "pct": -1.44,
     "source": "daily"
    },
    {
@@ -3877,9 +3614,9 @@
     "sym": "7203.T",
     "country": "日本",
     "industry": "汽車與電池",
-    "date": "2026-11-25",
-    "close": 3406.0,
-    "pct": 2.87,
+    "date": "2026-11-26",
+    "close": 3377.0,
+    "pct": -0.85,
     "source": "daily"
    },
    {
@@ -3887,9 +3624,9 @@
     "sym": "005380.KS",
     "country": "韓國",
     "industry": "汽車與電池",
-    "date": "2026-11-25",
-    "close": 269500.0,
-    "pct": -2.0,
+    "date": "2026-11-26",
+    "close": 259000.0,
+    "pct": -3.9,
     "source": "daily"
    },
    {
@@ -3897,9 +3634,9 @@
     "sym": "373220.KS",
     "country": "韓國",
     "industry": "汽車與電池",
-    "date": "2026-11-25",
-    "close": 308500.0,
-    "pct": -1.91,
+    "date": "2026-11-26",
+    "close": 302000.0,
+    "pct": -2.11,
     "source": "daily"
    },
    {
@@ -3907,9 +3644,9 @@
     "sym": "002594.SZ",
     "country": "中國",
     "industry": "汽車與電池",
-    "date": "2026-11-25",
-    "close": 74.45,
-    "pct": -1.99,
+    "date": "2026-11-26",
+    "close": 73.62,
+    "pct": -1.11,
     "source": "daily"
    },
    {
@@ -3917,9 +3654,9 @@
     "sym": "300750.SZ",
     "country": "中國",
     "industry": "汽車與電池",
-    "date": "2026-11-25",
-    "close": 208.42,
-    "pct": -8.33,
+    "date": "2026-11-26",
+    "close": 204.22,
+    "pct": -2.02,
     "source": "daily"
    },
    {
@@ -3957,9 +3694,9 @@
     "sym": "7011.T",
     "country": "日本",
     "industry": "工業航太國防",
-    "date": "2026-11-25",
-    "close": 2628.0,
-    "pct": -6.63,
+    "date": "2026-11-26",
+    "close": 2622.0,
+    "pct": -0.23,
     "source": "daily"
    },
    {
@@ -3967,9 +3704,9 @@
     "sym": "6501.T",
     "country": "日本",
     "industry": "工業航太國防",
-    "date": "2026-11-25",
-    "close": 4959.0,
-    "pct": -0.3,
+    "date": "2026-11-26",
+    "close": 5012.0,
+    "pct": 1.07,
     "source": "daily"
    },
    {
@@ -3977,9 +3714,9 @@
     "sym": "012450.KS",
     "country": "韓國",
     "industry": "工業航太國防",
-    "date": "2026-11-25",
-    "close": 633000.0,
-    "pct": 0.8,
+    "date": "2026-11-26",
+    "close": 627000.0,
+    "pct": -0.95,
     "source": "daily"
    },
    {
@@ -3997,9 +3734,9 @@
     "sym": "1216.TW",
     "country": "台灣",
     "industry": "消費品與零售",
-    "date": "2026-11-25",
-    "close": 78.7,
-    "pct": 1.68,
+    "date": "2026-11-26",
+    "close": 78.5,
+    "pct": -0.25,
     "source": "daily"
    },
    {
@@ -4007,9 +3744,9 @@
     "sym": "9983.T",
     "country": "日本",
     "industry": "消費品與零售",
-    "date": "2026-11-25",
-    "close": 86170.0,
-    "pct": 2.53,
+    "date": "2026-11-26",
+    "close": 85500.0,
+    "pct": -0.78,
     "source": "daily"
    },
    {
@@ -4017,9 +3754,9 @@
     "sym": "600519.SS",
     "country": "中國",
     "industry": "消費品與零售",
-    "date": "2026-11-25",
-    "close": 1474.84,
-    "pct": 1.02,
+    "date": "2026-11-26",
+    "close": 1469.0,
+    "pct": -0.4,
     "source": "daily"
    },
    {
@@ -4047,9 +3784,9 @@
     "sym": "2882.TW",
     "country": "台灣",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 100.5,
-    "pct": -3.83,
+    "date": "2026-11-26",
+    "close": 104.5,
+    "pct": 3.98,
     "source": "daily"
    },
    {
@@ -4057,9 +3794,9 @@
     "sym": "2881.TW",
     "country": "台灣",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 132.5,
-    "pct": -7.67,
+    "date": "2026-11-26",
+    "close": 138.5,
+    "pct": 4.53,
     "source": "daily"
    },
    {
@@ -4067,9 +3804,9 @@
     "sym": "2883.TW",
     "country": "台灣",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 30.05,
-    "pct": -6.82,
+    "date": "2026-11-26",
+    "close": 31.1,
+    "pct": 3.49,
     "source": "daily"
    },
    {
@@ -4077,9 +3814,9 @@
     "sym": "2887.TW",
     "country": "台灣",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 34.0,
-    "pct": -6.34,
+    "date": "2026-11-26",
+    "close": 35.3,
+    "pct": 3.82,
     "source": "daily"
    },
    {
@@ -4087,9 +3824,9 @@
     "sym": "2891.TW",
     "country": "台灣",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 65.9,
-    "pct": -5.72,
+    "date": "2026-11-26",
+    "close": 68.9,
+    "pct": 4.55,
     "source": "daily"
    },
    {
@@ -4097,9 +3834,9 @@
     "sym": "8306.T",
     "country": "日本",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 3122.0,
-    "pct": -1.08,
+    "date": "2026-11-26",
+    "close": 3118.0,
+    "pct": -0.13,
     "source": "daily"
    },
    {
@@ -4107,9 +3844,9 @@
     "sym": "105560.KS",
     "country": "韓國",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 148100.0,
-    "pct": -2.18,
+    "date": "2026-11-26",
+    "close": 145300.0,
+    "pct": -1.89,
     "source": "daily"
    },
    {
@@ -4117,9 +3854,9 @@
     "sym": "601398.SS",
     "country": "中國",
     "industry": "金融",
-    "date": "2026-11-25",
-    "close": 9.2,
-    "pct": -0.22,
+    "date": "2026-11-26",
+    "close": 9.23,
+    "pct": 0.33,
     "source": "daily"
    },
    {
@@ -4137,9 +3874,9 @@
     "sym": "4568.T",
     "country": "日本",
     "industry": "醫療",
-    "date": "2026-11-25",
-    "close": 2895.5,
-    "pct": 5.79,
+    "date": "2026-11-26",
+    "close": 2875.0,
+    "pct": -0.71,
     "source": "daily"
    },
    {
@@ -4147,9 +3884,9 @@
     "sym": "207940.KS",
     "country": "韓國",
     "industry": "醫療",
-    "date": "2026-11-25",
-    "close": 1363000.0,
-    "pct": 5.66,
+    "date": "2026-11-26",
+    "close": 1337000.0,
+    "pct": -1.91,
     "source": "daily"
    },
    {
@@ -4157,9 +3894,9 @@
     "sym": "600276.SS",
     "country": "中國",
     "industry": "醫療",
-    "date": "2026-11-25",
-    "close": 47.7,
-    "pct": 0.17,
+    "date": "2026-11-26",
+    "close": 47.35,
+    "pct": -0.73,
     "source": "daily"
    },
    {
@@ -4177,9 +3914,9 @@
     "sym": "6505.TW",
     "country": "台灣",
     "industry": "能源",
-    "date": "2026-11-25",
-    "close": 80.6,
-    "pct": 0.37,
+    "date": "2026-11-26",
+    "close": 85.9,
+    "pct": 6.58,
     "source": "daily"
    },
    {
@@ -4187,9 +3924,9 @@
     "sym": "601857.SS",
     "country": "中國",
     "industry": "能源",
-    "date": "2026-11-25",
-    "close": 12.3,
-    "pct": -0.4,
+    "date": "2026-11-26",
+    "close": 12.76,
+    "pct": 3.74,
     "source": "daily"
    }
   ],
