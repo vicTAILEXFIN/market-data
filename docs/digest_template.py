@@ -54,7 +54,7 @@ def market_table(first, rows):
         extra = "".join(f'<br><span style="{F_JH};font-size:8.5pt;color:#6B7280">{x}</span>' for x in (sub, note) if x)
         o.append(f'<tr><td width="{C[0]}" valign="top" style="{F_JH};font-size:10.5pt;font-weight:bold;padding:9px 8px;{bd}">{n}</td>'
                  f'<td width="{C[1]}" valign="top" align="right" style="{F_AP};font-size:10.5pt;text-align:right;padding:9px 8px;{bd}">{val}'
-                 f'<br><span style="{F_AP};font-size:8.5pt;color:#9CA3AF">{lbl(d)}</span></td>'
+                 + (f'<br><span style="{F_AP};font-size:8.5pt;color:#9CA3AF">{lbl(d)}</span>' if d else "") + '</td>'
                  f'<td width="{C[2]}" valign="top" align="center" style="text-align:center;padding:9px 4px;line-height:1.55;{bd}">{badge}{extra}</td>'
                  f'<td width="{C[3]}" valign="top" align="left" style="{F_JH};font-size:10.5pt;line-height:1.6;color:#000;padding:8px 8px;{bd}">{reason}</td></tr>')
     return "".join(o) + "</table>" + gap(12)
@@ -148,18 +148,55 @@ def bp_value(s):
     return 0 if not m else (-1 if m.group(1) in "−-" and m.group(1) else 1) * float(m.group(2))
 
 
+# ---------- 11/27 休市：GitHub 行情檔 market_status（交易所行事曆）；休市市場一律灰色「休市」、不列數據 ----------
+MKT_OF = {"道瓊工業指數": "US", "標準普爾500指數": "US", "那斯達克綜合指數": "US", "費城半導體指數": "US",
+          "日經225指數": "JP", "韓國綜合股價指數": "KR", "台灣加權指數": "TW"}
+MACRO_MKT = {"美元兌新台幣": "TW", "布蘭特原油": "US", "黃金（COMEX近月期貨）": "US", "美元指數": "US"}
+
+
+def mstat():
+    L = load_latest() or {}
+    return (L.get("market_status") or {}) if L.get("taipei_date") == D.get("today") else {}
+
+
+def closed(m, d=None):
+    """回傳假日名稱（休市）或 None。d＝該列資料日期（M/D）；已有參考日當天資料就照常顯示。"""
+    st = mstat()
+    s = st.get(m) or {}
+    if s.get("open") is not False:
+        return None
+    ref = st.get("ref_date")
+    t = re.search(r"(\d{1,2})/(\d{1,2})", str(d or ""))
+    if t and ref:
+        rm, rd, tm, tdd = int(ref[5:7]), int(ref[8:10]), int(t.group(1)), int(t.group(2))
+        older = (tm, tdd) < (rm, rd) or (rm == 1 and tm == 12)
+        if not older:
+            return None
+    return s.get("holiday") or "休市"
+
+
+HOL = lambda h: f"{h}休市" if h and h != "休市" else "休市"
+
+
 def idx_tile(n, c, ch, pc):
     return (SHORT[n], f"{c:,.2f}", pct(pc), pc, 6, f"{sgn(ch)}{abs(ch):,.2f} 點")
 
 
+def idx_tile_c(r):
+    h = closed(MKT_OF.get(r[0]), r[5])
+    return (SHORT[r[0]], "", "休市", None, 6, h if h != "休市" else "") if h else idx_tile(*r[:4])
+
+
 def us_tiles():
-    return [idx_tile(*r[:4]) for r in D["index_rows"][:4]]
+    return [idx_tile_c(r) for r in D["index_rows"][:4]]
 
 
 def asia_tiles():
     R = {r[0]: r for r in D["index_rows"]}
-    t = [idx_tile(*R[n][:4]) for n in ("台灣加權指數", "日經225指數", "韓國綜合股價指數")]
+    t = [idx_tile_c(R[n]) for n in ("台灣加權指數", "日經225指數", "韓國綜合股價指數")]
     se = D.get("sse")
+    if closed("CN"):
+        return t + [("上證綜合", "", "休市", None, 6, closed("CN"))]
     return t + [("上證綜合", f"{se[0]:,.2f}", pct(se[2]), se[2], 6, f"{sgn(se[1])}{abs(se[1]):,.2f} 點") if se else ("上證綜合", "", "未取得", None, 6, "")]
 
 
@@ -168,6 +205,9 @@ def ust_tiles():
     def tile(n, q):
         return (n, f"{q[0]:.2f}%", f"{sgn(q[1])}{abs(q[1]):g}bp", q[1], 15, note(q[1])) if q else (n, "", "未取得", None, 15, "")
     lv, bp, _n, _r, _d = D["ust"]
+    hb = closed("US_BOND", _d)
+    if hb:
+        return [(n, "", "休市", None, 15, hb if hb != "休市" else "") for n in ("2年期", "10年期", "30年期", "10Y−2Y 利差")]
     y10 = [float(lv.rstrip("%")), bp_value(bp)]
     c = D.get("curve") or {}
     y2, y30 = c.get("y2"), c.get("y30")
@@ -187,6 +227,10 @@ def macro_tiles():
     for n in ("美元指數", "美元兌新台幣", "布蘭特原油", "黃金（COMEX近月期貨）"):
         _n, lv, ch, nt, r, a, d = M[n]
         name = "黃金" if n.startswith("黃金") else n
+        h = closed(MACRO_MKT.get(n), d)
+        if h:
+            out.append((name, "", "休市", None, SCALE[n], h if h != "休市" else ""))
+            continue
         if not a:
             out.append((name, "", "未取得", None, SCALE[n], ""))
             continue
@@ -265,6 +309,8 @@ def news_card(i, e):
 def chips_block():
     ch, inst = D.get("chips"), D.get("inst")
     idx_date = next((r[5] for r in D["index_rows"] if r[0] == "台灣加權指數"), None)
+    if closed("TW", idx_date):
+        return h2("台股籌碼面") + closed_box(W, f'{md(mstat().get("ref_date"))} 台股{HOL(closed("TW", idx_date))}，無法人買賣超資料', 40) + gap(12)
     if not ch or not inst or not idx_date:
         return ""
     d = inst["date"][5:].replace("-", "/").lstrip("0")
@@ -455,6 +501,109 @@ def compact(h):
     return re.sub(r"(</(?:tr|p|table|h1|h2|div)>)", "\\1\n", h)
 
 
+# ---------- 11/26 產業板塊：直接讀 GitHub 行情檔 sectors（排程不必抄數字） ----------
+def md(iso):
+    return f"{int(iso[5:7])}/{int(iso[8:10])}" if iso else "—"
+
+
+def blocks(v, m, n=14):
+    """長條改用方塊字元（11/27：比巢狀表格省約 75% 容量；Courier New 等寬，Gmail／Outlook 皆可顯示）"""
+    if not v:
+        return "▏"
+    x = min(abs(v) / m, 1) * n
+    return "█" * int(x) + ("▌" if x - int(x) >= 0.5 else "") or "▎"
+
+
+def bar_rows(items, m, cw, NW=64):
+    """items: [(名稱, 漲跌幅)]；名稱｜漲跌幅｜方塊長條（紅漲綠跌）。欄寬只寫在第一列（table-layout:fixed）"""
+    VW = 54
+    BW = cw - NW - VW
+    o = []
+    for i, (n, v) in enumerate(items):
+        wa = (lambda w: f' width="{w}"') if i == 0 else (lambda w: "")
+        c, tc = ("#D9534F", "#B42318") if v > 0 else (("#3E9C76", "#1E7A55") if v < 0 else ("#9CA3AF", "#374151"))
+        nm = f'<td{wa(NW)} nowrap style="font-size:9pt">{esc(n)}</td>' if NW else ""
+        o.append(f'<tr>{nm}<td{wa(VW)} align="right" style="font-size:9pt;padding-right:5px"><b><font color="{tc}">{pct(v)}</font></b></td>'
+                 f'<td{wa(BW)} nowrap style="font-family:Courier New,monospace;font-size:8pt;line-height:1"><font color="{c}">{blocks(v, m)}</font></td></tr>')
+    return o
+
+
+def bar_table(cw, rows):
+    return (f'<table width="{cw}" cellspacing="0" cellpadding="1" border="0" style="border-collapse:collapse;width:{cw}px;table-layout:fixed">'
+            + "".join(rows) + "</table>")
+
+
+def closed_box(cw, text, h=56):
+    return (f'<table width="{cw}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{cw}px"><tr>'
+            f'<td height="{h}" bgcolor="#E5E7EB" align="center" style="background-color:#E5E7EB;height:{h}px;{F_JH};font-size:10pt;color:#6B7280;text-align:center">'
+            f'<font color="#6B7280">{esc(text)}</font></td></tr></table>')
+
+
+def sub_h(t, note=""):
+    nt = f'<span style="{F_JH};font-size:8.5pt;font-weight:normal;color:#6B7280"><br>{note}</span>' if note else ""
+    return f'<p style="{F_JH};font-size:10pt;font-weight:bold;color:#0B2545;margin:6px 0 3px">{esc(t)}{nt}</p>'
+
+
+def sector_block():
+    """11/27 改版：三欄橫向長條（美股 ETF｜台股類股上半｜下半）＋自編族群長條表；休市市場一律灰框、不列數據"""
+    S = D.get("sectors") or (load_latest() or {}).get("sectors") or {}
+    G = 14
+    CW = (W - 2 * G) // 3
+    o = [h2("產業板塊", "22px 0 4px")]
+    us, tw, bk = S.get("us"), S.get("tw"), S.get("baskets")
+    hu = closed("US", md(us["date"])) if us else None
+    ht = closed("TW", md(tw["date"])) if tw else None
+    ref = md(mstat().get("ref_date"))
+    if not us:
+        c1 = sub_h("美股產業 ETF") + closed_box(CW, "未取得")
+    elif hu:
+        c1 = sub_h("美股產業 ETF") + closed_box(CW, f"{ref} {HOL(hu)}")
+    else:
+        mu = max(2.0, *(abs(x["pct"]) for x in us["main"] + us.get("sub", [])))
+        r = bar_rows([(x["name"], x["pct"]) for x in sorted(us["main"], key=lambda x: -x["pct"])], mu, CW)
+        if us.get("sub"):
+            r.append('<tr><td colspan="3" style="font-size:8.5pt;color:#6B7280;padding-top:4px;border-top:1px solid #E5E7EB">細分產業</td></tr>')
+            r += bar_rows([(x["name"], x["pct"]) for x in sorted(us["sub"], key=lambda x: -x["pct"])], mu, CW)
+        c1 = sub_h(f"美股產業 ETF（{md(us['date'])}收盤）", "SPDR 11 大類股＋細分產業") + bar_table(CW, r)
+    if not tw:
+        c23 = sub_h("台股類股指數") + closed_box(2 * CW + G, "未取得")
+    elif ht:
+        c23 = sub_h("台股類股指數") + closed_box(2 * CW + G, f"{ref} {HOL(ht)}")
+    else:
+        mt = max(2.0, *(abs(x["pct"]) for x in tw["sectors"]))
+        half = (len(tw["sectors"]) + 1) // 2
+        head = "　".join(f'{h["name"]} {pct(h["pct"])}' for h in tw.get("head", []))
+        cols = [bar_table(CW, bar_rows([(x["name"], x["pct"]) for x in part], mt, CW)) for part in (tw["sectors"][:half], tw["sectors"][half:])]
+        c23 = (sub_h(f"台股類股指數（證交所 {md(tw['date'])}收盤）", esc(head))
+               + f'<table width="{2 * CW + G}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{2 * CW + G}px;table-layout:fixed"><tr>'
+               f'<td width="{CW}" valign="top" style="vertical-align:top">{cols[0]}</td><td width="{G}" style="font-size:1px">&nbsp;</td>'
+               f'<td width="{CW}" valign="top" style="vertical-align:top">{cols[1]}</td></tr></table>')
+    o.append(f'<table width="{W}" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed"><tr>'
+             f'<td width="{CW}" valign="top" style="vertical-align:top">{c1}</td><td width="{G}" style="font-size:1px">&nbsp;</td>'
+             f'<td width="{2 * CW + G}" valign="top" style="vertical-align:top">{c23}</td></tr></table>')
+    if bk and bk.get("baskets") and not ht:
+        o.append(sub_h(f"台股自編細分族群（{md(bk['date'])}收盤，研究用）", "長條＝市值加權報酬；等權＝成分股平均；族群可重疊，只比強弱"))
+        NW, VW, BW2, EW, UW = 76, 58, 120, 62, 52
+        LW = (W - NW - VW - BW2 - EW - UW) // 2
+        th = lambda t, w, a="center": f'<th width="{w}" align="{a}" style="font-size:8.5pt;font-weight:normal;color:#6B7280;border-bottom:1px solid #243B53">{t}</th>'
+        mb = max(2.0, *(abs(b["cap_w"] or 0) for b in bk["baskets"]))
+        r = ["<tr>" + th("族群", NW, "left") + th("市值加權", VW + BW2, "left") + th("等權", EW) + th("上漲", UW) + th("領漲", LW, "left") + th("領跌", LW, "left") + "</tr>"]
+        mv = lambda x: f'{esc(x["name"])} <font color="{"#B42318" if x["pct"] > 0 else "#1E7A55"}">{pct(x["pct"])}</font>'
+        for b in bk["baskets"]:
+            v = b["cap_w"]
+            c, tc = ("#D9534F", "#B42318") if v > 0 else ("#3E9C76", "#1E7A55")
+            r.append(f'<tr style="font-size:9pt"><td style="font-size:9pt"><b>{esc(b["name"])}</b></td>'
+                     f'<td nowrap style="font-size:9pt"><b><font color="{tc}">{pct(v)}</font></b> '
+                     f'<span style="font-family:Courier New,monospace;font-size:8pt"><font color="{c}">{blocks(v, mb, 16)}</font></span></td>'
+                     f'<td align="center" style="font-size:9pt">{pct(b["eq_w"])}</td><td align="center" style="font-size:9pt">{b["up"]}/{b["n"]}</td>'
+                     f'<td style="font-size:9pt">{mv(b["best"])}</td><td style="font-size:9pt">{mv(b["worst"])}</td></tr>')
+        o.append(f'<table width="{W}" cellspacing="0" cellpadding="2" border="0" style="border-collapse:collapse;width:{W}px;table-layout:fixed">' + "".join(r) + "</table>")
+    o.append(f'<p style="{F_JH};font-size:8.5pt;color:#6B7280;line-height:1.5;margin:4px 0 0">資料：Yahoo 正式收盤（美股 ETF）；證交所、櫃買中心 OpenAPI（類股指數、族群成分股，市值以前日收盤計）。</p>')
+    if D.get("sector_note"):
+        o.append(f'<p style="{F_JH};font-size:10.5pt;line-height:1.6;margin:6px 0 0">{esc(D["sector_note"])}</p>')
+    return "".join(o) + gap(12)
+
+
 def build():
     P = ['<!doctype html><html><head><meta charset="UTF-8"></head><body style="margin:0;padding:0;background:#FFFFFF;color:#000">'
          f'<table role="presentation" width="{W}" align="center" cellspacing="0" cellpadding="0" border="0" style="width:{W}px;border-collapse:collapse"><tr><td style="padding:16px 0">',
@@ -468,16 +617,25 @@ def build():
     P.append(h2("重大新聞", "16px 0 8px"))
     for i, e in enumerate(D["news"], 1):
         P.append(news_card(i, e))
-    rows = [(esc(IDX_DISP.get(n, n)), f"{c:,.2f}", d, pct(pc), pts(ch), None, pc, 6, esc(r)) for n, c, ch, pc, r, d in D["index_rows"]]
+    ref = md(mstat().get("ref_date"))
+    hrow = lambda n, h: (n, "—", None, "休市", None, None, None, 6, esc(f"{ref} {HOL(h)}，無新交易數據"))
+    rows = [hrow(esc(IDX_DISP.get(n, n)), closed(MKT_OF.get(n), d)) if closed(MKT_OF.get(n), d) else
+            (esc(IDX_DISP.get(n, n)), f"{c:,.2f}", d, pct(pc), pts(ch), None, pc, 6, esc(r)) for n, c, ch, pc, r, d in D["index_rows"]]
     lv, bp, note, r, d = D["ust"]
-    rows.append(("美國10年期<br>公債殖利率", esc(lv), d, esc(bp), None, f"({esc(note)})", bp_value(bp) if lv != "未取得" else None, 15, esc(r)))
+    if closed("US_BOND", d):
+        rows.append(hrow("美國10年期<br>公債殖利率", closed("US_BOND", d)))
+    else:
+        rows.append(("美國10年期<br>公債殖利率", esc(lv), d, esc(bp), None, f"({esc(note)})", bp_value(bp) if lv != "未取得" else None, 15, esc(r)))
     P.append(h2("主要指數"))
     P.append(market_table("指數", rows))
+    P.append(sector_block())
     P.append(chips_block())
     P.append(h2("匯率、商品與利率"))
     rows = []
     for n, lv, ch, nt, r, a, d in D["macro_rows"]:
-        if a:  # a=[數值, 漲跌, 百分比]
+        if closed(MACRO_MKT.get(n), d):
+            rows.append((brk(n), "—", None, "休市", None, None, None, 1, esc(f"{ref} {HOL(closed(MACRO_MKT.get(n), d))}，無新交易數據")))
+        elif a:  # a=[數值, 漲跌, 百分比]
             rows.append((brk(n), esc(lv).replace("美元/", "<br>美元/"), d, pct(a[2]), esc(re.sub(r"（[^）]*）$", "", ch)), f"({esc(nt)})" if nt else None,
                          a[2], SCALE.get(n, 1), esc(r)))
         else:
@@ -509,11 +667,13 @@ def build_text():
         L += [f"［{e['tag']}］{e['date']}{imp}", f"{i}. {e['title']}", e["url"]] + [f"• {b}" for b in e["bullets"]] + [""]
     L += ["主要指數"]
     for n, c, ch, pc, r, d in D["index_rows"]:
-        L.append(f"{IDX_DISP.get(n, n)}｜{c:,.2f}{lbl(d)}｜{pts(ch)}（{pct(pc)}）｜{r}")
+        h = closed(MKT_OF.get(n), d)
+        L.append(f"{IDX_DISP.get(n, n)}｜{HOL(h)}" if h else f"{IDX_DISP.get(n, n)}｜{c:,.2f}{lbl(d)}｜{pts(ch)}（{pct(pc)}）｜{r}")
     lv, bp, note, r, d = D["ust"]
-    L += [f"美國10年期公債殖利率｜{lv}{lbl(d)}｜{bp}（{note}）｜{r}"]
+    hb = closed("US_BOND", d)
+    L += [f"美國10年期公債殖利率｜{HOL(hb)}" if hb else f"美國10年期公債殖利率｜{lv}{lbl(d)}｜{bp}（{note}）｜{r}"]
     cb = chips_block()
-    if cb:
+    if cb and not closed("TW", next((x[5] for x in D["index_rows"] if x[0] == "台灣加權指數"), None)):
         ch, inst = D["chips"], D["inst"]
         mk = lambda v: f"{sgn(v)}{abs(v):,.2f}"
         stk = lambda s_: f"（連{abs(s_)}{'買' if s_ > 0 else '賣'}）" if s_ and abs(s_) >= 2 else ""
@@ -521,7 +681,8 @@ def build_text():
               f"外資及陸資 {mk(inst['foreign'])}{stk(ch.get('foreign_streak'))}｜投信 {mk(inst['trust'])}{stk(ch.get('trust_streak'))}｜自營商 {mk(inst['dealer'])}｜合計 {mk(inst['total'])}"]
     L += ["", "匯率、商品與利率"]
     for n, lv, ch, nt, r, _a, d in D["macro_rows"]:
-        L.append(f"{n}｜{lv}{lbl(d)}｜{ch}{'（' + nt + '）' if nt else ''}｜{r}")
+        h = closed(MACRO_MKT.get(n), d)
+        L.append(f"{n}｜{HOL(h)}" if h else f"{n}｜{lv}{lbl(d)}｜{ch}{'（' + nt + '）' if nt else ''}｜{r}")
     um = D.get("us_macro")
     if um and um.get("rows"):
         L += ["", f"美國總經數據（{um['date']} 發布）"] + [f"{n}｜實際 {a}｜預期 {e}｜前值 {p}｜與預期差 {df}｜{rd}" for n, a, e, p, df, rd in um["rows"]]
@@ -561,15 +722,24 @@ def impact_value(name):
 LATEST_URL = "https://raw.githubusercontent.com/vicTAILEXFIN/market-data/main/data/latest.json"
 
 
+_LATEST = {}
+
+
 def load_latest():
     import os, urllib.request
     if os.environ.get("NO_LATEST"):
         return None
+    if "v" in _LATEST:
+        return _LATEST["v"]
+    if os.environ.get("LATEST_PATH"):  # 本機測試用
+        _LATEST["v"] = json.load(open(os.environ["LATEST_PATH"], encoding="utf-8"))
+        return _LATEST["v"]
     try:
         with urllib.request.urlopen(LATEST_URL, timeout=15) as r:
-            return json.loads(r.read().decode("utf-8"))
+            _LATEST["v"] = json.loads(r.read().decode("utf-8"))
     except Exception:  # noqa
-        return None
+        _LATEST["v"] = None
+    return _LATEST["v"]
 
 
 OFFICIAL_SUFFIX = (".gov", ".gov.tw", ".gov.uk", ".go.jp", ".go.kr", ".gov.cn", ".europa.eu", ".int")

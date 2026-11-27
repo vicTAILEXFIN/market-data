@@ -463,6 +463,59 @@ def twii_official(today):
             "chg": r(chg, 2), "pct": sign * abs(pct), "source": "twse_mi_index"}
 
 
+# ---------- 11/27 休市判斷：交易所行事曆（exchange_calendars）＋假日名稱（holidays） ----------
+MKT_CAL = {"US": "XNYS", "TW": "XTAI", "JP": "XTKS", "KR": "XKRX", "CN": "XSHG"}
+US_HOL_ZH = {"New Year's Day": "元旦", "Martin Luther King Jr. Day": "馬丁路德金恩紀念日", "Washington's Birthday": "總統日",
+             "Good Friday": "耶穌受難日", "Memorial Day": "陣亡將士紀念日", "Juneteenth National Independence Day": "六月節",
+             "Independence Day": "獨立紀念日", "Labor Day": "勞動節", "Thanksgiving Day": "感恩節", "Christmas Day": "聖誕節",
+             "Columbus Day": "哥倫布日", "Veterans Day": "退伍軍人節"}
+
+
+def market_status(today):
+    """參考日＝台北今天的前一個平日（07:45 信件應反映的交易日）；該市場行事曆非交易日 → 休市。
+    US_BOND：美債市場另休哥倫布日、退伍軍人節（SIFMA）。行事曆查不到時視為開市，交由資料日期判斷。"""
+    import pandas as pd
+    ref = prev_business_day_local(today)
+    out = {"ref_date": ref.isoformat()}
+    try:
+        import exchange_calendars as xc
+    except Exception as ex:  # noqa
+        errors.append(f"exchange_calendars 載入失敗：{ex}")
+        return out
+    try:
+        import holidays as hl
+    except Exception:  # noqa
+        hl = None
+
+    def name(m):
+        if not hl:
+            return None
+        try:
+            if m in ("US", "US_BOND"):
+                n = hl.financial_holidays("NYSE", years=ref.year).get(ref) or hl.US(years=ref.year).get(ref)
+                return US_HOL_ZH.get(str(n).split(" (")[0], n) if n else None
+            if m == "TW":
+                return hl.TW(years=ref.year, language="zh_TW").get(ref)
+            return {"JP": "日本國定假日", "KR": "韓國國定假日", "CN": "中國國定假日"}[m]
+        except Exception:  # noqa
+            return None
+    for m, code in MKT_CAL.items():
+        try:
+            is_open = bool(xc.get_calendar(code).is_session(pd.Timestamp(ref)))
+        except Exception:  # noqa  行事曆範圍外（例：XSHG 只到年底）→ 改用國定假日
+            is_open = not (hl and ref in hl.country_holidays(m, years=ref.year))
+        out[m] = {"open": is_open, "holiday": None if is_open else (name(m) or "休市")}
+    us_extra = None
+    if hl:
+        n = str(hl.US(years=ref.year).get(ref) or "")
+        us_extra = next((k for k in ("Columbus Day", "Veterans Day") if k in n), None)
+    if us_extra and out.get("US", {}).get("open"):
+        out["US_BOND"] = {"open": False, "holiday": US_HOL_ZH[us_extra]}
+    else:
+        out["US_BOND"] = dict(out.get("US") or {"open": True, "holiday": None})
+    return out
+
+
 # ---------- 台股籌碼面 ----------
 def _bfi82u(d):
     js = json.loads(get(f"https://www.twse.com.tw/rwd/zh/fund/BFI82U?type=day&dayDate={d:%Y%m%d}&response=json"))
@@ -1035,6 +1088,10 @@ def main():
             pass
     out = {"generated_at_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "taipei_date": today.isoformat(),
            "indices": {}, "ust10y": None, "sse": None, "ust_curve": None, "stocks": {}, "macro": {}, "fedwatch": None, "us_macro_fred": None, "us_calendar": None, "errors": errors, "notes": []}
+    try:
+        out["market_status"] = market_status(today)
+    except Exception as ex:  # noqa
+        errors.append(f"market_status 失敗：{ex}")
 
     expected = prev_business_day_local(today)  # 亞股最新應有的收盤日（不含休市）
     for s, n in INDICES.items():
@@ -1158,6 +1215,14 @@ def main():
             out["contributors"][sym] = fn(idx)
         except Exception as ex:  # noqa
             errors.append(f"contributors {sym} 失敗：{ex}")
+
+    # 11/26：產業板塊（美股產業 ETF、證交所類股指數、自編細分族群）
+    try:
+        import sectors
+        out["sectors"] = sectors.build(today, get, pair_src, out["notes"], errors)
+    except Exception as ex:  # noqa
+        out["sectors"] = None
+        errors.append(f"sectors 失敗：{ex}")
 
     try:
         out["corp_events"], out["watch_news"], out["watch_quotes"] = corp_watch(today)
